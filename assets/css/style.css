@@ -1,0 +1,229 @@
+/* ============================================
+   KORAT REALITY - Custom Styles
+   Bootstrap 5 + Custom CSS
+   ============================================ */
+
+/* ============================================
+   1. FONT DEFINITIONS
+   ============================================ */
+@font-face {
+    font-family: 'Romie';
+    src: url('../fonts/RomieTrial-Regular.otf') format('opentype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Romie';
+    src: url('../fonts/RomieTrial-Medium.otf') format('opentype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Romie';
+    src: url('../fonts/RomieTrial-Bold.otf') format('opentype');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Archivo';
+    src: url('../fonts/Archivo-Regular.otf') format('opentype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Archivo';
+    src: url('../fonts/Archivo-Medium.otf') format('opentype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Archivo';
+    src: url('../fonts/Archivo-SemiBold.otf') format('opentype');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Archivo';
+    src: url('../fonts/Archivo-Bold.otf') format('opentype');
+    font-weight: 700;
+}
+
+/* ============================================
+   2. CSS CUSTOM PROPERTIES
+   ============================================ */
+:root {
+    --primary-dark: #1c1c1c;
+    --primary-cream: #faf7f2;
+    --primary-gold: #b99b5f;
+    --text-dark: #1c1c1c;
+    --text-light: #faf7f2;
+    --text-muted: #6c6c6c;
+    --font-heading: 'Romie', serif;
+    --font-body: 'Archivo', sans-serif;
+    --section-padding: 80px 0;
+}
+
+/* ============================================
+   3. BASE STYLES
+   ============================================ */
+body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--text-dark);
+    background-color: var(--primary-cream);
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+/* Utility Classes */
+.font-heading {
+    font-family: var(--font-heading);
+}
+
+.text-gold {
+    color: var(--primary-gold) !important;
+}
+
+.bg-dark {
+    background-color: var(--primary-dark) !important;
+}
+
+.bg-cream {
+    background-color: var(--primary-cream) !important;
+}
+
+.section-padding {
+    padding: var(--section-padding);
+}
+
+.object-fit-cover {
+    object-fit: cover;
+}
+
+/* Buttons */
+.btn-gold {
+    background-color: var(--primary-gold);
+    color: var(--primary-dark);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+    background-color: #a68a4f;
+    color: #fff;
+}
+
+.btn-outline-light {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+
+.btn-outline-light:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* ============================================
+   4. COMPONENT STYLES
+   ============================================ */
+
+/* Navbar */
+.main-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding-top: 20px;
+}
+
+.navbar-brand span {
+    letter-spacing: -1px;
+}
+
+.nav-link {
+    color: #fff !important;
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+/* Hero */
+.hero-section {
+    position: relative;
+    background-color: var(--primary-dark);
+    overflow: hidden;
+}
+
+.hero-video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title {
+    color: #fff;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+/* Services Border Grid */
+.services-section .border-end {
+    border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.services-section .border-bottom {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Timeline Process */
+.process-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    z-index: 0;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .services-section .border-end {
+        border-right: none !important;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+}
