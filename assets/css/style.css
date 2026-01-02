@@ -6,61 +6,238 @@
 /* ============================================
    1. FONT DEFINITIONS
    ============================================ */
+/* Romie - Serif */
+@font-face {
+    font-family: 'Romie';
+    src: url('../fonts/RomieTrial-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Romie';
+    src: url('../fonts/RomieTrial-LightItalic.otf') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+}
+
 @font-face {
     font-family: 'Romie';
     src: url('../fonts/RomieTrial-Regular.otf') format('opentype');
     font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Romie';
+    src: url('../fonts/RomieTrial-Italic.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
 }
 
 @font-face {
     font-family: 'Romie';
     src: url('../fonts/RomieTrial-Medium.otf') format('opentype');
     font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Romie';
+    src: url('../fonts/RomieTrial-MediumItalic.otf') format('opentype');
+    font-weight: 500;
+    font-style: italic;
 }
 
 @font-face {
     font-family: 'Romie';
     src: url('../fonts/RomieTrial-Bold.otf') format('opentype');
     font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Romie';
+    src: url('../fonts/RomieTrial-BoldItalic.otf') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Romie';
+    src: url('../fonts/RomieTrial-Heavy.otf') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Romie';
+    src: url('../fonts/RomieTrial-HeavyItalic.otf') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Romie';
+    src: url('../fonts/RomieTrial-Black.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Romie';
+    src: url('../fonts/RomieTrial-BlackItalic.otf') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+/* Archivo - Sans Serif */
+@font-face {
+    font-family: 'Archivo';
+    src: url('../fonts/Archivo-Thin.otf') format('opentype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Archivo';
+    src: url('../fonts/Archivo-ThinItalic.otf') format('opentype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Archivo';
+    src: url('../fonts/Archivo-ExtraLight.otf') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Archivo';
+    src: url('../fonts/Archivo-ExtraLightItalic.otf') format('opentype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Archivo';
+    src: url('../fonts/Archivo-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Archivo';
+    src: url('../fonts/Archivo-LightItalic.otf') format('opentype');
+    font-weight: 300;
+    font-style: italic;
 }
 
 @font-face {
     font-family: 'Archivo';
     src: url('../fonts/Archivo-Regular.otf') format('opentype');
     font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Archivo';
+    src: url('../fonts/Archivo-Italic.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
 }
 
 @font-face {
     font-family: 'Archivo';
     src: url('../fonts/Archivo-Medium.otf') format('opentype');
     font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Archivo';
+    src: url('../fonts/Archivo-MediumItalic.otf') format('opentype');
+    font-weight: 500;
+    font-style: italic;
 }
 
 @font-face {
     font-family: 'Archivo';
     src: url('../fonts/Archivo-SemiBold.otf') format('opentype');
     font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Archivo';
+    src: url('../fonts/Archivo-SemiBoldItalic.otf') format('opentype');
+    font-weight: 600;
+    font-style: italic;
 }
 
 @font-face {
     font-family: 'Archivo';
     src: url('../fonts/Archivo-Bold.otf') format('opentype');
     font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Archivo';
+    src: url('../fonts/Archivo-BoldItalic.otf') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Archivo';
+    src: url('../fonts/Archivo-ExtraBold.otf') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Archivo';
+    src: url('../fonts/Archivo-ExtraBoldItalic.otf') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Archivo';
+    src: url('../fonts/Archivo-Black.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Archivo';
+    src: url('../fonts/Archivo-BlackItalic.otf') format('opentype');
+    font-weight: 900;
+    font-style: italic;
 }
 
 /* ============================================
    2. CSS CUSTOM PROPERTIES
    ============================================ */
 :root {
+    /* Colors */
     --primary-dark: #1c1c1c;
     --primary-cream: #faf7f2;
     --primary-gold: #b99b5f;
     --text-dark: #1c1c1c;
     --text-light: #faf7f2;
     --text-muted: #6c6c6c;
+
+    /* Fonts */
     --font-heading: 'Romie', serif;
     --font-body: 'Archivo', sans-serif;
-    --section-padding: 80px 0;
+
+    /* Spacing & Sizes */
+    --section-padding: clamp(3rem, 6vw, 5rem) 0;
+    --container-padding: clamp(1rem, 3vw, 2rem);
+    --border-opacity: 0.1;
 }
 
 /* ============================================
@@ -68,7 +245,8 @@
    ============================================ */
 body {
     font-family: var(--font-body);
-    font-size: 16px;
+    font-size: 1rem;
+    /* 16px default */
     line-height: 1.5;
     color: var(--text-dark);
     background-color: var(--primary-cream);
@@ -84,6 +262,31 @@ h6 {
     font-family: var(--font-heading);
     font-weight: 400;
     line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem);
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw + 1rem, 3.5rem);
+}
+
+h3 {
+    font-size: clamp(1.75rem, 3vw + 1rem, 2.5rem);
+}
+
+h4 {
+    font-size: clamp(1.5rem, 2vw + 1rem, 2rem);
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+h6 {
+    font-size: 1rem;
 }
 
 /* Utility Classes */
@@ -111,12 +314,30 @@ h6 {
     object-fit: cover;
 }
 
+.hover-white:hover {
+    color: #fff !important;
+}
+
+.hover-gold:hover {
+    color: var(--primary-gold) !important;
+}
+
+.ls-1 {
+    letter-spacing: 1px;
+}
+
+.bg-cream {
+    background-color: #FAF9F6;
+}
+
 /* Buttons */
 .btn-gold {
     background-color: var(--primary-gold);
     color: var(--primary-dark);
     border: none;
     transition: all 0.3s ease;
+    padding: 0.75em 1.5em;
+    /* relative to font size */
 }
 
 .btn-gold:hover {
@@ -127,6 +348,8 @@ h6 {
 .btn-outline-light {
     border: 1px solid rgba(255, 255, 255, 0.3);
     color: #fff;
+    padding: 0.75em 1.5em;
+    transition: all 0.3s ease;
 }
 
 .btn-outline-light:hover {
@@ -145,17 +368,19 @@ h6 {
     left: 0;
     width: 100%;
     z-index: 1000;
-    padding-top: 20px;
+    padding-top: clamp(1rem, 2vw, 1.5rem);
 }
 
 .navbar-brand span {
-    letter-spacing: -1px;
+    letter-spacing: -0.05em;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
 }
 
 .nav-link {
     color: #fff !important;
-    font-size: 13px;
-    letter-spacing: 1px;
+    font-size: 0.8125rem;
+    /* 13px */
+    letter-spacing: 0.08em;
     font-weight: 500;
 }
 
@@ -164,6 +389,12 @@ h6 {
     position: relative;
     background-color: var(--primary-dark);
     overflow: hidden;
+    min-height: 100vh;
+    /* Use vh for full screen */
+    min-height: 100dvh;
+    /* Dynamic viewport height for modern browsers */
+    display: flex;
+    align-items: center;
 }
 
 .hero-video-bg {
@@ -182,28 +413,42 @@ h6 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
+    width: 100%;
 }
 
 .hero-title {
     color: #fff;
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    /* Updated clamp for better scaling */
+    font-family: var(--font-body);
     line-height: 1.1;
     letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+}
+
+.hero-title .highlight {
+    /* color: var(--primary-gold); */
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-weight: 400;
+    text-decoration: underline;
+    text-underline-offset: 0.12em;
+    text-decoration-thickness: 2px;
 }
 
 /* Services Border Grid */
 .services-section .border-end {
-    border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-right: 1px solid rgba(255, 255, 255, var(--border-opacity)) !important;
 }
 
 .services-section .border-bottom {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, var(--border-opacity)) !important;
 }
 
 /* Timeline Process */
@@ -217,13 +462,39 @@ h6 {
     z-index: 0;
 }
 
-/* Responsive */
+#hero .pt-8 {
+    padding-top: 8rem !important;
+}
+
+#why-korat h2 {
+    font-family: var(--font-body) !important;
+    font-weight: 500;
+}
+
+#why-korat h4 {
+    font-family: var(--font-body) !important;
+    font-weight: 500;
+}
+
+#services h2,
+#services h3 {
+    font-family: var(--font-body) !important;
+    font-weight: 500;
+}
+
+#services .py-1 {
+    padding-top: .20rem !important;
+    padding-bottom: .20rem !important;
+}
+
+div#services_id span {
+    cursor: pointer !important;
+}
+
+/* Responsive Overrides (Minimal needed due to clamp) */
 @media (max-width: 991px) {
     .services-section .border-end {
         border-right: none !important;
-    }
-
-    .hero-title {
-        font-size: 2.5rem;
+        /* Stacked layout on smaller screens */
     }
 }

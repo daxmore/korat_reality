@@ -16,38 +16,55 @@
     <!-- ============================================
          HEADER / NAVIGATION
          ============================================ -->
-    <header class="main-header">
-        <div class="container-fluid px-5">
-            <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="#">
-                    <span class="font-heading" style="color: #fff; font-size: 2rem; font-weight: 700;">KR</span>
+    <header class="main-header py-4">
+        <div class="container-fluid px-4 px-md-5">
+            <div class="d-flex justify-content-between align-items-center w-100">
+                <!-- 1. Logo -->
+                <a href="#" class="d-block">
+                    <img src="assets/images/svg/for-dark-bg.svg" alt="KR" style="height: 35px; width: auto;">
                 </a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-                    <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="mainNav">
-                    <ul class="navbar-nav ms-auto align-items-center">
-                        <li class="nav-item ps-4"><a class="nav-link text-uppercase" href="#about">About Us</a></li>
-                        <li class="nav-item ps-4"><a class="nav-link text-uppercase" href="#why-korat">Why Invest in
-                                India</a></li>
-                        <li class="nav-item ps-4"><a class="nav-link text-uppercase" href="#services">Our Services</a>
-                        </li>
-                        <li class="nav-item ps-4">
-                            <a class="nav-link text-uppercase d-flex align-items-center gap-2" href="#">
-                                Menu
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2">
-                                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                                </svg>
-                            </a>
-                        </li>
-                    </ul>
+                <!-- 2. Center Navigation (Desktop Only) -->
+                <div class="d-none d-lg-flex align-items-center gap-5 w-100 justify-content-evenly">
+                    <a href="#about"
+                        class="text-white text-uppercase text-decoration-none fw-semibold small ls-1 hover-gold">About
+                        Us</a>
+                    <a href="#why-korat"
+                        class="text-white text-uppercase text-decoration-none fw-semibold small ls-1 hover-gold">Why
+                        Invest In India</a>
+                    <a href="#services"
+                        class="text-white text-uppercase text-decoration-none fw-semibold small ls-1 hover-gold">Our
+                        Services</a>
                 </div>
-            </nav>
+
+                <!-- 3. Menu Button -->
+                <button
+                    class="btn border-0 bg-transparent p-0 text-white text-uppercase fw-semibold small ls-1 d-flex align-items-center gap-3 hover-gold"
+                    type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
+                    Menu
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu content placeholder -->
+            <div class="collapse position-absolute w-100 start-0 bg-dark mt-3 p-4" id="mobileMenu"
+                style="z-index: 100;">
+                <ul class="list-unstyled text-center mb-0 d-lg-none">
+                    <li class="mb-3"><a href="#about" class="text-white text-uppercase text-decoration-none">About
+                            Us</a></li>
+                    <li class="mb-3"><a href="#why-korat" class="text-white text-uppercase text-decoration-none">Why
+                            Invest In India</a></li>
+                    <li class="mb-3"><a href="#services" class="text-white text-uppercase text-decoration-none">Our
+                            Services</a></li>
+                </ul>
+            </div>
         </div>
     </header>
 
@@ -60,26 +77,26 @@
         </video>
         <div class="hero-overlay"></div>
 
-        <div class="container">
+        <div class="container-fluid mx-4">
             <div class="row min-vh-100 align-items-center">
                 <div class="col-lg-10">
-                    <div class="hero-content pt-5">
+                    <div class="hero-content pt-8">
                         <h1 class="hero-title text-uppercase mb-4">
-                            Strategic Real Estate<br>
-                            Development & Investment<br>
-                            Solutions in India
+                            Strategic <span class="highlight">Real Estate</span>
+                            <br>
+                            Development & Investment
+                            <br>
+                            <span class="highlight">Solutions</span> in India
                         </h1>
-                        <p class="hero-description text-uppercase mb-5 text-white"
+                        <p class="hero-description text-uppercase mb-4 text-white"
                             style="font-size: 14px; letter-spacing: 1px; max-width: 800px; line-height: 1.8;">
                             We work with investors, landowners, and NRIs to identify, develop, and structure real estate
                             opportunities with clear documentation, disciplined research, and a long-term value mindset.
                         </p>
 
                         <div class="hero-buttons d-flex flex-wrap gap-0">
-                            <a href="#projects" class="btn btn-gold text-uppercase px-4 py-3 fw-bold"
+                            <a href="#projects" class="btn btn-sm btn-gold text-uppercase px-4 py-3 fw-bold"
                                 style="min-width: 250px;">Explore Current Developments</a>
-                            <a href="#contact" class="btn btn-outline-light text-uppercase px-4 py-3 fw-bold"
-                                style="min-width: 250px; margin-left: -1px;">Speak With an Investment Advisor</a>
                         </div>
                     </div>
                 </div>
@@ -95,7 +112,7 @@
             <div class="row justify-content-center mb-5">
                 <div class="col-lg-10 text-center">
                     <h2 class="section-title text-uppercase display-4 mb-4 fw-bold">About Korat Reality</h2>
-                    <p class="lead mx-auto" style="max-width: 800px; font-size: 18px;">
+                    <p class="lead mx-auto" style="max-width: 800px; font-size: 1.125rem;">
                         Korat Reality is a development-led real estate investment firm in India, delivering transparent
                         land acquisition, strategic development, and advisory services for investors, landowners, and
                         NRIs, with a clear focus on long-term value creation.
@@ -106,66 +123,65 @@
             <!-- Main Feature Image -->
             <div class="row mb-5">
                 <div class="col-12">
-                    <div class="w-100" style="height: 500px; overflow: hidden; border-radius: 20px;">
-                        <img src="assets/images/a_well_planned_residential_complex_with_multiple_buildings.mp4"
-                            onerror="this.src='assets/images/a_low_to_mid_altitude_oblique_aerial_view_of.jpeg'"
-                            alt="Overview" class="w-100 h-100 object-fit-cover">
+                    <div class="w-100 mb-5" style="height: 500px; overflow: hidden; border-radius: 20px;">
+                        <img class="w-100 h-100 object-fit-cover"
+                            src="assets/images/an_oblique_aerial_view_of_a_completed.jpeg" alt="">
                     </div>
                 </div>
             </div>
 
-            <!-- Content Grid with Specific Layout -->
             <div class="row g-5">
-                <!-- Left Column -->
-                <div class="col-lg-6">
-                    <div class="mb-5">
-                        <h4 class="text-uppercase fw-bold mb-3 fs-6">Development-Led Focus</h4>
-                        <p class="text-muted small">Development-led real estate investment firm in India serving
+                <!-- Column 1 -->
+                <div class="col-lg-4 d-flex flex-column">
+                    <div class="mb-4">
+                        <p class="text-muted small text-uppercase" style="line-height: 1.6;">Development-led real estate
+                            investment firm in India serving
                             investors, landowners, and NRIs through land acquisition, strategic development, and
                             advisory services focused on sustainable, long-term value creation.</p>
                     </div>
-                    <div class="mb-0">
-                        <div class="w-100 mb-4" style="height: 300px; overflow: hidden; border-radius: 10px;">
-                            <img src="assets/images/an_oblique_aerial_view_of_a_completed.jpeg" alt="Development"
-                                class="w-100 h-100 object-fit-cover">
-                        </div>
+                    <div class="flex-grow-1 w-100 mt-2"
+                        style="min-height: 250px; border-radius: 20px; overflow: hidden;">
+                        <video class="w-100 h-100 object-fit-cover" autoplay muted loop playsinline
+                            poster="assets/images/a_low_to_mid_altitude_oblique_aerial_view_of.jpeg">
+                            <source src="assets/images/a_well_planned_residential_complex_with_multiple_buildings.mp4"
+                                type="video/mp4">
+                        </video>
                     </div>
                 </div>
-                <!-- Right Column -->
-                <div class="col-lg-6">
+
+                <!-- Column 2 -->
+                <div class="col-lg-4">
                     <div class="mb-5">
-                        <h4 class="text-uppercase fw-bold mb-3 fs-6">Trust, Transparency, Expertise</h4>
-                        <p class="text-muted small">Core operating principles emphasize trust, transparency, and
+                        <p class="text-muted small text-uppercase" style="line-height: 1.6;">Core operating principles
+                            emphasize trust, transparency, and
                             professional expertise, recognizing property investment as a long-term commitment and
                             providing research-driven guidance.</p>
                     </div>
+                    <div class="mb-5">
+                        <p class="text-muted small text-uppercase mb-4" style="line-height: 1.6;">Transforms raw
+                            land into residential, commercial, and
+                            industrial projects through feasibility studies, legal verification, market
+                            research, and structured execution.</p>
+                    </div>
+                    <div class="mb-5">
+                        <p class="text-muted small text-uppercase" style="line-height: 1.6;">Advisory approach
+                            aligns
+                            opportunities with investor goals, risk
+                            appetite, budget, and timelines.</p>
+                    </div>
+                </div>
 
-                    <div class="row g-4">
-                        <div class="col-12">
-                            <div class="d-flex gap-4 flex-wrap flex-md-nowrap">
-                                <div style="flex: 1;">
-                                    <h4 class="text-uppercase fw-bold mb-3 fs-6">End-to-End Development</h4>
-                                    <p class="text-muted small">Transforms raw land into residential, commercial, and
-                                        industrial projects through feasibility studies, legal verification, market
-                                        research, and structured execution.</p>
-                                </div>
-                                <div
-                                    style="width: 200px; height: 150px; flex-shrink: 0; border-radius: 10px; overflow: hidden;">
-                                    <img src="assets/images/Gemini_Generated_Image_xpnukkxpnukkxpnu.png"
-                                        alt="End to End" class="w-100 h-100 object-fit-cover">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <h4 class="text-uppercase fw-bold mb-3 fs-6">Investor-Centric Advisory</h4>
-                            <p class="text-muted small">Advisory approach aligns opportunities with investor goals, risk
-                                appetite, budget, and timelines.</p>
-                        </div>
-                        <div class="col-md-6">
-                            <h4 class="text-uppercase fw-bold mb-3 fs-6">NRI Investment Support</h4>
-                            <p class="text-muted small">Specialized support for NRI property investments in India,
-                                including remote advisory and compliance.</p>
-                        </div>
+                <!-- Column 3 -->
+                <div class="col-lg-4">
+                    <div style="width: 100%; height: 70%; flex-shrink: 0; border-radius: 12px; overflow: hidden;"
+                        class="mb-4">
+                        <img src="assets/images/Gemini_Generated_Image_xpnukkxpnukkxpnu.png" alt="End to End"
+                            class="w-100 h-100 object-fit-cover">
+                    </div>
+                    <div>
+                        <p class="text-muted small text-uppercase" style="line-height: 1.6;">Specialized support for NRI
+                            property investments in India,
+                            including remote advisory and compliance.</p>
                     </div>
                 </div>
             </div>
@@ -186,9 +202,9 @@
             <div class="row g-0 border-top border-white border-opacity-10">
                 <!-- Service 1 -->
                 <div class="col-lg-6 border-end border-bottom border-white border-opacity-10 p-5">
-                    <div class="d-flex justify-content-between align-items-start mb-4">
+                    <div class="d-flex justify-content-between align-items-start mb-4" id="services_id">
                         <h3 class="text-uppercase fs-4">Land Acquisition</h3>
-                        <span class="border rounded-pill px-2 py-1 small">01</span>
+                        <span class="border rounded-pill px-2 py-1 small">&#8599;</span>
                     </div>
                     <p class="text-white-50 small mb-4" style="max-width: 400px;">We provide land acquisition services
                         across India using market research, location analysis, connectivity, zoning review, and legal
@@ -201,9 +217,9 @@
 
                 <!-- Service 2 -->
                 <div class="col-lg-6 border-bottom border-white border-opacity-10 p-5">
-                    <div class="d-flex justify-content-between align-items-start mb-4">
+                    <div class="d-flex justify-content-between align-items-start mb-4" id="services_id">
                         <h3 class="text-uppercase fs-4">Residential Projects</h3>
-                        <span class="border rounded-pill px-2 py-1 small">04</span>
+                        <span class="border rounded-pill px-2 py-1 small">&#8599;</span>
                     </div>
                     <p class="text-white-50 small mb-4" style="max-width: 400px;">Our residential projects include
                         plotted developments and villas in well-connected locations designed for homebuyers and
@@ -216,9 +232,9 @@
 
                 <!-- Service 3 -->
                 <div class="col-lg-6 border-end border-bottom border-white border-opacity-10 p-5">
-                    <div class="d-flex justify-content-between align-items-start mb-4">
+                    <div class="d-flex justify-content-between align-items-start mb-4" id="services_id">
                         <h3 class="text-uppercase fs-4">Land Development</h3>
-                        <span class="border rounded-pill px-2 py-1 small">02</span>
+                        <span class="border rounded-pill px-2 py-1 small">&#8599;</span>
                     </div>
                     <p class="text-white-50 small mb-4" style="max-width: 400px;">We transform raw land into compliant,
                         market-ready properties through planning approvals, infrastructure development, and execution.
@@ -232,9 +248,9 @@
 
                 <!-- Service 4 -->
                 <div class="col-lg-6 border-bottom border-white border-opacity-10 p-5">
-                    <div class="d-flex justify-content-between align-items-start mb-4">
+                    <div class="d-flex justify-content-between align-items-start mb-4" id="services_id">
                         <h3 class="text-uppercase fs-4">Industrial Projects</h3>
-                        <span class="border rounded-pill px-2 py-1 small">05</span>
+                        <span class="border rounded-pill px-2 py-1 small">&#8599;</span>
                     </div>
                     <p class="text-white-50 small mb-4" style="max-width: 400px;">We specialize in industrial land
                         development in designated zones, supporting manufacturing, logistics, and warehousing needs.</p>
@@ -246,9 +262,9 @@
 
                 <!-- Service 5 -->
                 <div class="col-lg-6 border-end border-bottom border-white border-opacity-10 p-5">
-                    <div class="d-flex justify-content-between align-items-start mb-4">
+                    <div class="d-flex justify-content-between align-items-start mb-4" id="services_id">
                         <h3 class="text-uppercase fs-4">Commercial Projects</h3>
-                        <span class="border rounded-pill px-2 py-1 small">03</span>
+                        <span class="border rounded-pill px-2 py-1 small">&#8599;</span>
                     </div>
                     <p class="text-white-50 small mb-4" style="max-width: 400px;">We develop commercial real estate
                         projects including retail, office, and mixed-use developments focusing on location demand.</p>
@@ -284,16 +300,16 @@
             <div class="mb-5">
                 <h2 class="text-uppercase fw-bold mb-2 display-6">Why Korat Reality is a</h2>
                 <h2 class="text-uppercase fw-bold text-muted mb-4 display-6">Trusted Investment Partner</h2>
-                <p class="text-uppercase small fw-bold text-muted ls-1">Choosing the right property investment advisory
-                    partner is critical to your investment success. Here's what sets Korat Reality apart:</p>
+                <!-- <p class="text-uppercase small fw-bold text-muted ls-1">Choosing the right property investment advisory
+                    partner is critical to your investment success. Here's what sets Korat Reality apart:</p> -->
             </div>
 
             <div class="border-top border-dark border-opacity-25">
                 <!-- Item 1 -->
                 <div class="row py-5 border-bottom border-dark border-opacity-25 align-items-center">
-                    <div class="col-md-2"><span class="fs-2 font-heading">01</span></div>
+                    <div class="col-md-2"><span class="fs-2 font-body">01</span></div>
                     <div class="col-md-4">
-                        <h4 class="text-uppercase m-0 fs-6 fw-bold">Transparency First</h4>
+                        <h4 class="text-uppercase m-0 fs-6 fw-semibold font-body">Transparency First</h4>
                     </div>
                     <div class="col-md-6">
                         <p class="text-muted m-0 small text-uppercase">Every project undergoes thorough legal
@@ -303,9 +319,9 @@
                 </div>
                 <!-- Item 2 -->
                 <div class="row py-5 border-bottom border-dark border-opacity-25 align-items-center">
-                    <div class="col-md-2"><span class="fs-2 font-heading">02</span></div>
+                    <div class="col-md-2"><span class="fs-2 font-body">02</span></div>
                     <div class="col-md-4">
-                        <h4 class="text-uppercase m-0 fs-6 fw-bold">Research-Driven Decisions</h4>
+                        <h4 class="text-uppercase m-0 fs-6 fw-semibold font-body">Research-Driven Decisions</h4>
                     </div>
                     <div class="col-md-6">
                         <p class="text-muted m-0 small text-uppercase">Our investment recommendations are based on
@@ -314,9 +330,9 @@
                 </div>
                 <!-- Item 3 -->
                 <div class="row py-5 border-bottom border-dark border-opacity-25 align-items-center">
-                    <div class="col-md-2"><span class="fs-2 font-heading">03</span></div>
+                    <div class="col-md-2"><span class="fs-2 font-body">03</span></div>
                     <div class="col-md-4">
-                        <h4 class="text-uppercase m-0 fs-6 fw-bold">Investor-Centric Approach</h4>
+                        <h4 class="text-uppercase m-0 fs-6 fw-semibold font-body">Investor-Centric Approach</h4>
                     </div>
                     <div class="col-md-6">
                         <p class="text-muted m-0 small text-uppercase">Whether you're investing ₹10 Lakhs or ₹10 Crores,
@@ -326,9 +342,9 @@
                 </div>
                 <!-- Item 4 -->
                 <div class="row py-5 border-bottom border-dark border-opacity-25 align-items-center">
-                    <div class="col-md-2"><span class="fs-2 font-heading">04</span></div>
+                    <div class="col-md-2"><span class="fs-2 font-body">04</span></div>
                     <div class="col-md-4">
-                        <h4 class="text-uppercase m-0 fs-6 fw-bold">Development Expertise</h4>
+                        <h4 class="text-uppercase m-0 fs-6 fw-semibold font-body">Development Expertise</h4>
                     </div>
                     <div class="col-md-6">
                         <p class="text-muted m-0 small text-uppercase">With hands-on experience in executing joint
@@ -337,9 +353,9 @@
                 </div>
                 <!-- Item 5 -->
                 <div class="row py-5 border-bottom border-dark border-opacity-25 align-items-center">
-                    <div class="col-md-2"><span class="fs-2 font-heading">05</span></div>
+                    <div class="col-md-2"><span class="fs-2 font-body">05</span></div>
                     <div class="col-md-4">
-                        <h4 class="text-uppercase m-0 fs-6 fw-bold">Long-Term Value Focus</h4>
+                        <h4 class="text-uppercase m-0 fs-6 fw-semibold font-body">Long-Term Value Focus</h4>
                     </div>
                     <div class="col-md-6">
                         <p class="text-muted m-0 small text-uppercase">We prioritize long-term real estate investment
@@ -348,9 +364,9 @@
                 </div>
                 <!-- Item 6 -->
                 <div class="row py-5 border-bottom border-dark border-opacity-25 align-items-center">
-                    <div class="col-md-2"><span class="fs-2 font-heading">06</span></div>
+                    <div class="col-md-2"><span class="fs-2 font-body">06</span></div>
                     <div class="col-md-4">
-                        <h4 class="text-uppercase m-0 fs-6 fw-bold">Legal & Compliance Excellence</h4>
+                        <h4 class="text-uppercase m-0 fs-6 fw-semibold font-body">Legal & Compliance Excellence</h4>
                     </div>
                     <div class="col-md-6">
                         <p class="text-muted m-0 small text-uppercase">From title verification to RERA compliance, our
@@ -365,7 +381,7 @@
          OPPORTUNITIES & NRI SECTIONS
          ============================================ -->
     <section class="section-padding" style="background-color: #fcfbf9;">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row g-0">
                 <div class="col-lg-6">
                     <div class="h-100" style="min-height: 500px;">
@@ -409,7 +425,7 @@
     </section>
 
     <section class="section-padding bg-cream">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row g-0 flex-row-reverse">
                 <div class="col-lg-6">
                     <div class="h-100" style="min-height: 500px;">
@@ -454,37 +470,101 @@
     <!-- ============================================
          PROCESS SECTION
          ============================================ -->
-    <section class="section-padding bg-white">
+    <section class="section-padding bg-cream">
         <div class="container">
             <h2 class="text-uppercase fw-bold mb-2">Our Development & Investment</h2>
             <h2 class="text-uppercase fw-bold mb-5">Process</h2>
             <div class="process-wrapper position-relative py-5">
-                <div class="position-absolute top-50 w-100 border-top border-dark d-none d-lg-block"></div>
+                <!-- Row 1: Steps 1-4 -->
+                <div class="row g-4 mb-5">
+                    <!-- Step 01 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="position-relative border-top border-dark pt-5">
+                            <div class="position-absolute bg-dark rounded-circle"
+                                style="top: -6px; left: 0; width: 12px; height: 12px;"></div>
+                            <h5 class="fw-bold fs-5 text-uppercase mb-3">Initial Consultation</h5>
+                            <p class="text-muted small lh-base mb-0">We begin by understanding your investment
+                                objectives, risk appetite, budget, and timeline. This helps us recommend opportunities
+                                aligned with your goals.</p>
+                        </div>
+                    </div>
+                    <!-- Step 02 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="position-relative border-top border-dark pt-5">
+                            <div class="position-absolute bg-dark rounded-circle"
+                                style="top: -6px; left: 0; width: 12px; height: 12px;"></div>
+                            <h5 class="fw-bold fs-5 text-uppercase mb-3">Opportunity Identification</h5>
+                            <p class="text-muted small lh-base mb-0">Based on your requirements, we present vetted
+                                opportunities with complete project details, location analysis, and legal status.</p>
+                        </div>
+                    </div>
+                    <!-- Step 03 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="position-relative border-top border-dark pt-5">
+                            <div class="position-absolute bg-dark rounded-circle"
+                                style="top: -6px; left: 0; width: 12px; height: 12px;"></div>
+                            <h5 class="fw-bold fs-5 text-uppercase mb-3">Due Diligence & Verification</h5>
+                            <p class="text-muted small lh-base mb-0">Before you commit, we conduct comprehensive legal
+                                verification, title searches, encumbrance checks, and compliance audits.</p>
+                        </div>
+                    </div>
+                    <!-- Step 04 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="position-relative border-top border-dark pt-5">
+                            <div class="position-absolute bg-dark rounded-circle"
+                                style="top: -6px; left: 0; width: 12px; height: 12px;"></div>
+                            <h5 class="fw-bold fs-5 text-uppercase mb-3">Feasibility Assessment</h5>
+                            <p class="text-muted small lh-base mb-0">Our team evaluates market demand, infrastructure
+                                development, comparable transactions, and appreciation potential to provide realistic
+                                projections.</p>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Row 2: Steps 5-8 -->
                 <div class="row g-4">
-                    <div class="col-lg-3 position-relative bg-white pe-4">
-                        <div class="bg-dark rounded-circle mb-3" style="width: 12px; height: 12px;"></div>
-                        <h5 class="fw-bold fs-6">Initial Consultation</h5>
-                        <p class="text-muted small" style="font-size: 12px;">We begin by understanding your investment
-                            objectives, risk appetite, budget, and timeline.</p>
+                    <!-- Step 05 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="position-relative border-top border-dark pt-5">
+                            <div class="position-absolute bg-dark rounded-circle"
+                                style="top: -6px; left: 0; width: 12px; height: 12px;"></div>
+                            <h5 class="fw-bold fs-5 text-uppercase mb-3">Investment Structuring</h5>
+                            <p class="text-muted small lh-base mb-0">We help structure the investment—whether it's
+                                direct land purchase, plotting project participation, or joint venture real estate
+                                projects—to optimize returns and minimize risks.</p>
+                        </div>
                     </div>
-                    <div class="col-lg-3 position-relative bg-white pe-4">
-                        <div class="bg-dark rounded-circle mb-3" style="width: 12px; height: 12px;"></div>
-                        <h5 class="fw-bold fs-6">Opportunity Identification</h5>
-                        <p class="text-muted small" style="font-size: 12px;">We present vetted opportunities with
-                            complete project details and location analysis.</p>
+                    <!-- Step 06 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="position-relative border-top border-dark pt-5">
+                            <div class="position-absolute bg-dark rounded-circle"
+                                style="top: -6px; left: 0; width: 12px; height: 12px;"></div>
+                            <h5 class="fw-bold fs-5 text-uppercase mb-3">Execution & Documentation</h5>
+                            <p class="text-muted small lh-base mb-0">From agreement drafting to registration, we
+                                coordinate the entire transaction process with legal and financial precision.</p>
+                        </div>
                     </div>
-                    <div class="col-lg-3 position-relative bg-white pe-4">
-                        <div class="bg-dark rounded-circle mb-3" style="width: 12px; height: 12px;"></div>
-                        <h5 class="fw-bold fs-6">Due Diligence</h5>
-                        <p class="text-muted small" style="font-size: 12px;">Comprehensive legal verification, title
-                            searches, encumbrance checks, and compliance audits.</p>
+                    <!-- Step 07 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="position-relative border-top border-dark pt-5">
+                            <div class="position-absolute bg-dark rounded-circle"
+                                style="top: -6px; left: 0; width: 12px; height: 12px;"></div>
+                            <h5 class="fw-bold fs-5 text-uppercase mb-3">Development & Updates</h5>
+                            <p class="text-muted small lh-base mb-0">For development projects, we provide regular
+                                progress updates, milestone reports, and documentation handovers as per agreed
+                                timelines.</p>
+                        </div>
                     </div>
-                    <div class="col-lg-3 position-relative bg-white pe-4">
-                        <div class="bg-dark rounded-circle mb-3" style="width: 12px; height: 12px;"></div>
-                        <h5 class="fw-bold fs-6">Feasibility Assessment</h5>
-                        <p class="text-muted small" style="font-size: 12px;">Our team evaluates market demand,
-                            infrastructure development, and potential appreciation.</p>
+                    <!-- Step 08 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="position-relative border-top border-dark pt-5">
+                            <div class="position-absolute bg-dark rounded-circle"
+                                style="top: -6px; left: 0; width: 12px; height: 12px;"></div>
+                            <h5 class="fw-bold fs-5 text-uppercase mb-3">Exit Support</h5>
+                            <p class="text-muted small lh-base mb-0">When you're ready to liquidate or transfer the
+                                property, our team assists with market positioning, buyer identification, and
+                                transaction facilitation.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -522,53 +602,91 @@
     <!-- ============================================
          FOOTER
          ============================================ -->
-    <footer class="main-footer pt-5 pb-3 bg-dark">
+    <footer class="main-footer pt-5 pb-3 bg-dark text-white">
         <div class="container pt-5">
-            <div class="row g-4 mb-5 border-bottom border-white border-opacity-10 pb-5">
-                <div class="col-lg-3">
-                    <span class="font-heading text-white fs-2 fw-bold">KR</span>
-                </div>
-                <div class="col-lg-2">
-                    <h6 class="text-white text-uppercase small fw-bold mb-4">About</h6>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none small">Company</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none small">Team</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none small">Career</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2">
-                    <h6 class="text-white text-uppercase small fw-bold mb-4">Services</h6>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none small">Residential</a>
-                        </li>
-                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none small">Commercial</a>
-                        </li>
-                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none small">Investment</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-2">
-                    <h6 class="text-white text-uppercase small fw-bold mb-4">Connect</h6>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none small">LinkedIn</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none small">Instagram</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none small">Facebook</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3">
-                    <h6 class="text-white text-uppercase small fw-bold mb-4">Subscribe</h6>
-                    <p class="text-white-50 small mb-3">Join our newsletter to stay up to date.</p>
-                    <div class="input-group mb-2">
-                        <input type="email" class="form-control bg-transparent border-secondary text-white rounded-0"
-                            placeholder="Enter your email">
-                        <button class="btn btn-outline-light rounded-0" type="button">Subscribe</button>
+            <div class="row g-5 mb-5 justify-content-between">
+                <!-- Brand Column -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="mb-4">
+                        <img src="assets/images/svg/for-dark-bg.svg" alt="Korat Reality"
+                            style="width: 60px; height: auto;">
                     </div>
+                    <p class="text-white-50 small text-uppercase lh-lg mb-4" style="max-width: 300px;">
+                        Strategic land acquisition and development solutions building long-term value for investors and
+                        communities.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-white-50 text-decoration-none hover-white"><i
+                                class="bi bi-linkedin"></i> LinkedIn</a>
+                        <a href="#" class="text-white-50 text-decoration-none hover-white"><i
+                                class="bi bi-instagram"></i> Instagram</a>
+                    </div>
+                </div>
+
+                <!-- Links Column 1 -->
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h6 class="text-white text-uppercase small fw-bold mb-4 ls-1">Company</h6>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="#about"
+                                class="text-white-50 text-decoration-none small text-uppercase hover-white">About Us</a>
+                        </li>
+                        <li><a href="#process"
+                                class="text-white-50 text-decoration-none small text-uppercase hover-white">Our
+                                Process</a></li>
+                        <li><a href="#opportunities"
+                                class="text-white-50 text-decoration-none small text-uppercase hover-white">Opportunities</a>
+                        </li>
+                        <li><a href="#contact"
+                                class="text-white-50 text-decoration-none small text-uppercase hover-white">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Links Column 2 -->
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h6 class="text-white text-uppercase small fw-bold mb-4 ls-1">Services</h6>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="#" class="text-white-50 text-decoration-none small text-uppercase hover-white">Land
+                                Acquisition</a></li>
+                        <li><a href="#"
+                                class="text-white-50 text-decoration-none small text-uppercase hover-white">Development</a>
+                        </li>
+                        <li><a href="#"
+                                class="text-white-50 text-decoration-none small text-uppercase hover-white">Advisory</a>
+                        </li>
+                        <li><a href="#" class="text-white-50 text-decoration-none small text-uppercase hover-white">NRI
+                                Services</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter Column -->
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="text-white text-uppercase small fw-bold mb-4 ls-1">Stay Updated</h6>
+                    <p class="text-white-50 small mb-4">Subscribe to our newsletter for the latest investment insights.
+                    </p>
+                    <form action="#">
+                        <div class="input-group border-bottom border-secondary pb-2">
+                            <input type="email"
+                                class="form-control bg-transparent border-0 text-white p-0 shadow-none placeholder-white-50"
+                                placeholder="Email Address" style="font-size: 0.9rem;">
+                            <button
+                                class="btn btn-link text-white p-0 text-decoration-none text-uppercase small fw-bold"
+                                type="submit">Join</button>
+                        </div>
+                    </form>
                 </div>
             </div>
 
-            <div class="row align-items-center">
-                <div class="col-12">
-                    <span class="text-white-50 small">© 2024 Korat Reality. All rights reserved.</span>
+            <div class="row align-items-center pt-4 border-top border-white border-opacity-10">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <span class="text-white-50 small text-uppercase">&copy; 2025 Korat Reality. All rights
+                        reserved.</span>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-white-50 text-decoration-none small text-uppercase me-4 hover-white">Privacy
+                        Policy</a>
+                    <a href="#" class="text-white-50 text-decoration-none small text-uppercase hover-white">Terms of
+                        Service</a>
                 </div>
             </div>
         </div>
