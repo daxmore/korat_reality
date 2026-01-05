@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     gsap.registerPlugin(ScrollTrigger);
 
-    // Lock scroll initially
-    document.body.style.overflow = 'hidden';
-    window.scrollTo(0, 0);
+
 
     const navLinks = document.querySelectorAll(".nav-link");
     const mobileMenu = document.getElementById('mobileMenu');
@@ -11,78 +9,36 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuCloseBtn = document.getElementById('menuCloseBtn');
 
 
-    // ============================================
-    // INTRO SEQUENCE (Timeline)
-    // ============================================
-    const masterTl = gsap.timeline({
-        onComplete: () => {
-            // Unlock scroll after intro
-            document.body.style.overflow = '';
-        }
-    });
 
-    masterTl
-        // 1. Logo Reveal
-        .to(".intro-logo", {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            ease: "power2.out"
-        })
-        // 2. Progress Bar
-        .to(".intro-progress", {
-            width: "100%",
-            duration: 1.2,
-            ease: "expo.inOut" // Snappier
-        }, "-=0.5")
-        // 3. Exit Intro Elements
-        .to(".intro-logo", {
-            y: -30,
-            opacity: 0,
-            duration: 0.6,
-            ease: "power2.in"
-        })
-        .to(".intro-progress-bar", {
-            opacity: 0,
-            duration: 0.4
-        }, "<")
-        // 4. Curtain Lift (The "Classy" Reveal)
-        .to(".intro-overlay", {
-            height: 0, // Wipe up
-            duration: 1.4,
-            ease: "power4.inOut"
-        }, "-=0.3")
-        // 5. Hero Elements Reveal (Chained)
-        .from(".hero-video-bg", {
-            scale: 1.15,
-            duration: 2,
-            ease: "power2.out"
-        }, "-=1.4") // Start moving while curtain is lifting
-        .from(".main-header", {
-            y: -30,
-            opacity: 0,
-            duration: 1,
-            ease: "power3.out"
-        }, "-=0.8")
-        .from(".hero-title", {
-            y: 100,
-            opacity: 0,
-            duration: 1.4,
-            ease: "power4.out",
-            skewY: 2
-        }, "-=1.0")
-        .from(".hero-description", {
-            y: 30,
-            opacity: 0,
-            duration: 1,
-            ease: "power3.out"
-        }, "-=1.0")
-        .from(".hero-buttons", {
-            y: 20,
-            opacity: 0,
-            duration: 0.6,
-            ease: "power3.out"
-        }, "-=1.2");
+    // Hero and header animations
+    gsap.from(".main-header", {
+        y: -30,
+        opacity: 0,
+        duration: 2,
+        ease: "power3.out"
+    }, "-=0.8");
+
+    gsap.from(".hero-title", {
+        y: 100,
+        opacity: 0,
+        duration: 1.4,
+        ease: "power4.out",
+        skewY: 2
+    }, "-=1.0");
+
+    gsap.from(".hero-description", {
+        y: 30,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out"
+    }, "-=1.0");
+
+    gsap.from(".hero-buttons", {
+        y: 20,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power3.out"
+    }, "-=1.2");
 
 
     // ============================================

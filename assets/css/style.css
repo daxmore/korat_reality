@@ -242,6 +242,19 @@
 /* ============================================
    3. BASE STYLES
    ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
 body {
     font-family: var(--font-body);
     font-size: 1rem;
@@ -343,7 +356,7 @@ h6 {
 .menu-link-large {
     font-family: var(--font-body);
     /* Or Heading font if preferred, let's stick to body consistent or heading */
-    font-size: clamp(2rem, 8vw, 3rem);
+    font-size: clamp(1.4rem, 5vw, 2.2rem);
     font-weight: 700;
     transition: all 0.3s ease;
     line-height: 1;
@@ -535,7 +548,7 @@ h6 {
 
 .hero-title {
     color: #fff;
-    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-size: clamp(2rem, 6vw, 4rem);
     /* Updated clamp for better scaling */
     font-family: var(--font-body);
     line-height: 1.1;
@@ -707,52 +720,3 @@ input::placeholder {
 /* ============================================
    5. INTRO OVERLAY
    ============================================ */
-.intro-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--primary-dark);
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform-origin: top;
-}
-
-.intro-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 240px;
-    position: relative;
-    overflow: hidden;
-    /* For cleaner reveal texts if needed */
-}
-
-.intro-logo {
-    width: 60px;
-    height: auto;
-    opacity: 0;
-    /* Handled by GSAP */
-    margin-bottom: 1.5rem;
-}
-
-.intro-progress-bar {
-    width: 100%;
-    height: 1px;
-    background-color: rgba(255, 255, 255, 0.1);
-    position: relative;
-    overflow: hidden;
-}
-
-.intro-progress {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    background-color: var(--primary-gold);
-}
