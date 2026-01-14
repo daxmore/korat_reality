@@ -230,11 +230,15 @@
     --text-light: #faf7f2;
     --text-muted: #6c6c6c;
     /* Fonts */
-    --font-heading: 'Romie', serif;
+    --font-heading: 'Archivo', sans-serif;
+    /* User requested Archivo for most headings */
     --font-body: 'Archivo', sans-serif;
+    --font-serif: 'Romie', serif;
+    /* Highlighting font */
 
     /* Spacing & Sizes */
     --section-padding: clamp(3rem, 6vw, 5rem) 0;
+    --section-lg-padding: clamp(3rem, 10vw, 8rem) 0;
     --container-padding: clamp(1rem, 3vw, 2rem);
     --border-opacity: 0.1;
 }
@@ -242,6 +246,20 @@
 /* ============================================
    3. BASE STYLES
    ============================================ */
+
+/* Font Utilities */
+.font-serif {
+    font-family: var(--font-serif);
+}
+
+.grayscale-img {
+    filter: grayscale(100%);
+    transition: filter 0.5s ease;
+}
+
+.grayscale-img:hover {
+    filter: grayscale(0%);
+}
 
 * {
     margin: 0;
@@ -332,12 +350,20 @@ h6 {
     padding: var(--section-padding);
 }
 
+.section-lg-padding {
+    padding: var(--section-lg-padding);
+}
+
 .object-fit-cover {
     object-fit: cover;
 }
 
 .hover-white:hover {
     color: #fff !important;
+}
+
+.hover-dark:hover {
+    color: var(--text-dark) !important;
 }
 
 .hover-gold:hover {
@@ -537,7 +563,7 @@ h6 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.60);
 }
 
 .hero-content {
@@ -558,7 +584,7 @@ h6 {
 
 .hero-title .highlight {
     /* color: var(--primary-gold); */
-    font-family: var(--font-heading);
+    font-family: var(--font-serif);
     font-style: italic;
     font-weight: 400;
     text-decoration: underline;
@@ -598,6 +624,49 @@ h6 {
 
 div#services_id span {
     cursor: pointer !important;
+}
+
+.filter-invert {
+    filter: invert(100%);
+}
+
+.main-footer ul li a {
+    color: var(--text-dark) !important;
+}
+
+.main-footer img {
+    filter: invert(100%);
+}
+
+.fs-14px {
+    font-size: 14px !important;
+}
+
+.big-title {
+    font-size: clamp(7rem, 6vw, 10rem);
+    font-family: var(--font-body);
+}
+
+.image-wrapper,
+.image-wrapper img {
+    height: 500px !important;
+    border-radius: 0 !important;
+}
+
+.bg-warning-subtle {
+    background-color: rgb(185, 155, 95, 0.2) !important;
+}
+
+#our-mission>.col-lg-4:first-of-type .p-4 {
+    padding: 0 !important;
+}
+
+/* About Section Parallax Image */
+.parallax-image {
+    /* Scale up initially for parallax movement space */
+    transform: scale(1.3);
+    /* Essential to prevent blur during transform if possible, though scale > 1 usually fine */
+    will-change: transform;
 }
 
 /* Responsive Overrides (Minimal needed due to clamp) */
@@ -718,5 +787,431 @@ input::placeholder {
 }
 
 /* ============================================
-   5. INTRO OVERLAY
+   5. ABOUT PAGE SPECIFIC STYLES
    ============================================ */
+
+/* Utilities */
+.ls-2 {
+    letter-spacing: 2px;
+}
+
+.fw-light {
+    font-weight: 300 !important;
+}
+
+.text-darker {
+    color: #000 !important;
+}
+
+.opacity-10 {
+    opacity: 0.1 !important;
+}
+
+.opacity-25 {
+    opacity: 0.25 !important;
+}
+
+.opacity-50 {
+    opacity: 0.5 !important;
+}
+
+.opacity-75 {
+    opacity: 0.75 !important;
+}
+
+.cursor-default {
+    cursor: default;
+}
+
+.z-2 {
+    z-index: 2;
+}
+
+.lh-1 {
+    line-height: 1;
+}
+
+.transition-all {
+    transition: all 0.4s ease;
+}
+
+/* Backgrounds & Glassmorphism */
+.bg-gradient-to-t-dark {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+}
+
+.bg-white-05 {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.backdrop-blur {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.hero-bg-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-bg-wrapper>div {
+    width: 100%;
+    height: 100%;
+}
+
+/* Animations */
+@keyframes scalePulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.2;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.2;
+    }
+}
+
+.scale-pulse-anim {
+    animation: scalePulse 4s infinite ease-in-out;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+    z-index: 2;
+}
+
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+.hover-bg-cream:hover {
+    background-color: var(--primary-cream);
+}
+
+/* Specific Component Tweaks */
+.service-card .icon-box {
+    transition: transform 0.4s ease;
+}
+
+.service-card:hover .icon-box {
+    transform: scale(1.1);
+    color: var(--primary-dark) !important;
+    /* Optional contrast shift */
+}
+
+.rounded-pill-vertical {
+    border-radius: 100px;
+    /* Large radius for pill shape */
+}
+
+/* Process Steps */
+.step-item:hover .step-num {
+    opacity: 1;
+    transform: translateX(5px);
+    transition: all 0.3s ease;
+}
+
+/* Responsive fixes */
+@media (max-width: 991px) {
+    .border-end {
+        border-right: none !important;
+    }
+
+    .display-3 {
+        font-size: 2.5rem;
+    }
+
+    .display-4 {
+        font-size: 2rem;
+    }
+}
+
+/* ============================================
+   6. FOOTER THEME UTILITIES
+   ============================================ */
+.bg-cream {
+    background-color: var(--primary-cream, #f9f9f7);
+}
+
+.hover-gold {
+    transition: color 0.3s ease;
+}
+
+.hover-gold:hover {
+    color: var(--primary-gold, #c5a47e) !important;
+}
+
+/* ============================================
+   7. SHERY & STICKY SECTIONS
+   ============================================ */
+.shery-img-wrapper {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+.shery-img-pinned {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 1;
+    will-change: opacity, transform;
+}
+
+.shery-img-pinned:first-child {
+    z-index: 1;
+}
+
+.shery-img-pinned:nth-child(n+2) {
+    z-index: 2;
+    opacity: 0;
+}
+
+.content-block {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+}
+
+/* ============================================
+   8. REFACTORED UTILITIES (Index)
+   ============================================ */
+.logo-sm {
+    height: 35px;
+    width: auto;
+}
+
+.menu-links-offset {
+    margin-top: -2rem;
+}
+
+.hero-desc-text {
+    font-size: 14px;
+    letter-spacing: 1px;
+    max-width: 800px;
+    line-height: 1.8;
+}
+
+.btn-hero {
+    min-width: 250px;
+}
+
+.bg-light-cream-alt {
+    background-color: #faf7f2;
+}
+
+.lead-text-constrained {
+    max-width: 800px;
+    font-size: 1.125rem;
+}
+
+.about-main-img-box {
+    height: 600px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.lh-relaxed {
+    line-height: 1.6;
+}
+
+.about-col-img {
+    min-height: 250px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.about-end-img {
+    width: 100%;
+    height: 70%;
+    flex-shrink: 0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.service-desc {
+    min-height: 48px;
+    letter-spacing: 1px;
+}
+
+.service-img-box {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.process-circle {
+    top: -6px;
+    left: 0;
+    width: 12px;
+    height: 12px;
+}
+
+.cta-text-constrained {
+    line-height: 1.8;
+}
+
+.footer-logo {
+    width: 60px;
+    height: auto;
+}
+
+.footer-brand-text {
+    line-height: 1.8;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.footer-copy-text {
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+/* Reset opacity for service images handled by CSS classes if needed */
+.img-opacity-80 {
+    opacity: 0.8;
+}
+
+
+/* ============================================
+   9. STICKY CROSS-FADE SECTION
+   ============================================ */
+.sticky-container {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.sticky-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+    /* Fallback */
+    z-index: 1;
+}
+
+.sticky-img.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.sticky-content-block {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+}
+
+/* ============================================
+   10. SERVICE ICON ANIMATION
+   ============================================ */
+.service-icon-anim {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.anim-circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* Hover State for Circle: Scale and Whiter Border */
+.col-lg-6:hover .anim-circle {
+    transform: scale(1.1);
+    border-color: #fff;
+}
+
+.anim-arrows {
+    width: 16px;
+    height: 16px;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.arrow-main,
+.arrow-clone {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
+
+/* Clone starts Top-Right or Bottom-Left? Let's do Bottom-Left fly in */
+.arrow-clone {
+    transform: translate(-100%, 100%);
+}
+
+
+/* Service Icon Tweaks */
+.service-icon-anim.magnet-target {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.service-icon-anim.magnet-target:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* ============================================
+   9. NEW UTILITIES (From Inline Cleanup)
+   ============================================ */
+
+.min-h-500 {
+    min-height: 500px;
+}
+
+.fs-12 {
+    font-size: 12px !important;
+}
+
+.bg-cream-light {
+    background-color: #fcfbf9;
+}

@@ -77,3 +77,18 @@ Do not over-engineer.
 
 Start every response by implementing, not explaining.
 Explain only when necessary or when trade-offs exist.
+
+### Shery.js & WebGL Safety Rules (Mandatory)
+
+When using Shery.js or any WebGL-based effect:
+
+- Treat Shery.js as an enhancement, not a dependency.
+- Always explicitly set initial opacity and z-index for all images.
+- Never rely on default DOM visibility.
+- GSAP controls visibility and state; Shery controls distortion only.
+- Shery effects must be gated behind http/https protocol checks.
+- Provide a graceful CSS/GSAP fallback if Shery fails or is unavailable.
+- Avoid inline layout styles on Shery targets.
+- Sticky + WebGL sections must remain functional with Shery disabled.
+
+If these conditions are not met, pause implementation and refactor.

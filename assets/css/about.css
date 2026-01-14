@@ -1,0 +1,29 @@
+/* ============================================
+   ABOUT PAGE SPECIFIC STYLES
+   ============================================ */
+
+.about-hero-bg {
+    background: url('../../assets/images/building_image_1.png') center/cover no-repeat;
+}
+
+.lh-tighter {
+    line-height: 0.9 !important;
+}
+
+.min-h-400 {
+    min-height: 400px;
+}
+
+.min-h-500 {
+    min-height: 500px;
+}
+
+.icon-box-40 {
+    width: 40px;
+    height: 40px;
+}
+
+.cta-grad-bg {
+    background: radial-gradient(circle at 80% 20%, rgba(185, 155, 95, 0.15) 0%, rgba(28, 28, 28, 0) 50%);
+    pointer-events: none;
+}
