@@ -388,12 +388,6 @@ h6 {
     line-height: 1;
 }
 
-.menu-link-large:hover {
-    color: var(--primary-gold) !important;
-    padding-right: 20px;
-    transition: padding-right 0.3s ease !important;
-}
-
 .lh-08 {
     line-height: 0.8 !important;
 }
@@ -754,12 +748,6 @@ div#services_id span {
 #servicesNav a {
     opacity: 0.8;
     transition: all 0.5s ease;
-}
-
-#servicesNav a:hover {
-    opacity: 1;
-    color: var(--primary-gold) !important;
-    padding-right: 15px;
 }
 
 input::placeholder {
@@ -1214,4 +1202,43 @@ input::placeholder {
 
 .bg-cream-light {
     background-color: #fcfbf9;
+}
+
+/* ============================================
+   10. TEXT SLIDE HOVER ANIMATION (Pure CSS)
+   Add class "text-slide" and data-text="Link Text" to links
+   ============================================ */
+
+/* Container - applies to the link itself */
+.text-slide {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    vertical-align: bottom;
+}
+
+/* Original text wrapper */
+.text-slide span {
+    display: inline-block;
+    transition: transform 0.35s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* Clone text via ::after pseudo-element */
+.text-slide::after {
+    content: attr(data-text);
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    color: var(--primary-gold);
+    transition: transform 0.35s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* Hover state - slide both up */
+.text-slide:hover span {
+    transform: translateY(-100%);
+}
+
+.text-slide:hover::after {
+    transform: translateY(-100%);
 }

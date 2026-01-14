@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         // 2. Magnet Effect (Shery.js - Ultra Fast)
-        Shery.makeMagnet(".btn, .nav-link, .menu-link-large, .magnet-target", {
+        Shery.makeMagnet(".btn, .magnet-target", {
             ease: "cubic-bezier(0.23, 1, 0.320, 1)",
             duration: 0.2, // Ultra fast response (similar to custom)
         });
