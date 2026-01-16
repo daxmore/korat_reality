@@ -17,9 +17,25 @@
 
 <body id="page-home">
     <!-- ============================================
-         INTRO OVERLAY
+         INTRO OVERLAY (TrueKind-Inspired)
          ============================================ -->
-
+    <div class="intro-overlay" id="introOverlay">
+        <div class="intro-content">
+            <!-- Counter -->
+            <div class="intro-counter" id="introCounter">00</div>
+            <!-- Logo (will animate to header) -->
+            <div class="intro-logo" id="introLogo">
+                <img src="assets/images/svg/for-dark-bg.svg" alt="Korat Reality">
+            </div>
+            <!-- Progress Ring -->
+            <div class="intro-progress">
+                <svg class="progress-ring" viewBox="0 0 50 50">
+                    <circle class="progress-ring-bg" cx="25" cy="25" r="20"></circle>
+                    <circle class="progress-ring-fill" id="progressRing" cx="25" cy="25" r="20"></circle>
+                </svg>
+            </div>
+        </div>
+    </div>
 
     <!-- ============================================
          HEADER / NAVIGATION
@@ -1095,7 +1111,7 @@
     </footer>
 
     <!-- Three.js (Required for Shery.js) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <!-- GSAP & ScrollTrigger -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>

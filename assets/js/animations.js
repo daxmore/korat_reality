@@ -73,32 +73,134 @@ document.addEventListener("DOMContentLoaded", function () {
     splitTextToWords(".about-title-anim");
 
     // ============================================
+    // INTRO OVERLAY ANIMATION (TrueKind-Inspired)
+    // ============================================
+    const introOverlay = document.getElementById('introOverlay');
+    const introCounter = document.getElementById('introCounter');
+    const introLogo = document.getElementById('introLogo');
+    const progressRing = document.getElementById('progressRing');
+    const headerLogo = document.querySelector('.main-header .logo-sm');
+
+    // Only run intro animation on home page and if elements exist
+    if (introOverlay && introCounter && introLogo) {
+        // Lock body scroll during intro
+        document.body.classList.add('intro-active');
+
+        // Progress ring circumference (2 * PI * 20)
+        const circumference = 125.6;
+
+        // Counter animation
+        let counter = { value: 0 };
+        const counterDuration = 2.5; // Total loading time in seconds
+
+        const introTl = gsap.timeline({
+            onComplete: () => {
+                // Remove intro overlay after animation
+                introOverlay.classList.add('is-hidden');
+                document.body.classList.remove('intro-active');
+
+                // Trigger hero animations after intro
+                if (typeof runHeroAnimations === 'function') {
+                    runHeroAnimations();
+                }
+            }
+        });
+
+        // Phase 1: Counter 00 → 100 with progress ring
+        introTl.to(counter, {
+            value: 100,
+            duration: counterDuration,
+            ease: "power2.inOut",
+            onUpdate: () => {
+                const val = Math.floor(counter.value);
+                introCounter.textContent = val < 10 ? '0' + val : val;
+
+                // Update progress ring
+                const offset = circumference - (val / 100) * circumference;
+                if (progressRing) {
+                    progressRing.style.strokeDashoffset = offset;
+                }
+            }
+        });
+
+        // Phase 2: Fade out counter
+        introTl.to(introCounter, {
+            opacity: 0,
+            duration: 0.3,
+            ease: "power2.out"
+        });
+
+        // Phase 3: Hide progress ring
+        introTl.to(".intro-progress", {
+            opacity: 0,
+            duration: 0.3,
+            ease: "power2.out"
+        }, "<");
+
+        // Phase 4: Reveal logo at center
+        introTl.to(introLogo, {
+            opacity: 1,
+            scale: 1,
+            duration: 0.6,
+            ease: "back.out(1.7)"
+        });
+
+        // Phase 5: Logo migrates to header position + overlay slides up
+        const headerLogoRect = headerLogo ? headerLogo.getBoundingClientRect() : { top: 30, left: 30 };
+
+        introTl.to(introLogo, {
+            x: headerLogoRect.left - window.innerWidth / 2 + 17,
+            y: headerLogoRect.top - window.innerHeight / 2 + 17,
+            scale: 0.45,
+            duration: 0.8,
+            ease: "power3.inOut"
+        });
+
+        // Phase 6: Overlay curtain slides up
+        introTl.to(introOverlay, {
+            yPercent: -100,
+            duration: 0.8,
+            ease: "power3.inOut"
+        }, "-=0.4");
+
+    } else {
+        // No intro overlay - run hero animations immediately
+        if (typeof runHeroAnimations === 'function') {
+            runHeroAnimations();
+        }
+    }
+
+    // ============================================
     // HERO / HEADER (On Load - One time)
     // These are NOT scroll-triggered, they run once on page load
     // Using fromTo ensures consistent behavior
     // ============================================
-    const headerTimeline = gsap.timeline();
 
-    headerTimeline
-        .fromTo(".main-header",
-            { y: -30, opacity: 0 },
-            { y: 0, opacity: 1, duration: 1.0, ease: "power3.out" }
-        )
-        .fromTo(".hero-title",
-            { y: 50, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" },
-            "-=0.6"
-        )
-        .fromTo(".hero-description",
-            { y: 30, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" },
-            "-=0.5"
-        )
-        .fromTo(".hero-buttons",
-            { y: 20, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" },
-            "-=0.4"
-        );
+    // Wrap hero animations in a function so they can be called after intro
+    function runHeroAnimations() {
+        const headerTimeline = gsap.timeline();
+
+        headerTimeline
+            .fromTo(".main-header",
+                { y: -30, opacity: 0 },
+                { y: 0, opacity: 1, duration: 1.0, ease: "power3.out" }
+            )
+            .fromTo(".hero-title",
+                { y: 50, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" },
+                "-=0.6"
+            )
+            .fromTo(".hero-description",
+                { y: 30, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" },
+                "-=0.5"
+            )
+            .fromTo(".hero-buttons",
+                { y: 20, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" },
+                "-=0.4"
+            );
+    }
 
 
     // ============================================
@@ -734,3 +836,4 @@ faqItems.forEach(item => {
         }
     });
 });
+

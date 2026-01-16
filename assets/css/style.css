@@ -281,6 +281,7 @@ body {
     color: var(--text-dark);
     background-color: var(--primary-cream);
     overflow-x: hidden;
+    cursor: none !important;
 }
 
 h1 {
@@ -617,7 +618,7 @@ h6 {
 }
 
 div#services_id span {
-    cursor: pointer !important;
+    cursor: none !important;
 }
 
 .filter-invert {
@@ -1230,6 +1231,7 @@ input::placeholder {
     position: absolute;
     top: 100%;
     left: 0;
+    right: 0;
     color: var(--primary-gold);
     transition: transform 0.35s cubic-bezier(0.65, 0, 0.35, 1);
 }
@@ -1322,7 +1324,7 @@ input::placeholder {
     padding: clamp(1.25rem, 3vw, 2rem) 0;
     background: none;
     border: none;
-    cursor: pointer;
+    cursor: none !important;
     text-align: left;
     color: #fff;
     transition: all 0.4s ease;
@@ -1471,4 +1473,104 @@ input::placeholder {
         width: 36px;
         height: 36px;
     }
+}
+
+/* ============================================
+   11. INTRO OVERLAY (TrueKind-Inspired)
+   ============================================ */
+.intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    height: 100dvh;
+    background-color: var(--primary-dark);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.intro-overlay.is-hidden {
+    pointer-events: none;
+}
+
+.intro-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+/* Counter */
+.intro-counter {
+    font-family: var(--font-body);
+    font-size: clamp(4rem, 15vw, 10rem);
+    font-weight: 700;
+    color: var(--primary-cream);
+    letter-spacing: -0.02em;
+    line-height: 1;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.intro-counter.is-hidden {
+    opacity: 0;
+}
+
+/* Logo */
+.intro-logo {
+    position: absolute;
+    opacity: 0;
+    transform: scale(1.5);
+}
+
+.intro-logo img {
+    height: 80px;
+    width: auto;
+}
+
+@media (max-width: 768px) {
+    .intro-logo img {
+        height: 50px;
+    }
+}
+
+/* Progress Ring */
+.intro-progress {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.progress-ring {
+    width: 50px;
+    height: 50px;
+    transform: rotate(-90deg);
+}
+
+.progress-ring-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.1);
+    stroke-width: 2;
+}
+
+.progress-ring-fill {
+    fill: none;
+    stroke: var(--primary-gold);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-dasharray: 125.6;
+    /* 2 * PI * 20 */
+    stroke-dashoffset: 125.6;
+    transition: stroke-dashoffset 0.05s linear;
+}
+
+/* Body locked during intro */
+body.intro-active {
+    overflow: hidden;
 }
