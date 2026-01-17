@@ -9,16 +9,19 @@ document.addEventListener("DOMContentLoaded", function () {
     // SHERY JS INITIALIZATION
     // ============================================
     if (typeof Shery !== 'undefined') {
-        Shery.mouseFollower({
-            skew: true,
-            ease: "cubic-bezier(0.23, 1, 0.320, 1)",
-            duration: 0.4,
-        });
+        // Only initialize on larger screens (>= 1200px) and non-touch devices
+        if (window.innerWidth >= 1200 && !window.matchMedia("(pointer: coarse)").matches) {
+            Shery.mouseFollower({
+                skew: true,
+                ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+                duration: 0.4,
+            });
 
-        Shery.makeMagnet(".btn, .magnet-target", {
-            ease: "cubic-bezier(0.23, 1, 0.320, 1)",
-            duration: 0.2,
-        });
+            Shery.makeMagnet(".btn, .magnet-target", {
+                ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+                duration: 0.2,
+            });
+        }
     }
 
     // ============================================
@@ -31,10 +34,16 @@ document.addEventListener("DOMContentLoaded", function () {
     function toggleMenu() {
         if (!mobileMenu) return;
         mobileMenu.classList.toggle('is-active');
-        if (mobileMenu.classList.contains('is-active')) {
+        const isActive = mobileMenu.classList.contains('is-active');
+
+        if (isActive) {
             document.body.style.overflow = 'hidden';
+            document.documentElement.style.overflow = 'hidden';
+            if (window.lenis) window.lenis.stop();
         } else {
             document.body.style.overflow = '';
+            document.documentElement.style.overflow = '';
+            if (window.lenis) window.lenis.start();
         }
     }
 

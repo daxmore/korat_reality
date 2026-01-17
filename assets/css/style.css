@@ -407,6 +407,9 @@ h6 {
     line-height: 1;
 }
 
+
+
+
 .lh-08 {
     line-height: 0.8 !important;
 }
@@ -656,7 +659,7 @@ div#services_id span {
 }
 
 .big-title {
-    font-size: clamp(7rem, 6vw, 10rem);
+    font-size: clamp(4rem, 6vw, 10rem);
     font-family: var(--font-body);
 }
 
@@ -682,26 +685,6 @@ div#services_id span {
     will-change: transform;
 }
 
-/* Responsive Overrides (Minimal needed due to clamp) */
-@media (max-width: 991px) {
-    .services-section .border-end {
-        border-right: none !important;
-        /* Stacked layout on smaller screens */
-    }
-}
-
-/* Service Grid Custom Borders */
-@media (min-width: 992px) {
-    .service-border-right {
-        border-right: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    /* Dynamic Staggered Layout for PHP Loop */
-    .services-grid>div:nth-child(even) {
-        padding-top: 7rem !important;
-    }
-}
-
 /* Hover Effects */
 .transition-hover {
     transition: transform 0.6s ease;
@@ -712,23 +695,26 @@ div#services_id span {
 }
 
 /* Full Screen Menu Transition Styles */
+/* Full Screen Menu Transition Styles */
 .fullscreen-menu {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
-    z-index: 9999;
-    /* Ensure it's on top */
-    overflow-y: auto;
-    /* Allow scrolling content */
-    /* Allow scrolling content */
-    background-color: #1c1c1c !important;
-    /* Force solid background */
-    backdrop-filter: none !important;
-    /* Remove any potential blur/transparency */
+    /* Layout & Positioning */
+    position: fixed;
+    /* Ensure it's fixed */
+    top: 0;
+    right: 0;
+    width: 100%;
+    /* Mobile Default */
     height: 100vh;
-    /* Fallback */
     height: 100dvh;
-    /* Dynamic height for mobile */
+    z-index: 9999;
+    background-color: #1c1c1c !important;
+    overflow-y: auto;
+
+    /* Animation: Slide from Right */
+    visibility: hidden;
+    transform: translateX(100%);
+    transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1), visibility 0s linear 0.6s;
+    /* Visibility delay ensures it stays visible during slide out */
 }
 
 /* Helper for inner menu container */
@@ -738,8 +724,10 @@ div#services_id span {
 }
 
 .fullscreen-menu.is-active {
-    opacity: 1;
     visibility: visible;
+    transform: translateX(0);
+    transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1), visibility 0s linear 0s;
+    /* Immediate visibility on open */
 }
 
 /* Optional: Stagger animation for links (handled via JS or CSS delay) */
@@ -748,6 +736,7 @@ div#services_id span {
     transform: translateY(30px);
     transition: opacity 1.2s ease, transform 1.2s ease;
 }
+
 
 .fullscreen-menu.is-active .menu-link-large {
     opacity: 1;
@@ -937,24 +926,11 @@ input::placeholder {
     transition: all 0.3s ease;
 }
 
-/* Responsive fixes */
-@media (max-width: 991px) {
-    .border-end {
-        border-right: none !important;
-    }
-
-    .display-3 {
-        font-size: 2.5rem;
-    }
-
-    .display-4 {
-        font-size: 2rem;
-    }
-}
 
 /* ============================================
    6. FOOTER THEME UTILITIES
    ============================================ */
+
 .bg-cream {
     background-color: var(--primary-cream, #f9f9f7);
 }
@@ -1044,6 +1020,8 @@ input::placeholder {
     height: 600px;
     overflow: hidden;
     border-radius: 20px;
+    transform: translateZ(0);
+    /* Fix for Safari border-radius overflow */
 }
 
 .lh-relaxed {
@@ -1469,35 +1447,10 @@ input::placeholder {
     z-index: 1;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 991px) {
-    .faq-question {
-        gap: 1rem;
-    }
-
-    .faq-answer-inner {
-        padding-left: calc(2.5rem + 1rem);
-    }
-}
-
-@media (max-width: 575px) {
-    .faq-number {
-        display: none;
-    }
-
-    .faq-answer-inner {
-        padding-left: 0;
-    }
-
-    .faq-icon {
-        width: 36px;
-        height: 36px;
-    }
-}
-
 /* ============================================
    11. INTRO OVERLAY
    ============================================ */
+
 .intro-overlay {
     position: fixed;
     top: 0;
@@ -1540,12 +1493,6 @@ input::placeholder {
 .intro-logo img {
     height: 80px;
     width: auto;
-}
-
-@media (max-width: 768px) {
-    .intro-logo img {
-        height: 50px;
-    }
 }
 
 /* Progress Ring */
