@@ -69,15 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
             y: 20
         });
 
-        const introTl = gsap.timeline({
-            onComplete: () => {
-                document.body.classList.remove('intro-active');
-
-                if (typeof runHeroAnimations === 'function') {
-                    runHeroAnimations();
-                }
-            }
-        });
+        const introTl = gsap.timeline();
 
         // Phase 1: Bottom-to-Top Reveal with Upward Drift
         introTl.to(introLogo, {
@@ -99,6 +91,13 @@ document.addEventListener("DOMContentLoaded", function () {
             opacity: 0,
             duration: 0.6,
             ease: "power2.inOut",
+            onStart: () => {
+                // Start hero animations as overlay begins to fade
+                document.body.classList.remove('intro-active');
+                if (typeof runHeroAnimations === 'function') {
+                    runHeroAnimations();
+                }
+            },
             onComplete: () => {
                 // Remove from DOM after fade
                 introOverlay.style.display = 'none';

@@ -261,6 +261,24 @@
     filter: grayscale(0%);
 }
 
+/* Text Capitalization */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.nav-link,
+.menu-link-large,
+.btn,
+.section-title,
+.service-card h3,
+.process-step h4,
+label,
+button {
+    text-transform: capitalize !important;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -751,6 +769,10 @@ div#services_id span {
     transition: all 0.5s ease;
 }
 
+#why-korat p {
+    max-width: 100ch !important;
+}
+
 input::placeholder {
     color: var(--primary-cream) !important;
 }
@@ -1197,8 +1219,8 @@ input::placeholder {
     min-height: 500px;
 }
 
-.fs-12 {
-    font-size: 12px !important;
+.fs-14 {
+    font-size: 14px !important;
 }
 
 .bg-cream-light {
@@ -1362,7 +1384,7 @@ input::placeholder {
     flex: 1;
     font-size: clamp(1rem, 2vw, 1.25rem);
     font-weight: 500;
-    text-transform: uppercase;
+    text-transform: capitalize;
     letter-spacing: 0.5px;
     transition: color 0.4s ease;
 }
@@ -1476,7 +1498,7 @@ input::placeholder {
 }
 
 /* ============================================
-   11. INTRO OVERLAY (TrueKind-Inspired)
+   11. INTRO OVERLAY
    ============================================ */
 .intro-overlay {
     position: fixed;
