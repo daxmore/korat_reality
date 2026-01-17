@@ -66,7 +66,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 isActive = true;
                 document.documentElement.classList.add('lenis-active');
 
-                // --------------------------------------------------------
                 // GSAP SYNCHRONIZATION (MANDATORY)
                 // --------------------------------------------------------
                 if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
@@ -74,9 +73,15 @@ document.addEventListener("DOMContentLoaded", function () {
                     lenis.on('scroll', ScrollTrigger.update);
 
                     // Use GSAP ticker for Lenis RAF (performance & sync)
-                    gsap.ticker.add((time) => {
-                        lenis.raf(time * 1000);
-                    });
+                    const lenisRAF = (time) => {
+                        if (lenis) {
+                            lenis.raf(time * 1000);
+                        }
+                    };
+                    gsap.ticker.add(lenisRAF);
+
+                    // Store the ticker function for cleanup
+                    window.lenisRAF = lenisRAF;
 
                     // Disable lag smoothing to prevent jumps
                     gsap.ticker.lagSmoothing(0);
@@ -100,6 +105,13 @@ document.addEventListener("DOMContentLoaded", function () {
                     lenis.destroy();
                     lenis = null;
                 }
+
+                // Remove GSAP ticker if it exists
+                if (window.lenisRAF && typeof gsap !== 'undefined') {
+                    gsap.ticker.remove(window.lenisRAF);
+                    window.lenisRAF = null;
+                }
+
                 isActive = false;
                 document.documentElement.classList.remove('lenis-active');
 
