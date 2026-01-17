@@ -246,3 +246,111 @@ When using **Shery.js or any WebGL-based effect**:
 * Ensure effects do not break WordPress lazy-loading or content injection.
 
 If these conditions are not met, **pause implementation and refactor**.
+
+---
+
+trigger: always_on
+---
+
+# Smooth Scrolling & Reload-Safe Animation Rules (Mandatory)
+
+## Smooth Scrolling Engine
+
+Use **Lenis** as the **only approved smooth scrolling library**.
+
+### Library Constraints
+
+* ✅ **Allowed:** Lenis  
+* ❌ **Forbidden:** Locomotive Scroll  
+* ❌ **Forbidden:** GSAP ScrollSmoother (unless explicitly approved)  
+* ❌ **Forbidden:** Custom scroll engines or experimental scroll hacks  
+
+Lenis must:
+
+* Preserve native scroll behavior
+* Avoid DOM hijacking or wrapper reflows
+* Initialize **before** GSAP ScrollTrigger animations
+* Be fully destroyed on mobile devices
+
+---
+
+## Lenis Usage Rules
+
+* Smooth scrolling is **desktop-only**
+* On screens `<1024px`, Lenis must be **disabled or destroyed**
+* Forms, legal sections, and text-heavy content must **not depend** on smooth scrolling
+* Smooth scrolling must never compromise accessibility or native momentum
+
+Luxury UX = control, not excessive motion.
+
+---
+
+## GSAP + Lenis Synchronization (Strict)
+
+When Lenis is active:
+
+* GSAP ScrollTrigger **must update on every Lenis scroll tick**
+* Lenis must be driven by `requestAnimationFrame`
+* `ScrollTrigger.refresh()` is mandatory:
+  * On window `load`
+  * After layout-affecting animations
+  * After images or fonts finish loading
+
+Failure to synchronize Lenis and ScrollTrigger correctly is a **blocking implementation error**.
+
+---
+
+## Reload-Safe Animation Rules (Non-Negotiable)
+
+* ❌ Do **NOT** rely on `gsap.from()` for scroll-based animations
+* ✅ Prefer:
+  * `gsap.fromTo()`
+  * `gsap.set()` + `gsap.to()`
+* If `gsap.from()` is used:
+  * `immediateRender: false` is mandatory
+
+All animations must guarantee:
+
+* Elements are **visible by default** without JavaScript
+* No animation leaves content hidden on refresh or reload
+* No dependency on prior scroll history
+
+---
+
+## ScrollTrigger Stability Rules
+
+Scroll animations must:
+
+* Work on page refresh
+* Work on deep links
+* Work when reloading mid-scroll
+* Survive fast scrolling and back/forward navigation
+
+Additional constraints:
+
+* Prefer `once: true` for reveal animations
+* Never assume fixed heights or fixed trigger offsets
+* All triggers must tolerate dynamic WordPress content changes
+
+---
+
+## Architectural Separation (Required)
+
+* Smooth scrolling logic must live in its **own module/file**
+* Scroll animation files must **not initialize Lenis**
+* Lenis must never be re-initialized inside animation logic
+
+Mixing scroll-engine logic with animation logic is **forbidden**.
+
+---
+
+## Final Principle
+
+Animations and smooth scrolling are **enhancements**, not dependencies.
+
+The page must remain:
+* Readable
+* Accessible
+* Fully usable  
+
+…even if JavaScript fails or animations are disabled.

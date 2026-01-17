@@ -2,15 +2,8 @@
  * Korat Reality - GSAP Animations
  * RELOAD-SAFE VERSION
  * 
- * Pattern used: gsap.set() for initial state + gsap.to() with ScrollTrigger
- * This ensures elements are always visible on page load, regardless of scroll position.
- * 
- * WHY THE PREVIOUS CODE CAUSED BLANK STATES:
- * - gsap.from() with toggleActions: "play reverse play reverse" sets elements to their
- *   "from" state (opacity: 0, y: 30, etc.) on initialization
- * - On page reload, if user was scrolled past the trigger point, the animation
- *   stays in "reversed" state = elements remain hidden
- * - The "reverse" action means scroll-up causes elements to return to hidden state
+ * All scroll-triggered and on-load animations
+ * Pattern: gsap.set() for initial state + gsap.fromTo() with ScrollTrigger
  */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -26,23 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // ============================================
-    // SHERY JS INITIALIZATION
-    // ============================================
-    if (typeof Shery !== 'undefined') {
-        Shery.mouseFollower({
-            skew: true,
-            ease: "cubic-bezier(0.23, 1, 0.320, 1)",
-            duration: 0.4,
-        });
-
-        Shery.makeMagnet(".btn, .magnet-target", {
-            ease: "cubic-bezier(0.23, 1, 0.320, 1)",
-            duration: 0.2,
-        });
-    }
-
-    // ============================================
-    // HELPER: SPLIT TEXT
+    // HELPER: SPLIT TEXT TO WORDS
     // ============================================
     function splitTextToWords(selector) {
         const elements = document.querySelectorAll(selector);
@@ -73,110 +50,70 @@ document.addEventListener("DOMContentLoaded", function () {
     splitTextToWords(".about-title-anim");
 
     // ============================================
-    // INTRO OVERLAY ANIMATION (TrueKind-Inspired)
+    // INTRO OVERLAY ANIMATION
+    // Bottom-to-Top Logo Reveal
     // ============================================
     const introOverlay = document.getElementById('introOverlay');
-    const introCounter = document.getElementById('introCounter');
     const introLogo = document.getElementById('introLogo');
-    const progressRing = document.getElementById('progressRing');
-    const headerLogo = document.querySelector('.main-header .logo-sm');
 
-    // Only run intro animation on home page and if elements exist
-    if (introOverlay && introCounter && introLogo) {
+    if (introOverlay && introLogo) {
         // Lock body scroll during intro
         document.body.classList.add('intro-active');
 
-        // Progress ring circumference (2 * PI * 20)
-        const circumference = 125.6;
+        const loadDuration = 1.4;
 
-        // Counter animation
-        let counter = { value: 0 };
-        const counterDuration = 2.5; // Total loading time in seconds
+        // Initial State - Logo hidden with clip-path (bottom clipped)
+        gsap.set(introLogo, {
+            opacity: 1,
+            clipPath: "inset(100% 0% 0% 0%)",
+            y: 20
+        });
 
         const introTl = gsap.timeline({
             onComplete: () => {
-                // Remove intro overlay after animation
-                introOverlay.classList.add('is-hidden');
                 document.body.classList.remove('intro-active');
 
-                // Trigger hero animations after intro
                 if (typeof runHeroAnimations === 'function') {
                     runHeroAnimations();
                 }
             }
         });
 
-        // Phase 1: Counter 00 → 100 with progress ring
-        introTl.to(counter, {
-            value: 100,
-            duration: counterDuration,
-            ease: "power2.inOut",
-            onUpdate: () => {
-                const val = Math.floor(counter.value);
-                introCounter.textContent = val < 10 ? '0' + val : val;
-
-                // Update progress ring
-                const offset = circumference - (val / 100) * circumference;
-                if (progressRing) {
-                    progressRing.style.strokeDashoffset = offset;
-                }
-            }
-        });
-
-        // Phase 2: Fade out counter
-        introTl.to(introCounter, {
-            opacity: 0,
-            duration: 0.3,
-            ease: "power2.out"
-        });
-
-        // Phase 3: Hide progress ring
-        introTl.to(".intro-progress", {
-            opacity: 0,
-            duration: 0.3,
-            ease: "power2.out"
-        }, "<");
-
-        // Phase 4: Reveal logo at center
+        // Phase 1: Bottom-to-Top Reveal with Upward Drift
         introTl.to(introLogo, {
-            opacity: 1,
-            scale: 1,
+            clipPath: "inset(0% 0% 0% 0%)",
+            y: 0,
+            duration: 1.5,
+            ease: "power3.out"
+        })
+            .to({}, { duration: loadDuration - 1.5 }); // Hold
+
+        // Phase 2: Fade Out Logo & Overlay Together
+        introTl.to(introLogo, {
+            opacity: 0,
             duration: 0.6,
-            ease: "back.out(1.7)"
+            ease: "power2.inOut"
         });
 
-        // Phase 5: Logo migrates to header position + overlay slides up
-        const headerLogoRect = headerLogo ? headerLogo.getBoundingClientRect() : { top: 30, left: 30 };
-
-        introTl.to(introLogo, {
-            x: headerLogoRect.left - window.innerWidth / 2 + 17,
-            y: headerLogoRect.top - window.innerHeight / 2 + 17,
-            scale: 0.45,
-            duration: 0.8,
-            ease: "power3.inOut"
-        });
-
-        // Phase 6: Overlay curtain slides up
         introTl.to(introOverlay, {
-            yPercent: -100,
-            duration: 0.8,
-            ease: "power3.inOut"
-        }, "-=0.4");
+            opacity: 0,
+            duration: 0.6,
+            ease: "power2.inOut",
+            onComplete: () => {
+                // Remove from DOM after fade
+                introOverlay.style.display = 'none';
+            }
+        }, "<"); // Start at same time as logo fade
 
     } else {
-        // No intro overlay - run hero animations immediately
         if (typeof runHeroAnimations === 'function') {
             runHeroAnimations();
         }
     }
 
     // ============================================
-    // HERO / HEADER (On Load - One time)
-    // These are NOT scroll-triggered, they run once on page load
-    // Using fromTo ensures consistent behavior
+    // HERO ANIMATIONS (On Load)
     // ============================================
-
-    // Wrap hero animations in a function so they can be called after intro
     function runHeroAnimations() {
         const headerTimeline = gsap.timeline();
 
@@ -202,17 +139,13 @@ document.addEventListener("DOMContentLoaded", function () {
             );
     }
 
-
     // ============================================
     // SCROLL ANIMATIONS (RELOAD-SAFE)
-    // Pattern: gsap.set() initial visible state, then gsap.to() for animation
-    // Using toggleActions: "play none none none" - play once when entering
     // ============================================
 
     // 1. ABOUT TITLE: Word Stagger Reveal
     const wordInners = document.querySelectorAll(".about-title-anim .word-inner");
     if (wordInners.length > 0) {
-        // Set initial state (visible)
         gsap.set(wordInners, { y: 0, opacity: 1 });
 
         gsap.fromTo(wordInners,
@@ -221,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 scrollTrigger: {
                     trigger: ".about-title-anim",
                     start: "top 85%",
-                    toggleActions: "play none none none"
+                    toggleActions: "play none none reverse"
                 },
                 y: 0,
                 opacity: 1,
@@ -243,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 scrollTrigger: {
                     trigger: ".hero-lead-reveal",
                     start: "top 85%",
-                    toggleActions: "play none none none"
+                    toggleActions: "play none none reverse"
                 },
                 y: 0,
                 opacity: 1,
@@ -264,7 +197,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 scrollTrigger: {
                     trigger: ".about-image-wrapper",
                     start: "top 85%",
-                    toggleActions: "play none none none"
+                    toggleActions: "play none none reverse"
                 },
                 clipPath: "inset(0% 0% 0% 0%)",
                 opacity: 1,
@@ -274,7 +207,7 @@ document.addEventListener("DOMContentLoaded", function () {
         );
     }
 
-    // Zoom Out Effect (Parallax) - This is fine as scrub-based
+    // Parallax Image Effect
     const parallaxImage = document.querySelector(".parallax-image");
     if (parallaxImage) {
         gsap.to(".parallax-image", {
@@ -301,7 +234,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 scrollTrigger: {
                     trigger: ".about-section .row.g-5",
                     start: "top 75%",
-                    toggleActions: "play none none none"
+                    toggleActions: "play none none reverse"
                 },
                 y: 0,
                 opacity: 1,
@@ -323,7 +256,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 scrollTrigger: {
                     trigger: img,
                     start: "top 85%",
-                    toggleActions: "play none none none"
+                    toggleActions: "play none none reverse"
                 },
                 clipPath: "inset(0 0% 0 0%)",
                 opacity: 1,
@@ -343,7 +276,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 scrollTrigger: {
                     trigger: element,
                     start: "top 85%",
-                    toggleActions: "play none none none"
+                    toggleActions: "play none none reverse"
                 },
                 y: 0,
                 opacity: 1,
@@ -363,7 +296,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 scrollTrigger: {
                     trigger: card,
                     start: "top 85%",
-                    toggleActions: "play none none none"
+                    toggleActions: "play none none reverse"
                 },
                 y: 0,
                 opacity: 1,
@@ -384,7 +317,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 scrollTrigger: {
                     trigger: row,
                     start: "top 90%",
-                    toggleActions: "play none none none"
+                    toggleActions: "play none none reverse"
                 },
                 x: 0,
                 opacity: 1,
@@ -405,7 +338,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 scrollTrigger: {
                     trigger: ".process-wrapper",
                     start: "top 80%",
-                    toggleActions: "play none none none"
+                    toggleActions: "play none none reverse"
                 },
                 y: 0,
                 opacity: 1,
@@ -420,7 +353,6 @@ document.addEventListener("DOMContentLoaded", function () {
     gsap.utils.toArray(".reveal-content, .reveal-scale-up").forEach(function (elem) {
         const isScaleUp = elem.classList.contains('reveal-scale-up');
 
-        // Set initial visible state
         gsap.set(elem, { y: 0, opacity: 1, scale: 1 });
 
         if (isScaleUp) {
@@ -430,7 +362,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     scrollTrigger: {
                         trigger: elem,
                         start: "top 85%",
-                        toggleActions: "play none none none"
+                        toggleActions: "play none none reverse"
                     },
                     scale: 1,
                     opacity: 1,
@@ -445,7 +377,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     scrollTrigger: {
                         trigger: elem,
                         start: "top 85%",
-                        toggleActions: "play none none none"
+                        toggleActions: "play none none reverse"
                     },
                     y: 0,
                     opacity: 1,
@@ -457,10 +389,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // ============================================
-    // 10. ABOUT PAGE SPECIFIC ANIMATIONS
+    // ABOUT PAGE SPECIFIC ANIMATIONS
     // ============================================
 
-    // 1. Hero Content (About Page) - One-time on load, NOT scroll-triggered
+    // Hero Background (About Page)
     if (document.querySelector('.hero-bg-wrapper')) {
         const aboutHeroTl = gsap.timeline();
 
@@ -475,7 +407,7 @@ document.addEventListener("DOMContentLoaded", function () {
             );
     }
 
-    // 2. Who We Are Section
+    // Who We Are Section
     if (document.querySelector('#who-we-are')) {
         const whoH2 = document.querySelector("#who-we-are h2");
         if (whoH2) {
@@ -486,7 +418,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     scrollTrigger: {
                         trigger: "#who-we-are",
                         start: "top 80%",
-                        toggleActions: "play none none none"
+                        toggleActions: "play none none reverse"
                     },
                     x: 0,
                     opacity: 1,
@@ -505,7 +437,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     scrollTrigger: {
                         trigger: "#who-we-are",
                         start: "top 75%",
-                        toggleActions: "play none none none"
+                        toggleActions: "play none none reverse"
                     },
                     y: 0,
                     opacity: 1,
@@ -517,7 +449,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // 3. Vision & Mission Cards
+    // Vision & Mission Cards
     const visionCards = document.querySelectorAll('#our-mission .col-lg-4');
     if (visionCards.length > 0) {
         gsap.set(visionCards, { y: 0, opacity: 1 });
@@ -527,7 +459,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 scrollTrigger: {
                     trigger: "#our-mission",
                     start: "top 85%",
-                    toggleActions: "play none none none"
+                    toggleActions: "play none none reverse"
                 },
                 y: 0,
                 opacity: 1,
@@ -538,7 +470,7 @@ document.addEventListener("DOMContentLoaded", function () {
         );
     }
 
-    // 4. Specialization Cards
+    // Specialization Cards
     const specCards = document.querySelectorAll('.bg-warning-subtle');
     if (specCards.length > 0) {
         gsap.set(specCards, { y: 0, opacity: 1 });
@@ -548,7 +480,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 scrollTrigger: {
                     trigger: specCards[0],
                     start: "top 85%",
-                    toggleActions: "play none none none"
+                    toggleActions: "play none none reverse"
                 },
                 y: 0,
                 opacity: 1,
@@ -559,7 +491,7 @@ document.addEventListener("DOMContentLoaded", function () {
         );
     }
 
-    // 5. Approach List Items
+    // Approach List Items
     const approachItems = document.querySelectorAll('#approach ul li');
     if (approachItems.length > 0) {
         gsap.set(approachItems, { x: 0, opacity: 1 });
@@ -569,7 +501,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 scrollTrigger: {
                     trigger: "#approach",
                     start: "top 75%",
-                    toggleActions: "play none none none"
+                    toggleActions: "play none none reverse"
                 },
                 x: 0,
                 opacity: 1,
@@ -580,9 +512,8 @@ document.addEventListener("DOMContentLoaded", function () {
         );
     }
 
-
     // ============================================
-    // FAQ SECTION SCROLL ANIMATIONS (RELOAD-SAFE)
+    // FAQ SECTION ANIMATIONS
     // ============================================
     if (document.querySelector('.faq-section')) {
         const faqLabel = document.querySelector('.faq-header-label');
@@ -591,7 +522,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const faqItemsAnim = document.querySelectorAll('.faq-item');
         const faqCta = document.querySelector('.faq-cta');
 
-        // Set all to visible initially
+        // Set initial visible state
         if (faqLabel) gsap.set(faqLabel, { y: 0, opacity: 1 });
         if (faqTitle) gsap.set(faqTitle, { y: 0, opacity: 1 });
         if (faqIntro) gsap.set(faqIntro, { y: 0, opacity: 1 });
@@ -652,7 +583,7 @@ document.addEventListener("DOMContentLoaded", function () {
             );
         }
 
-        // FAQ Items stagger animation
+        // FAQ Items stagger
         if (faqItemsAnim.length > 0) {
             gsap.fromTo(faqItemsAnim,
                 { y: 30, opacity: 0 },
@@ -689,151 +620,4 @@ document.addEventListener("DOMContentLoaded", function () {
             );
         }
     }
-
-
-    // ============================================
-    // MENU LOGIC (Unchanged)
-    // ============================================
-    const mobileMenu = document.getElementById('mobileMenu');
-    const menuToggleBtn = document.getElementById('menuToggleBtn');
-    const menuCloseBtn = document.getElementById('menuCloseBtn');
-
-    function toggleMenu() {
-        if (!mobileMenu) return;
-        mobileMenu.classList.toggle('is-active');
-        if (mobileMenu.classList.contains('is-active')) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
-        }
-    }
-
-    if (menuToggleBtn) menuToggleBtn.addEventListener('click', toggleMenu);
-    if (menuCloseBtn) menuCloseBtn.addEventListener('click', toggleMenu);
-
-    const menuLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
-    menuLinks.forEach(link => {
-        if (link.hasAttribute('data-bs-toggle') && link.getAttribute('data-bs-toggle') === 'collapse') {
-            return;
-        }
-        link.addEventListener('click', function () {
-            if (mobileMenu.classList.contains('is-active')) {
-                toggleMenu();
-            }
-        });
-    });
 });
-
-// ============================================
-// SERVICE ICON HOVER ANIMATION (Unchanged - not scroll-triggered)
-// ============================================
-const serviceHeaders = document.querySelectorAll('.service-header-trigger');
-
-serviceHeaders.forEach(header => {
-    const iconAnim = header.querySelector('.service-icon-anim');
-    if (!iconAnim) return;
-
-    const arrowMain = iconAnim.querySelector('.arrow-main');
-    const arrowClone = iconAnim.querySelector('.arrow-clone');
-
-    // Ensure initial state
-    if (typeof gsap !== 'undefined') {
-        gsap.set(arrowClone, { x: '-100%', y: '100%' });
-    }
-
-    header.addEventListener('mouseenter', () => {
-        if (typeof gsap === 'undefined') return;
-        gsap.to(arrowMain, {
-            x: '100%',
-            y: '-100%',
-            duration: 0.4,
-            ease: 'power2.in',
-            overwrite: true
-        });
-        gsap.to(arrowClone, {
-            x: '0%',
-            y: '0%',
-            duration: 0.4,
-            delay: 0.1,
-            ease: 'power2.out',
-            overwrite: true
-        });
-    });
-
-    header.addEventListener('mouseleave', () => {
-        if (typeof gsap === 'undefined') return;
-        gsap.to(arrowClone, {
-            x: '-100%',
-            y: '100%',
-            duration: 0.4,
-            ease: 'power2.in',
-            overwrite: true
-        });
-        gsap.to(arrowMain, {
-            x: '0%',
-            y: '0%',
-            duration: 0.4,
-            delay: 0.1,
-            ease: 'power2.out',
-            overwrite: true
-        });
-    });
-});
-
-// ============================================
-// FAQ ACCORDION FUNCTIONALITY (Unchanged - not scroll-triggered)
-// ============================================
-const faqItems = document.querySelectorAll('.faq-item');
-
-faqItems.forEach(item => {
-    const question = item.querySelector('.faq-question');
-    const answer = item.querySelector('.faq-answer');
-
-    if (!question || !answer) return;
-
-    question.addEventListener('click', () => {
-        if (typeof gsap === 'undefined') return;
-
-        const isActive = item.classList.contains('is-active');
-
-        // Close all other items first
-        faqItems.forEach(otherItem => {
-            if (otherItem !== item && otherItem.classList.contains('is-active')) {
-                const otherAnswer = otherItem.querySelector('.faq-answer');
-                otherItem.classList.remove('is-active');
-                otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-
-                gsap.to(otherAnswer, {
-                    maxHeight: 0,
-                    duration: 0.5,
-                    ease: 'power3.inOut'
-                });
-            }
-        });
-
-        // Toggle current item
-        if (isActive) {
-            item.classList.remove('is-active');
-            question.setAttribute('aria-expanded', 'false');
-
-            gsap.to(answer, {
-                maxHeight: 0,
-                duration: 0.5,
-                ease: 'power3.inOut'
-            });
-        } else {
-            item.classList.add('is-active');
-            question.setAttribute('aria-expanded', 'true');
-
-            const answerInner = answer.querySelector('.faq-answer-inner');
-            const naturalHeight = answerInner ? answerInner.offsetHeight : 150;
-
-            gsap.to(answer, {
-                maxHeight: naturalHeight + 40,
-                duration: 0.6,
-                ease: 'power3.out'
-            });
-        }
-    });
-});
-
