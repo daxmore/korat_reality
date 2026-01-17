@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // SHERY JS INITIALIZATION
     // ============================================
     if (typeof Shery !== 'undefined') {
-        // Only initialize on larger screens (>= 1200px) and non-touch devices
-        if (window.innerWidth >= 1200 && !window.matchMedia("(pointer: coarse)").matches) {
+        // Only initialize on larger screens (>= 1199px)
+        if (window.innerWidth >= 1199) {
             Shery.mouseFollower({
                 skew: true,
                 ease: "cubic-bezier(0.23, 1, 0.320, 1)",
@@ -34,18 +34,9 @@ document.addEventListener("DOMContentLoaded", function () {
     function toggleMenu() {
         if (!mobileMenu) return;
         mobileMenu.classList.toggle('is-active');
-        const isActive = mobileMenu.classList.contains('is-active');
-
-        if (isActive) {
-            document.body.style.overflow = 'hidden';
-            document.documentElement.style.overflow = 'hidden';
-            if (window.lenis) window.lenis.stop();
-        } else {
-            document.body.style.overflow = '';
-            document.documentElement.style.overflow = '';
-            if (window.lenis) window.lenis.start();
-        }
+        document.body.classList.toggle('menu-active', mobileMenu.classList.contains('is-active'));
     }
+
 
     if (menuToggleBtn) menuToggleBtn.addEventListener('click', toggleMenu);
     if (menuCloseBtn) menuCloseBtn.addEventListener('click', toggleMenu);

@@ -4,9 +4,20 @@
    ============================================ */
 
 /* ============================================
+   LARGE TABLET & BELOW (max-width: 1199px)
+   Menu width adjustment
+   ============================================ */
+@media (max-width: 1199px) {
+    .fullscreen-menu {
+        width: 100% !important;
+    }
+}
+
+/* ============================================
    TABLET & BELOW (max-width: 991px)
    ============================================ */
 @media (max-width: 991px) {
+
     .hero-desc-text {
         font-size: 10px;
     }
@@ -102,15 +113,5 @@
     /* Intro logo size adjustment */
     .intro-logo img {
         height: 50px;
-    }
-}
-
-/* ============================================
-   LARGE DESKTOP (min-width: 1200px)
-   ============================================ */
-@media (min-width: 1200px) {
-    .fullscreen-menu {
-        width: 40%;
-        border-left: 1px solid rgba(255, 255, 255, 0.1);
     }
 }
