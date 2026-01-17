@@ -226,6 +226,7 @@
     --primary-dark: #1c1c1c;
     --primary-cream: #faf7f2;
     --primary-gold: #b99b5f;
+    --primary-dark-gold: #af7400;
     --text-dark: #1c1c1c;
     --text-light: #faf7f2;
     --text-muted: #6c6c6c;
@@ -299,7 +300,6 @@ body {
     color: var(--text-dark);
     background-color: var(--primary-cream);
     overflow-x: hidden;
-    cursor: none !important;
 }
 
 h1 {
@@ -1307,7 +1307,7 @@ input::placeholder {
 .faq-title-highlight {
     font-style: italic;
     font-weight: 500;
-    color: var(--primary-gold);
+    color: var(--primary-dark-gold);
     text-decoration: underline;
     text-underline-offset: 0.1em;
     text-decoration-thickness: 2px;
@@ -1346,23 +1346,22 @@ input::placeholder {
     padding: clamp(1.25rem, 3vw, 2rem) 0;
     background: none;
     border: none;
-    cursor: none !important;
     text-align: left;
     color: var(--text-dark);
     transition: all 0.4s ease;
 }
 
 .faq-question:hover .faq-number {
-    color: var(--primary-gold);
+    color: var(--primary-dark-gold);
     transform: translateX(5px);
 }
 
 .faq-question:hover .faq-question-text {
-    color: var(--primary-gold);
+    color: var(--primary-dark-gold);
 }
 
 .faq-question:hover .faq-icon {
-    border-color: var(--primary-gold);
+    border-color: var(--primary-dark-gold);
     background-color: rgba(185, 155, 95, 0.15);
 }
 
@@ -1376,7 +1375,7 @@ input::placeholder {
 }
 
 .faq-item.is-active .faq-number {
-    color: var(--primary-gold);
+    color: var(--primary-dark-gold);
 }
 
 /* Question Text */
@@ -1390,7 +1389,7 @@ input::placeholder {
 }
 
 .faq-item.is-active .faq-question-text {
-    color: var(--primary-gold);
+    color: var(--primary-dark-gold);
 }
 
 /* Plus/Minus Icon */
