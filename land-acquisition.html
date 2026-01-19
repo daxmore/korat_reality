@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Land Acquisition Services for Commercial & Industrial Projects | Korat Reality</title>
+    <meta name="description"
+        content="Korat Reality provides strategic land acquisition services for commercial and industrial projects, offering legal due diligence, approvals, zoning support, and transparent valuation for investors and NRIs across India.">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="assets/css/media.css">
+    <!-- Shery.js CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        .land-hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/wide_aerial_view_2.jpeg') center/cover no-repeat;
+        }
+
+        .hero-bg-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .hero-bg-image {
+            width: 100%;
+            height: 100%;
+            transform: scale(1.1);
+            transition: transform 10s ease;
+        }
+
+        .min-h-500 {
+            min-height: 500px;
+        }
+    </style>
+</head>
+
+<body id="page-land">
+
+    <!-- ============================================
+         HEADER / NAVIGATION
+         ============================================ -->
+    <header class="main-header py-4">
+        <div class="container-fluid px-4 px-md-5">
+            <div class="d-flex justify-content-between align-items-center w-100">
+                <!-- 1. Logo -->
+                <a href="index.html" class="d-block">
+                    <img src="assets/images/svg/for-dark-bg.svg" alt="KR" class="logo-sm">
+                </a>
+
+                <!-- 2. Center Navigation (Desktop Only) -->
+                <div class="d-none d-lg-flex align-items-center gap-5 w-75 mx-auto justify-content-evenly">
+                    <a href="about.html"
+                        class="text-white text-uppercase text-decoration-none fw-semibold small ls-1 text-slide"
+                        data-text="About Us"><span>About Us</span></a>
+                    <a href="why-invest-in-india.html"
+                        class="text-white text-uppercase text-decoration-none fw-semibold small ls-1 text-slide"
+                        data-text="Why Invest In India"><span>Why Invest In India</span></a>
+                    <a href="nri-investor-guide.html"
+                        class="text-white text-uppercase text-decoration-none fw-semibold small ls-1 text-slide"
+                        data-text="NRI Investor Guide"><span>NRI Investor Guide</span></a>
+                </div>
+
+                <!-- 3. Menu Button -->
+                <button
+                    class="btn btn-sm border-0 bg-transparent p-0 text-white text-uppercase fw-semibold small ls-1 d-flex align-items-center gap-2 hover-gold"
+                    type="button" id="menuToggleBtn">
+                    Menu
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu content (Full Screen Overlay) -->
+            <div class="fullscreen-menu position-fixed top-0 end-0 w-40 bg-dark" id="mobileMenu">
+                <div class="d-flex flex-column min-h-dvh p-4">
+                    <!-- Menu Header -->
+                    <div class="d-flex justify-content-between justify-content-lg-end align-items-center mb-5">
+                        <a href="index.html">
+                            <img src="assets/images/svg/for-dark-bg.svg" class="logo-sm d-block d-lg-none" alt="Logo">
+                        </a>
+                        <button class="btn text-white p-0 d-flex align-items-center" type="button" id="menuCloseBtn"
+                            aria-label="Close">
+                            <span class="text-uppercase small fw-bold me-2 ls-1">Close</span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Menu Links -->
+                    <div class="flex-grow-1 d-flex flex-column align-items-end gap-3 text-end menu-links-offset">
+                        <a href="index.html"
+                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
+                            data-text="Home"><span>Home</span></a>
+                        <a href="about.html"
+                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
+                            data-text="About Us"><span>About Us</span></a>
+                        <a href="why-invest-in-india.html"
+                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
+                            data-text="Why Invest In India"><span>Why Invest In India</span></a>
+
+                        <!-- Services Dropdown -->
+                        <div class="d-flex flex-column align-items-end w-100">
+                            <a href="#"
+                                class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold d-inline-flex align-items-center gap-2 justify-content-end"
+                                data-bs-toggle="collapse" data-bs-target="#servicesNav">
+                                Our Services <span class="fs-4 text-white-50">+</span>
+                            </a>
+                            <div class="collapse text-end mt-3 border-end border-white border-opacity-25 pe-3"
+                                id="servicesNav">
+                                <a href="land-acquisition.html"
+                                    class="d-block text-white text-opacity-75 text-decoration-none text-uppercase mb-2 fs-5 text-slide"
+                                    data-text="Land Acquisition"><span>Land Acquisition</span></a>
+                                <a href="land-development.html"
+                                    class="d-block text-white text-opacity-75 text-decoration-none text-uppercase mb-2 fs-5 text-slide"
+                                    data-text="Land Development"><span>Land Development</span></a>
+                                <a href="commercial-projects.html"
+                                    class="d-block text-white text-opacity-75 text-decoration-none text-uppercase mb-2 fs-5 text-slide"
+                                    data-text="Commercial Projects"><span>Commercial Projects</span></a>
+                                <a href="residential-projects.html"
+                                    class="d-block text-white text-opacity-75 text-decoration-none text-uppercase mb-2 fs-5 text-slide"
+                                    data-text="Residential Projects"><span>Residential Projects</span></a>
+                                <a href="industrial-projects.html"
+                                    class="d-block text-white text-opacity-75 text-decoration-none text-uppercase mb-2 fs-5 text-slide"
+                                    data-text="Industrial Projects"><span>Industrial Projects</span></a>
+                            </div>
+                        </div>
+
+                        <a href="investment-opportunities.html"
+                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
+                            data-text="Investment Opportunities"><span>Investment Opportunities</span></a>
+                        <a href="why-invest-in-india.html"
+                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
+                            data-text="NRI Investor Guide"><span>NRI Investor Guide</span></a>
+                        <a href="insights.html"
+                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
+                            data-text="Insights / Blog"><span>Insights / Blog</span></a>
+                        <a href="contact.html"
+                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
+                            data-text="Contact Us"><span>Contact Us</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
+    <section class="hero-section text-center position-relative" style="min-height: 80vh;" id="land-hero">
+        <div class="hero-bg-wrapper">
+            <div class="hero-bg-image land-hero-bg">
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+
+        <div class="container position-relative z-2">
+            <div class="row min-vh-100 align-items-center justify-content-center pt-5">
+                <div class="col-lg-9">
+                    <div class="hero-content reveal-content mt-5 mt-lg-0">
+                        <h1 class="hero-title text-uppercase font-heading fw-bold mb-4 text-white display-3 ls-2">
+                            Strategic <span class="text-gold font-serif fst-italic">Land Acquisition</span> Services
+                        </h1>
+                        <p class="hero-description mx-auto text-white fs-6 mb-4 lh-md" style="max-width: 840px;">
+                            Acquiring land for commercial or industrial purposes demands strategic insight, legal
+                            expertise, and regulatory knowledge. As a leading land acquisition company India, Korat
+                            Reality specializes in providing comprehensive land acquisition services India that
+                            transform complex land transactions into secure, value-driven investment opportunities.
+                        </p>
+                        <p class="hero-description mx-auto text-white fs-6 lh-md" style="max-width: 840px;">
+                            Whether you're seeking commercial land acquisition opportunities, planning industrial
+                            expansion, or exploring secure land investment India as an NRI, our advisory-led approach
+                            ensures every acquisition is backed by thorough due diligence, transparent valuation, and
+                            regulatory compliance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         PROFESSIONAL SERVICES SECTION
+         ============================================ -->
+    <section class="section-padding bg-cream" id="professional-services">
+        <div class="container">
+            <div class="row gx-lg-5 align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0 reveal-content">
+                    <h2 class="display-5 font-heading text-uppercase fw-bold text-dark mb-4">
+                        Professional Land Acquisition Services in India
+                    </h2>
+                    <p class="font-body text-muted lh-lg mb-4">
+                        Korat Reality functions as a strategic land acquisition partner, not a conventional broker. Our
+                        approach prioritizes long-term value creation over transactional speed. We specialize in
+                        identifying land parcels that align with your strategic objectives, whether for immediate
+                        development, future appreciation, or structured joint ventures.
+                    </p>
+                    <p class="font-body text-muted lh-lg mb-4">
+                        What distinguishes our land acquisition services India is our commitment to transparency and
+                        risk mitigation. We conduct exhaustive evaluations before presenting any opportunity, ensuring
+                        legal titles are clear, zoning is appropriate, and pricing reflects genuine market value.
+                    </p>
+                    <p class="font-body text-muted lh-lg">
+                        For NRIs navigating land investment remotely, we provide specialized NRI land investment
+                        advisory India services. We offer comprehensive coordination that eliminates geographical
+                        barriers while maintaining complete transparency throughout the acquisition journey.
+                    </p>
+                </div>
+                <div class="col-lg-6 reveal-scale-up">
+                    <div class="image-wrapper rounded-4 overflow-hidden h-100 min-h-500">
+                        <img src="assets/images/building_image_3.jpeg" alt="Land Acquisition Services"
+                            class="w-100 h-100 object-fit-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         TYPES OF LAND SECTION
+         ============================================ -->
+    <section class="section-padding bg-dark text-white" id="types-of-land">
+        <div class="container">
+            <div class="text-center mb-5 reveal-content">
+                <h2 class="display-5 font-heading text-uppercase fw-bold mb-3">Types of Land We Specialise In</h2>
+                <p class="text-white-50">Expertise across major development sectors</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Commercial -->
+                <div class="col-lg-6 reveal-content">
+                    <div
+                        class="p-5 border border-white border-opacity-10 rounded-start h-100 hover-lift bg-gradient-dark">
+                        <div class="d-flex gap-3 mb-4 align-items-center">
+                            <i class="bi bi-shop-window fs-2 text-gold"></i>
+                            <h3 class="font-heading text-uppercase fw-bold h4 m-0">Commercial Land Acquisition</h3>
+                        </div>
+                        <p class="text-white-50 lh-lg mb-4">Commercial land acquisition focuses on parcels strategically
+                            positioned for retail developments, office complexes, logistics hubs, and mixed-use
+                            projects. Our commercial land purchase advisory considers proximity to transportation
+                            networks, demographic profiles, zoning regulations, and future development plans.</p>
+                        <p class="text-white-50 lh-lg m-0">We identify locations where commercial activity is expanding,
+                            ensuring your land investment benefits from rising demand and appreciation potential.</p>
+                    </div>
+                </div>
+
+                <!-- Industrial -->
+                <div class="col-lg-6 reveal-content">
+                    <div
+                        class="p-5 border border-white border-opacity-10 rounded-end h-100 hover-lift bg-gradient-dark">
+                        <div class="d-flex gap-3 mb-4 align-items-center">
+                            <i class="bi bi-gear-wide-connected fs-2 text-gold"></i>
+                            <h3 class="font-heading text-uppercase fw-bold h4 m-0">Industrial Land Acquisition</h3>
+                        </div>
+                        <p class="text-white-50 lh-lg mb-4">Industrial land acquisition requires specialized knowledge
+                            of manufacturing zones, industrial estates, and regulatory frameworks. As experienced
+                            providers of industrial land acquisition services India, we help clients identify land with
+                            robust infrastructure—reliable power, water availability, road connectivity, and proximity
+                            to ports and highways.</p>
+                        <p class="text-white-50 lh-lg m-0">From small-scale manufacturing units to large industrial
+                            parks, our services cover the full spectrum while ensuring zoning compatibility and
+                            regulatory alignment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         OUR APPROACH SECTION
+         ============================================ -->
+    <section class="section-padding bg-cream" id="approach">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-lg-12 text-center reveal-content">
+                    <h2 class="display-5 font-heading text-uppercase fw-bold mb-4">Our Approach to Strategic Land
+                        Acquisition</h2>
+                    <p class="text-muted text-center mx-auto" style="max-width: 700px;">Our methodology as a trusted
+                        land acquisition company India combines market intelligence, risk assessment, and client
+                        alignment</p>
+                </div>
+            </div>
+
+            <div class="row g-4 align-items-stretch">
+                <!-- Step 1 -->
+                <div class="col-lg-3 col-md-6 reveal-content">
+                    <div class="bg-white p-4 h-100 rounded-3 shadow-sm border border-light text-center">
+                        <i class="bi bi-search text-gold fs-1 mb-3 d-block"></i>
+                        <h5 class="fw-bold text-uppercase mb-3">Market & Location Research</h5>
+                        <p class="text-muted small lh-relaxed">Comprehensive analysis of growth corridors,
+                            infrastructure
+                            developments, and demand drivers.</p>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="col-lg-3 col-md-6 reveal-content">
+                    <div class="bg-white p-4 h-100 rounded-3 shadow-sm border border-light text-center">
+                        <i class="bi bi-exclamation-triangle text-gold fs-1 mb-3 d-block"></i>
+                        <h5 class="fw-bold text-uppercase mb-3">Risk Identification</h5>
+                        <p class="text-muted small lh-relaxed">We identify legal complications, regulatory hurdles, and
+                            market vulnerabilities before presenting opportunities.</p>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="col-lg-3 col-md-6 reveal-content">
+                    <div class="bg-white p-4 h-100 rounded-3 shadow-sm border border-light text-center">
+                        <i class="bi bi-bullseye text-gold fs-1 mb-3 d-block"></i>
+                        <h5 class="fw-bold text-uppercase mb-3">Investor Goal Alignment</h5>
+                        <p class="text-muted small lh-relaxed">Customized land buying advisory India services matching
+                            your investment timeline and return expectations.</p>
+                    </div>
+                </div>
+                <!-- Step 4 -->
+                <div class="col-lg-3 col-md-6 reveal-content">
+                    <div class="bg-white p-4 h-100 rounded-3 shadow-sm border border-light text-center">
+                        <i class="bi bi-binoculars text-gold fs-1 mb-3 d-block"></i>
+                        <h5 class="fw-bold text-uppercase mb-3">Long-Term Vision</h5>
+                        <p class="text-muted small lh-relaxed">We evaluate land for future potential, considering
+                            infrastructure changes and urban expansion impacts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         LEGAL & COMPLIANCE SECTION
+         ============================================ -->
+    <section class="section-padding bg-light-cream-alt pb-2 pb-lg-0" id="legal-compliance">
+        <div class="container">
+            <div class="row gx-lg-5">
+                <!-- Legal Due Diligence -->
+                <div class="col-lg-6 mb-5 mb-lg-0 reveal-content">
+                    <h3 class="font-heading text-uppercase fw-bold mb-4">Legal Due Diligence & Title Verification</h3>
+                    <p class="text-muted mb-4">Legal due diligence forms the foundation of our land acquisition services
+                        India:</p>
+                    <ul class="list-unstyled d-flex flex-column gap-3">
+                        <li class="d-flex gap-3">
+                            <i class="bi bi-file-earmark-check text-dark mt-1"></i>
+                            <div>
+                                <strong class="text-uppercase d-block">Clear Title Verification</strong>
+                                <span class="text-muted small">Exhaustive title searches establishing unbroken ownership
+                                    chains.</span>
+                            </div>
+                        </li>
+                        <li class="d-flex gap-3">
+                            <i class="bi bi-shield-check text-dark mt-1"></i>
+                            <div>
+                                <strong class="text-uppercase d-block">Ownership & Encumbrance Checks</strong>
+                                <span class="text-muted small">Investigation of mortgages, liens, legal disputes, and
+                                    undisclosed claims.</span>
+                            </div>
+                        </li>
+                        <li class="d-flex gap-3">
+                            <i class="bi bi-files text-dark mt-1"></i>
+                            <div>
+                                <strong class="text-uppercase d-block">Documentation Review</strong>
+                                <span class="text-muted small">Verification of sale agreements, revenue records, survey
+                                    documents, and registration papers.</span>
+                            </div>
+                        </li>
+                        <li class="d-flex gap-3">
+                            <i class="bi bi-shield-exclamation text-dark mt-1"></i>
+                            <div>
+                                <strong class="text-uppercase d-block">Risk Mitigation</strong>
+                                <span class="text-muted small">Proactive identification of potential risks with
+                                    strategic solutions before commitment.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Government Approvals -->
+                <div class="col-lg-6 reveal-content">
+                    <h3 class="font-heading text-uppercase fw-bold mb-4">Government Approvals, Zoning & Land Conversion
+                    </h3>
+                    <p class="text-muted mb-4">Regulatory compliance is critical for successful land acquisition for
+                        investors India:</p>
+                    <ul class="list-unstyled d-flex flex-column gap-3">
+                        <li class="d-flex gap-3">
+                            <i class="bi bi-arrow-repeat text-dark mt-1"></i>
+                            <div>
+                                <strong class="text-uppercase d-block">NA Conversion Awareness</strong>
+                                <span class="text-muted small">Guidance through Non-Agricultural conversion processes
+                                    for development purposes.</span>
+                            </div>
+                        </li>
+                        <li class="d-flex gap-3">
+                            <i class="bi bi-map text-dark mt-1"></i>
+                            <div>
+                                <strong class="text-uppercase d-block">Zoning & Land-Use Checks</strong>
+                                <span class="text-muted small">Verification of current classifications and master plan
+                                    provisions.</span>
+                            </div>
+                        </li>
+                        <li class="d-flex gap-3">
+                            <i class="bi bi-check-square text-dark mt-1"></i>
+                            <div>
+                                <strong class="text-uppercase d-block">Regulatory Alignment</strong>
+                                <span class="text-muted small">Assessment of development control regulations,
+                                    environmental clearances, and local approvals.</span>
+                            </div>
+                        </li>
+                        <li class="d-flex gap-3">
+                            <i class="bi bi-signpost-split text-dark mt-1"></i>
+                            <div>
+                                <strong class="text-uppercase d-block">Approval Pathway Clarity</strong>
+                                <span class="text-muted small">Understanding of approval sequences, authorities
+                                    involved, and typical timelines.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         PRICING & INVESTORS SECTION
+         ============================================ -->
+    <section class="section-padding bg-cream" id="pricing-investors">
+        <div class="container">
+            <!-- Transparent Valuation -->
+            <div class="row gx-lg-5 align-items-center mb-5 pb-5 border-bottom border-dark border-opacity-10">
+                <div class="col-lg-6 mb-4 mb-lg-0 reveal-content">
+                    <div class="image-wrapper rounded-4 overflow-hidden h-100 min-h-400">
+                        <img src="assets/images/drone_ground_view_1.png" alt="Land Valuation"
+                            class="w-100 h-100 object-fit-cover">
+                    </div>
+                </div>
+                <div class="col-lg-6 reveal-content">
+                    <h3 class="font-heading text-uppercase fw-bold mb-4">Transparent Land Valuation & Pricing</h3>
+                    <p class="text-muted mb-4">Fair pricing based on objective market analysis distinguishes us as a
+                        strategic land acquisition partner:</p>
+                    <ul class="list-unstyled d-flex flex-column gap-3">
+                        <li class="d-flex gap-3">
+                            <i class="bi bi-graph-up text-dark mt-1"></i>
+                            <div>
+                                <strong class="text-uppercase d-block">Market-Based Valuation</strong>
+                                <span class="text-muted small">Analysis of comparable sales, location attributes, and
+                                    development potential.</span>
+                            </div>
+                        </li>
+                        <li class="d-flex gap-3">
+                            <i class="bi bi-currency-exchange text-dark mt-1"></i>
+                            <div>
+                                <strong class="text-uppercase d-block">Fair Pricing Approach</strong>
+                                <span class="text-muted small">Negotiation ensuring alignment with market realities and
+                                    strong return potential.</span>
+                            </div>
+                        </li>
+                        <li class="d-flex gap-3">
+                            <i class="bi bi-slash-circle text-dark mt-1"></i>
+                            <div>
+                                <strong class="text-uppercase d-block">Speculation Avoidance</strong>
+                                <span class="text-muted small">Filtering out speculative excess to focus on genuine
+                                    demand drivers.</span>
+                            </div>
+                        </li>
+                        <li class="d-flex gap-3">
+                            <i class="bi bi-check2-all text-dark mt-1"></i>
+                            <div>
+                                <strong class="text-uppercase d-block">Deal Transparency</strong>
+                                <span class="text-muted small">Complete clarity on pricing determination and negotiation
+                                    opportunities.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Investors & NRIs -->
+            <div class="row gx-lg-5 align-items-center">
+                <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0 reveal-content">
+                    <div class="image-wrapper rounded-4 overflow-hidden h-100 min-h-400">
+                        <img src="assets/images/building_image_2.png" alt="NRI Investment"
+                            class="w-100 h-100 object-fit-cover">
+                    </div>
+                </div>
+                <div class="col-lg-6 reveal-content">
+                    <h3 class="font-heading text-uppercase fw-bold mb-4">Land Acquisition for Investors & NRIs</h3>
+                    <p class="text-muted mb-4">We provide specialized support for investors and NRIs seeking secure land
+                        investment India:</p>
+                    <ul class="list-unstyled d-flex flex-column gap-3">
+                        <li class="d-flex gap-3">
+                            <i class="bi bi-globe text-dark mt-1"></i>
+                            <div>
+                                <strong class="text-uppercase d-block">Remote Advisory Support</strong>
+                                <span class="text-muted small">Digital coordination keeping you informed without
+                                    physical presence.</span>
+                            </div>
+                        </li>
+                        <li class="d-flex gap-3">
+                            <i class="bi bi-bank text-dark mt-1"></i>
+                            <div>
+                                <strong class="text-uppercase d-block">Compliance-Sensitive Execution</strong>
+                                <span class="text-muted small">FEMA and RBI-compliant structuring for NRI
+                                    investments.</span>
+                            </div>
+                        </li>
+                        <li class="d-flex gap-3">
+                            <i class="bi bi-person-gear text-dark mt-1"></i>
+                            <div>
+                                <strong class="text-uppercase d-block">Professional Coordination</strong>
+                                <span class="text-muted small">End-to-end management from identification through
+                                    registration.</span>
+                            </div>
+                        </li>
+                        <li class="d-flex gap-3">
+                            <i class="bi bi-lock text-dark mt-1"></i>
+                            <div>
+                                <strong class="text-uppercase d-block">Security Focus</strong>
+                                <span class="text-muted small">Risk mitigation and clear documentation building
+                                    investment confidence.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         WHY CHOOSE US & CTA SECTION
+         ============================================ -->
+    <section class="section-padding bg-dark text-white" id="why-choose-us">
+        <div class="container">
+            <div class="row justify-content-center mb-5 reveal-content">
+                <div class="col-lg-10 text-center">
+                    <h2 class="display-6 font-heading text-uppercase fw-bold mb-4">Why Choose Korat Reality as Your Land
+                        Acquisition Partner</h2>
+                    <div class="row g-4 text-start mt-4">
+                        <div class="col-md-6">
+                            <div class="d-flex gap-3">
+                                <i class="bi bi-award text-gold fs-4"></i>
+                                <div>
+                                    <h5 class="fw-bold text-uppercase">Advisory-First Mindset</h5>
+                                    <p class="text-white-50 small">Strategic recommendations over commission-driven
+                                        transactions.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex gap-3">
+                                <i class="bi bi-eye text-gold fs-4"></i>
+                                <div>
+                                    <h5 class="fw-bold text-uppercase">Process Transparency</h5>
+                                    <p class="text-white-50 small">Complete visibility from evaluation through
+                                        post-acquisition support.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex gap-3">
+                                <i class="bi bi-graph-up-arrow text-gold fs-4"></i>
+                                <div>
+                                    <h5 class="fw-bold text-uppercase">Long-Term Value Focus</h5>
+                                    <p class="text-white-50 small">Prioritizing sustained value over quick deals.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex gap-3">
+                                <i class="bi bi-shield-check text-gold fs-4"></i>
+                                <div>
+                                    <h5 class="fw-bold text-uppercase">Not a Transactional Broker</h5>
+                                    <p class="text-white-50 small">Comprehensive evaluation ensuring rigorous standards.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-10 text-center reveal-content">
+                    <div class="bg-white text-dark p-4 p-md-5 py-5 rounded-4 shadow-lg">
+                        <h3 class="font-heading text-uppercase fw-bold mb-3">Talk to Our Investment Advisor</h3>
+                        <p class="text-muted mb-4">Strategic land acquisition requires expert guidance. Whether
+                            exploring commercial land acquisition for retail development or industrial land acquisition
+                            services India for manufacturing expansion, our experienced advisors provide confidential,
+                            comprehensive consultation.</p>
+
+                        <div class="d-flex justify-content-center gap-3 flex-wrap">
+                            <a href="#contact"
+                                class="btn btn-gold text-uppercase fw-bold ls-1 px-4 py-3 flex-grow-1">Schedule
+                                Consultation</a>
+                            <a href="#evaluation"
+                                class="btn btn-outline-dark-custom text-uppercase fw-bold ls-1 px-4 py-3 flex-grow-1">Request
+                                Land
+                                Evaluation</a>
+                        </div>
+
+                        <div id="evaluation" class="mt-4 pt-4 border-top">
+                            <h4 class="h5 fw-bold text-uppercase mb-2">Request Land Evaluation</h4>
+                            <p class="small text-muted mb-0">Our professional evaluation services cover legal title
+                                verification, valuation analysis, zoning compliance, and development potential. Detailed
+                                reports equip you with actionable intelligence for informed decisions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FAQ SECTION
+         ============================================ -->
+    <section class="faq-section section-padding primary-cream" id="faq">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="row mb-4 mb-md-5">
+                <div class="col-lg-12">
+                    <h2 class="faq-title text-dark text-uppercase mb-4">
+                        Frequently Asked
+                        <span class="faq-title-highlight font-serif">Questions</span>
+                    </h2>
+                </div>
+            </div>
+
+            <!-- FAQ Accordion -->
+            <div class="faq-accordion">
+                <!-- Q1 -->
+                <div class="faq-item border-top border-dark border-opacity-10">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-number font-body">01</span>
+                        <span class="faq-question-text">What is land acquisition in real estate?</span>
+                        <span class="faq-icon">
+                            <span class="faq-icon-line faq-icon-horizontal"></span>
+                            <span class="faq-icon-line faq-icon-vertical"></span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Land acquisition involves identifying, evaluating, and securing land with clear legal
+                                titles and regulatory compliance for development or investment purposes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="faq-item border-top border-dark border-opacity-10">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-number font-body">02</span>
+                        <span class="faq-question-text">Does Korat Reality handle commercial and industrial land
+                            acquisition?</span>
+                        <span class="faq-icon">
+                            <span class="faq-icon-line faq-icon-horizontal"></span>
+                            <span class="faq-icon-line faq-icon-vertical"></span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Yes, we specialise in acquiring commercial and industrial land based on zoning, location
+                                potential, and compliance requirements.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="faq-item border-top border-dark border-opacity-10">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-number font-body">03</span>
+                        <span class="faq-question-text">How does Korat Reality ensure legal title clarity?</span>
+                        <span class="faq-icon">
+                            <span class="faq-icon-line faq-icon-horizontal"></span>
+                            <span class="faq-icon-line faq-icon-vertical"></span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Through structured due diligence, documentation checks, and verification of ownership and
+                                encumbrances.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="faq-item border-top border-dark border-opacity-10">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-number font-body">04</span>
+                        <span class="faq-question-text">Do you assist with land conversion and zoning approvals?</span>
+                        <span class="faq-icon">
+                            <span class="faq-icon-line faq-icon-horizontal"></span>
+                            <span class="faq-icon-line faq-icon-vertical"></span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Yes, we guide clients through zoning verification and land-use conversion processes where
+                                applicable.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q5 -->
+                <div class="faq-item border-top border-dark border-opacity-10">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-number font-body">05</span>
+                        <span class="faq-question-text">Is land acquisition safe for investors in India?</span>
+                        <span class="faq-icon">
+                            <span class="faq-icon-line faq-icon-horizontal"></span>
+                            <span class="faq-icon-line faq-icon-vertical"></span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Land acquisition can be secure when supported by proper legal checks, approvals, and
+                                transparent valuation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q6 -->
+                <div class="faq-item border-top border-dark border-opacity-10">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-number font-body">06</span>
+                        <span class="faq-question-text">Can NRIs invest in commercial or industrial land?</span>
+                        <span class="faq-icon">
+                            <span class="faq-icon-line faq-icon-horizontal"></span>
+                            <span class="faq-icon-line faq-icon-vertical"></span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Yes, NRIs can invest in structured land acquisition opportunities with professional
+                                advisory and compliance support.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q7 -->
+                <div class="faq-item border-top border-dark border-opacity-10">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-number font-body">07</span>
+                        <span class="faq-question-text">How is land pricing determined?</span>
+                        <span class="faq-icon">
+                            <span class="faq-icon-line faq-icon-horizontal"></span>
+                            <span class="faq-icon-line faq-icon-vertical"></span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Pricing is evaluated based on market conditions, location, zoning, development potential,
+                                and regulatory factors.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q8 -->
+                <div class="faq-item border-top border-dark border-opacity-10">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-number font-body">08</span>
+                        <span class="faq-question-text">Does Korat Reality work with landowners?</span>
+                        <span class="faq-icon">
+                            <span class="faq-icon-line faq-icon-horizontal"></span>
+                            <span class="faq-icon-line faq-icon-vertical"></span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Yes, we collaborate with landowners for structured acquisition, advisory, and
+                                development-led opportunities.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q9 -->
+                <div class="faq-item border-top border-dark border-opacity-10">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-number font-body">09</span>
+                        <span class="faq-question-text">What makes Korat Reality different from land brokers?</span>
+                        <span class="faq-icon">
+                            <span class="faq-icon-line faq-icon-horizontal"></span>
+                            <span class="faq-icon-line faq-icon-vertical"></span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>We follow a strategic, advisory-led approach focused on compliance, risk mitigation, and
+                                long-term value creation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q10 -->
+                <div class="faq-item border-top border-dark border-opacity-10 border-bottom">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-number font-body">10</span>
+                        <span class="faq-question-text">How can I request a land evaluation or consultation?</span>
+                        <span class="faq-icon">
+                            <span class="faq-icon-line faq-icon-horizontal"></span>
+                            <span class="faq-icon-line faq-icon-vertical"></span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>You can request a land evaluation or speak with our investment advisor through the
+                                enquiry form or direct contact.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="main-footer pt-5 pb-3 bg-cream text-dark" id="footer">
+        <div class="container">
+            <div class="row g-5 mb-5 justify-content-between">
+                <div class="col-lg-4 col-md-6">
+                    <a href="index.html">
+                        <img src="assets/images/svg/for-light-bg.svg" alt="Korat Reality" class="footer-logo mb-3">
+                    </a>
+                    <p class="text-muted text-uppercase lh-lg mb-4 footer-brand-text">
+                        Strategic land acquisition and development solutions building long-term value for investors and
+                        communities.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-dark text-uppercase text-decoration-none small text-slide"
+                            data-text="LinkedIn"><span>LinkedIn</span></a>
+                        <a href="#" class="text-dark text-uppercase text-decoration-none small text-slide"
+                            data-text="Instagram"><span>Instagram</span></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h6 class="text-uppercase small fw-bold mb-4 ls-1">Company</h6>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="about.html" class="text-dark text-uppercase text-decoration-none small text-slide"
+                                data-text="About Us"><span>About Us</span></a></li>
+                        <li><a href="index.html#process"
+                                class="text-dark text-uppercase text-decoration-none small text-slide"
+                                data-text="Our Process"><span>Our Process</span></a></li>
+                        <li><a href="index.html#opportunities"
+                                class="text-dark text-uppercase text-decoration-none small text-slide"
+                                data-text="Opportunities"><span>Opportunities</span></a></li>
+                        <li><a href="#footer" class="text-dark text-uppercase text-decoration-none small text-slide"
+                                data-text="Contact"><span>Contact</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h6 class="text-uppercase small fw-bold mb-4 ls-1">Services</h6>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="land-acquisition.html"
+                                class="text-dark text-uppercase text-decoration-none small text-slide"
+                                data-text="Land Acquisition"><span>Land Acquisition</span></a></li>
+                        <li><a href="index.html#services"
+                                class="text-dark text-uppercase text-decoration-none small text-slide"
+                                data-text="Development"><span>Development</span></a></li>
+                        <li><a href="index.html#services"
+                                class="text-dark text-uppercase text-decoration-none small text-slide"
+                                data-text="Advisory"><span>Advisory</span></a></li>
+                        <li><a href="why-invest-in-india.html"
+                                class="text-dark text-uppercase text-decoration-none small text-slide"
+                                data-text="NRI Services"><span>NRI Services</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row pt-4 border-top border-dark border-opacity-10">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <small class="text-muted text-uppercase">© 2025 Korat Reality. All rights reserved.</small>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-dark text-uppercase text-decoration-none small me-4 text-slide"
+                        data-text="Privacy Policy"><span>Privacy Policy</span></a>
+                    <a href="#" class="text-dark text-uppercase text-decoration-none small text-slide"
+                        data-text="Terms of Service"><span>Terms of Service</span></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Three.js (Required for Shery.js) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- Shery.js -->
+    <script type="text/javascript" src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
+
+    <!-- Lenis (Smooth Scroll) -->
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+
+    <!-- Smooth Scrolling Logic -->
+    <script src="assets/js/smooth-scroll.js"></script>
+
+    <!-- UI Interactions (Menu, FAQ, Service Icons) -->
+    <script src="assets/js/ui-interactions.js"></script>
+
+    <!-- Animations (Using common animation script) -->
+    <script src="assets/js/animations.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

@@ -103,6 +103,24 @@
     .about-main-img-box {
         height: 300px;
     }
+
+    /* Hero Text Adjustments for Mobile */
+    .hero-title.display-3 {
+        font-size: 2rem !important;
+        /* Reduce specific hero title size */
+        margin-bottom: 1rem !important;
+    }
+
+    .hero-description {
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+    }
+
+    /* Ensure content clears the header on mobile */
+    .hero-section .container {
+        padding-top: 80px;
+        /* Give space for the absolute header */
+    }
 }
 
 /* ============================================
