@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Invest in India Real Estate | NRI Property Investment Guide – Korat Reality</title>
+    <meta name="description"
+        content="Explore why India is a preferred real estate investment destination for NRIs. Learn about growth, safety, ROI, and how Korat Reality supports NRI property investment in India.">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="assets/css/media.css">
+    <!-- Shery.js CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        .nri-hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/wide_aerial_view_1.jpeg') center/cover no-repeat;
+        }
+
+        .hero-bg-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .hero-bg-image {
+            width: 100%;
+            height: 100%;
+            transform: scale(1.1);
+            transition: transform 10s ease;
+        }
+
+        .min-h-300 {
+            min-height: 300px;
+        }
+
+        .cta-grad-bg {
+            background: radial-gradient(circle at 80% 20%, rgba(185, 155, 95, 0.15) 0%, rgba(28, 28, 28, 0) 50%);
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body id="page-nri">
+
+    <!-- ============================================
+         HEADER / NAVIGATION
+         ============================================ -->
+    <header class="main-header py-4">
+        <div class="container-fluid px-4 px-md-5">
+            <div class="d-flex justify-content-between align-items-center w-100">
+                <!-- 1. Logo -->
+                <a href="index.html" class="d-block">
+                    <img src="assets/images/svg/for-dark-bg.svg" alt="KR" class="logo-sm">
+                </a>
+
+                <!-- 2. Center Navigation (Desktop Only) -->
+                <div class="d-none d-lg-flex align-items-center gap-5 w-75 mx-auto justify-content-evenly">
+                    <a href="about.html"
+                        class="text-white text-uppercase text-decoration-none fw-semibold small ls-1 text-slide"
+                        data-text="About Us"><span>About Us</span></a>
+                    <a href="why-invest-in-india.html"
+                        class="text-white text-uppercase text-decoration-none fw-semibold small ls-1 text-slide"
+                        data-text="Why Invest In India"><span>Why Invest In India</span></a>
+                    <a href="#services"
+                        class="text-white text-uppercase text-decoration-none fw-semibold small ls-1 text-slide"
+                        data-text="Our Services"><span>Our Services</span></a>
+                </div>
+
+                <!-- 3. Menu Button -->
+                <button
+                    class="btn btn-sm border-0 bg-transparent p-0 text-white text-uppercase fw-semibold small ls-1 d-flex align-items-center gap-2 hover-gold"
+                    type="button" id="menuToggleBtn">
+                    Menu
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu content (Full Screen Overlay) -->
+            <div class="fullscreen-menu position-fixed top-0 end-0 w-40 bg-dark" id="mobileMenu">
+                <div class="d-flex flex-column min-h-dvh p-4">
+                    <!-- Menu Header -->
+                    <div class="d-flex justify-content-between justify-content-lg-end align-items-center mb-5">
+                        <a href="index.html">
+                            <img src="assets/images/svg/for-dark-bg.svg" class="logo-sm d-block d-lg-none" alt="Logo">
+                        </a>
+                        <button class="btn text-white p-0 d-flex align-items-center" type="button" id="menuCloseBtn"
+                            aria-label="Close">
+                            <span class="text-uppercase small fw-bold me-2 ls-1">Close</span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Menu Links -->
+                    <div class="flex-grow-1 d-flex flex-column align-items-end gap-3 text-end menu-links-offset">
+                        <a href="index.html"
+                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
+                            data-text="Home"><span>Home</span></a>
+                        <a href="about.html"
+                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
+                            data-text="About Us"><span>About Us</span></a>
+                        <a href="why-invest-in-india.html"
+                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
+                            data-text="Why Invest In India"><span>Why Invest In India</span></a>
+
+                        <!-- Services Dropdown -->
+                        <div class="d-flex flex-column align-items-end w-100">
+                            <a href="#"
+                                class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold d-inline-flex align-items-center gap-2 justify-content-end"
+                                data-bs-toggle="collapse" data-bs-target="#servicesNav">
+                                Our Services <span class="fs-4 text-white-50">+</span>
+                            </a>
+                            <div class="collapse text-end mt-3 border-end border-white border-opacity-25 pe-3"
+                                id="servicesNav">
+                                <a href="land-acquisition.html"
+                                    class="d-block text-white text-opacity-75 text-decoration-none text-uppercase mb-2 fs-5 text-slide"
+                                    data-text="Land Acquisition"><span>Land Acquisition</span></a>
+                                <a href="land-development.html"
+                                    class="d-block text-white text-opacity-75 text-decoration-none text-uppercase mb-2 fs-5 text-slide"
+                                    data-text="Land Development"><span>Land Development</span></a>
+                                <a href="commercial-projects.html"
+                                    class="d-block text-white text-opacity-75 text-decoration-none text-uppercase mb-2 fs-5 text-slide"
+                                    data-text="Commercial Projects"><span>Commercial Projects</span></a>
+                                <a href="residential-projects.html"
+                                    class="d-block text-white text-opacity-75 text-decoration-none text-uppercase mb-2 fs-5 text-slide"
+                                    data-text="Residential Projects"><span>Residential Projects</span></a>
+                                <a href="industrial-projects.html"
+                                    class="d-block text-white text-opacity-75 text-decoration-none text-uppercase mb-2 fs-5 text-slide"
+                                    data-text="Industrial Projects"><span>Industrial Projects</span></a>
+                            </div>
+                        </div>
+
+                        <a href="investment-opportunities.html"
+                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
+                            data-text="Investment Opportunities"><span>Investment Opportunities</span></a>
+                        <a href="nri-investor-guide.html"
+                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
+                            data-text="NRI Investor Guide"><span>NRI Investor Guide</span></a>
+                        <a href="insights.html"
+                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
+                            data-text="Insights / Blog"><span>Insights / Blog</span></a>
+                        <a href="contact.html"
+                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
+                            data-text="Contact Us"><span>Contact Us</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
+    <section class="hero-section text-center position-relative" style="min-height: 80vh;" id="nri-hero">
+        <div class="hero-bg-wrapper">
+            <div class="hero-bg-image nri-hero-bg">
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+
+        <div class="container position-relative z-2">
+            <div class="row min-vh-100 align-items-center justify-content-center pt-5">
+                <div class="col-lg-10">
+                    <div class="hero-content reveal-content">
+                        <h1 class="hero-title text-uppercase font-heading fw-bold mb-4 text-white display-3 ls-2">
+                            Why Invest in <span class="text-gold font-serif fst-italic">India Real Estate</span> as an
+                            NRI
+                        </h1>
+                        <p class="hero-description mx-auto text-white-50 fs-5 mb-5 lh-lg" style="max-width: 800px;">
+                            India has emerged as one of the most compelling destinations for NRI property investment
+                            India, offering a unique blend of economic growth, cultural connection, and substantial
+                            financial returns. For Non-Resident Indians looking to diversify their investment portfolio,
+                            property investment in India for NRIs presents an opportunity to build long-term wealth
+                            while maintaining a tangible connection to their homeland.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         GROWTH SECTION
+         ============================================ -->
+    <section class="section-padding bg-cream" id="growth">
+        <div class="container">
+            <div class="row gx-lg-5 align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0 reveal-content">
+                    <h2 class="display-5 font-heading text-uppercase fw-bold text-dark mb-4">
+                        India as a High-Growth Real Estate Market
+                    </h2>
+                    <p class="font-body text-muted lh-lg mb-4">
+                        India's real estate sector is experiencing unprecedented growth, driven by multiple factors that
+                        make it an attractive investment destination. The country's GDP growth trajectory, combined
+                        with rapid urbanization and infrastructure expansion, creates a robust foundation for NRI real
+                        estate investment India.
+                    </p>
+                    <p class="font-body text-muted lh-lg mb-4">
+                        The government's ambitious infrastructure projects, including smart cities, metro rail networks,
+                        and expressway developments, are transforming urban landscapes and creating significant
+                        appreciation potential. With a growing middle class and increasing purchasing power, demand
+                        for quality residential and commercial spaces continues to surge.
+                    </p>
+                    <p class="font-body text-muted lh-lg">
+                        Major metropolitan areas like Mumbai, Bangalore, Pune, Hyderabad, and emerging tier-2 cities
+                        are witnessing substantial real estate development. These markets offer diverse Indian real
+                        estate investment opportunities across various price points and property types, catering to
+                        different investment strategies and risk appetites.
+                    </p>
+                </div>
+                <div class="col-lg-6 reveal-scale-up">
+                    <div class="image-wrapper rounded-4 overflow-hidden h-100 min-h-500">
+                        <img src="assets/images/drone_ground_view_1.png" alt="India Real Estate Growth"
+                            class="w-100 h-100 object-fit-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         BENEFITS SECTION
+         ============================================ -->
+    <section class="section-padding bg-dark text-white" id="benefits">
+        <div class="container">
+            <div class="text-center mb-5 reveal-content">
+                <h2 class="display-5 font-heading text-uppercase fw-bold mb-3">Key Benefits of Investing in Indian Real
+                    Estate</h2>
+                <p class="text-white-50">Why invest in India real estate? The answer lies in the fundamental advantages
+                    that make real
+                    estate one of the most secure and rewarding asset classes:</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Benefit 1 -->
+                <div class="col-lg-6 reveal-content">
+                    <div
+                        class="p-4 border border-white border-opacity-10 rounded-start h-100 hover-lift bg-gradient-dark">
+                        <div class="d-flex gap-3 mb-3">
+                            <i class="bi bi-shield-check fs-2 text-gold"></i>
+                            <h3 class="font-heading text-uppercase fw-bold h4">Asset-Backed Security</h3>
+                        </div>
+                        <p class="text-white-50 lh-lg">Unlike financial instruments, real estate provides tangible
+                            ownership
+                            of physical assets. This intrinsic value offers protection against market volatility and
+                            provides a sense of security that resonates particularly well with NRI investors.</p>
+                    </div>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="col-lg-6 reveal-content">
+                    <div
+                        class="p-4 border border-white border-opacity-10 rounded-end h-100 hover-lift bg-gradient-dark">
+                        <div class="d-flex gap-3 mb-3">
+                            <i class="bi bi-graph-up-arrow fs-2 text-gold"></i>
+                            <h3 class="font-heading text-uppercase fw-bold h4">Inflation Hedge</h3>
+                        </div>
+                        <p class="text-white-50 lh-lg">Property values and rental incomes typically rise with inflation,
+                            preserving and often enhancing your purchasing power over time. As India's economy grows,
+                            real
+                            estate investments naturally appreciate, protecting wealth from currency devaluation.</p>
+                    </div>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="col-lg-6 reveal-content">
+                    <div
+                        class="p-4 border border-white border-opacity-10 rounded-start h-100 hover-lift bg-gradient-dark">
+                        <div class="d-flex gap-3 mb-3">
+                            <i class="bi bi-house-heart fs-2 text-gold"></i>
+                            <h3 class="font-heading text-uppercase fw-bold h4">Tangible Ownership</h3>
+                        </div>
+                        <p class="text-white-50 lh-lg">The psychological and financial comfort of owning physical
+                            property
+                            in India creates lasting value. It's an asset you can see, visit, and pass on to future
+                            generations.</p>
+                    </div>
+                </div>
+
+                <!-- Benefit 4 -->
+                <div class="col-lg-6 reveal-content">
+                    <div
+                        class="p-4 border border-white border-opacity-10 rounded-end h-100 hover-lift bg-gradient-dark">
+                        <div class="d-flex gap-3 mb-3">
+                            <i class="bi bi-people fs-2 text-gold"></i>
+                            <h3 class="font-heading text-uppercase fw-bold h4">Intergenerational Wealth Creation</h3>
+                        </div>
+                        <p class="text-white-50 lh-lg">Real estate serves as a cornerstone for building family wealth
+                            that
+                            transcends generations. It provides financial security for your children while maintaining
+                            roots
+                            in India.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         NRI PREFERENCE SECTION
+         ============================================ -->
+    <!-- ============================================
+         NRI PREFERENCE SECTION - PREMIUM REDESIGN
+         ============================================ -->
+    <section class="nri-pref-section" id="nri-preferences">
+        <!-- Background Elements -->
+        <div class="nri-bg-pattern"></div>
+        <div class="nri-geo-shape" style="width: 300px; height: 300px; top: -50px; left: -50px; opacity: 0.5;"></div>
+        <div class="nri-geo-shape" style="width: 200px; height: 200px; bottom: 10%; right: 5%; opacity: 0.3;"></div>
+        <div class="fake-chart-line"></div>
+
+        <div class="container position-relative z-2">
+            <div class="text-center mb-5 reveal-content">
+                <h2 class="display-5 font-heading text-uppercase fw-bold mb-2">Why NRIs Prefer</h2>
+                <h2 class="display-5 font-heading text-uppercase fw-bold text-gold fst-italic font-serif">Property
+                    Investment in India</h2>
+            </div>
+
+            <div class="nri-pref-grid">
+                <!-- Card 1 -->
+                <div class="reveal-content" style="transition-delay: 0.1s;">
+                    <div class="nri-card">
+                        <div class="nri-card-icon">
+                            <i class="bi bi-graph-up-arrow"></i>
+                        </div>
+                        <div class="nri-card-content">
+                            <h3 class="text-uppercase fw-bold">Long-Term Capital Appreciation</h3>
+                            <p>Safe property investment India for NRIs begins with
+                                understanding appreciation potential.
+                                Indian real estate has historically delivered impressive capital appreciation,
+                                particularly
+                                in well-chosen locations with strong infrastructure. Cities experiencing rapid
+                                development offer multifold returns over a 5-10 year investment horizon. The rupee's
+                                historical depreciation against major foreign currencies provides NRIs with a unique
+                                advantage,
+                                amplifying returns when converted back.</p>
+                        </div>
+                        <div class="nri-card-line"></div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="reveal-content" style="transition-delay: 0.2s;">
+                    <div class="nri-card">
+                        <div class="nri-card-icon">
+                            <i class="bi bi-shield-lock"></i>
+                        </div>
+                        <div class="nri-card-content">
+                            <h3 class="text-uppercase fw-bold">Stable Asset Class</h3>
+                            <p>Real estate in India offers stability that's hard to find in
+                                volatile stock markets. While values may
+                                fluctuate in the short term, the long-term trajectory remains consistently upward,
+                                especially in
+                                prime locations and emerging growth corridors. The Indian real estate market's
+                                resilience
+                                through various economic cycles demonstrates its
+                                reliability as an investment vehicle. Government initiatives like RERA (Real Estate
+                                Regulatory Authority)
+                                have further
+                                enhanced transparency and investor protection.</p>
+                        </div>
+                        <div class="nri-card-line"></div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="reveal-content" style="transition-delay: 0.3s;">
+                    <div class="nri-card">
+                        <div class="nri-card-icon">
+                            <i class="bi bi-door-open"></i>
+                        </div>
+                        <div class="nri-card-content">
+                            <h3 class="text-uppercase fw-bold">Multiple Exit Options</h3>
+                            <p>NRI property investment India offers flexibility through
+                                various exit
+                                strategies. Whether you
+                                choose to generate rental income, sell for capital gains, or pass property to heirs,
+                                real
+                                estate
+                                provides multiple pathways to realize value based on your financial goals and timeline.
+                            </p>
+                        </div>
+                        <div class="nri-card-line"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         OPPORTUNITIES & SUPPORT
+         ============================================ -->
+    <section class="section-padding bg-cream" id="opportunities">
+        <div class="container">
+            <div class="row gx-lg-5 mb-5 align-items-center border-bottom border-dark border-opacity-10 pb-5">
+                <div class="col-lg-6 mb-4 mb-lg-0 reveal-content">
+                    <h3 class="display-6 font-heading text-uppercase fw-bold mb-4">Residential, Commercial & Land
+                        Investment Opportunities</h3>
+                    <p class="mb-4 text-muted">The diversity of Indian real estate investment opportunities ensures
+                        there's something for
+                        every investment objective:</p>
+                    <ul class="list-unstyled d-flex flex-column gap-3">
+                        <li class="d-flex gap-3">
+                            <i class="bi bi-buildings text-dark mt-1"></i>
+                            <div>
+                                <strong class="text-uppercase d-block">Residential Developments</strong>
+                                <span class="text-muted small">From luxury apartments in metropolitan cities to premium
+                                    villas in
+                                    gated communities, residential real estate offers strong rental yields and steady
+                                    appreciation.
+                                    The growing demand for quality housing from India's expanding middle class creates
+                                    sustained
+                                    value growth.</span>
+                            </div>
+                        </li>
+                        <li class="d-flex gap-3">
+                            <i class="bi bi-shop text-dark mt-1"></i>
+                            <div>
+                                <strong class="text-uppercase d-block">Commercial Projects</strong>
+                                <span class="text-muted small">Office spaces, retail outlets, and co-working facilities
+                                    in prime business
+                                    districts generate attractive rental returns. With India's services sector booming
+                                    and
+                                    multinational companies expanding operations, commercial real estate presents
+                                    compelling
+                                    opportunities for NRI real estate investment India.</span>
+                            </div>
+                        </li>
+                        <li class="d-flex gap-3">
+                            <i class="bi bi-geo-alt text-dark mt-1"></i>
+                            <div>
+                                <strong class="text-uppercase d-block">Industrial & Land Investments</strong>
+                                <span class="text-muted small">Strategic land parcels in developing corridors and
+                                    industrial
+                                    zones offer exceptional appreciation potential. As cities expand and industrial
+                                    activity
+                                    intensifies, well-located land investments can deliver substantial returns.</span>
+                            </div>
+                        </li>
+                        <li class="d-flex gap-3">
+                            <i class="bi bi-people text-dark mt-1"></i>
+                            <div>
+                                <strong class="text-uppercase d-block">Joint Venture & Development Models</strong>
+                                <span class="text-muted small">For sophisticated investors seeking higher returns,
+                                    participation in development projects through structured joint ventures provides
+                                    opportunities
+                                    to benefit from project profits alongside capital appreciation.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 reveal-scale-up" id="wiii-section-img">
+                    <img src="assets/images/building_image_2.png" class="w-100 h-100 object-fit-cover shadow-sm"
+                        alt="Opportunities">
+                </div>
+            </div>
+
+            <div class="row gx-lg-5 align-items-center pt-lg-4">
+                <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0 reveal-content">
+                    <h3 class="display-6 font-heading text-uppercase fw-bold mb-4">How Korat Reality Supports NRI
+                        Investors</h3>
+                    <p class="mb-4 text-muted">At Korat Reality, we understand the unique challenges NRIs face when
+                        considering property
+                        investment in India for NRIs. Our specialized advisory approach addresses these concerns
+                        comprehensively:</p>
+                    <ul class="list-unstyled d-flex flex-column gap-3">
+                        <li class="d-flex gap-3">
+                            <i class="bi bi-briefcase text-dark mt-1"></i>
+                            <div>
+                                <strong class="text-uppercase d-block">Advisory-Led Approach</strong>
+                                <span class="text-muted small">We don't just sell properties; we provide strategic
+                                    investment counsel
+                                    tailored to your financial goals, risk profile, and timeline. Our recommendations
+                                    are based on
+                                    thorough market research and opportunity evaluation.</span>
+                            </div>
+                        </li>
+                        <li class="d-flex gap-3">
+                            <i class="bi bi-check-circle text-dark mt-1"></i>
+                            <div>
+                                <strong class="text-uppercase d-block">End-to-End Coordination</strong>
+                                <span class="text-muted small">From initial consultation to property handover, we manage
+                                    every
+                                    aspect of your investment journey. Our team coordinates with legal experts,
+                                    financial advisors,
+                                    and property developers to ensure seamless execution.</span>
+                            </div>
+                        </li>
+                        <li class="d-flex gap-3">
+                            <i class="bi bi-eye text-dark mt-1"></i>
+                            <div>
+                                <strong class="text-uppercase d-block">Transparent Process</strong>
+                                <span class="text-muted small">We believe in complete transparency regarding property
+                                    details, pricing,
+                                    documentation, and potential returns. You receive regular updates and have full
+                                    visibility into
+                                    every transaction stage.</span>
+                            </div>
+                        </li>
+                        <li class="d-flex gap-3">
+                            <i class="bi bi-infinity text-dark mt-1"></i>
+                            <div>
+                                <strong class="text-uppercase d-block">Long-Term Relationship Focus</strong>
+                                <span class="text-muted small">Our commitment extends beyond the transaction. We provide
+                                    ongoing support for property management, rental coordination, and future investment
+                                    opportunities, building lasting relationships based on trust and results.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 reveal-scale-up" id="wiii-section-img">
+                    <img src="assets/images/drone_ground_view_2.jpeg" class="w-100 h-100 object-fit-cover shadow-sm"
+                        alt="Support">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         LEGAL & REGULATORY FRAMEWORK (Minimalist Cards)
+         ============================================ -->
+    <section class="section-padding bg-cream" id="legal">
+        <div class="container reveal-content">
+            <!-- Section Header -->
+            <div class="row mb-5 justify-content-between align-items-end">
+                <div class="col-lg-6">
+                    <h2 class="font-heading text-uppercase fw-bold h3 m-0">
+                        Legal <span class="text-gold font-serif fst-italic">&</span> Regulatory
+                    </h2>
+                </div>
+                <div class="col-lg-5 text-lg-end mt-3 mt-lg-0">
+                    <p class="text-muted small m-0 lh-relaxed">
+                        Navigating Indian property laws with transparency and full compliance.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Cards Row -->
+            <div class="row g-4">
+                <!-- Card 1 -->
+                <div class="col-lg-4">
+                    <div class="bg-white p-4 h-100 rounded-3 shadow-sm transition-hover border border-light">
+                        <i class="bi bi-bank2 text-gold fs-4 mb-3 d-block"></i>
+                        <h4 class="font-heading fw-bold h6 text-dark mb-3">RBI & FEMA Compliance</h4>
+                        <p class="text-muted small lh-relaxed m-0">
+                            NRIs are permitted to purchase residential and commercial properties in India without prior
+                            approval, with certain restrictions on agricultural land and plantation property.
+                            Repatriation of funds is allowed subject to specific conditions.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-lg-4">
+                    <div class="bg-white p-4 h-100 rounded-3 shadow-sm transition-hover border border-light">
+                        <i class="bi bi-file-earmark-check text-gold fs-4 mb-3 d-block"></i>
+                        <h4 class="font-heading fw-bold h6 text-dark mb-3">Due Diligence Essentials</h4>
+                        <p class="text-muted small lh-relaxed m-0">
+                            Comprehensive verification of title clarity, property approvals, and legal documentation is
+                            non-negotiable. Professional verification ensures your investment is secure and free from
+                            future disputes.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-lg-4">
+                    <div class="bg-white p-4 h-100 rounded-3 shadow-sm transition-hover border border-light">
+                        <i class="bi bi-people text-gold fs-4 mb-3 d-block"></i>
+                        <h4 class="font-heading fw-bold h6 text-dark mb-3">Professional Guidance Necessity</h4>
+                        <p class="text-muted small lh-relaxed m-0">
+                            Navigating legal requirements, tax implications, and documentation processes from overseas
+                            requires expert support. Working with experienced advisors eliminates risks and ensures
+                            smooth transaction execution.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FAQ SECTION
+         ============================================ -->
+    <section class="faq-section section-padding primary-cream" id="faq">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <h2 class="faq-title text-dark text-uppercase mb-4">
+                        Frequently Asked
+                        <span class="faq-title-highlight font-serif">Questions</span>
+                    </h2>
+                </div>
+            </div>
+
+            <!-- FAQ Accordion -->
+            <div class="faq-accordion">
+                <!-- Q1 -->
+                <div class="faq-item border-top border-dark border-opacity-10">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-number font-body">01</span>
+                        <span class="faq-question-text">Why should NRIs invest in Indian real estate?</span>
+                        <span class="faq-icon">
+                            <span class="faq-icon-line faq-icon-horizontal"></span>
+                            <span class="faq-icon-line faq-icon-vertical"></span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>India offers long-term capital appreciation, a growing economy, and stable demand, making
+                                real estate a strong asset for NRIs. The combination of economic growth, infrastructure
+                                development, and cultural connection creates a compelling investment case.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="faq-item border-top border-dark border-opacity-10">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-number font-body">02</span>
+                        <span class="faq-question-text">Is property investment in India safe for NRIs?</span>
+                        <span class="faq-icon">
+                            <span class="faq-icon-line faq-icon-horizontal"></span>
+                            <span class="faq-icon-line faq-icon-vertical"></span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Yes, when supported by proper legal due diligence, compliance checks, and professional
+                                advisory support. Working with experienced advisors and ensuring complete documentation
+                                verification eliminates risks.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="faq-item border-top border-dark border-opacity-10">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-number font-body">03</span>
+                        <span class="faq-question-text">What types of properties can NRIs invest in India?</span>
+                        <span class="faq-icon">
+                            <span class="faq-icon-line faq-icon-horizontal"></span>
+                            <span class="faq-icon-line faq-icon-vertical"></span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>NRIs can invest in residential, commercial, industrial, and land development projects,
+                                subject to regulations. Most property categories are accessible, with restrictions
+                                primarily on agricultural land and plantation property.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="faq-item border-top border-dark border-opacity-10">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-number font-body">04</span>
+                        <span class="faq-question-text">Can NRIs invest in land development projects?</span>
+                        <span class="faq-icon">
+                            <span class="faq-icon-line faq-icon-horizontal"></span>
+                            <span class="faq-icon-line faq-icon-vertical"></span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Yes, structured land development and approved projects are accessible with the right
+                                guidance. Strategic land investments in growing corridors offer significant appreciation
+                                potential.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q5 -->
+                <div class="faq-item border-top border-dark border-opacity-10">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-number font-body">05</span>
+                        <span class="faq-question-text">What are the main benefits of investing in Indian
+                            property?</span>
+                        <span class="faq-icon">
+                            <span class="faq-icon-line faq-icon-horizontal"></span>
+                            <span class="faq-icon-line faq-icon-vertical"></span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Capital appreciation, rental income potential, portfolio diversification, and asset
+                                security are primary benefits. Real estate also serves as an inflation hedge and
+                                provides tangible, intergenerational wealth.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q6 -->
+                <div class="faq-item border-top border-dark border-opacity-10">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-number font-body">06</span>
+                        <span class="faq-question-text">Do NRIs need to be physically present in India to invest?</span>
+                        <span class="faq-icon">
+                            <span class="faq-icon-line faq-icon-horizontal"></span>
+                            <span class="faq-icon-line faq-icon-vertical"></span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>No, investments can be managed remotely with professional advisory and documentation
+                                support. Digital processes and power of attorney mechanisms enable seamless overseas
+                                transactions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q7 -->
+                <div class="faq-item border-top border-dark border-opacity-10">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-number font-body">07</span>
+                        <span class="faq-question-text">How does Korat Reality help NRI investors?</span>
+                        <span class="faq-icon">
+                            <span class="faq-icon-line faq-icon-horizontal"></span>
+                            <span class="faq-icon-line faq-icon-vertical"></span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Korat Reality provides structured advisory, project evaluation, coordination, and
+                                transparent investment guidance. We manage the entire process from opportunity
+                                identification to property handover.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q8 -->
+                <div class="faq-item border-top border-dark border-opacity-10">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-number font-body">08</span>
+                        <span class="faq-question-text">What legal aspects should NRIs consider before investing?</span>
+                        <span class="faq-icon">
+                            <span class="faq-icon-line faq-icon-horizontal"></span>
+                            <span class="faq-icon-line faq-icon-vertical"></span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Title clarity, approvals, compliance with FEMA and RBI guidelines, and documentation
+                                verification are essential. Professional legal review ensures your investment is secure
+                                and compliant.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q9 -->
+                <div class="faq-item border-top border-dark border-opacity-10">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-number font-body">09</span>
+                        <span class="faq-question-text">Are commercial properties suitable for NRI investors?</span>
+                        <span class="faq-icon">
+                            <span class="faq-icon-line faq-icon-horizontal"></span>
+                            <span class="faq-icon-line faq-icon-vertical"></span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Yes, commercial properties can offer stable returns and long-term growth depending on
+                                location and demand. Office spaces and retail outlets in prime areas generate attractive
+                                rental yields.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q10 -->
+                <div class="faq-item border-top border-dark border-opacity-10 border-bottom">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-number font-body">10</span>
+                        <span class="faq-question-text">How can NRIs start investing with Korat Reality?</span>
+                        <span class="faq-icon">
+                            <span class="faq-icon-line faq-icon-horizontal"></span>
+                            <span class="faq-icon-line faq-icon-vertical"></span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>NRIs can connect with Korat Reality through a consultation request to discuss suitable
+                                investment options. Our team will understand your requirements and provide personalized
+                                recommendations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CTA SECTION
+         ============================================ -->
+    <section class="section-padding bg-dark text-white position-relative overflow-hidden" id="contact">
+        <!-- Background accents -->
+        <div class="position-absolute top-0 start-0 w-100 h-100 cta-grad-bg">
+        </div>
+
+        <div class="container position-relative z-2 reveal-content">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-10">
+                    <h2 class="display-4 font-heading text-uppercase mb-4"> Talk to Our <span
+                            class="text-gold font-serif fw-medium fst-italic">Investment Advisor</span></h2>
+                    <p class="text-white-50 font-body fs-5 fw-light mb-4 px-lg-5">
+                        Making informed decisions about NRI property investment India requires expert guidance and local
+                        market knowledge. Whether you're exploring Indian real estate investment opportunities
+                        for the first time or expanding your existing portfolio, Korat Reality's experienced advisors
+                        are
+                        here to help.
+                    </p>
+                    <p class="text-white-50 font-body fs-6 fw-light mb-5 px-lg-5 text-muted">
+                        Our consultation process is confidential, pressure-free, and designed to understand your unique
+                        requirements. We take time to explain market dynamics, evaluate suitable options, and provide
+                        honest recommendations aligned with your investment objectives.
+                    </p>
+                    <div class="d-flex flex-column align-items-center gap-3">
+                        <p class="text-gold font-serif h5 fst-italic">"Connect with Korat Reality today to discover how
+                            NRI real estate investment India can
+                            strengthen your financial future."</p>
+                        <a href="contact.html"
+                            class="btn btn-gold text-uppercase fw-bold ls-1 px-5 py-3 rounded-pill hover-scale mt-3">
+                            Schedule Your Consultation Now <i class="bi bi-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="main-footer pt-5 pb-3 bg-cream text-dark" id="footer">
+        <div class="container">
+            <div class="row g-5 mb-5 justify-content-between">
+                <div class="col-lg-4 col-md-6">
+                    <img src="assets/images/svg/for-light-bg.svg" alt="Korat Reality" class="footer-logo mb-3">
+                    <p class="text-muted text-uppercase lh-lg mb-4 footer-brand-text">
+                        Strategic land acquisition and development solutions building long-term value for investors and
+                        communities.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-dark text-uppercase text-decoration-none small text-slide"
+                            data-text="LinkedIn"><span>LinkedIn</span></a>
+                        <a href="#" class="text-dark text-uppercase text-decoration-none small text-slide"
+                            data-text="Instagram"><span>Instagram</span></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h6 class="text-uppercase small fw-bold mb-4 ls-1">Company</h6>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="about.html" class="text-dark text-uppercase text-decoration-none small text-slide"
+                                data-text="About Us"><span>About Us</span></a></li>
+                        <li><a href="#" class="text-dark text-uppercase text-decoration-none small text-slide"
+                                data-text="Our Process"><span>Our Process</span></a></li>
+                        <li><a href="#" class="text-dark text-uppercase text-decoration-none small text-slide"
+                                data-text="Opportunities"><span>Opportunities</span></a></li>
+                        <li><a href="#" class="text-dark text-uppercase text-decoration-none small text-slide"
+                                data-text="Contact"><span>Contact</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h6 class="text-uppercase small fw-bold mb-4 ls-1">Services</h6>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="#" class="text-dark text-uppercase text-decoration-none small text-slide"
+                                data-text="Land Acquisition"><span>Land Acquisition</span></a></li>
+                        <li><a href="#" class="text-dark text-uppercase text-decoration-none small text-slide"
+                                data-text="Development"><span>Development</span></a></li>
+                        <li><a href="#" class="text-dark text-uppercase text-decoration-none small text-slide"
+                                data-text="Advisory"><span>Advisory</span></a></li>
+                        <li><a href="#" class="text-dark text-uppercase text-decoration-none small text-slide"
+                                data-text="NRI Services"><span>NRI Services</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row pt-4 border-top border-dark border-opacity-10">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <small class="text-muted text-uppercase">© 2025 Korat Reality. All rights reserved.</small>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-dark text-uppercase text-decoration-none small me-4 text-slide"
+                        data-text="Privacy Policy"><span>Privacy Policy</span></a>
+                    <a href="#" class="text-dark text-uppercase text-decoration-none small text-slide"
+                        data-text="Terms of Service"><span>Terms of Service</span></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Three.js (Required for Shery.js) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- Shery.js -->
+    <script type="text/javascript" src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
+
+    <!-- Lenis (Smooth Scroll) -->
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+
+    <!-- Smooth Scrolling Logic -->
+    <script src="assets/js/smooth-scroll.js"></script>
+
+    <!-- UI Interactions (Menu, FAQ, Service Icons) -->
+    <script src="assets/js/ui-interactions.js"></script>
+
+    <!-- GSAP Animations -->
+    <script src="assets/js/animations.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
