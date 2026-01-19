@@ -283,6 +283,7 @@ button {
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html,
@@ -301,6 +302,8 @@ body {
     background-color: var(--primary-cream);
     overflow-x: hidden;
 }
+
+
 
 /* Lock body scroll when menu is open */
 body.menu-active {
@@ -414,7 +417,7 @@ h6 {
 }
 
 .w-40 {
-    width: 40% !important;
+    width: min(40%, 540px);
 }
 
 .lh-08 {
@@ -653,6 +656,10 @@ div#services_id span {
     filter: invert(100%);
 }
 
+.main-footer {
+    overflow: hidden;
+}
+
 .main-footer ul li a {
     color: var(--text-dark) !important;
 }
@@ -784,6 +791,37 @@ div#services_id span {
 #servicesNav a {
     opacity: 0.8;
     transition: all 0.5s ease;
+}
+
+/* ============================================
+   MENU LINK LARGE HOVER ANIMATION
+   ============================================ */
+.fullscreen-menu .menu-link-large {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    transition: color 0.4s ease;
+}
+
+.fullscreen-menu .menu-link-large:hover,
+.fullscreen-menu .menu-link-large:focus {
+    color: var(--primary-gold, #c5a47e) !important;
+}
+
+/* ============================================
+   FOOTER LINK HOVER ANIMATIONS
+   ============================================ */
+.main-footer a,
+.main-footer ul li a,
+footer.main-footer a {
+    transition: color 0.3s ease, transform 0.3s ease !important;
+    display: inline-block;
+}
+
+/* Override text-muted on hover for footer links */
+.main-footer .text-muted:hover,
+.main-footer a.text-muted:hover {
+    color: var(--primary-gold, #c5a47e) !important;
 }
 
 #why-korat p {
@@ -1001,9 +1039,9 @@ input::placeholder {
     width: auto;
 }
 
-.menu-links-offset {
+/* .menu-links-offset {
     margin-top: -2rem;
-}
+} */
 
 .hero-desc-text {
     font-size: 14px;
