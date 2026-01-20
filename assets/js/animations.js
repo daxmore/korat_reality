@@ -307,7 +307,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // 7. WHY KORAT ROWS
-    gsap.utils.toArray("#why-korat .row.py-5").forEach(function (row) {
+    gsap.utils.toArray("#why-korat .row.border-bottom").forEach(function (row) {
         gsap.set(row, { x: 0, opacity: 1 });
 
         gsap.fromTo(row,

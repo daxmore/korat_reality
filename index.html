@@ -48,6 +48,27 @@
                     <a href="why-invest-in-india.html"
                         class="text-white text-uppercase text-decoration-none fw-semibold small ls-1 text-slide"
                         data-text="Why Invest In India"><span>Why Invest In India</span></a>
+
+                    <!-- Services Dropdown (Desktop) -->
+                    <div class="dropdown">
+                        <a href="#"
+                            class="text-white text-uppercase text-decoration-none fw-semibold small ls-1 text-slide dropdown-toggle"
+                            data-bs-toggle="dropdown" aria-expanded="false" data-text="Our Services"><span>Our
+                                Services</span></a>
+                        <ul class="dropdown-menu bg-dark border border-white border-opacity-10 rounded-0 p-0 mt-3">
+                            <li><a class="dropdown-item text-white text-uppercase small fw-semibold py-3 px-4 border-bottom border-white border-opacity-10 hover-bg-gold"
+                                    href="land-acquisition.html">Land Acquisition</a></li>
+                            <li><a class="dropdown-item text-white text-uppercase small fw-semibold py-3 px-4 border-bottom border-white border-opacity-10 hover-bg-gold"
+                                    href="land-development.html">Land Development</a></li>
+                            <li><a class="dropdown-item text-white text-uppercase small fw-semibold py-3 px-4 border-bottom border-white border-opacity-10 hover-bg-gold"
+                                    href="commercial-projects.html">Commercial Projects</a></li>
+                            <li><a class="dropdown-item text-white text-uppercase small fw-semibold py-3 px-4 border-bottom border-white border-opacity-10 hover-bg-gold"
+                                    href="residential-projects.html">Residential Projects</a></li>
+                            <li><a class="dropdown-item text-white text-uppercase small fw-semibold py-3 px-4 hover-bg-gold"
+                                    href="industrial-projects.html">Industrial Projects</a></li>
+                        </ul>
+                    </div>
+
                     <a href="nri-investor-guide.html"
                         class="text-white text-uppercase text-decoration-none fw-semibold small ls-1 text-slide"
                         data-text="NRI Investor Guide"><span>NRI Investor Guide</span></a>
@@ -73,7 +94,7 @@
             <div class="fullscreen-menu position-fixed top-0 end-0 w-40 bg-dark" id="mobileMenu">
                 <div class="d-flex flex-column min-h-dvh p-4">
                     <!-- Menu Header -->
-                    <div class="d-flex justify-content-between justify-content-lg-end align-items-center mb-5">
+                    <div class="d-flex justify-content-between justify-content-lg-end align-items-center mb-4">
                         <a href="index.html">
                             <img src="assets/images/svg/for-dark-bg.svg" class="logo-sm d-block d-lg-none" alt="Logo">
                         </a>
@@ -467,9 +488,10 @@
     <section class="section-padding bg-cream" id="why-korat">
         <div class="container">
             <div class="mb-5">
-                <h2 class="text-uppercase fw-bold m-0 mb-lg-2 display-6">Why Korat Reality is a</h2>
-                <h2 class="text-uppercase fw-bold text-muted mb-4 display-6">Trusted Investment Partner</h2>
-                <p class="small fw-bold text-muted ls-1">Choosing the right property investment advisory
+                <h2 class="text-uppercase fw-bold m-0 mb-lg-2 display-6 why-korat-title">Why Korat Reality is a</h2>
+                <h2 class="text-uppercase fw-bold text-muted mb-4 display-6 why-korat-title">Trusted Investment Partner
+                </h2>
+                <p class="small fw-bold text-muted ls-1 reveal-content">Choosing the right property investment advisory
                     partner is critical to your investment success. Here's what sets Korat Reality apart:</p>
             </div>
 
@@ -550,84 +572,109 @@
     <!-- ============================================
          OPPORTUNITIES & NRI SECTIONS
          ============================================ -->
-    <section class="section-padding bg-cream-light" id="opportunities">
-        <div class="container-fluid">
+    <section class="section-padding bg-cream-light overflow-hidden" id="opportunities">
+        <div class="container">
             <!-- Row 1: Opportunities -->
-            <div class="row g-0">
-                <div class="col-lg-6">
-                    <div class="h-100 min-h-500">
-                        <img src="assets/images/building_image_1.png" class="w-100 h-100 object-fit-cover">
-                    </div>
-                </div>
-                <div class="col-lg-6 py-3  p-lg-5 reveal-content">
-                    <h2 class="fw-bold mb-4">Real Estate Investment Opportunities in India</h2>
-                    <p class="text-muted mb-4">India's real estate market offers diverse investment opportunities
-                        across residential, commercial, and industrial segments. At Korat Reality, we evaluate each
-                        opportunity based on:</p>
+            <div class="row align-items-center gx-lg-5 gy-5 mb-5 pb-lg-5">
+                <div class="col-lg-6 order-lg-1 reveal-content">
+                    <h2 class="font-heading text-uppercase fw-bold mb-4 display-6">Real Estate Investment Opportunities
+                        in India</h2>
+                    <p class="font-body text-muted mb-4 lh-lg">India's real estate market offers diverse investment
+                        opportunities across residential, commercial, and industrial segments. At Korat Reality, we
+                        evaluate each opportunity based on:</p>
 
-                    <div class="row g-4 mb-4">
-                        <div class="col-6">
-                            <h6 class="fw-bold small text-uppercase font-body">Location Potential</h6>
-                            <p class="text-muted fs-14">Proximity to infrastructure projects,
-                                IT hubs, airports, and highways.</p>
-                        </div>
-                        <div class="col-6">
-                            <h6 class="fw-bold small text-uppercase font-body">Market Demand</h6>
-                            <p class="text-muted fs-14">Current and projected demand for the
-                                property type in the area.</p>
-                        </div>
-                        <div class="col-6">
-                            <h6 class="fw-bold small text-uppercase font-body">Legal Clarity</h6>
-                            <p class="text-muted fs-14">Clear titles, approved layouts, and
-                                compliance with local regulations.</p>
-                        </div>
-                        <div class="col-6">
-                            <h6 class="fw-bold small text-uppercase font-body">Exit Strategy</h6>
-                            <p class="text-muted fs-14">Liquidity options and potential
-                                appreciation timelines when you invest.</p>
-                        </div>
+                    <ul class="list-unstyled d-flex flex-column gap-3 mb-4">
+                        <li class="d-flex align-items-start gap-2">
+                            <span class="mt-1">•</span>
+                            <p class="font-body text-muted m-0 lh-lg">
+                                <strong class="text-dark fw-bold text-uppercase">Location Potential:</strong>
+                                Proximity to infrastructure projects, IT hubs, airports, and highways.
+                            </p>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <span class="mt-1">•</span>
+                            <p class="font-body text-muted m-0 lh-lg">
+                                <strong class="text-dark fw-bold text-uppercase">Market Demand:</strong>
+                                Current and projected demand for the property type in the area.
+                            </p>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <span class="mt-1">•</span>
+                            <p class="font-body text-muted m-0 lh-lg">
+                                <strong class="text-dark fw-bold text-uppercase">Legal Clarity:</strong>
+                                Clear titles, approved layouts, and compliance with local regulations.
+                            </p>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <span class="mt-1">•</span>
+                            <p class="font-body text-muted m-0 lh-lg">
+                                <strong class="text-dark fw-bold text-uppercase">Exit Strategy:</strong>
+                                Liquidity options and potential appreciation timelines when you invest.
+                            </p>
+                        </li>
+                    </ul>
+
+                    <a href="#" class="btn btn-sm btn-gold text-uppercase px-4 py-3 fw-bold ls-1">Explore
+                        Opportunities</a>
+                </div>
+                <div class="col-lg-6 order-lg-2 reveal-scale-up">
+                    <div class="image-wrapper overflow-hidden h-100 rounded-4 min-h-500">
+                        <img src="assets/images/building_image_1.png" class="w-100 h-100 object-fit-cover"
+                            alt="Investment Opportunities">
                     </div>
-                    <a href="#" class="text-dark fw-bold text-decoration-none small text-uppercase">Explore current
-                        Investment Opportunities →</a>
                 </div>
             </div>
 
-            <!-- Row 2: NRI (Reconstructed to match style) -->
-            <div class="row g-0 flex-row-reverse border-top border-black border-opacity-10">
-                <div class="col-lg-6">
-                    <div class="h-100 min-h-500">
-                        <img src="assets/images/building_image_3.jpeg" class="w-100 h-100 object-fit-cover">
+            <!-- Row 2: NRI -->
+            <div class="row align-items-center gx-lg-5 gy-5">
+                <div class="col-lg-6 reveal-scale-up">
+                    <div class="image-wrapper overflow-hidden h-100 rounded-4 min-h-500">
+                        <img src="assets/images/building_image_3.jpeg" class="w-100 h-100 object-fit-cover"
+                            alt="NRI Investment">
                     </div>
                 </div>
-                <div class="col-lg-6 py-3  p-lg-5 reveal-content">
-                    <h2 class="fw-bold mb-4">Secure Property Investment for NRIs</h2>
-                    <p class="text-muted mb-4">For Non-Resident Indians, investing in India's property market can
-                        be both rewarding and challenging. Korat Reality specializes in NRI property solutions:</p>
+                <div class="col-lg-6 reveal-content">
+                    <h2 class="font-heading text-uppercase fw-bold mb-4 display-6">Secure Property Investment for NRIs
+                    </h2>
+                    <p class="font-body text-muted mb-4 lh-lg">For Non-Resident Indians, investing in India's property
+                        market can be both rewarding and challenging. Korat Reality specializes in NRI property
+                        solutions:</p>
 
-                    <div class="row g-4 mb-4">
-                        <div class="col-6">
-                            <h6 class="fw-bold small text-uppercase font-body">Remote Investment Support</h6>
-                            <p class="text-muted fs-14">We understand that managing property
-                                investments from abroad requires trust and transparency.</p>
-                        </div>
-                        <div class="col-6">
-                            <h6 class="fw-bold small text-uppercase font-body">Compliance & Documentation</h6>
-                            <p class="text-muted fs-14">NRI property transactions involve
-                                specific legal and taxation requirements expert handling.</p>
-                        </div>
-                        <div class="col-6">
-                            <h6 class="fw-bold small text-uppercase font-body">Structured Advisory Process</h6>
-                            <p class="text-muted fs-14">From initial consultation to project
-                                completion, we provide end-to-end guidance.</p>
-                        </div>
-                        <div class="col-6">
-                            <h6 class="fw-bold small text-uppercase font-body">Trusted Local Representation</h6>
-                            <p class="text-muted fs-14">Our advisory team acts as your eyes and
-                                ears on the ground, conducting site visits.</p>
-                        </div>
-                    </div>
-                    <a href="#" class="text-dark fw-bold text-decoration-none small text-uppercase">NRI
-                        Investor Guide →</a>
+                    <ul class="list-unstyled d-flex flex-column gap-3 mb-4">
+                        <li class="d-flex align-items-start gap-2">
+                            <span class="mt-1">•</span>
+                            <p class="font-body text-muted m-0 lh-lg">
+                                <strong class="text-dark fw-bold text-uppercase">Remote Investment Support:</strong>
+                                We understand that managing property investments from abroad requires trust and
+                                transparency.
+                            </p>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <span class="mt-1">•</span>
+                            <p class="font-body text-muted m-0 lh-lg">
+                                <strong class="text-dark fw-bold text-uppercase">Compliance & Documentation:</strong>
+                                NRI property transactions involve specific legal and taxation requirements expert
+                                handling.
+                            </p>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <span class="mt-1">•</span>
+                            <p class="font-body text-muted m-0 lh-lg">
+                                <strong class="text-dark fw-bold text-uppercase">Structured Advisory Process:</strong>
+                                From initial consultation to project completion, we provide end-to-end guidance.
+                            </p>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <span class="mt-1">•</span>
+                            <p class="font-body text-muted m-0 lh-lg">
+                                <strong class="text-dark fw-bold text-uppercase">Trusted Local Representation:</strong>
+                                Our advisory team acts as your eyes and ears on the ground, conducting site visits.
+                            </p>
+                        </li>
+                    </ul>
+
+                    <a href="why-invest-in-india.html"
+                        class="btn btn-sm btn-gold text-uppercase px-4 py-3 fw-bold ls-1">NRI Investor Guide</a>
                 </div>
             </div>
         </div>
@@ -965,14 +1012,18 @@
     <!-- ============================================
          CTA SECTION
          ============================================ -->
-    <section class="cta-section primary-light text-white px-3 pt-5" id="cta">
+    <section class="cta-section primary-light text-white p-3 py-lg-5" id="cta">
         <div class="container-fluid g-0">
             <div class="row g-0">
                 <div class="col-lg-6 d-flex align-items-center p-lg-5 reveal-content">
                     <div class="p-lg-5 pb-4">
-                        <div class="mb-4 small text-uppercase text-dark">Global Investors</div>
+                        <div class="mb-4 small text-uppercase text-dark d-flex align-items-center gap-2"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path fill="currentColor"
+                                    d="M0 5.358a.854.854 0 0 1 1.235-.767L6.134 7.05v5.768c0 .81.456 1.553 1.179 1.915l4.42 2.218v1.692a.853.853 0 0 1-1.235.766L1.18 14.732A2.14 2.14 0 0 1 0 12.817zm6.134 0a.853.853 0 0 1 1.235-.766l4.898 2.458v5.768c0 .81.457 1.552 1.18 1.915l4.42 2.218v1.692a.853.853 0 0 1-1.235.765l-4.899-2.457v-5.769a2.14 2.14 0 0 0-1.179-1.914L6.134 7.05zm6.133 0a.853.853 0 0 1 1.235-.766l9.319 4.676A2.14 2.14 0 0 1 24 11.182v7.46a.853.853 0 0 1-1.235.766l-4.899-2.457v-5.769a2.14 2.14 0 0 0-1.179-1.914l-4.42-2.218z" />
+                            </svg> Global Investors</div>
                         <h2 class="display-5 fw-bold mb-4 text-dark">Talk to Our Investment Advisor</h2>
-                        <p class=" text-dark mb-3 mb-lg-5 text-uppercase small cta-text-constrained">Real estate
+                        <p class=" text-dark mb-3 mb-lg-4 text-uppercase small cta-text-constrained">Real estate
                             investment is a significant financial commitment that deserves professional guidance.
                             Whether you're exploring opportunities for the first time or looking to expand your property
                             portfolio, our investment advisory team is here to help.</p>
