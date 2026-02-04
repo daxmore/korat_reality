@@ -1,0 +1,53 @@
+/* Hero Canvas Loading Indicator */
+.hero-loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    text-align: center;
+    color: var(--primary-teal);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.hero-loading.hidden {
+    opacity: 0;
+}
+
+.hero-loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(0, 77, 77, 0.1);
+    border-top-color: var(--primary-teal);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 15px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.hero-loading-bar {
+    width: 200px;
+    height: 3px;
+    background: rgba(0, 77, 77, 0.1);
+    border-radius: 2px;
+    margin: 10px auto 0;
+    overflow: hidden;
+}
+
+.hero-loading-progress {
+    height: 100%;
+    background: var(--primary-teal);
+    width: 0%;
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}

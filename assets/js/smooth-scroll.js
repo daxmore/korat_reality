@@ -50,16 +50,17 @@ document.addEventListener("DOMContentLoaded", function () {
             const enable = shouldEnableLenis();
 
             if (enable && !isActive) {
-                // Initialize Lenis
+                // Initialize Lenis with optimized settings for canvas animation
                 lenis = new Lenis({
-                    duration: cfg.smoothDuration,
+                    duration: 0.8, // Reduced for snappier feel
                     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
                     direction: 'vertical',
                     gestureDirection: 'vertical',
                     smooth: true,
-                    mouseMultiplier: 1,
+                    mouseMultiplier: 0.8, // Slightly reduced for better control
                     smoothTouch: false,
-                    touchMultiplier: 2,
+                    touchMultiplier: 1.5,
+                    infinite: false,
                 });
 
                 window.lenis = lenis; // Expose global

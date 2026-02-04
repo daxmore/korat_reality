@@ -8,21 +8,24 @@ document.addEventListener("DOMContentLoaded", function () {
     // ============================================
     // SHERY JS INITIALIZATION
     // ============================================
-    if (typeof Shery !== 'undefined') {
-        // Only initialize on larger screens (>= 1199px)
-        if (window.innerWidth >= 1199) {
-            Shery.mouseFollower({
-                skew: true,
-                ease: "cubic-bezier(0.23, 1, 0.320, 1)",
-                duration: 0.4,
-            });
-
-            Shery.makeMagnet(".btn, .magnet-target", {
-                ease: "cubic-bezier(0.23, 1, 0.320, 1)",
-                duration: 0.2,
-            });
-        }
-    }
+    // ============================================
+    // SHERY JS INITIALIZATION
+    // ============================================
+    // if (typeof Shery !== 'undefined') {
+    //     // Only initialize on larger screens (>= 1199px)
+    //     if (window.innerWidth >= 1199) {
+    //         Shery.mouseFollower({
+    //             skew: true,
+    //             ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+    //             duration: 0.4,
+    //         });
+    //
+    //         Shery.makeMagnet(".btn, .magnet-target", {
+    //             ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+    //             duration: 0.2,
+    //         });
+    //     }
+    // }
 
     // ============================================
     // MOBILE MENU LOGIC
@@ -53,6 +56,42 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+    // ============================================
+    // SERVICES SWIPER INITIALIZATION
+    // ============================================
+    if (document.querySelector('.services-swiper')) {
+        const swiper = new Swiper('.services-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            // autoplay: {
+            //     delay: 3500,
+            //     disableOnInteraction: false,
+            // },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".services-next",
+                prevEl: ".services-prev",
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 30,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+            },
+        });
+    }
 
 });
 

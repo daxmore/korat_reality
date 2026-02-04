@@ -2,246 +2,71 @@
    KORAT REALITY - Custom Styles
    Bootstrap 5 + Custom CSS
    ============================================ */
+@import url('custom_nav.css');
 
 /* ============================================
    1. FONT DEFINITIONS
    ============================================ */
-/* Romie - Serif */
+/* Moderat - Sans Serif */
 @font-face {
-    font-family: 'Romie';
-    src: url('../fonts/RomieTrial-Light.otf') format('opentype');
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Romie';
-    src: url('../fonts/RomieTrial-LightItalic.otf') format('opentype');
-    font-weight: 300;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Romie';
-    src: url('../fonts/RomieTrial-Regular.otf') format('opentype');
+    font-family: 'Moderat';
+    src: url('../fonts/Moderat Regular-aee8705ac4eb685914b24fc617f47826.otf') format('opentype');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Romie';
-    src: url('../fonts/RomieTrial-Italic.otf') format('opentype');
-    font-weight: 400;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Romie';
-    src: url('../fonts/RomieTrial-Medium.otf') format('opentype');
+    font-family: 'Moderat';
+    src: url('../fonts/Moderat Medium-284300233e01e911abbf7b5d18914aef.otf') format('opentype');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Romie';
-    src: url('../fonts/RomieTrial-MediumItalic.otf') format('opentype');
-    font-weight: 500;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Romie';
-    src: url('../fonts/RomieTrial-Bold.otf') format('opentype');
+    font-family: 'Moderat';
+    src: url('../fonts/Moderat Bold-8a7973c9bbff79012140c9ff1f9a97fa.otf') format('opentype');
     font-weight: 700;
     font-style: normal;
 }
 
+/* Rza - Serif */
 @font-face {
-    font-family: 'Romie';
-    src: url('../fonts/RomieTrial-BoldItalic.otf') format('opentype');
-    font-weight: 700;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Romie';
-    src: url('../fonts/RomieTrial-Heavy.otf') format('opentype');
-    font-weight: 800;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Romie';
-    src: url('../fonts/RomieTrial-HeavyItalic.otf') format('opentype');
-    font-weight: 800;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Romie';
-    src: url('../fonts/RomieTrial-Black.otf') format('opentype');
-    font-weight: 900;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Romie';
-    src: url('../fonts/RomieTrial-BlackItalic.otf') format('opentype');
-    font-weight: 900;
-    font-style: italic;
-}
-
-/* Archivo - Sans Serif */
-@font-face {
-    font-family: 'Archivo';
-    src: url('../fonts/Archivo-Thin.otf') format('opentype');
-    font-weight: 100;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Archivo';
-    src: url('../fonts/Archivo-ThinItalic.otf') format('opentype');
-    font-weight: 100;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Archivo';
-    src: url('../fonts/Archivo-ExtraLight.otf') format('opentype');
-    font-weight: 200;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Archivo';
-    src: url('../fonts/Archivo-ExtraLightItalic.otf') format('opentype');
-    font-weight: 200;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Archivo';
-    src: url('../fonts/Archivo-Light.otf') format('opentype');
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Archivo';
-    src: url('../fonts/Archivo-LightItalic.otf') format('opentype');
-    font-weight: 300;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Archivo';
-    src: url('../fonts/Archivo-Regular.otf') format('opentype');
+    font-family: 'Rza';
+    src: url('../fonts/Rza-DEMO-Regular-8d698401fc1f79f83637e8d9fe8ec2af.otf') format('opentype');
     font-weight: 400;
     font-style: normal;
-}
-
-@font-face {
-    font-family: 'Archivo';
-    src: url('../fonts/Archivo-Italic.otf') format('opentype');
-    font-weight: 400;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Archivo';
-    src: url('../fonts/Archivo-Medium.otf') format('opentype');
-    font-weight: 500;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Archivo';
-    src: url('../fonts/Archivo-MediumItalic.otf') format('opentype');
-    font-weight: 500;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Archivo';
-    src: url('../fonts/Archivo-SemiBold.otf') format('opentype');
-    font-weight: 600;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Archivo';
-    src: url('../fonts/Archivo-SemiBoldItalic.otf') format('opentype');
-    font-weight: 600;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Archivo';
-    src: url('../fonts/Archivo-Bold.otf') format('opentype');
-    font-weight: 700;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Archivo';
-    src: url('../fonts/Archivo-BoldItalic.otf') format('opentype');
-    font-weight: 700;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Archivo';
-    src: url('../fonts/Archivo-ExtraBold.otf') format('opentype');
-    font-weight: 800;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Archivo';
-    src: url('../fonts/Archivo-ExtraBoldItalic.otf') format('opentype');
-    font-weight: 800;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Archivo';
-    src: url('../fonts/Archivo-Black.otf') format('opentype');
-    font-weight: 900;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Archivo';
-    src: url('../fonts/Archivo-BlackItalic.otf') format('opentype');
-    font-weight: 900;
-    font-style: italic;
 }
 
 /* ============================================
    2. CSS CUSTOM PROPERTIES
    ============================================ */
 :root {
-    /* Colors */
-    --primary-dark: #1c1c1c;
-    --primary-cream: #faf7f2;
-    --primary-gold: #b99b5f;
-    --primary-dark-gold: #af7400;
-    --text-dark: #1c1c1c;
-    --text-light: #faf7f2;
-    --text-muted: #6c6c6c;
+    /* Colors - Teal/Green Inspired Theme */
+    --primary-teal: #068466;
+    /* New Background/Button Color */
+    --primary-teal-dark: #004d49;
+    /* New Card Color */
+    --primary-teal-light: #64ccc2;
+    /* Fallback/Same as primary for now */
+    --accent-teal: #008080;
+    --primary-cream: #f5f4f0;
+    --primary-light: #fdfcfa;
+    --primary-pastel-green: #e8f4f3;
+    --primary-pastel-pink: #fef0ed;
+    --text-dark: #004d4d;
+    --text-light: #f5f4f0;
+    --text-muted: #6b6b6b;
+    --text-teal: #004d4d;
     /* Fonts */
-    --font-heading: 'Archivo', sans-serif;
-    /* User requested Archivo for most headings */
-    --font-body: 'Archivo', sans-serif;
-    --font-serif: 'Romie', serif;
-    /* Highlighting font */
+    --font-heading: 'Moderat', sans-serif;
+    --font-body: 'Moderat', sans-serif;
+    --font-serif: 'Rza', serif;
 
     /* Spacing & Sizes */
-    --section-padding: clamp(3rem, 6vw, 5rem) 0;
-    --section-lg-padding: clamp(3rem, 10vw, 8rem) 0;
-    --container-padding: clamp(1rem, 3vw, 2rem);
-    --border-opacity: 0.1;
+    --section-padding: clamp(4rem, 8vw, 7rem) 0;
+    --section-lg-padding: clamp(5rem, 12vw, 10rem) 0;
+    --container-padding: clamp(1.5rem, 4vw, 3rem);
+    --border-opacity: 0.08;
 }
 
 /* ============================================
@@ -362,16 +187,32 @@ h6 {
     font-family: var(--font-body);
 }
 
+.text-teal {
+    color: var(--primary-teal) !important;
+}
+
 .text-gold {
-    color: var(--primary-gold) !important;
+    color: var(--accent-teal) !important;
+}
+
+.bg-teal {
+    background-color: var(--primary-teal) !important;
 }
 
 .bg-dark {
-    background-color: var(--primary-dark) !important;
+    background-color: var(--primary-teal-dark) !important;
 }
 
 .bg-cream {
     background-color: var(--primary-cream) !important;
+}
+
+.bg-pastel-green {
+    background-color: var(--primary-pastel-green) !important;
+}
+
+.bg-pastel-pink {
+    background-color: var(--primary-pastel-pink) !important;
 }
 
 .section-padding {
@@ -394,8 +235,12 @@ h6 {
     color: var(--text-dark) !important;
 }
 
+.hover-teal:hover {
+    color: var(--primary-teal) !important;
+}
+
 .hover-gold:hover {
-    color: var(--primary-gold) !important;
+    color: var(--accent-teal) !important;
 }
 
 .ls-1 {
@@ -440,7 +285,7 @@ h6 {
     bottom: -4px;
     /* Slight gap */
     left: 0;
-    background-color: var(--primary-gold);
+    background-color: var(--accent-teal);
     transition: width 0.6s ease-out;
 }
 
@@ -448,22 +293,36 @@ h6 {
     width: 100%;
 }
 
-/* Button Animations (Circle Fill) */
+/* Button Animations (Circle Fill) - Teal Theme */
+.btn-teal,
 .btn-gold {
-    background-color: var(--primary-gold);
-    color: var(--primary-dark);
+    background-color: var(--primary-teal);
+    color: #fff;
     border: none;
-    padding: 0.75em 1.5em;
-    /* transition: all 0.4s ease;  <-- Conflict with GSAP */
-    transition: color 0.4s ease, background-color 0.4s ease, transform 0.4s ease;
+    padding: 0.85em 2em;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: color 0.4s ease, background-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.btn-teal:hover,
+.btn-gold:hover {
+    background-color: #1c4044;
+    /* New Button Hover Color */
+    box-shadow: 0 8px 20px rgba(6, 132, 102, 0.2);
+    transform: translateY(-2px);
 }
 
 .btn-dark-gold {
-    background-color: var(--primary-gold);
-    color: var(--primary-dark);
+    background-color: var(--accent-teal);
+    color: #fff;
     border: none;
-    padding: 0.75em 1.5em;
-    /* transition: all 0.4s ease;  <-- Conflict with GSAP */
+    padding: 0.85em 2em;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
     transition: color 0.4s ease, background-color 0.4s ease, transform 0.4s ease;
 }
 
@@ -529,7 +388,7 @@ h6 {
 }
 
 .btn-outline-light:hover {
-    color: #000;
+    color: #004d4d;
     /* Text turns dark on white bg */
     border-color: #fff;
 }
@@ -575,7 +434,7 @@ h6 {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 1004d4d;
     padding-top: clamp(1rem, 2vw, 1.5rem);
 }
 
@@ -592,17 +451,38 @@ h6 {
     font-weight: 500;
 }
 
-/* Hero */
+/* Hero Section - Canvas Parallax Animation */
 .hero-section {
     position: relative;
-    background-color: var(--primary-dark);
+    background-color: var(--primary-cream);
     overflow: hidden;
     min-height: 100vh;
-    /* Use vh for full screen */
-    min-height: 100dvh;
-    /* Dynamic viewport height for modern browsers */
+    min-height: 130dvh;
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+.hero-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero-cloud-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    /* Covers bottom 30% */
+    background: linear-gradient(to top, #FAF9F6, rgba(250, 249, 246, 0));
+    z-index: 1;
+    pointer-events: none;
 }
 
 .hero-video-bg {
@@ -612,7 +492,8 @@ h6 {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.4;
+    opacity: 0.15;
+    z-index: 0;
 }
 
 .hero-overlay {
@@ -621,34 +502,35 @@ h6 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.30);
+    background: rgba(245, 244, 240, 0.7);
+    z-index: 1;
 }
 
 .hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     width: 100%;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
 .hero-title {
-    color: #fff;
-    font-size: clamp(2rem, 6vw, 4rem);
-    /* Updated clamp for better scaling */
+    color: var(--primary-teal);
+    font-size: clamp(2.5rem, 7vw, 5rem);
     font-family: var(--font-body);
+    font-weight: 300;
     line-height: 1.1;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
     margin-bottom: 1.5rem;
 }
 
 .hero-title .highlight {
-    /* color: var(--primary-gold); */
+    color: var(--accent-teal);
     font-family: var(--font-serif);
-    font-style: italic;
+    font-style: normal;
     font-weight: 400;
-    text-decoration: underline;
-    text-underline-offset: 0.12em;
-    text-decoration-thickness: 2px;
-    letter-spacing: 0.02rem;
 }
 
 /* Services Border Grid */
@@ -667,17 +549,18 @@ h6 {
     left: 0;
     width: 100%;
     height: 1px;
-    background-color: #000;
+    background-color: #004d4d;
     z-index: 0;
-}
-
-#hero .pt-8 {
-    padding-top: 8rem !important;
 }
 
 #services .py-1 {
     padding-top: .20rem !important;
     padding-bottom: .20rem !important;
+}
+
+/* Target the 4th item in the swiper specifically */
+#services .swiper-wrapper>.swiper-slide:nth-child(4) .service-img-wrapper img {
+    transform: scaleX(-1);
 }
 
 div#services_id span {
@@ -751,11 +634,160 @@ div#services_id span {
     z-index: 9999;
     overflow-y: auto;
     overflow-x: hidden !important;
-    background-color: #1c1c1c !important;
-    backdrop-filter: none !important;
-    height: 100vh;
-    height: 100dvh;
+    background-color: var(--primary-teal) !important;
 }
+
+/* ============================================
+   5. OVERLAPPING ABOUT SECTION
+   ============================================ */
+.section-overlap {
+    position: relative;
+    z-index: 20;
+    /* Above hero and cloud */
+    margin-top: -140px;
+    /* Pull up over hero */
+    padding-bottom: 4rem;
+}
+
+.dashboard-container {
+    background-color: #fdfcfa;
+    /* Light cream/white */
+    border-radius: 24px;
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.12);
+    padding: clamp(2rem, 4vw, 3.5rem);
+    position: relative;
+}
+
+.dashboard-header h2 {
+    font-family: var(--font-serif);
+    color: var(--text-dark);
+}
+
+.inner-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 2rem;
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* 
+.inner-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.01);
+} */
+
+.card-label {
+    font-size: 0.875rem;
+    /* 14px */
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.card-value {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--text-dark);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.stat-pill {
+    background-color: var(--primary-pastel-green);
+    color: var(--primary-teal);
+    font-size: 0.75rem;
+    padding: 0.25em 0.75em;
+    border-radius: 50px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.action-pill {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    border: 1px solid var(--primary-teal);
+    color: var(--primary-teal);
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    margin-bottom: 0.5rem;
+    margin-right: 0.25rem;
+}
+
+.action-pill:hover,
+.action-pill.active {
+    background-color: var(--primary-teal);
+    color: #fff;
+}
+
+.btn-card-action {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s;
+}
+
+.btn-card-primary {
+    background-color: var(--primary-teal-dark);
+    color: white;
+    border: none;
+}
+
+.btn-card-primary:hover {
+    background-color: var(--primary-teal-dark);
+    filter: brightness(0.8);
+    color: white;
+}
+
+.btn-card-outline {
+    background-color: transparent;
+    border: 1px solid var(--text-muted);
+    color: var(--text-dark);
+}
+
+.btn-card-outline:hover {
+    border-color: var(--text-dark);
+    background-color: var(--primary-teal-dark);
+    color: white;
+}
+
+/* Bottom Stats Row */
+.bottom-stats-row {
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+.bottom-stat-item h3 {
+    color: var(--primary-teal);
+    font-weight: 700;
+    font-size: 4rem;
+    margin-bottom: 0.25rem;
+    font-family: var(--font-serif);
+}
+
+.bottom-stat-item p {
+    color: var(--text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 1px;
+}
+
+
 
 /* Helper for inner menu container */
 .min-h-dvh {
@@ -883,7 +915,7 @@ input::placeholder {
 }
 
 .text-darker {
-    color: #000 !important;
+    color: #004d4d !important;
 }
 
 .opacity-10 {
@@ -2177,9 +2209,131 @@ img {
 
     .vm-icon-wrapper {
         width: 50px;
-        height: 50px;
+    }
+}
+
+/* ============================================
+   12. NEW SERVICE CARD STYLES (Grid Layout)
+   ============================================ */
+.bg-teal-dark {
+    background-color: var(--primary-teal-dark) !important;
+    /* #004d49 - Cards Color */
+}
+
+.service-card-new {
+    border-radius: 20px;
+    padding: 2.5rem;
+    height: 480px;
+    /* Fixed height for consistency */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.service-title {
+    font-size: 2.25rem;
+    /* ~36px */
+    line-height: 1;
+    transition: transform 0.4s ease;
+    transform-origin: left top;
+}
+
+.service-desc-hover {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease 0.1s;
+    /* Slight delay */
+    margin-top: 1rem;
+    max-width: 90%;
+}
+
+.service-card-new:hover .service-desc-hover {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service-img-wrapper {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 340px;
+    /* Fixed width for standard sizing */
+    height: 340px;
+    transition: transform 0.4s ease;
+    z-index: 1;
+    /* Ensure image doesn't overlap text too much initially */
+}
+
+/* 
+.service-card-new:hover .service-img-wrapper {
+    transform: translateX(-50%) scale(1.05) translateY(-10px);
+} */
+
+.service-svg-illu {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 340px;
+    object-fit: cover;
+}
+
+.service-footer {
+    /* Anchored to bottom left above padding */
+    margin-top: auto;
+    /* We used mt-auto in HTML, but let's be safe */
+}
+
+.service-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.6rem 1.4rem;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.service-cta-btn .arrow-icon {
+    transition: transform 0.3s ease;
+}
+
+.service-cta-btn:hover .arrow-icon {
+    transform: translateX(4px);
+}
+
+.service-cta-btn:hover {
+    background-color: var(--primary-teal-light);
+    color: var(--primary-teal-dark);
+    /* New Card Button Hover Effect Color */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsiveness */
+@media (max-width: 991px) {
+    .service-card-new {
+        height: 420px;
+        padding: 2rem;
     }
 
+    .service-title {
+        font-size: 1.75rem;
+    }
+
+    .service-img-wrapper {
+        width: 180px;
+    }
+}
+
+@media (max-width: 767.98px) {
     .vm-icon-wrapper svg {
         width: 24px;
         height: 24px;

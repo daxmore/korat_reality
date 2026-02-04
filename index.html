@@ -13,16 +13,18 @@
     <link rel="stylesheet" href="assets/css/media.css">
     <!-- Shery.js CSS -->
     <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body id="page-home">
     <!-- ============================================
          INTRO OVERLAY (TrueKind-Inspired)
          ============================================ -->
-    <div class="intro-overlay" id="introOverlay">
-        <!-- Central Wrapper -->
+    <!-- <div class="intro-overlay" id="introOverlay">
+        Central Wrapper 
         <div class="intro-center-wrapper">
-            <!-- Logo -->
+            Logo 
             <div class="intro-logo" id="introLogo">
                 <img src="assets/images/svg/for-dark-bg.svg" alt="Korat Reality">
             </div>
@@ -37,37 +39,31 @@
             <div class="d-flex justify-content-between align-items-center w-100">
                 <!-- 1. Logo -->
                 <a href="index.html" class="d-block">
-                    <img src="assets/images/svg/for-dark-bg.svg" alt="KR" class="logo-sm">
+                    <img src="assets/images/svg/for-light-bg.svg" alt="KR" class="logo-sm">
                 </a>
 
                 <!-- 2. Center Navigation (Desktop Only) -->
-                <div class="d-none d-lg-flex align-items-center gap-5 w-75 mx-auto justify-content-evenly">
+                <div class="d-none d-lg-flex align-items-center gap-5 w-75 mx-auto justify-content-center">
                     <a href="about.html"
-                        class="text-white text-uppercase text-decoration-none fw-semibold small ls-1 text-slide"
+                        class="text-teal text-uppercase text-decoration-none fw-semibold small ls-1 text-slide"
                         data-text="About Us"><span>About Us</span></a>
                     <a href="why-invest-in-india.html"
-                        class="text-white text-uppercase text-decoration-none fw-semibold small ls-1 text-slide"
+                        class="text-teal text-uppercase text-decoration-none fw-semibold small ls-1 text-slide"
                         data-text="Why Invest In India"><span>Why Invest In India</span></a>
-
-
-
                     <a href="nri-investor-guide.html"
-                        class="text-white text-uppercase text-decoration-none fw-semibold small ls-1 text-slide"
+                        class="text-teal text-uppercase text-decoration-none fw-semibold small ls-1 text-slide"
                         data-text="NRI Investor Guide"><span>NRI Investor Guide</span></a>
                 </div>
 
                 <!-- 3. Menu Button -->
                 <button
-                    class="btn btn-sm border-0 bg-transparent p-0 text-white text-uppercase fw-semibold small ls-1 d-flex align-items-center gap-2 hover-gold"
-                    type="button" id="menuToggleBtn">
-                    Menu
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                        <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                        <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" />
+                    class="btn btn-sm border-0 bg-transparent p-0 text-teal d-flex align-items-center justify-content-center hover-teal"
+                    type="button" id="menuToggleBtn" aria-label="Menu">
+                    <svg width="48" height="20" viewBox="0 0 48 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="2" y1="6" x2="46" y2="6" stroke="currentColor" stroke-width="3"
+                            stroke-linecap="round" />
+                        <line x1="2" y1="14" x2="46" y2="14" stroke="currentColor" stroke-width="3"
+                            stroke-linecap="round" />
                     </svg>
                 </button>
             </div>
@@ -148,35 +144,40 @@
         </div>
     </header>
 
+    <!-- Loading Indicator for Frame Preloading -->
+    <!-- Loading Indicator REMOVED -->
+
     <!-- ============================================
-         HERO SECTION
+         HERO SECTION - Canvas Parallax Animation
          ============================================ -->
     <section class="hero-section" id="hero">
-        <video class="hero-video-bg" autoplay muted loop playsinline>
-            <source src="assets/videos/Korat home page video.mp4" type="video/mp4">
-        </video>
-        <!-- <div class="hero-overlay"></div> -->
+        <!-- Canvas for frame animation -->
+        <!-- Hero Background Image -->
+        <img src="assets/images/hero_image (2).jpeg" alt="Hero Background" class="hero-bg-image">
+
+        <!-- Cloud Overlay -->
+        <div class="hero-cloud-overlay"></div>
 
         <div class="container-fluid px-lg-4">
-            <div class="row min-vh-100 align-items-center">
-                <div class="col-lg-10">
+            <div class="row min-vh-100 align-items-center justify-content-center">
+                <div class="col-lg-12">
                     <div class="hero-content pt-8">
+                        <p class="text-uppercase small text-muted mb-3 ls-1" style="letter-spacing: 3px;">Welcome to
+                            Korat Reality</p>
                         <h1 class="hero-title text-uppercase mb-4">
-                            Strategic <span class="highlight">Real Estate</span>
-                            <br>
-                            Development & Investment
-                            <br>
-                            <span class="highlight">Solutions</span> in India
+                            Get The Most Out <br>
+                            <span class="highlight">Of VCS</span>
                         </h1>
-                        <p class="hero-description text-uppercase mb-4 text-white hero-desc-text">
+                        <p class="text-muted mb-5 mx-auto" style="max-width: 600px; font-size: 1rem; line-height: 1.7;">
                             We work with investors, landowners, and NRIs to identify, develop, and structure real estate
-                            opportunities with clear documentation, disciplined research, and a long-term value mindset.
+                            opportunities with clear documentation and long-term value mindset.
                         </p>
 
-                        <div class="hero-buttons d-flex flex-wrap gap-0 mb-5">
-                            <a href="#projects"
-                                class="btn btn-sm btn-gold text-uppercase px-4 py-3 fw-bold btn-hero">Explore Current
-                                Developments</a>
+                        <div class="hero-buttons d-flex flex-wrap gap-3 justify-content-center mb-5">
+                            <a href="#projects" class="btn btn-teal text-uppercase px-5 py-3 fw-bold">Explore
+                                Opportunities</a>
+                            <a href="#about" class="btn btn-outline-dark-custom text-uppercase px-5 py-3 fw-bold">Learn
+                                More</a>
                         </div>
                     </div>
                 </div>
@@ -187,79 +188,168 @@
     <!-- ============================================
          ABOUT SECTION
          ============================================ -->
-    <section class="about-section section-padding bg-light-cream-alt" id="about">
+    <!-- ============================================
+         OVERLAPPING INTRO / DASHBOARD SECTION
+         ============================================ -->
+    <section class="section-overlap text-dark" id="about">
         <div class="container">
-            <div class="row justify-content-center mb-5">
-                <div class="col-lg-10 text-center">
-                    <h2 class="about-title-anim text-uppercase display-1 mb-4 fw-bold">About Korat Reality</h2>
-                    <p class="lead mx-auto hero-lead-reveal lead-text-constrained">
-                        Korat Reality is a trusted real estate development company India that specializes in creating
-                        value-driven property solutions for investors, landowners, and NRIs. As a comprehensive real
-                        estate investment company India, we focus on land acquisition, strategic development, and
-                        transparent investment advisory services that prioritize long-term value creation over shortterm
-                        gains.
+            <!-- Main Dashboard Container -->
+            <div class="dashboard-container">
+                <!-- Header -->
+                <div class="row mb-5">
+                    <div class="col-lg-8">
+                        <div class="dashboard-header">
+                            <h2 class="display-5 fw-bold mb-3">About Korat Reality</h2>
+                            <p class="text-muted lead mb-0">Building trust through transparency and expertise. Continue
+                                where you left off building your real estate portfolio.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 text-lg-end d-lg-flex align-items-center justify-content-end">
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="assets/images/svg/for-light-bg.svg" alt="Korat Reality"
+                                style="height: 40px; opacity: 0.8;">
+                        </div>
+                    </div>
+                </div>
 
-                    </p>
+                <!-- Cards Grid -->
+                <div class="row g-4">
+                    <!-- Card 1: Project Overview -->
+                    <div class="col-lg-4">
+                        <div class="inner-card">
+                            <div>
+                                <h4 class="card-label">Project Overview</h4>
+                                <p class="small text-muted mb-3">You've explored <span
+                                        class="text-teal fw-bold">3</span> of our latest opportunities.</p>
+
+                                <div class="mb-4">
+                                    <h4 class="card-label">Total Projects</h4>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="card-value">15+</div>
+                                        <div class="stat-pill">Active</div>
+                                    </div>
+                                    <p class="small text-muted mt-1">Updated 2 days ago</p>
+                                </div>
+
+                                <div>
+                                    <h4 class="card-label">Land Developed</h4>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="card-value">500+ <span class="h6 text-muted">Acres</span></div>
+                                        <div class="stat-pill">growing</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 pt-3 border-top">
+                                <a href="land-development.html"
+                                    class="btn-card-outline btn-card-action d-block text-center text-decoration-none">View
+                                    All Projects</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Investment Vision -->
+                    <div class="col-lg-4">
+                        <div class="inner-card">
+                            <div>
+                                <h4 class="card-label">Investment Vision</h4>
+                                <div class="card-value mb-3 text-teal">Long-Term Value</div>
+                                <p class="text-muted small mb-4">
+                                    We prioritize sustainable growth over quick flips. What are your investment goals?
+                                </p>
+
+                                <div class="d-flex flex-wrap mb-3">
+                                    <a href="land-acquisition.html" class="action-pill">Land Acquisition</a>
+                                    <a href="commercial-projects.html" class="action-pill">Commercial</a>
+                                    <a href="residential-projects.html" class="action-pill">Residential</a>
+                                    <a href="industrial-projects.html" class="action-pill">Industrial</a>
+                                </div>
+                            </div>
+
+                            <div class="mt-auto">
+                                <a href="why-invest-in-india.html"
+                                    class="btn-card-primary btn-card-action d-block text-center text-decoration-none">Explore
+                                    Opportunities</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Quick Actions / Services -->
+                    <div class="col-lg-4">
+                        <div class="inner-card">
+                            <div>
+                                <h4 class="card-label">Quick Actions</h4>
+                                <p class="text-muted small mb-4">Manage your journey with us.</p>
+
+                                <div class="d-flex flex-column gap-3">
+                                    <div class="p-3 bg-light rounded-3 border d-flex align-items-center gap-3">
+                                        <div class="bg-white p-2 rounded-circle shadow-sm text-teal">
+                                            <svg width="20" height="20" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h6 class="m-0 small fw-bold">Schedule Visit</h6>
+                                            <small class="text-muted">Book a site tour</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="p-3 bg-light rounded-3 border d-flex align-items-center gap-3">
+                                        <div class="bg-white p-2 rounded-circle shadow-sm text-teal">
+                                            <svg width="20" height="20" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h6 class="m-0 small fw-bold">Contact Advisor</h6>
+                                            <small class="text-muted">Get expert guidance</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 pt-3">
+                                <a href="contact.html"
+                                    class="btn-card-outline btn-card-action d-block text-center text-decoration-none">Contact
+                                    Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Hint -->
+                <div class="mt-4 pt-3 border-top">
+                    <div class="d-flex align-items-center gap-2 text-muted small">
+                        <div class="bg-teal text-white rounded p-1">
+                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                            </svg>
+                        </div>
+                        <span class="fw-bold text-dark">Market Trend:</span> Real estate in Gujarat is projected to grow
+                        by 12% this year.
+                    </div>
                 </div>
             </div>
 
-            <!-- Main Feature Image -->
-            <div class="row mb-5">
-                <div class="col-12">
-                    <div class="w-100 mb-5 about-image-wrapper about-main-img-box">
-                        <img class="w-100 h-100 object-fit-cover parallax-image"
-                            src="assets/images/wide_aerial_view_2.jpeg" alt="">
-                    </div>
+            <!-- Stats Row (Outside Card) -->
+            <div class="row bottom-stats-row">
+                <div class="col-md-4 bottom-stat-item">
+                    <h3>1.4M+</h3>
+                    <p>Sq. Ft. Developed</p>
                 </div>
-            </div>
-
-            <div class="row g-3 g-lg-5">
-                <!-- Column 1 -->
-                <div class="col-lg-4 d-flex flex-column">
-                    <div class="mb-4">
-                        <p class="text-muted lh-relaxed">Our approach is built on
-                            three fundamental principles: trust, transparency, and expertise. We understand that
-                            property
-                            investment is not just a financial decision—it's a commitment to your future.</p>
-                    </div>
-                    <div class="flex-grow-1 w-100 mt-2 reveal-center-width about-col-img">
-                        <img src="assets/images/drone_ground_view_2.jpeg" class="w-100 h-100 object-fit-cover">
-                    </div>
+                <div class="col-md-4 bottom-stat-item">
+                    <h3>11%</h3>
+                    <p>Avg. Annual ROI</p>
                 </div>
-
-                <!-- Column 2 -->
-                <div class="col-lg-4">
-                    <div class="mb-5">
-                        <p class="text-muted lh-relaxed">Core Whether you're an
-                            investor seeking secure opportunities, a landowner looking to
-                            maximize your asset's potential, or an NRI exploring NRI property investment India options,
-                            Korat Reality provides the guidance, research, and execution support you need.</p>
-                    </div>
-                    <div class="mb-5">
-                        <p class="text-muted mb-4 lh-relaxed">Unlike transactional
-                            brokers, we are a development-led organization that transforms raw land
-                            into thriving residential, commercial, and industrial projects. </p>
-                    </div>
-                    <div class="mb-5">
-                        <p class="text-muted lh-relaxed"> Our team conducts rigorous
-                            feasibility studies, legal verifications, and market research to ensure every project we
-                            undertake
-                            meets the highest standards of compliance and profitability.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Column 3 -->
-                <div class="col-lg-4">
-                    <div class="mb-4 reveal-center-width about-end-img">
-                        <img src="assets/images/drone_ground_view_1.png" alt="End to End"
-                            class="w-100 h-100 object-fit-cover">
-                    </div>
-                    <div>
-                        <p class="text-muted lh-relaxed">Specialized support for NRI
-                            property investments in India,
-                            including remote advisory and compliance.</p>
-                    </div>
+                <div class="col-md-4 bottom-stat-item">
+                    <h3>15+</h3>
+                    <p>Completed Projects</p>
                 </div>
             </div>
         </div>
@@ -268,200 +358,194 @@
     <!-- ============================================
          SERVICES SECTION
          ============================================ -->
-    <section class="services-section section-padding bg-dark text-white" id="services">
+    <section class="services-section section-padding bg-light text-white" id="services">
         <div class="container">
-            <div class="row mb-3">
-                <div class="col-12 text-center">
-                    <h2 class="text-uppercase mb-3">Our Core Services</h2>
+            <div class="row mb-5 text-center">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-4 font-serif text-dark mb-3">The most effective way to build wealth</h2>
+                    <p class="text-dark lead">Strategic real estate solutions designed to maximize value and
+                        minimize risk for investors and landowners.</p>
                 </div>
             </div>
 
-            <div class="row g-0 border-top border-white border-opacity-10 services-grid">
-                <!-- Service 1 -->
-                <div class="col-lg-6 p-3 pt-4 p-lg-5 border-bottom border-white border-opacity-10 service-border-right">
-                    <a href="land-acquisition.html" class="text-white text-decoration-none d-block">
-                        <div
-                            class="d-flex justify-content-between align-items-center a  lign-items-lg-start mb-2 mb-lg-4 service-header-trigger">
-                            <h3 class="text-uppercase fw-bold fs-4 m-0">Land Acquisition</h3>
-                            <!-- Arrow Icon -->
-                            <div class="service-icon-anim magnet-target rounded-circle">
-                                <div class="anim-circle"></div>
-                                <div class="anim-arrows">
-                                    <svg class="arrow-main" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M8 16L16 8"></path>
-                                        <path d="M16 16V8H8"></path>
+            <!-- Swiper Container -->
+            <div class="swiper services-swiper pb-5">
+                <div class="swiper-wrapper">
+                    <!-- Service 1: Land Acquisition -->
+                    <div class="swiper-slide">
+                        <div class="service-card-new bg-teal-dark">
+                            <div class="service-card-content position-relative z-2">
+                                <h3 class="font-serif text-white mb-3 service-title">Land Acquisition</h3>
+                                <p class="service-desc-hover text-white-50 small mb-0">
+                                    Comprehensive market research and location analysis to identify high-potential land
+                                    parcels across India.
+                                </p>
+                            </div>
+
+                            <div class="service-img-wrapper">
+                                <img src="assets/images/land_acquisition.png" alt="Land Acquisition"
+                                    class="service-svg-illu">
+                            </div>
+
+                            <div class="service-footer position-relative z-2 mt-auto">
+                                <a href="land-acquisition.html" class="service-cta-btn">
+                                    Land Acquisition
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="ms-2 arrow-icon"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M5 12h14" />
+                                        <path d="M12 5l7 7-7 7" />
                                     </svg>
-                                    <svg class="arrow-clone" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M8 16L16 8"></path>
-                                        <path d="M16 16V8H8"></path>
-                                    </svg>
-                                </div>
+                                </a>
                             </div>
                         </div>
-                    </a>
-                    <p class="text-white-50 small mb-5 service-desc">Our land
-                        acquisition services are
-                        built on comprehensive market research and location analysis.
-                        We identify high-potential land parcels across India, evaluating factors such as connectivity,
-                        infrastructure development, zoning regulations, and future growth prospects. Whether you're
-                        looking to invest in emerging markets or established locations, our acquisition expertise helps
-                        you make informed decisions backed by data and due diligence</p>
-                    <div class="w-100 service-img-box">
-                        <img src="assets/images/building_image_1.png"
-                            class="w-100 h-100 object-fit-cover img-opacity-80">
                     </div>
-                </div>
 
-                <!-- Service 2 -->
-                <div class="col-lg-6 p-3 pt-4 p-lg-5 border-bottom border-white border-opacity-10">
-                    <a href="residential-projects.html" class="text-white text-decoration-none d-block">
-                        <div class="d-flex justify-content-between align-items-start mb-lg-4 service-header-trigger">
-                            <h3 class="text-uppercase fw-bold fs-4 m-0">Residential Projects</h3>
-                            <div class="service-icon-anim magnet-target rounded-circle">
-                                <div class="anim-circle"></div>
-                                <div class="anim-arrows">
-                                    <svg class="arrow-main" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M8 16L16 8"></path>
-                                        <path d="M16 16V8H8"></path>
+                    <!-- Service 2: Land Development -->
+                    <div class="swiper-slide">
+                        <div class="service-card-new bg-teal-dark">
+                            <div class="service-card-content position-relative z-2">
+                                <h3 class="font-serif text-white mb-3 service-title">Land Development</h3>
+                                <p class="service-desc-hover text-white-50 small mb-0">
+                                    Transforming raw land into market-ready properties through town planning,
+                                    infrastructure
+                                    setup, and legal compliance.
+                                </p>
+                            </div>
+
+                            <div class="service-img-wrapper">
+                                <img src="assets/images/land_development.png" alt="Land Development"
+                                    class="service-svg-illu">
+                            </div>
+
+                            <div class="service-footer position-relative z-2 mt-auto">
+                                <a href="land-development.html" class="service-cta-btn">
+                                    Development
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="ms-2 arrow-icon"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M5 12h14" />
+                                        <path d="M12 5l7 7-7 7" />
                                     </svg>
-                                    <svg class="arrow-clone" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M8 16L16 8"></path>
-                                        <path d="M16 16V8H8"></path>
-                                    </svg>
-                                </div>
+                                </a>
                             </div>
                         </div>
-                    </a>
-                    <p class="text-white-50 small mb-4 mb-lg-5 service-desc ls-1">Korat Reality develops
-                        residential plotting projects that cater to homebuyers and investors
-                        seeking appreciating assets. From gated plotting communities to villa projects, our residential
-                        developments are strategically located in areas with excellent connectivity, social
-                        infrastructure,
-                        and long-term growth potential.</p>
-                    <div class="w-100 service-img-box">
-                        <img src="assets/images/building_image_2.png"
-                            class="w-100 h-100 object-fit-cover img-opacity-80">
                     </div>
-                </div>
 
-                <!-- Service 3 -->
-                <div class="col-lg-6 p-3 pt-4 p-lg-5 border-bottom border-white border-opacity-10 service-border-right">
-                    <a href="land-development.html" class="text-white text-decoration-none d-block">
-                        <div class="d-flex justify-content-between align-items-start mb-lg-4 service-header-trigger">
-                            <h3 class="text-uppercase fw-bold fs-4 m-0">Land Development</h3>
-                            <div class="service-icon-anim magnet-target rounded-circle">
-                                <div class="anim-circle"></div>
-                                <div class="anim-arrows">
-                                    <svg class="arrow-main" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M8 16L16 8"></path>
-                                        <path d="M16 16V8H8"></path>
+                    <!-- Service 3: Residential Projects -->
+                    <div class="swiper-slide">
+                        <div class="service-card-new bg-teal-dark">
+                            <div class="service-card-content position-relative z-2">
+                                <h3 class="font-serif text-white mb-3 service-title">Residential Projects</h3>
+                                <p class="service-desc-hover text-white-50 small mb-0">
+                                    Developing plotting communities and villa projects in areas with excellent
+                                    connectivity
+                                    and social infrastructure.
+                                </p>
+                            </div>
+
+                            <div class="service-img-wrapper">
+                                <img src="assets/images/residential_projects.png" alt="Residential Projects"
+                                    class="service-svg-illu">
+                            </div>
+
+                            <div class="service-footer position-relative z-2 mt-auto">
+                                <a href="residential-projects.html" class="service-cta-btn">
+                                    Residential
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="ms-2 arrow-icon"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M5 12h14" />
+                                        <path d="M12 5l7 7-7 7" />
                                     </svg>
-                                    <svg class="arrow-clone" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M8 16L16 8"></path>
-                                        <path d="M16 16V8H8"></path>
-                                    </svg>
-                                </div>
+                                </a>
                             </div>
                         </div>
-                    </a>
-                    <p class="text-white-50 small mb-4 mb-lg-5 service-desc ls-1">As a leading land
-                        development company, Korat Reality transforms raw land into ready-todevelop or market-ready
-                        properties. Our development process includes town planning
-                        approvals, infrastructure setup, legal clearances, and compliance management. We handle the
-                        complexities of development so investors and landowners can focus on returns and growth.</p>
-                    <div class="w-100 service-img-box">
-                        <img src="assets/images/building_image_3.jpeg"
-                            onerror="this.src='assets/images/an_oblique_aerial_view_of_a_completed.jpeg'"
-                            class="w-100 h-100 object-fit-cover img-opacity-80">
                     </div>
-                </div>
 
-                <!-- Service 4 -->
-                <div class="col-lg-6 p-3 pt-4 p-lg-5 border-bottom border-white border-opacity-10">
-                    <a href="industrial-projects.html" class="text-white text-decoration-none d-block">
-                        <div class="d-flex justify-content-between align-items-start mb-lg-4 service-header-trigger">
-                            <h3 class="text-uppercase fw-bold fs-4 m-0">Industrial Projects</h3>
-                            <div class="service-icon-anim magnet-target rounded-circle">
-                                <div class="anim-circle"></div>
-                                <div class="anim-arrows">
-                                    <svg class="arrow-main" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M8 16L16 8"></path>
-                                        <path d="M16 16V8H8"></path>
+                    <!-- Service 4: Commercial Projects -->
+                    <div class="swiper-slide">
+                        <div class="service-card-new bg-teal-dark">
+                            <div class="service-card-content position-relative z-2">
+                                <h3 class="font-serif text-white mb-3 service-title">Commercial Projects</h3>
+                                <p class="service-desc-hover text-white-50 small mb-0">
+                                    Retail complexes, office spaces, and mixed-use developments designed for sustainable
+                                    rental yields.
+                                </p>
+                            </div>
+
+                            <div class="service-img-wrapper">
+                                <img src="assets/images/commercial_project.png" alt="Commercial Projects"
+                                    class="service-svg-illu">
+                            </div>
+
+                            <div class="service-footer position-relative z-2 mt-auto">
+                                <a href="commercial-projects.html" class="service-cta-btn">
+                                    Commercial
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="ms-2 arrow-icon"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M5 12h14" />
+                                        <path d="M12 5l7 7-7 7" />
                                     </svg>
-                                    <svg class="arrow-clone" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M8 16L16 8"></path>
-                                        <path d="M16 16V8H8"></path>
-                                    </svg>
-                                </div>
+                                </a>
                             </div>
                         </div>
-                    </a>
-                    <p class="text-white-50 small mb-4 mb-lg-5 service-desc ls-1">In the rapidly
-                        growing industrial sector, we specialize in industrial land development that serves
-                        manufacturers, logistics companies, and warehouse operators. Our industrial projects are
-                        located in designated zones with robust infrastructure, ensuring compliance and operational
-                        efficiency for businesses.</p>
-                    <div class="w-100 service-img-box">
-                        <img src="assets/images/house_image.png" class="w-100 h-100 object-fit-cover img-opacity-80">
                     </div>
-                </div>
 
-                <!-- Service 5 -->
-                <div class="col-lg-6 p-3 pt-4 p-lg-5 border-bottom border-white border-opacity-10 service-border-right">
-                    <a href="commercial-projects.html" class="text-white text-decoration-none d-block">
-                        <div class="d-flex justify-content-between align-items-start mb-lg-4 service-header-trigger">
-                            <h3 class="text-uppercase fw-bold fs-4 m-0">Commercial Projects</h3>
-                            <div class="service-icon-anim magnet-target rounded-circle">
-                                <div class="anim-circle"></div>
-                                <div class="anim-arrows">
-                                    <svg class="arrow-main" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M8 16L16 8"></path>
-                                        <path d="M16 16V8H8"></path>
+                    <!-- Service 5: Industrial Projects -->
+                    <div class="swiper-slide">
+                        <div class="service-card-new bg-teal-dark">
+                            <div class="service-card-content position-relative z-2">
+                                <h3 class="font-serif text-white mb-3 service-title">Industrial Projects</h3>
+                                <p class="service-desc-hover text-white-50 small mb-0">
+                                    Industrial land development for manufacturers and logistics companies in designated
+                                    industrial zones.
+                                </p>
+                            </div>
+
+                            <div class="service-img-wrapper">
+                                <img src="assets/images/industrial_project.png" alt="Industrial Projects"
+                                    class="service-svg-illu">
+                            </div>
+
+                            <div class="service-footer position-relative z-2 mt-auto">
+                                <a href="industrial-projects.html" class="service-cta-btn">
+                                    Industrial
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="ms-2 arrow-icon"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M5 12h14" />
+                                        <path d="M12 5l7 7-7 7" />
                                     </svg>
-                                    <svg class="arrow-clone" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M8 16L16 8"></path>
-                                        <path d="M16 16V8H8"></path>
-                                    </svg>
-                                </div>
+                                </a>
                             </div>
                         </div>
-                    </a>
-                    <p class="text-white-50 small mb-4 mb-lg-5 service-desc ls-1">Our commercial
-                        land development expertise spans retail complexes, office spaces, mixed-use
-                        developments, and commercial plots. We identify locations with strong commercial potential
-                        and develop projects that attract businesses and deliver sustainable rental yields. Every
-                        commercial project is designed with accessibility, visibility, and market demand in mind.</p>
-                    <div class="w-100 service-img-box">
-                        <img src="assets/images/random_image_1.png" class="w-100 h-100 object-fit-cover img-opacity-80">
                     </div>
                 </div>
+                <!-- Pagination -->
+                <!-- <div class="swiper-pagination mt-4 position-relative"></div> -->
 
-                <!-- CTA (Item 6) -->
-                <div class="col-lg-6 p-3 pt-4 p-lg-5 border-bottom border-white border-opacity-10">
-                    <div class="d-flex justify-content-between align-items-center mb-lg-4 mb-2">
-                        <h3 class="text-uppercase fw-bold fs-4 m-0">Have a Project?</h3>
-                        <a href="#contact" id="contact-btn"
-                            class="btn btn-outline-light rounded-pill px-4 py-2 text-uppercase fw-bold small ls-1">Contact
-                            Us</a>
+                <!-- Navigation Buttons -->
+                <div class="swiper-nav-wrapper d-flex justify-content-center gap-3 mt-4">
+                    <div class="swiper-button-prev-custom services-prev cursor-pointer">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 12H5" />
+                            <path d="M12 19l-7-7 7-7" />
+                        </svg>
                     </div>
-                    <p class="text-white-50 small text-uppercase mb-lg-5 mb-2 service-desc ls-1">
-                        Let's Build Something Exceptional...</p>
-                    <div class="w-100 service-img-box">
-                        <img src="assets/images/random_image_2.png" class="w-100 h-100 object-fit-cover img-opacity-80">
+                    <div class="swiper-button-next-custom services-next cursor-pointer">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14" />
+                            <path d="M12 5l7 7-7 7" />
+                        </svg>
                     </div>
                 </div>
             </div>
         </div>
+
     </section>
 
     <!-- ============================================
@@ -1104,6 +1188,12 @@
 
     <!-- Lenis (Smooth Scroll) -->
     <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Hero Parallax Animation (Frame-based) -->
+    <!-- Hero Parallax Animation REMOVED -->
 
     <!-- Smooth Scrolling Logic -->
     <script src="assets/js/smooth-scroll.js"></script>

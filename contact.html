@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Korat Reality</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="assets/css/media.css">
+    <!-- Shery.js CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
+</head>
+
+<body id="page-contact">
+
+    <!-- ============================================
+         HEADER / NAVIGATION
+         ============================================ -->
+    <header class="main-header py-4">
+        <div class="container-fluid px-4 px-md-5">
+            <div class="d-flex justify-content-between align-items-center w-100">
+                <!-- 1. Logo -->
+                <a href="index.html" class="d-block">
+                    <img src="assets/images/svg/for-dark-bg.svg" alt="KR" class="logo-sm">
+                </a>
+
+                <!-- 2. Center Navigation (Desktop Only) -->
+                <div class="d-none d-lg-flex align-items-center gap-5 w-75 mx-auto justify-content-evenly">
+                    <a href="about.html"
+                        class="text-white text-uppercase text-decoration-none fw-semibold small ls-1 text-slide"
+                        data-text="About Us"><span>About Us</span></a>
+                    <a href="why-invest-in-india.html"
+                        class="text-white text-uppercase text-decoration-none fw-semibold small ls-1 text-slide"
+                        data-text="Why Invest In India"><span>Why Invest In India</span></a>
+                    <a href="nri-investor-guide.html"
+                        class="text-white text-uppercase text-decoration-none fw-semibold small ls-1 text-slide"
+                        data-text="NRI Investor Guide"><span>NRI Investor Guide</span></a>
+                    <a href="contact.html"
+                        class="text-white text-uppercase text-decoration-none fw-semibold small ls-1 text-slide"
+                        data-text="Contact Us"><span>Contact Us</span></a>
+                </div>
+
+                <!-- 3. Menu Button -->
+                <button
+                    class="btn btn-sm border-0 bg-transparent p-0 text-white text-uppercase fw-semibold small ls-1 d-flex align-items-center gap-2 hover-gold"
+                    type="button" id="menuToggleBtn">
+                    Menu
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu content (Full Screen Overlay) -->
+            <div class="fullscreen-menu position-fixed top-0 end-0 w-40 bg-dark" id="mobileMenu">
+                <div class="d-flex flex-column min-h-dvh p-4">
+                    <!-- Menu Header -->
+                    <div class="d-flex justify-content-between justify-content-lg-end align-items-center mb-4">
+                        <a href="index.html">
+                            <img src="assets/images/svg/for-dark-bg.svg" class="logo-sm d-block d-lg-none" alt="Logo">
+                        </a>
+                        <button class="btn text-white p-0 d-flex align-items-center" type="button" id="menuCloseBtn"
+                            aria-label="Close">
+                            <span class="text-uppercase small fw-bold me-2 ls-1">Close</span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Menu Links -->
+                    <div class="flex-grow-1 d-flex flex-column align-items-end gap-3 text-end menu-links-offset">
+                        <a href="index.html"
+                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
+                            data-text="Home"><span>Home</span></a>
+                        <a href="about.html"
+                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
+                            data-text="About Us"><span>About Us</span></a>
+                        <a href="why-invest-in-india.html"
+                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
+                            data-text="Why Invest In India"><span>Why Invest In India</span></a>
+
+                        <!-- Services Dropdown -->
+                        <div class="d-flex flex-column align-items-end w-100">
+                            <a href="#"
+                                class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold d-inline-flex align-items-center gap-2 justify-content-end"
+                                data-bs-toggle="collapse" data-bs-target="#servicesNav">
+                                Our Services <span class="fs-4 text-white-50">+</span>
+                            </a>
+                            <div class="collapse text-end mt-3 border-end border-white border-opacity-25 pe-3"
+                                id="servicesNav">
+                                <a href="land-acquisition.html"
+                                    class="d-block text-white text-opacity-75 text-decoration-none text-uppercase mb-2 fs-5 text-slide"
+                                    data-text="Land Acquisition"><span>Land Acquisition</span></a>
+                                <a href="land-development.html"
+                                    class="d-block text-white text-opacity-75 text-decoration-none text-uppercase mb-2 fs-5 text-slide"
+                                    data-text="Land Development"><span>Land Development</span></a>
+                                <a href="commercial-projects.html"
+                                    class="d-block text-white text-opacity-75 text-decoration-none text-uppercase mb-2 fs-5 text-slide"
+                                    data-text="Commercial Projects"><span>Commercial Projects</span></a>
+                                <a href="residential-projects.html"
+                                    class="d-block text-white text-opacity-75 text-decoration-none text-uppercase mb-2 fs-5 text-slide"
+                                    data-text="Residential Projects"><span>Residential Projects</span></a>
+                                <a href="industrial-projects.html"
+                                    class="d-block text-white text-opacity-75 text-decoration-none text-uppercase mb-2 fs-5 text-slide"
+                                    data-text="Industrial Projects"><span>Industrial Projects</span></a>
+                            </div>
+                        </div>
+
+                        <a href="investment-opportunities.html"
+                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
+                            data-text="Investment Opportunities"><span>Investment Opportunities</span></a>
+                        <a href="why-invest-in-india.html"
+                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
+                            data-text="NRI Investor Guide"><span>NRI Investor Guide</span></a>
+                        <a href="insights.html"
+                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
+                            data-text="Insights / Blog"><span>Insights / Blog</span></a>
+                        <a href="contact.html"
+                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
+                            data-text="Contact Us"><span>Contact Us</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
+    <section class="hero-section position-relative bg-dark d-flex align-items-center justify-content-center"
+        style="min-height: 60vh;">
+        <div class="container text-center text-white position-relative z-1 pt-5">
+            <h1 class="display-3 font-serif mb-4 reveal-content">Get in Touch</h1>
+            <p class="lead text-white-50 mn-auto lh-lg reveal-content" style="max-width: 600px; margin: 0 auto;">
+                Whether you have a question about investment opportunities, partnership inquiries, or just want to say
+                hello, our team is ready to answer all your questions.
+            </p>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CONTACT FORM & INFO
+         ============================================ -->
+    <section class="section-padding bg-cream">
+        <div class="container">
+            <div class="row g-5">
+                <!-- Info Column -->
+                <div class="col-lg-4">
+                    <div class="mb-5 reveal-content">
+                        <h4 class="text-uppercase fw-bold mb-4 font-heading">Contact Information</h4>
+                        <p class="text-muted mb-4">Feel free to reach out to us through any of the following channels.
+                            We look forward to connecting with you.</p>
+
+                        <div class="d-flex flex-column gap-4">
+                            <!-- Item -->
+                            <div class="d-flex align-items-start gap-3">
+                                <div class="bg-dark text-white rounded-circle p-2 d-flex align-items-center justify-content-center"
+                                    style="width: 40px; height: 40px;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path
+                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold text-uppercase mb-1">Phone</h6>
+                                    <p class="text-muted m-0 small">+91 98765 43210</p>
+                                </div>
+                            </div>
+                            <!-- Item -->
+                            <div class="d-flex align-items-start gap-3">
+                                <div class="bg-dark text-white rounded-circle p-2 d-flex align-items-center justify-content-center"
+                                    style="width: 40px; height: 40px;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                        </path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold text-uppercase mb-1">Email</h6>
+                                    <p class="text-muted m-0 small">info@koratreality.com</p>
+                                </div>
+                            </div>
+                            <!-- Item -->
+                            <div class="d-flex align-items-start gap-3">
+                                <div class="bg-dark text-white rounded-circle p-2 d-flex align-items-center justify-content-center"
+                                    style="width: 40px; height: 40px;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold text-uppercase mb-1">Office</h6>
+                                    <p class="text-muted m-0 small">123, Korat Business Hub,<br>Ahmedabad, Gujarat,
+                                        India</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Column -->
+                <div class="col-lg-8">
+                    <div class="bg-white p-4 p-lg-5 shadow-sm rounded-0 reveal-content">
+                        <h4 class="text-uppercase fw-bold mb-4 font-heading">Send us a Message</h4>
+                        <form>
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <label class="form-label text-uppercase small fw-bold">Your Name</label>
+                                    <input type="text" class="form-control rounded-0 border-dark border-opacity-25 py-3"
+                                        placeholder="John Doe">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label text-uppercase small fw-bold">Email Address</label>
+                                    <input type="email"
+                                        class="form-control rounded-0 border-dark border-opacity-25 py-3"
+                                        placeholder="john@example.com">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label text-uppercase small fw-bold">Phone Number</label>
+                                    <input type="tel" class="form-control rounded-0 border-dark border-opacity-25 py-3"
+                                        placeholder="+91 000 000 0000">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label text-uppercase small fw-bold">Interested In</label>
+                                    <select class="form-select rounded-0 border-dark border-opacity-25 py-3">
+                                        <option selected>Select an option</option>
+                                        <option value="Land Acquisition">Land Acquisition</option>
+                                        <option value="Residential Project">Residential Project</option>
+                                        <option value="Commercial Project">Commercial Project</option>
+                                        <option value="Investment">Investment Advisory</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label text-uppercase small fw-bold">Message</label>
+                                    <textarea class="form-control rounded-0 border-dark border-opacity-25" rows="5"
+                                        placeholder="How can we help you?"></textarea>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <button type="submit"
+                                        class="btn btn-gold text-uppercase px-5 py-3 fw-bold w-100">Send
+                                        Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="main-footer pt-5 pb-3 bg-cream text-dark" id="footer">
+        <div class="container">
+            <div class="row g-5 mb-5 justify-content-between">
+                <div class="col-lg-4 col-md-6">
+                    <a href="index.html">
+                        <img src="assets/images/svg/for-light-bg.svg" alt="Korat Reality" class="footer-logo mb-3">
+                    </a>
+                    <p class="text-muted text-uppercase lh-lg mb-4 footer-brand-text">
+                        Strategic land acquisition and development solutions building long-term value for investors and
+                        communities.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-dark text-uppercase text-decoration-none small text-slide"
+                            data-text="LinkedIn"><span>LinkedIn</span></a>
+                        <a href="#" class="text-dark text-uppercase text-decoration-none small text-slide"
+                            data-text="Instagram"><span>Instagram</span></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h6 class="text-uppercase small fw-bold mb-4 ls-1">Company</h6>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="about.html" class="text-dark text-uppercase text-decoration-none small text-slide"
+                                data-text="About Us"><span>About Us</span></a></li>
+                        <li><a href="index.html#process"
+                                class="text-dark text-uppercase text-decoration-none small text-slide"
+                                data-text="Our Process"><span>Our Process</span></a></li>
+                        <li><a href="index.html#opportunities"
+                                class="text-dark text-uppercase text-decoration-none small text-slide"
+                                data-text="Opportunities"><span>Opportunities</span></a></li>
+                        <li><a href="contact.html"
+                                class="text-dark text-uppercase text-decoration-none small text-slide"
+                                data-text="Contact"><span>Contact</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h6 class="text-uppercase small fw-bold mb-4 ls-1">Services</h6>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="land-acquisition.html"
+                                class="text-dark text-uppercase text-decoration-none small text-slide"
+                                data-text="Land Acquisition"><span>Land Acquisition</span></a></li>
+                        <li><a href="index.html#services"
+                                class="text-dark text-uppercase text-decoration-none small text-slide"
+                                data-text="Development"><span>Development</span></a></li>
+                        <li><a href="index.html#services"
+                                class="text-dark text-uppercase text-decoration-none small text-slide"
+                                data-text="Advisory"><span>Advisory</span></a></li>
+                        <li><a href="why-invest-in-india.html"
+                                class="text-dark text-uppercase text-decoration-none small text-slide"
+                                data-text="NRI Services"><span>NRI Services</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row pt-4 border-top border-dark border-opacity-10">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <small class="text-muted text-uppercase">© 2025 Korat Reality. All rights reserved.</small>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-dark text-uppercase text-decoration-none small me-4 text-slide"
+                        data-text="Privacy Policy"><span>Privacy Policy</span></a>
+                    <a href="#" class="text-dark text-uppercase text-decoration-none small text-slide"
+                        data-text="Terms of Service"><span>Terms of Service</span></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Three.js (Required for Shery.js) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- Shery.js -->
+    <script type="text/javascript" src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
+
+    <!-- Lenis (Smooth Scroll) -->
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+
+    <!-- Smooth Scrolling Logic -->
+    <script src="assets/js/smooth-scroll.js"></script>
+
+    <!-- UI Interactions (Menu, FAQ, Service Icons) -->
+    <script src="assets/js/ui-interactions.js"></script>
+
+    <!-- GSAP Animations -->
+    <script src="assets/js/animations.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
