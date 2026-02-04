@@ -3,6 +3,10 @@
    Bootstrap 5 + Custom CSS
    ============================================ */
 @import url('custom_nav.css');
+@import url('stacking_cards.css');
+@import url('new_footer.css');
+@import url('feature_grid.css');
+@import url('process_section.css');
 
 /* ============================================
    1. FONT DEFINITIONS
@@ -434,7 +438,7 @@ h6 {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1004d4d;
+    z-index: 100;
     padding-top: clamp(1rem, 2vw, 1.5rem);
 }
 
@@ -1520,7 +1524,7 @@ input::placeholder {
 }
 
 .faq-item.is-active .faq-icon-line {
-    background-color: var(--primary-dark);
+    background-color: var(--primary-teal);
 }
 
 /* Answer Container */

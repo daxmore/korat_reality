@@ -182,28 +182,92 @@ faqItems.forEach(item => {
             }
         });
 
-        // Toggle current item
-        if (isActive) {
-            item.classList.remove('is-active');
-            question.setAttribute('aria-expanded', 'false');
+        // Toggle current
+        item.classList.toggle('is-active');
+        const isNowActive = item.classList.contains('is-active');
+        question.setAttribute('aria-expanded', isNowActive);
 
+        if (isNowActive) {
+            gsap.to(answer, {
+                maxHeight: answer.scrollHeight,
+                duration: 0.5,
+                ease: 'power3.inOut'
+            });
+        } else {
             gsap.to(answer, {
                 maxHeight: 0,
                 duration: 0.5,
                 ease: 'power3.inOut'
             });
-        } else {
-            item.classList.add('is-active');
-            question.setAttribute('aria-expanded', 'true');
-
-            const answerInner = answer.querySelector('.faq-answer-inner');
-            const naturalHeight = answerInner ? answerInner.offsetHeight : 150;
-
-            gsap.to(answer, {
-                maxHeight: naturalHeight + 40,
-                duration: 0.6,
-                ease: 'power3.out'
-            });
         }
     });
 });
+
+// ============================================
+// PROCESS CARD BACKGROUND FOLLOWER
+// ============================================
+const processSection = document.querySelector('.process-section');
+if (processSection) {
+    const grid = processSection.querySelector('.process-grid');
+
+    if (grid) {
+        // Append to the GRID directly (relative positioned)
+        const follower = document.createElement('div');
+        follower.classList.add('process-bg-follower');
+        grid.appendChild(follower);
+
+        // Initially hide
+        gsap.set(follower, { opacity: 0 });
+
+        const cards = processSection.querySelectorAll('.process-step-card');
+
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                // CHECK: Only active on Large Screens (>= 1200px)
+                if (window.innerWidth < 1200) return;
+
+                // 1. Get positions relative to the GRID
+                const cardRect = card.getBoundingClientRect();
+                const gridRect = grid.getBoundingClientRect();
+
+                const relativeTop = cardRect.top - gridRect.top;
+                const relativeLeft = cardRect.left - gridRect.left;
+                const width = cardRect.width;
+                const height = cardRect.height;
+
+                // 2. Animate Follower
+                gsap.to(follower, {
+                    x: relativeLeft,
+                    y: relativeTop,
+                    width: width,
+                    height: height,
+                    opacity: 1,
+                    duration: 0.4,
+                    ease: "power2.out",
+                    overwrite: true
+                });
+
+                // 3. Toggle Active State on Card Text
+                cards.forEach(c => c.classList.remove('is-active'));
+                card.classList.add('is-active');
+            });
+
+            // Add mouseleave for individual cards primarily to handle quick exits
+            card.addEventListener('mouseleave', () => {
+                // Optional: We can rely on the section leave for full hide, 
+                // but this ensures state is clean if moving between cards.
+            });
+        });
+
+        // Hide when leaving the SECTION or GRID
+        // Using section covers cases where mouse moves to padding area
+        processSection.addEventListener('mouseleave', () => {
+            gsap.to(follower, {
+                opacity: 0,
+                duration: 0.3,
+                overwrite: true
+            });
+            cards.forEach(c => c.classList.remove('is-active'));
+        });
+    }
+}
