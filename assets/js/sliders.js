@@ -1,22 +1,48 @@
-/**
- * Korat Reality - Slider/Carousel Animations
- * 
- * This file is reserved for any future slider or carousel implementations
- * Examples: Testimonial sliders, image galleries, project showcases, etc.
- * 
- * Recommended libraries:
- * - Swiper.js (https://swiperjs.com/)
- * - Splide.js (https://splidejs.com/)
- * - GSAP Draggable (https://greensock.com/draggable/)
- */
+document.addEventListener('DOMContentLoaded', () => {
 
-document.addEventListener("DOMContentLoaded", function () {
+    /* ===============================================================
+       SERVICES SWIPER
+       =============================================================== */
+    if (document.querySelector('.services-swiper')) {
+        const servicesSwiper = new Swiper('.services-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            speed: 800,
+            grabCursor: true,
 
-    // Example: Testimonial Slider (placeholder)
-    // const testimonialSlider = document.querySelector('.testimonial-slider');
-    // if (testimonialSlider) {
-    //     // Initialize slider here
-    // }
+            // Navigation
+            navigation: {
+                nextEl: '.services-next',
+                prevEl: '.services-prev',
+            },
 
-    console.log('Slider module loaded - ready for implementation');
+            // Pagination
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+
+            // Responsive Breakpoints
+            breakpoints: {
+                // Mobile
+                575: {
+                    slidesPerView: 1,
+                    spaceBetween: 20
+                },
+                // Tablet
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20
+                },
+                // Desktop
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30
+                }
+            }
+        });
+    }
+
+    console.log('Slider module loaded - Services Swiper initialized');
 });

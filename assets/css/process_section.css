@@ -95,7 +95,7 @@
 
     /* Text Color Changes */
     .process-step-card.is-active .process-number {
-        color: rgba(255, 255, 255, 0.2);
+        color: rgba(255, 255, 255, 1);
     }
 
     .process-step-card.is-active .process-title {
