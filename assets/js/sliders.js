@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
             loop: true,
             speed: 800,
             grabCursor: true,
+            loopAdditionalSlides: 1,
 
             // Navigation
             navigation: {
@@ -43,6 +44,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
-    console.log('Slider module loaded - Services Swiper initialized');
 });
