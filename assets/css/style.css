@@ -57,7 +57,7 @@
     --primary-light: #fdfcfa;
     --primary-pastel-green: #e8f4f3;
     --primary-pastel-pink: #fef0ed;
-    --text-dark: #004d4d;
+    --text-dark: #1c4044;
     --text-light: #f5f4f0;
     --text-muted: #6b6b6b;
     --text-teal: #004d4d;
@@ -141,7 +141,7 @@ body.menu-active {
 
 
 h1 {
-    font-family: var(--font-heading);
+    font-family: var(--font-serif);
     font-weight: 400;
     line-height: 1.2;
     margin-bottom: 1rem;
@@ -197,6 +197,10 @@ h6 {
 
 .text-gold {
     color: var(--accent-teal) !important;
+}
+
+.text-dark {
+    color: var(--text-dark) !important;
 }
 
 .bg-teal {
@@ -297,6 +301,37 @@ h6 {
     width: 100%;
 }
 
+/* Text Slide Animation */
+.text-slide {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.text-slide span {
+    display: block;
+    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.text-slide::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.text-slide:hover span {
+    transform: translateY(-100%);
+}
+
+.text-slide:hover::after {
+    transform: translateY(-100%);
+}
+
 /* Button Animations (Circle Fill) - Teal Theme */
 .btn-teal,
 .btn-gold {
@@ -311,12 +346,14 @@ h6 {
     transition: color 0.4s ease, background-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.btn-teal:hover,
+.btn-teal:hover {
+    background-color: var(--primary-teal-light);
+    color: var(--primary-teal);
+}
+
 .btn-gold:hover {
-    background-color: #1c4044;
-    /* New Button Hover Color */
-    box-shadow: 0 8px 20px rgba(6, 132, 102, 0.2);
-    transform: translateY(-2px);
+    background-color: var(--primary-teal-light);
+    color: var(--primary-teal);
 }
 
 .btn-dark-gold {
@@ -371,7 +408,7 @@ h6 {
 /* Specific colors */
 .btn-gold::before {
     background-color: var(--primary-dark);
-    /* Darker gold/brown */
+    /* Darker Teal */
 }
 
 .btn-outline-light::before,
@@ -388,6 +425,7 @@ h6 {
 
 .btn-gold:hover {
     color: #fff;
+    background: var(--primary-teal-dark);
     /* Ensure text stays white */
 }
 
@@ -518,12 +556,13 @@ h6 {
     max-width: 900px;
     margin: 0 auto;
     padding: 2rem;
+    margin-top: -2rem;
 }
 
 .hero-title {
     color: var(--primary-teal);
     font-size: clamp(2.5rem, 7vw, 5rem);
-    font-family: var(--font-body);
+    font-family: var(--font-serif);
     font-weight: 300;
     line-height: 1.1;
     letter-spacing: -0.03em;
@@ -797,6 +836,331 @@ div#services_id span {
 .min-h-dvh {
     min-height: 100vh;
     min-height: 100dvh;
+}
+
+/* ============================================
+   6. NEW ABOUT PAGE REDESIGN
+   ============================================ */
+
+/* Mission Hero */
+.mission-hero {
+    padding-top: clamp(8rem, 15vw, 12rem);
+    padding-bottom: clamp(4rem, 8vw, 6rem);
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.mission-label {
+    color: var(--primary-teal);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 2rem;
+    display: block;
+}
+
+#about-us .hero-content {
+    padding: 5rem 0 !important;
+}
+
+.About-statement {
+    font-family: var(--font-serif);
+    font-size: clamp(1.2rem, 5vw, 2.5rem);
+    line-height: 1.2;
+    color: var(--text-dark) !important;
+    font-weight: 400;
+}
+
+/* Story & Stats Section - Refined 2-Column Layout with Overlap */
+.story-section-overlap {
+    position: relative;
+    z-index: 20;
+    /* Above hero */
+    margin-top: -100px;
+    /* Pull up over hero */
+    padding-bottom: 4rem;
+}
+
+.story-grid-container {
+    background-color: #fdfcfa;
+    border-radius: 20px;
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.12);
+    padding: clamp(2rem, 4vw, 3.5rem);
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: stretch;
+}
+
+@media (min-width: 992px) {
+    .story-grid {
+        grid-template-columns: 1.4fr 1fr;
+    }
+}
+
+/* Common Card Style */
+.story-card-main,
+.stats-card-wrapper {
+    background-color: #ffffff;
+    /* White inner cards to contrast with container if needed, or transparent to blend */
+    background-color: transparent;
+    border-radius: 20px;
+    padding: 0;
+    /* Remove padding as container handles it, or keep specific internal padding */
+    height: 100%;
+    position: relative;
+    overflow: visible;
+    /* Changed to visible to let image overlap if needed */
+}
+
+/* Re-add specific padding/bg if we want inner cards to look distinct inside the overlap container, 
+   BUT per index.html overlap style, it seems the Container IS the card. 
+   However, the user asked for the Story Grid to overlap. 
+   Let's fit the Story Grid INSIDE the Overlap Container. 
+*/
+
+.story-card-main {
+    padding-right: 2rem;
+}
+
+.stats-card-wrapper {
+    padding-left: 2rem;
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 991px) {
+    .stats-card-wrapper {
+        padding-left: 0;
+        border-left: none;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+        padding-top: 2rem;
+    }
+
+    .story-card-main {
+        padding-right: 0;
+    }
+}
+
+
+.story-content {
+    background-color: transparent;
+    padding-right: 0;
+    max-width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.story-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    /* Slightly larger */
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.story-text {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+/* Key Image Positioning */
+.key-image-wrapper {
+    position: absolute;
+    top: -35%;
+    /* Shift down slightly */
+    right: -100%;
+    /* Shift right slightly */
+    width: 65%;
+    /* Occupy bottom right corner */
+    max-width: 400px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.key-image-wrapper img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transform: rotate(-10deg);
+    /* Slight natural rotation */
+}
+
+@media (max-width: 991px) {
+    .key-image-wrapper {
+        position: relative;
+        bottom: 0;
+        right: 0;
+        width: 80%;
+        margin: 2rem auto 0;
+        display: block;
+        transform: none;
+    }
+
+    .key-image-wrapper img {
+        transform: none;
+    }
+}
+
+/* Stats Card Adjustments */
+.stats-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3.5rem;
+}
+
+.stat-item h3 {
+    font-family: var(--font-serif);
+    font-size: clamp(3rem, 5vw, 4rem);
+    /* Larger numbers */
+    color: var(--primary-teal);
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+
+.stat-item p {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+/* Team Section */
+.team-header {
+    margin-bottom: 4rem;
+}
+
+.team-header h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    color: var(--text-dark);
+    max-width: 600px;
+}
+
+/* Join Team Section */
+.join-team-wrapper {
+    background-color: #fdfcfa;
+    border-radius: 24px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 992px) {
+    .join-team-wrapper {
+        flex-direction: row;
+        min-height: 500px;
+    }
+}
+
+.join-image {
+    flex: 1;
+    min-height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.join-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.join-content {
+    flex: 1;
+    padding: clamp(2rem, 5vw, 4rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.join-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3vw, 2.5rem);
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+}
+
+.join-text {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.join-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.join-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.join-list li i {
+    color: var(--primary-teal);
+    font-size: 1.1rem;
+}
+
+/* New Footer CTA Box */
+.footer-cta-box {
+    background-color: var(--primary-teal-dark);
+    border-radius: 24px;
+    padding: clamp(3rem, 6vw, 5rem) 2rem;
+    text-align: center;
+    color: white;
+    margin-top: 4rem;
+}
+
+.footer-cta-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 2rem;
+}
+
+/* Team Card Polish */
+.team-card {
+    transition: transform 0.4s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+}
+
+.team-card h4 {
+    color: var(--text-dark);
+    font-size: 1.25rem;
+}
+
+/* Investor Logos Polish */
+.grayscale-img.opacity-50 {
+    opacity: 0.5;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.grayscale-img.opacity-50:hover {
+    opacity: 1;
+    filter: grayscale(0%);
 }
 
 .fullscreen-menu.is-active {

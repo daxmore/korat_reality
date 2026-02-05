@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
-<body id="page-home">
+<body id="home">
     <!-- ============================================
          INTRO OVERLAY (TrueKind-Inspired)
          ============================================ -->
@@ -33,7 +33,7 @@
 
     <!-- ============================================
          HEADER / NAVIGATION
-         ============================================ -->
+         ============================================  -->
     <header class="main-header py-4">
         <div class="container-fluid px-4 px-md-5">
             <div class="d-flex justify-content-between align-items-center w-100">
@@ -59,10 +59,10 @@
                 <button
                     class="btn btn-sm border-0 bg-transparent p-0 text-teal d-flex align-items-center justify-content-center hover-teal"
                     type="button" id="menuToggleBtn" aria-label="Menu">
-                    <svg width="48" height="20" viewBox="0 0 48 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <line x1="2" y1="6" x2="46" y2="6" stroke="currentColor" stroke-width="3"
+                    <svg width="36" height="20" viewBox="0 0 36 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="2" y1="6" x2="36" y2="6" stroke="currentColor" stroke-width="3"
                             stroke-linecap="round" />
-                        <line x1="2" y1="14" x2="46" y2="14" stroke="currentColor" stroke-width="3"
+                        <line x1="2" y1="14" x2="36" y2="14" stroke="currentColor" stroke-width="3"
                             stroke-linecap="round" />
                     </svg>
                 </button>
@@ -144,16 +144,12 @@
         </div>
     </header>
 
-    <!-- Loading Indicator for Frame Preloading -->
-    <!-- Loading Indicator REMOVED -->
-
     <!-- ============================================
          HERO SECTION - Canvas Parallax Animation
          ============================================ -->
     <section class="hero-section" id="hero">
-        <!-- Canvas for frame animation -->
         <!-- Hero Background Image -->
-        <img src="assets/images/hero_image (2).jpeg" alt="Hero Background" class="hero-bg-image">
+        <img src="assets/images/hero_image.jpeg" alt="Hero Background" class="hero-bg-image">
 
         <!-- Cloud Overlay -->
         <div class="hero-cloud-overlay"></div>
@@ -162,21 +158,24 @@
             <div class="row min-vh-100 align-items-center justify-content-center">
                 <div class="col-lg-12">
                     <div class="hero-content pt-8">
-                        <p class="text-uppercase small text-muted mb-3 ls-1" style="letter-spacing: 3px;">Welcome to
-                            Korat Reality</p>
+                        <span
+                            class="hero-label text-teal fw-bold bg-white px-3 py-1 rounded-pill mb-4 d-inline-block shadow-sm text-uppercase small ls-1">Welcome
+                            to
+                            Korat Reality</span>
                         <h1 class="hero-title text-uppercase mb-4">
                             Get The Most Out <br>
-                            <span class="highlight">Of VCS</span>
+                            <span class="highlight">Of Your Land</span>
                         </h1>
-                        <p class="text-muted mb-5 mx-auto" style="max-width: 600px; font-size: 1rem; line-height: 1.7;">
+                        <p class="text-light mb-5 mx-auto" style="max-width: 600px; font-size: 1rem; line-height: 1.7;">
                             We work with investors, landowners, and NRIs to identify, develop, and structure real estate
                             opportunities with clear documentation and long-term value mindset.
                         </p>
 
                         <div class="hero-buttons d-flex flex-wrap gap-3 justify-content-center mb-5">
-                            <a href="#projects" class="btn btn-teal text-uppercase px-5 py-3 fw-bold">Explore
+                            <a href="#projects"
+                                class="btn btn-teal text-uppercase rounded-pill px-5 py-3 fw-bold">Explore
                                 Opportunities</a>
-                            <a href="#about" class="btn btn-outline-dark-custom text-uppercase px-5 py-3 fw-bold">Learn
+                            <a href="#about" class="btn btn-light text-uppercase rounded-pill px-5 py-3 fw-bold">Learn
                                 More</a>
                         </div>
                     </div>
@@ -185,9 +184,6 @@
         </div>
     </section>
 
-    <!-- ============================================
-         ABOUT SECTION
-         ============================================ -->
     <!-- ============================================
          OVERLAPPING INTRO / DASHBOARD SECTION
          ============================================ -->
@@ -1203,9 +1199,6 @@
     </section>
 
     <!-- ============================================
-         CTA SECTION
-         ============================================ -->
-    <!-- ============================================
          NEW UNIFIED FOOTER
          ============================================ -->
     <footer class="new-main-footer" id="footer">
@@ -1227,26 +1220,36 @@
                 <!-- Column 1 -->
                 <div class="col-lg-2 col-md-4 col-6">
                     <h6 class="footer-nav-title">We're Korat</h6>
-                    <a href="#process" class="footer-nav-link">Our Process</a>
-                    <a href="#opportunities" class="footer-nav-link">Opportunities</a>
-                    <a href="why-invest-in-india.html" class="footer-nav-link">NRI Services</a>
+                    <a href="#process" class="footer-nav-link d-block text-slide" data-text="Our Process"><span>Our
+                            Process</span></a>
+                    <a href="#opportunities" class="footer-nav-link d-block text-slide"
+                        data-text="Opportunities"><span>Opportunities</span></a>
+                    <a href="why-invest-in-india.html" class="footer-nav-link d-block text-slide"
+                        data-text="NRI Services"><span>NRI Services</span></a>
                 </div>
 
                 <!-- Column 2 -->
                 <div class="col-lg-2 col-md-4 col-6">
                     <h6 class="footer-nav-title">Services</h6>
-                    <a href="land-acquisition.html" class="footer-nav-link">Land Acquisition</a>
-                    <a href="land-development.html" class="footer-nav-link">Land Development</a>
-                    <a href="residential-projects.html" class="footer-nav-link">Residential</a>
-                    <a href="commercial-projects.html" class="footer-nav-link">Commercial</a>
+                    <a href="land-acquisition.html" class="footer-nav-link d-block text-slide"
+                        data-text="Land Acquisition"><span>Land Acquisition</span></a>
+                    <a href="land-development.html" class="footer-nav-link d-block text-slide"
+                        data-text="Land Development"><span>Land Development</span></a>
+                    <a href="residential-projects.html" class="footer-nav-link d-block text-slide"
+                        data-text="Residential"><span>Residential</span></a>
+                    <a href="commercial-projects.html" class="footer-nav-link d-block text-slide"
+                        data-text="Commercial"><span>Commercial</span></a>
                 </div>
 
                 <!-- Column 3 -->
                 <div class="col-lg-2 col-md-4 col-6">
                     <h6 class="footer-nav-title">Company</h6>
-                    <a href="about.html" class="footer-nav-link">About Us</a>
-                    <a href="#contact" class="footer-nav-link">Careers</a>
-                    <a href="#contact" class="footer-nav-link">Contact</a>
+                    <a href="about.html" class="footer-nav-link d-block text-slide" data-text="About Us"><span>About
+                            Us</span></a>
+                    <a href="#contact" class="footer-nav-link d-block text-slide"
+                        data-text="Careers"><span>Careers</span></a>
+                    <a href="#contact" class="footer-nav-link d-block text-slide"
+                        data-text="Contact"><span>Contact</span></a>
                 </div>
 
                 <!-- Column 4 (Spacer/Logo) -->
@@ -1300,9 +1303,6 @@
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <!-- Hero Parallax Animation (Frame-based) -->
-    <!-- Hero Parallax Animation REMOVED -->
 
     <!-- Smooth Scrolling Logic -->
     <script src="assets/js/smooth-scroll.js"></script>
