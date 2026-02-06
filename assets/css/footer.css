@@ -84,7 +84,6 @@ input:focus {
 .footer-logo-lg {
     width: 40px;
     height: auto;
-    border-radius: 0 !important;
 }
 
 .footer-bottom-links {
@@ -113,8 +112,4 @@ input:focus {
 
 .footer-social-icon:hover {
     opacity: 1;
-}
-
-.footer-social-icon {
-    font-size: 16px;
 }

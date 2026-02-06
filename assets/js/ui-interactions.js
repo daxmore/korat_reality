@@ -59,62 +59,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ============================================
-    // FAQ ACCORDION
+    // FAQ ACCORDION AND CTA
     // ============================================
     const faqQuestions = document.querySelectorAll('.faq-question');
-    const faqAnswers = document.querySelectorAll('.faq-answer');
     const faqCta = document.querySelector('.faq-cta');
 
-    // Initialize all answers to height 0
-    faqAnswers.forEach(answer => {
-        answer.style.height = '0px';
-        answer.style.overflow = 'hidden';
-    });
-
-    // Initialize CTA if exists
+    // Initially hide CTA if it exists
     if (faqCta) {
-        faqCta.style.opacity = '0';
-        faqCta.style.display = 'none';
+        // We will reveal it when user interacts
+        gsap.set(faqCta, { opacity: 0, y: 20, display: 'none' });
     }
 
-    // Add click handlers
-    faqQuestions.forEach((question, index) => {
-        question.addEventListener('click', function () {
-            const isCurrentlyExpanded = this.getAttribute('aria-expanded') === 'true';
-            const answer = this.nextElementSibling;
-
-            // Close all other FAQs
-            faqQuestions.forEach((otherQuestion, otherIndex) => {
-                if (otherIndex !== index) {
-                    otherQuestion.setAttribute('aria-expanded', 'false');
-                    const otherAnswer = otherQuestion.nextElementSibling;
-                    if (otherAnswer) {
-                        otherAnswer.style.height = '0px';
-                    }
-                }
-            });
-
-            // Toggle current FAQ
-            if (isCurrentlyExpanded) {
-                // Close it
-                this.setAttribute('aria-expanded', 'false');
-                answer.style.height = '0px';
-            } else {
-                // Open it
-                this.setAttribute('aria-expanded', 'true');
-                const fullHeight = answer.scrollHeight;
-                answer.style.height = fullHeight + 'px';
-
-                // Show CTA on first interaction
-                if (faqCta && faqCta.style.opacity === '0') {
-                    setTimeout(() => {
-                        faqCta.style.display = 'block';
-                        faqCta.style.opacity = '1';
-                    }, 300);
-                }
-            }
-        });
-    });
     faqQuestions.forEach((btn) => {
         btn.addEventListener('click', () => {
             const answer = btn.nextElementSibling;
@@ -208,35 +163,11 @@ document.addEventListener('DOMContentLoaded', () => {
             // Get all process step cards
             const cards = processSection.querySelectorAll('.process-step-card');
 
-            // Flag to track if cards are loaded and ready for interaction
-            let cardsReady = false;
-
-            // Wait for section to be visible and images/content loaded
-            const enableCardsInteraction = () => {
-                // Check if section is in viewport
-                const sectionRect = processSection.getBoundingClientRect();
-                const isVisible = sectionRect.top < window.innerHeight && sectionRect.bottom > 0;
-
-                if (isVisible && !cardsReady) {
-                    // Small delay to ensure everything is rendered
-                    setTimeout(() => {
-                        cardsReady = true;
-                        processSection.classList.add('cards-ready');
-                    }, 300);
-                }
-            };
-
-            // Check on scroll and on load
-            window.addEventListener('scroll', enableCardsInteraction, { passive: true });
-            window.addEventListener('load', enableCardsInteraction);
-            // Also check immediately in case section is already visible
-            enableCardsInteraction();
-
             // Add event listeners to each card
             cards.forEach(card => {
                 card.addEventListener('mouseenter', () => {
-                    // Only active on desktop (>= 1200px) and when cards are ready
-                    if (window.innerWidth < 1200 || !cardsReady) return;
+                    // Only active on desktop (>= 1200px) based on CSS
+                    if (window.innerWidth < 1200) return;
 
                     // 1. Calculate Layout relative to the SECTION
                     const cardRect = card.getBoundingClientRect();
@@ -269,8 +200,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Handle Mouse Leaving the Grid
             grid.addEventListener('mouseleave', () => {
-                if (!cardsReady) return; // Don't animate if not ready
-
                 gsap.to(follower, {
                     opacity: 0,
                     duration: 0.3,

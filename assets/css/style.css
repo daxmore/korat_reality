@@ -132,10 +132,7 @@ body {
     overflow-x: hidden;
 }
 
-/* All sections with IDs should have overflow hidden */
-section[id] {
-    overflow: hidden;
-}
+
 
 /* Lock body scroll when menu is open */
 body.menu-active {
@@ -1000,19 +997,6 @@ div#services_id span {
     /* Slight natural rotation */
 }
 
-/* Hide key image on large screens */
-@media (max-width: 1300px) {
-    .key-image-wrapper {
-        display: none !important;
-    }
-}
-
-@media (max-width: 1200px) {
-    .About-statement {
-        font-size: 2rem;
-    }
-}
-
 @media (max-width: 991px) {
     .key-image-wrapper {
         position: relative;
@@ -1188,6 +1172,7 @@ div#services_id span {
 /* Optional: Stagger animation for links (handled via JS or CSS delay) */
 .fullscreen-menu .menu-link-large {
     opacity: 0;
+    transform: translateX(30px);
     transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -1911,7 +1896,7 @@ input::placeholder {
 .faq-answer {
     height: 0;
     overflow: hidden;
-    transition: height 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    /* transition: max-height 0.6s cubic-bezier(0.23, 1, 0.32, 1); */
 }
 
 .faq-answer-inner {
@@ -2580,10 +2565,6 @@ img {
         padding: 50px 0;
     }
 
-    .bottom-stat-item h3 {
-        font-size: 3rem;
-    }
-
     .vm-main-title {
         font-size: 2rem;
     }
@@ -2700,83 +2681,22 @@ img {
 }
 
 /* Responsiveness */
-/* Tablet and smaller - Hide images, show text content */
-@media (max-width: 1199px) {
-    .service-img-wrapper {
-        display: none;
-    }
-
-    .service-title {
-        font-size: 1.3rem;
-        line-height: 1.2;
-    }
-
+@media (max-width: 991px) {
     .service-card-new {
-        height: auto;
-        min-height: 280px;
+        height: 420px;
         padding: 2rem;
     }
 
-    /* Show description always on smaller screens */
-    .service-desc-hover {
-        opacity: 1;
-        transform: translateY(0);
-        margin-top: 1rem;
-        max-width: 100%;
-        font-size: 0.95rem;
-        line-height: 1.6;
-    }
-
-    .service-cta-btn {
-        margin-top: 1.5rem;
-    }
-}
-
-/* Tablet - 991px and below */
-@media (max-width: 991px) {
-    .service-card-new {
-        min-height: 260px;
-        padding: 1.75rem;
-    }
-
     .service-title {
-        font-size: 1.25rem;
+        font-size: 1.75rem;
     }
 
-    .service-desc-hover {
-        font-size: 0.9rem;
-    }
-
-    .service-cta-btn {
-        font-size: 0.85rem;
-        padding: 0.5rem 1.2rem;
+    .service-img-wrapper {
+        width: 180px;
     }
 }
 
-/* Mobile - 767px and below */
 @media (max-width: 767.98px) {
-    .service-card-new {
-        min-height: 240px;
-        padding: 1.5rem;
-        border-radius: 16px;
-    }
-
-    .service-title {
-        font-size: 1.15rem;
-    }
-
-    .service-desc-hover {
-        font-size: 1.05rem;
-        margin-top: 0.75rem;
-    }
-
-    .service-cta-btn {
-        font-size: 0.8rem;
-        padding: 0.45rem 1rem;
-        margin-top: 1rem;
-    }
-
-    /* Vision/Mission styles */
     .vm-icon-wrapper svg {
         width: 24px;
         height: 24px;
@@ -2803,22 +2723,5 @@ img {
     .vm-image-label {
         bottom: 15px;
         left: 15px;
-    }
-}
-
-/* Small Mobile - 575px and below */
-@media (max-width: 575.98px) {
-    .service-card-new {
-        min-height: 220px;
-        padding: 1.25rem;
-    }
-
-    .service-title {
-        font-size: 1.1rem;
-    }
-
-    .service-desc-hover {
-        font-size: 0.8rem;
-        line-height: 1.5;
     }
 }
