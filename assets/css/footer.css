@@ -1,12 +1,13 @@
 /* ============================================
    15. NEW FOOTER STYLES
    ============================================ */
-.new-main-footer {
+.main-footer {
     background-color: var(--primary-teal-dark);
     /* Deeper Teal Background */
     color: #fff;
     padding-top: 4rem;
     padding-bottom: 2rem;
+    overflow: hidden;
 }
 
 .footer-cta-box {

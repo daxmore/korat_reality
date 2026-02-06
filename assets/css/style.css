@@ -4,7 +4,7 @@
    ============================================ */
 @import url('custom_nav.css');
 @import url('stacking_cards.css');
-@import url('new_footer.css');
+@import url('footer.css');
 @import url('feature_grid.css');
 @import url('process_section.css');
 
@@ -348,7 +348,7 @@ h6 {
 
 .btn-teal:hover {
     background-color: var(--primary-teal-light);
-    color: var(--primary-teal);
+    color: var(--primary-teal-dark);
 }
 
 .btn-gold:hover {
@@ -513,6 +513,7 @@ h6 {
     height: 100%;
     object-fit: cover;
     z-index: 0;
+    border-radius: 0 !important;
 }
 
 .hero-cloud-overlay {
@@ -616,10 +617,6 @@ div#services_id span {
 
 .filter-invert {
     filter: invert(100%);
-}
-
-.main-footer {
-    overflow: hidden;
 }
 
 .main-footer ul li a {
@@ -1897,17 +1894,15 @@ input::placeholder {
 
 /* Answer Container */
 .faq-answer {
-    max-height: 0;
+    height: 0;
     overflow: hidden;
-    transition: max-height 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    /* transition: max-height 0.6s cubic-bezier(0.23, 1, 0.32, 1); */
 }
 
 .faq-answer-inner {
     padding: 0 0 2rem;
     padding-left: calc(2.5rem + clamp(1rem, 3vw, 2rem));
-    opacity: 0;
     transform: translateY(-10px);
-    transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s;
 }
 
 .faq-item.is-active .faq-answer-inner {
@@ -2620,11 +2615,6 @@ img {
     /* Slight delay */
     margin-top: 1rem;
     max-width: 90%;
-}
-
-.service-card-new:hover .service-desc-hover {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .service-img-wrapper {

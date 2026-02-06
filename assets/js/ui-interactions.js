@@ -70,38 +70,53 @@ document.addEventListener('DOMContentLoaded', () => {
         gsap.set(faqCta, { opacity: 0, y: 20, display: 'none' });
     }
 
-    faqQuestions.forEach((btn, index) => {
+    faqQuestions.forEach((btn) => {
         btn.addEventListener('click', () => {
-            const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+            const answer = btn.nextElementSibling;
+            const isOpen = btn.getAttribute('aria-expanded') === 'true';
 
             // Close all others
             faqQuestions.forEach(otherBtn => {
                 if (otherBtn !== btn) {
                     otherBtn.setAttribute('aria-expanded', 'false');
-                    const answer = otherBtn.nextElementSibling;
-                    gsap.to(answer, { height: 0, duration: 0.3, ease: 'power2.out' });
+                    const otherAnswer = otherBtn.nextElementSibling;
+                    gsap.to(otherAnswer, {
+                        height: 0,
+                        duration: 0.35,
+                        ease: 'power2.out'
+                    });
                 }
             });
 
-            // Toggle clicked
-            const answer = btn.nextElementSibling;
-            if (!isExpanded) {
+            if (!isOpen) {
                 btn.setAttribute('aria-expanded', 'true');
-                // Auto height animation
-                gsap.set(answer, { height: 'auto' });
-                gsap.from(answer, { height: 0, duration: 0.3, ease: 'power2.out' });
 
-                // Show CTA after first interaction (optional check)
-                if (faqCta && gsap.getProperty(faqCta, 'opacity') === 0) {
-                    gsap.to(faqCta, { display: 'block', opacity: 1, y: 0, duration: 0.5, delay: 0.5 });
-                }
+                // Measure content height
+                const inner = answer.querySelector('.faq-answer-inner');
+                const targetHeight = inner.offsetHeight;
+
+                gsap.to(answer, {
+                    height: targetHeight,
+                    duration: 0.35,
+                    ease: 'power2.out',
+                    onComplete: () => {
+                        // Let it breathe after animation
+                        answer.style.height = 'auto';
+                    }
+                });
 
             } else {
                 btn.setAttribute('aria-expanded', 'false');
-                gsap.to(answer, { height: 0, duration: 0.3, ease: 'power2.out' });
+
+                gsap.to(answer, {
+                    height: 0,
+                    duration: 0.35,
+                    ease: 'power2.out'
+                });
             }
         });
     });
+
 
 
     // ============================================
@@ -114,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         card.addEventListener('mouseenter', () => {
             if (arrow) {
-                gsap.to(arrow, { rotation: 45, duration: 0.3, ease: "back.out(1.7)" });
+                gsap.to(arrow, { rotation: -45, duration: 0.3, ease: "back.out(1.7)" });
             }
         });
 
