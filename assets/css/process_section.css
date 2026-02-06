@@ -53,7 +53,6 @@
     position: absolute;
     inset: 0;
     z-index: -1;
-    background: #fff;
     /* Behind the text */
     transition: opacity 0.3s ease;
     opacity: 1;
@@ -125,7 +124,7 @@
     }
 
     .process-step-card:hover .process-number {
-        color: rgba(255, 255, 255, 0.6);
+        color: rgba(255, 255, 255, 0.1);
     }
 
     .process-step-card:hover .process-title {
@@ -133,11 +132,7 @@
     }
 
     .process-step-card:hover .process-desc {
-        color: rgba(255, 255, 255);
-    }
-
-    .process-step-card::before {
-        background: transparent !important;
+        color: rgba(255, 255, 255, 0.7);
     }
 }
 

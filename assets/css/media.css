@@ -70,26 +70,9 @@
         padding-left: calc(2.5rem + 1rem);
     }
 
-    .faq-answer p {
-        margin-top: 4px;
-    }
-
     /* About Image Adjustment */
     .about-main-img-box {
         height: 400px;
-    }
-
-    .service-img-wrapper {
-        display: none;
-    }
-
-    .service-desc-hover {
-        opacity: 1;
-        font-size: 1.2rem;
-    }
-
-    .service-desc-hover:hover {
-        transform: translateY(20px) !important;
     }
 }
 
@@ -116,7 +99,7 @@
 
     /* FAQ mobile adjustments */
     .faq-number {
-        font-size: 1.3rem;
+        display: none;
     }
 
     .faq-answer-inner {
