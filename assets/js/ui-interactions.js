@@ -115,53 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-    faqQuestions.forEach((btn) => {
-        btn.addEventListener('click', () => {
-            const answer = btn.nextElementSibling;
-            const isOpen = btn.getAttribute('aria-expanded') === 'true';
-
-            // Close all others
-            faqQuestions.forEach(otherBtn => {
-                if (otherBtn !== btn) {
-                    otherBtn.setAttribute('aria-expanded', 'false');
-                    const otherAnswer = otherBtn.nextElementSibling;
-                    gsap.to(otherAnswer, {
-                        height: 0,
-                        duration: 0.35,
-                        ease: 'power2.out'
-                    });
-                }
-            });
-
-            if (!isOpen) {
-                btn.setAttribute('aria-expanded', 'true');
-
-                // Measure content height
-                const inner = answer.querySelector('.faq-answer-inner');
-                const targetHeight = inner.offsetHeight;
-
-                gsap.to(answer, {
-                    height: targetHeight,
-                    duration: 0.35,
-                    ease: 'power2.out',
-                    onComplete: () => {
-                        // Let it breathe after animation
-                        answer.style.height = 'auto';
-                    }
-                });
-
-            } else {
-                btn.setAttribute('aria-expanded', 'false');
-
-                gsap.to(answer, {
-                    height: 0,
-                    duration: 0.35,
-                    ease: 'power2.out'
-                });
-            }
-        });
-    });
-
 
 
     // ============================================
