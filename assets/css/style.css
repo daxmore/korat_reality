@@ -351,7 +351,7 @@ h6 {
 
 .btn-teal:hover {
     background-color: var(--primary-teal-light);
-    color: var(--primary-teal);
+    color: var(--primary-teal-dark);
 }
 
 .btn-gold:hover {
@@ -516,6 +516,7 @@ h6 {
     height: 100%;
     object-fit: cover;
     z-index: 0;
+    border-radius: 0 !important;
 }
 
 .hero-cloud-overlay {
@@ -619,10 +620,6 @@ div#services_id span {
 
 .filter-invert {
     filter: invert(100%);
-}
-
-.main-footer {
-    overflow: hidden;
 }
 
 .main-footer ul li a {
@@ -1920,9 +1917,7 @@ input::placeholder {
 .faq-answer-inner {
     padding: 0 0 2rem;
     padding-left: calc(2.5rem + clamp(1rem, 3vw, 2rem));
-    /* opacity: 0; */
     transform: translateY(-10px);
-    transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s;
 }
 
 .faq-item.is-active .faq-answer-inner {
@@ -2639,11 +2634,6 @@ img {
     /* Slight delay */
     margin-top: 1rem;
     max-width: 90%;
-}
-
-.service-card-new:hover .service-desc-hover {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .service-img-wrapper {
