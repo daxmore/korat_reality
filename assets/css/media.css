@@ -11,6 +11,10 @@
     .fullscreen-menu {
         width: 100% !important;
     }
+
+    .key-image-wrapper {
+        display: none;
+    }
 }
 
 /* ============================================
@@ -97,6 +101,15 @@
         padding-top: 7rem !important;
     }
 }
+
+@media (max-width: 991px) {
+
+    #blog-hero-visual {
+        display: none;
+    }
+}
+
+
 
 /* ============================================
    MOBILE (max-width: 575px)

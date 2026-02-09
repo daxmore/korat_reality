@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Land Acquisition Guide | Korat Reality Blog</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="assets/css/media.css">
+    <!-- Blog CSS -->
+    <link rel="stylesheet" href="assets/css/blog.css">
+</head>
+
+<body id="blog-detail">
+
+    <!-- ============================================
+         HEADER / NAVIGATION
+         ============================================  -->
+    <header class="main-header py-4">
+        <div class="container-fluid px-4 px-md-5">
+            <div class="d-flex justify-content-between align-items-center w-100">
+                <!-- 1. Logo -->
+                <a href="index.html" class="d-block">
+                    <img src="assets/images/korat_logo.png" alt="KR" class="logo-sm">
+                </a>
+
+                <!-- 2. Center Navigation (Desktop Only) -->
+                <div class="d-none d-lg-flex align-items-center gap-5 w-75 mx-auto justify-content-center">
+                    <a href="about.html"
+                        class="text-teal text-uppercase text-decoration-none fw-semibold small ls-1 text-slide"
+                        data-text="About Us"><span>About Us</span></a>
+                    <a href="why-invest-in-india.html"
+                        class="text-teal text-uppercase text-decoration-none fw-semibold small ls-1 text-slide"
+                        data-text="Why Invest In India"><span>Why Invest In India</span></a>
+                    <a href="nri-investor-guide.html"
+                        class="text-teal text-uppercase text-decoration-none fw-semibold small ls-1 text-slide"
+                        data-text="NRI Investor Guide"><span>NRI Investor Guide</span></a>
+                </div>
+
+                <!-- 3. Menu Button -->
+                <button
+                    class="btn btn-sm border-0 bg-transparent p-0 text-teal d-flex align-items-center justify-content-center hover-teal"
+                    type="button" id="menuToggleBtn" aria-label="Menu">
+                    <svg width="36" height="20" viewBox="0 0 36 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="2" y1="6" x2="36" y2="6" stroke="currentColor" stroke-width="3"
+                            stroke-linecap="round" />
+                        <line x1="2" y1="14" x2="36" y2="14" stroke="currentColor" stroke-width="3"
+                            stroke-linecap="round" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu content (Full Screen Overlay) -->
+            <div class="fullscreen-menu position-fixed top-0 end-0 w-40 bg-dark" id="mobileMenu">
+                <div class="d-flex flex-column min-h-dvh p-4">
+                    <!-- Menu Header -->
+                    <div class="d-flex justify-content-between justify-content-lg-end align-items-center mb-4">
+                        <a href="index.html">
+                            <img src="assets/images/korat_logo.png" class="logo-sm d-block d-lg-none" alt="Logo">
+                        </a>
+                        <button class="btn text-white p-0 d-flex align-items-center" type="button" id="menuCloseBtn"
+                            aria-label="Close">
+                            <span class="text-uppercase small fw-bold me-2 ls-1">Close</span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Menu Links -->
+                    <div class="flex-grow-1 d-flex flex-column align-items-end gap-3 text-end menu-links-offset">
+                        <a href="index.html"
+                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
+                            data-text="Home"><span>Home</span></a>
+                        <a href="about.html"
+                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
+                            data-text="About Us"><span>About Us</span></a>
+                        <a href="why-invest-in-india.html"
+                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
+                            data-text="Why Invest In India"><span>Why Invest In India</span></a>
+
+                        <!-- Services Dropdown -->
+                        <div class="d-flex flex-column align-items-end w-100">
+                            <button
+                                class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold d-inline-flex align-items-center gap-2 justify-content-end"
+                                data-bs-toggle="collapse" data-bs-target="#servicesNav">
+                                Our Services <span class="fs-4 text-white-50">+</span>
+                            </button>
+                            <div class="collapse text-end mt-3 border-end border-white border-opacity-25 pe-3"
+                                id="servicesNav">
+                                <a href="land-acquisition.html"
+                                    class="d-block text-white text-opacity-75 text-decoration-none text-uppercase mb-2 fs-5 text-slide"
+                                    data-text="Land Acquisition"><span>Land Acquisition</span></a>
+                                <a href="land-development.html"
+                                    class="d-block text-white text-opacity-75 text-decoration-none text-uppercase mb-2 fs-5 text-slide"
+                                    data-text="Land Development"><span>Land Development</span></a>
+                                <a href="commercial-projects.html"
+                                    class="d-block text-white text-opacity-75 text-decoration-none text-uppercase mb-2 fs-5 text-slide"
+                                    data-text="Commercial Projects"><span>Commercial Projects</span></a>
+                                <a href="residential-projects.html"
+                                    class="d-block text-white text-opacity-75 text-decoration-none text-uppercase mb-2 fs-5 text-slide"
+                                    data-text="Residential Projects"><span>Residential Projects</span></a>
+                                <a href="industrial-projects.html"
+                                    class="d-block text-white text-opacity-75 text-decoration-none text-uppercase mb-2 fs-5 text-slide"
+                                    data-text="Industrial Projects"><span>Industrial Projects</span></a>
+                            </div>
+                        </div>
+
+                        <a href="investment-opportunities.html"
+                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
+                            data-text="Investment Opportunities"><span>Investment Opportunities</span></a>
+                        <a href="why-invest-in-india.html"
+                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
+                            data-text="NRI Investor Guide"><span>NRI Investor Guide</span></a>
+                        <a href="blog.html"
+                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
+                            data-text="Insights / Blog"><span>Insights / Blog</span></a>
+                        <a href="contact.html"
+                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
+                            data-text="Contact Us"><span>Contact Us</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================
+         BREADCRUMB
+         ============================================ -->
+    <section class="breadcrumb-section py-4 bg-light border-bottom">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="index.html" class="text-teal">Home</a></li>
+                    <li class="breadcrumb-item"><a href="blog.html" class="text-teal">Blog</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Strategic Land Acquisition</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- ============================================
+         BLOG DETAIL CONTENT
+         ============================================ -->
+    <section class="blog-detail-section section-padding">
+        <div class="container">
+            <div class="row">
+                <!-- Main Content -->
+                <div class="col-lg-8 reveal-content">
+                    <!-- Article Header -->
+                    <article class="blog-detail-article">
+                        <div class="blog-detail-meta mb-4">
+                            <span class="blog-category">Investment</span>
+                            <span class="blog-detail-date">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                February 8, 2026
+                            </span>
+                            <span class="blog-detail-read-time">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                8 min read
+                            </span>
+                        </div>
+
+                        <h1 class="blog-detail-title mb-4">Strategic Land Acquisition: Key Factors for Successful Real
+                            Estate Investment</h1>
+
+                        <p class="lead text-muted mb-5">Discover the essential elements of strategic land acquisition
+                            and how proper due diligence can maximize your investment returns in the Indian real estate
+                            market.</p>
+
+                        <!-- Featured Image -->
+                        <div class="blog-detail-image-wrapper mb-5">
+                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&h=600&fit=crop"
+                                alt="Real Estate Investment" class="blog-detail-image">
+                        </div>
+
+                        <!-- Article Content -->
+                        <div class="blog-detail-content">
+                            <h2>Understanding Land Acquisition in India</h2>
+                            <p>Land acquisition is the cornerstone of any successful real estate development project. In
+                                India's dynamic market, understanding the nuances of land acquisition can mean the
+                                difference between a profitable investment and a costly mistake. Strategic land
+                                acquisition requires a comprehensive approach that considers legal, financial, and
+                                market factors.</p>
+
+                            <p>The Indian real estate market has witnessed significant transformation over the past
+                                decade, with increased regulation through RERA (Real Estate Regulatory Authority) and
+                                stricter compliance requirements. This evolution has made proper due diligence not just
+                                advisable, but essential for any serious investor.</p>
+
+                            <h2>Key Factors in Strategic Land Acquisition</h2>
+
+                            <h3>1. Location Analysis</h3>
+                            <p>The age-old adage "location, location, location" remains paramount in real estate. When
+                                evaluating land for acquisition, consider:</p>
+                            <ul>
+                                <li>Proximity to major infrastructure projects and transportation hubs</li>
+                                <li>Current and planned urban development in the area</li>
+                                <li>Access to essential amenities (schools, hospitals, commercial centers)</li>
+                                <li>Environmental factors and natural features</li>
+                                <li>Future growth potential and master plan alignment</li>
+                            </ul>
+
+                            <h3>2. Legal Due Diligence</h3>
+                            <p>Comprehensive legal verification is non-negotiable. This includes:</p>
+                            <ul>
+                                <li>Title search and ownership verification spanning at least 30 years</li>
+                                <li>Encumbrance certificate analysis</li>
+                                <li>Survey number and plot boundary verification</li>
+                                <li>Checking for any litigation, liens, or pending legal disputes</li>
+                                <li>Ensuring clear title transfer and proper documentation</li>
+                            </ul>
+
+                            <blockquote class="blog-quote">
+                                <p>"In real estate investment, thorough due diligence isn't expensive—it's priceless.
+                                    The cost of proper verification is always less than the cost of litigation or a
+                                    failed investment."</p>
+                                <cite>— Korat Reality Investment Advisory</cite>
+                            </blockquote>
+
+                            <h3>3. Zoning and Land Use Regulations</h3>
+                            <p>Understanding zoning regulations and land use permissions is critical:</p>
+                            <ul>
+                                <li>Current zoning classification (residential, commercial, industrial, agricultural)
+                                </li>
+                                <li>Permissible Floor Space Index (FSI) or Floor Area Ratio (FAR)</li>
+                                <li>Building height restrictions and setback requirements</li>
+                                <li>Conversion possibilities for agricultural land</li>
+                                <li>Environmental clearances and NOCs required</li>
+                            </ul>
+
+                            <h3>4. Market Analysis and Valuation</h3>
+                            <p>Proper market analysis ensures you're paying fair value and identifying growth potential:
+                            </p>
+                            <ul>
+                                <li>Comparative market analysis of similar properties</li>
+                                <li>Historical price trends and appreciation rates</li>
+                                <li>Supply-demand dynamics in the micro-market</li>
+                                <li>Future development plans affecting property values</li>
+                                <li>Exit strategy and liquidity considerations</li>
+                            </ul>
+
+                            <h2>The Due Diligence Process</h2>
+                            <p>A systematic due diligence process typically involves the following steps:</p>
+
+                            <ol>
+                                <li><strong>Preliminary Assessment:</strong> Initial evaluation of location, size, and
+                                    price range</li>
+                                <li><strong>Legal Verification:</strong> Title search, encumbrance check, and ownership
+                                    verification</li>
+                                <li><strong>Physical Inspection:</strong> Site visit, boundary verification, and
+                                    condition assessment</li>
+                                <li><strong>Regulatory Compliance:</strong> Zoning verification, land use permissions,
+                                    and required clearances</li>
+                                <li><strong>Financial Evaluation:</strong> Cost-benefit analysis, funding assessment,
+                                    and ROI calculation</li>
+                                <li><strong>Risk Assessment:</strong> Identifying and mitigating potential risks</li>
+                                <li><strong>Final Decision:</strong> Comprehensive review and investment decision</li>
+                            </ol>
+
+                            <h2>Common Pitfalls to Avoid</h2>
+                            <p>Even experienced investors can fall prey to common mistakes in land acquisition:</p>
+
+                            <ul>
+                                <li><strong>Inadequate Documentation Review:</strong> Rushing through legal paperwork
+                                    without thorough verification</li>
+                                <li><strong>Ignoring Future Development Plans:</strong> Not researching master plans and
+                                    upcoming infrastructure</li>
+                                <li><strong>Overlooking Environmental Factors:</strong> Missing soil conditions, water
+                                    table issues, or pollution concerns</li>
+                                <li><strong>Emotional Decision Making:</strong> Letting emotions override analytical
+                                    evaluation</li>
+                                <li><strong>Insufficient Market Research:</strong> Not understanding local market
+                                    dynamics and trends</li>
+                            </ul>
+
+                            <h2>Working with Professional Advisors</h2>
+                            <p>Successful land acquisition often requires a team of professionals:</p>
+
+                            <ul>
+                                <li><strong>Real Estate Consultants:</strong> Market insights and investment strategy
+                                </li>
+                                <li><strong>Legal Advisors:</strong> Title verification and documentation review</li>
+                                <li><strong>Chartered Surveyors:</strong> Physical measurement and boundary verification
+                                </li>
+                                <li><strong>Architects and Planners:</strong> Development potential assessment</li>
+                                <li><strong>Financial Advisors:</strong> Investment structuring and tax planning</li>
+                            </ul>
+
+                            <h2>Conclusion</h2>
+                            <p>Strategic land acquisition is a complex process that requires expertise, patience, and
+                                meticulous attention to detail. By following a systematic approach to due diligence,
+                                understanding legal requirements, and working with experienced professionals, investors
+                                can significantly reduce risks and maximize returns.</p>
+
+                            <p>At Korat Reality, we specialize in guiding investors through every step of the land
+                                acquisition process, from initial evaluation to final transaction. Our comprehensive
+                                approach ensures that your investment is built on a solid foundation of thorough
+                                research, legal compliance, and market intelligence.</p>
+
+                            <div class="blog-cta-box mt-5 p-4 bg-light rounded-3">
+                                <h4 class="mb-3">Ready to Start Your Land Acquisition Journey?</h4>
+                                <p class="text-muted mb-4">Connect with our expert advisors for personalized guidance on
+                                    strategic land acquisition and real estate investment.</p>
+                                <a href="contact.html" class="btn btn-card-outline px-4 py-2">Schedule a
+                                    Consultation</a>
+                            </div>
+                        </div>
+
+                        <!-- Article Tags -->
+                        <div class="blog-tags mt-5">
+                            <span class="fw-bold me-3">Tags:</span>
+                            <a href="#" class="blog-tag">Land Acquisition</a>
+                            <a href="#" class="blog-tag">Investment</a>
+                            <a href="#" class="blog-tag">Due Diligence</a>
+                            <a href="#" class="blog-tag">Real Estate</a>
+                            <a href="#" class="blog-tag">Legal Compliance</a>
+                        </div>
+
+                        <!-- Share Section -->
+                        <div class="blog-share mt-4 pt-4 border-top">
+                            <span class="fw-bold me-3">Share this article:</span>
+                            <div class="d-inline-flex gap-2">
+                                <a href="#" class="blog-share-btn" aria-label="Share on Facebook">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                    </svg>
+                                </a>
+                                <a href="#" class="blog-share-btn" aria-label="Share on Twitter">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                                    </svg>
+                                </a>
+                                <a href="#" class="blog-share-btn" aria-label="Share on LinkedIn">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                    </svg>
+                                </a>
+                                <a href="#" class="blog-share-btn" aria-label="Copy link">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-lg-4 d-none d-lg-block">
+                    <aside class="blog-sidebar">
+                        <!-- Categories Widget -->
+                        <div class="sidebar-widget reveal-content">
+                            <h4 class="sidebar-widget-title">Categories</h4>
+                            <ul class="sidebar-category-list">
+                                <li><a href="#" class="sidebar-category-item active">
+                                        Investment <span class="count">(12)</span>
+                                    </a></li>
+                                <li><a href="#" class="sidebar-category-item">
+                                        Market Trends <span class="count">(8)</span>
+                                    </a></li>
+                                <li><a href="#" class="sidebar-category-item">
+                                        Development <span class="count">(15)</span>
+                                    </a></li>
+                                <li><a href="#" class="sidebar-category-item">
+                                        Legal & Compliance <span class="count">(6)</span>
+                                    </a></li>
+                                <li><a href="#" class="sidebar-category-item">
+                                        NRI Investments <span class="count">(10)</span>
+                                    </a></li>
+                                <li><a href="#" class="sidebar-category-item">
+                                        Case Studies <span class="count">(5)</span>
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         RELATED POSTS
+         ============================================ -->
+    <section class="related-posts-section py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold mb-3">Related Articles</h2>
+                <p class="text-muted">Explore more insights on real estate investment and development</p>
+            </div>
+            <div class="row g-4">
+                <!-- Related Post 1 -->
+                <div class="col-lg-4 col-md-6 reveal-content">
+                    <article class="blog-card h-100">
+                        <a href="blog-detail.html" class="blog-card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=500&fit=crop"
+                                alt="Market Analysis" class="blog-card-img">
+                        </a>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-category">Market Trends</span>
+                                <span class="blog-date">Feb 5, 2026</span>
+                            </div>
+                            <h3 class="blog-card-title">
+                                <a href="blog-detail.html">2026 Real Estate Market Outlook: Emerging Opportunities</a>
+                            </h3>
+                            <p class="blog-card-desc">Analyze the latest market trends and understand why tier-2 cities
+                                are becoming investment hotspots.</p>
+                            <a href="blog-detail.html" class="blog-read-more">
+                                Read Article
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14m-7-7 7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Related Post 2 -->
+                <div class="col-lg-4 col-md-6 reveal-content">
+                    <article class="blog-card h-100">
+                        <a href="blog-detail.html" class="blog-card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=500&fit=crop"
+                                alt="Legal Guide" class="blog-card-img">
+                        </a>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-category">Legal & Compliance</span>
+                                <span class="blog-date">Jan 25, 2026</span>
+                            </div>
+                            <h3 class="blog-card-title">
+                                <a href="blog-detail.html">Understanding RERA: Complete Guide for Investors</a>
+                            </h3>
+                            <p class="blog-card-desc">Navigate RERA regulations and understand how it protects your
+                                investment and ensures transparency.</p>
+                            <a href="blog-detail.html" class="blog-read-more">
+                                Read Article
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14m-7-7 7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Related Post 3 -->
+                <div class="col-lg-4 col-md-6 reveal-content">
+                    <article class="blog-card h-100">
+                        <a href="blog-detail.html" class="blog-card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=500&fit=crop"
+                                alt="Development" class="blog-card-img">
+                        </a>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-category">Development</span>
+                                <span class="blog-date">Jan 28, 2026</span>
+                            </div>
+                            <h3 class="blog-card-title">
+                                <a href="blog-detail.html">Modern Land Development Strategies and Best Practices</a>
+                            </h3>
+                            <p class="blog-card-desc">Learn comprehensive approaches to land development including
+                                zoning and sustainable practices.</p>
+                            <a href="blog-detail.html" class="blog-read-more">
+                                Read Article
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14m-7-7 7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+        FOOTER
+    ============================================ -->
+    <footer class="main-footer" id="footer">
+        <div class="container">
+            <!-- Top CTA Box -->
+            <div class="footer-cta-box reveal-scale-up">
+                <h2 class="footer-cta-title text-white">Connect With Our <br><span class="fst-italic">Investment
+                        Advisors</span></h2>
+                <p class="text-white-50 mb-4 fs-5" style="max-width: 600px; margin: 0 auto;">
+                    Unlock exclusive real estate opportunities and build your wealth with professional guidance.
+                </p>
+                <a href="#contact" class="btn btn-card-light text-uppercase fw-bold px-5 py-3 ">
+                    Request Consultation
+                </a>
+            </div>
+
+            <!-- Footer Links Grid -->
+            <div class="row g-5 mb-5 border-bottom border-white border-opacity-10 pb-5">
+                <!-- Column 1 -->
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h6 class="footer-nav-title">We're Korat</h6>
+                    <a href="#process" class="footer-nav-link d-block text-slide" data-text="Our Process"><span>Our
+                            Process</span></a>
+                    <a href="#opportunities" class="footer-nav-link d-block text-slide"
+                        data-text="Opportunities"><span>Opportunities</span></a>
+                    <a href="why-invest-in-india.html" class="footer-nav-link d-block text-slide"
+                        data-text="NRI Services"><span>NRI Services</span></a>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h6 class="footer-nav-title">Services</h6>
+                    <a href="land-acquisition.html" class="footer-nav-link d-block text-slide"
+                        data-text="Land Acquisition"><span>Land Acquisition</span></a>
+                    <a href="land-development.html" class="footer-nav-link d-block text-slide"
+                        data-text="Land Development"><span>Land Development</span></a>
+                    <a href="residential-projects.html" class="footer-nav-link d-block text-slide"
+                        data-text="Residential"><span>Residential</span></a>
+                    <a href="commercial-projects.html" class="footer-nav-link d-block text-slide"
+                        data-text="Commercial"><span>Commercial</span></a>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h6 class="footer-nav-title">Company</h6>
+                    <a href="about.html" class="footer-nav-link d-block text-slide" data-text="About Us"><span>About
+                            Us</span></a>
+                    <a href="#contact" class="footer-nav-link d-block text-slide"
+                        data-text="Careers"><span>Careers</span></a>
+                    <a href="#contact" class="footer-nav-link d-block text-slide"
+                        data-text="Contact"><span>Contact</span></a>
+                </div>
+
+                <!-- Column 4 (Spacer/Logo) -->
+                <div class="col-lg-6 col-md-12 d-flex flex-column align-items-lg-end">
+                    <img src="assets/images/korat_logo.png" alt="Korat Reality" class="footer-logo-lg mb-5 mb-lg-auto">
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-4">
+                <!-- Socials -->
+                <div class="d-flex">
+                    <a href="#" class="footer-social-icon"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="footer-social-icon"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="footer-social-icon"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" class="footer-social-icon"><i class="bi bi-instagram"></i></a>
+                </div>
+
+                <!-- Copyright & Links -->
+                <div class="d-flex flex-wrap justify-content-center gap-4">
+                    <a href="#" class="footer-bottom-link">Privacy Policy</a>
+                    <a href="#" class="footer-bottom-link">Terms of Use</a>
+                    <span class="footer-bottom-link text-white-50">© 2026 Korat Reality. All Rights Reserved.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Lenis (Smooth Scroll) -->
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Smooth Scrolling Logic -->
+    <script src="assets/js/smooth-scroll.js"></script>
+
+    <!-- UI Interactions (Menu, FAQ, Service Icons) -->
+    <script src="assets/js/ui-interactions.js"></script>
+
+    <!-- GSAP Animations -->
+    <script src="assets/js/animations.js"></script>
+
+    <!-- Sliders -->
+    <script src="assets/js/sliders.js"></script>
+
+    <!-- Scroll to Top Button -->
+    <script src="assets/js/scroll-to-top.js"></script>
+
+    <!-- Counter Animation -->
+    <script src="assets/js/counter-animation.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

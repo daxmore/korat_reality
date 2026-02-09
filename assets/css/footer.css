@@ -82,8 +82,9 @@ input:focus {
 }
 
 .footer-logo-lg {
-    width: 40px;
+    width: 200px;
     height: auto;
+    filter: brightness(100);
 }
 
 .footer-bottom-links {

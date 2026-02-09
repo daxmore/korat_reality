@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Korat Reality - Real Estate Insights & Investment Tips</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="assets/css/media.css">
+    <!-- Blog CSS -->
+    <link rel="stylesheet" href="assets/css/blog.css">
+</head>
+
+<body id="blog">
+
+    <!-- ============================================
+         HEADER / NAVIGATION
+         ============================================  -->
+    <header class="main-header py-4">
+        <div class="container-fluid px-4 px-md-5">
+            <div class="d-flex justify-content-between align-items-center w-100">
+                <!-- 1. Logo -->
+                <a href="index.html" class="d-block">
+                    <img src="assets/images/korat_logo.png" alt="KR" class="logo-sm">
+                </a>
+
+                <!-- 2. Center Navigation (Desktop Only) -->
+                <div class="d-none d-lg-flex align-items-center gap-5 w-75 mx-auto justify-content-center">
+                    <a href="about.html"
+                        class="text-teal text-uppercase text-decoration-none fw-semibold small ls-1 text-slide"
+                        data-text="About Us"><span>About Us</span></a>
+                    <a href="why-invest-in-india.html"
+                        class="text-teal text-uppercase text-decoration-none fw-semibold small ls-1 text-slide"
+                        data-text="Why Invest In India"><span>Why Invest In India</span></a>
+                    <a href="nri-investor-guide.html"
+                        class="text-teal text-uppercase text-decoration-none fw-semibold small ls-1 text-slide"
+                        data-text="NRI Investor Guide"><span>NRI Investor Guide</span></a>
+                </div>
+
+                <!-- 3. Menu Button -->
+                <button
+                    class="btn btn-sm border-0 bg-transparent p-0 text-teal d-flex align-items-center justify-content-center hover-teal"
+                    type="button" id="menuToggleBtn" aria-label="Menu">
+                    <svg width="36" height="20" viewBox="0 0 36 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="2" y1="6" x2="36" y2="6" stroke="currentColor" stroke-width="3"
+                            stroke-linecap="round" />
+                        <line x1="2" y1="14" x2="36" y2="14" stroke="currentColor" stroke-width="3"
+                            stroke-linecap="round" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu content (Full Screen Overlay) -->
+            <div class="fullscreen-menu position-fixed top-0 end-0 w-40 bg-dark" id="mobileMenu">
+                <div class="d-flex flex-column min-h-dvh p-4">
+                    <!-- Menu Header -->
+                    <div class="d-flex justify-content-between justify-content-lg-end align-items-center mb-4">
+                        <a href="index.html">
+                            <img src="assets/images/korat_logo.png" class="logo-sm d-block d-lg-none" alt="Logo">
+                        </a>
+                        <button class="btn text-white p-0 d-flex align-items-center" type="button" id="menuCloseBtn"
+                            aria-label="Close">
+                            <span class="text-uppercase small fw-bold me-2 ls-1">Close</span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Menu Links -->
+                    <div class="flex-grow-1 d-flex flex-column align-items-end gap-3 text-end menu-links-offset">
+                        <a href="index.html"
+                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
+                            data-text="Home"><span>Home</span></a>
+                        <a href="about.html"
+                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
+                            data-text="About Us"><span>About Us</span></a>
+                        <a href="why-invest-in-india.html"
+                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
+                            data-text="Why Invest In India"><span>Why Invest In India</span></a>
+
+                        <!-- Services Dropdown -->
+                        <div class="d-flex flex-column align-items-end w-100">
+                            <button
+                                class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold d-inline-flex align-items-center gap-2 justify-content-end"
+                                data-bs-toggle="collapse" data-bs-target="#servicesNav">
+                                Our Services <span class="fs-4 text-white-50">+</span>
+                            </button>
+                            <div class="collapse text-end mt-3 border-end border-white border-opacity-25 pe-3"
+                                id="servicesNav">
+                                <a href="land-acquisition.html"
+                                    class="d-block text-white text-opacity-75 text-decoration-none text-uppercase mb-2 fs-5 text-slide"
+                                    data-text="Land Acquisition"><span>Land Acquisition</span></a>
+                                <a href="land-development.html"
+                                    class="d-block text-white text-opacity-75 text-decoration-none text-uppercase mb-2 fs-5 text-slide"
+                                    data-text="Land Development"><span>Land Development</span></a>
+                                <a href="commercial-projects.html"
+                                    class="d-block text-white text-opacity-75 text-decoration-none text-uppercase mb-2 fs-5 text-slide"
+                                    data-text="Commercial Projects"><span>Commercial Projects</span></a>
+                                <a href="residential-projects.html"
+                                    class="d-block text-white text-opacity-75 text-decoration-none text-uppercase mb-2 fs-5 text-slide"
+                                    data-text="Residential Projects"><span>Residential Projects</span></a>
+                                <a href="industrial-projects.html"
+                                    class="d-block text-white text-opacity-75 text-decoration-none text-uppercase mb-2 fs-5 text-slide"
+                                    data-text="Industrial Projects"><span>Industrial Projects</span></a>
+                            </div>
+                        </div>
+
+                        <a href="investment-opportunities.html"
+                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
+                            data-text="Investment Opportunities"><span>Investment Opportunities</span></a>
+                        <a href="why-invest-in-india.html"
+                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
+                            data-text="NRI Investor Guide"><span>NRI Investor Guide</span></a>
+                        <a href="blog.html"
+                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
+                            data-text="Insights / Blog"><span>Insights / Blog</span></a>
+                        <a href="contact.html"
+                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
+                            data-text="Contact Us"><span>Contact Us</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ============================================
+         BLOG HERO SECTION
+         ============================================ -->
+    <section class="blog-hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Text Content -->
+                <div class="col-lg-6 blog-hero-content reveal-content">
+                    <span class="d-block text-uppercase text-teal fw-bold small ls-2 mb-3">
+                        Blog & Updates
+                    </span>
+                    <h1 class="blog-title-large">
+                        Real Estate <span class="serif-italic">Insights</span>
+                    </h1>
+                    <p class="blog-subtitle">
+                        Deep dives into property investment, market analysis, and development strategies for the modern
+                        investor.
+                    </p>
+
+                    <!-- Modern Search -->
+                    <div class="modern-search-wrapper">
+                        <input type="text" class="modern-search-input" placeholder="Search by topic or keyword...">
+                        <button class="modern-search-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Categories -->
+                    <div class="hero-categories">
+                        <span class="hero-cat-label">Trending:</span>
+                        <button class="hero-cat-pill active" data-category="all">All</button>
+                        <button class="hero-cat-pill" data-category="investment">Investment</button>
+                        <button class="hero-cat-pill" data-category="market-trends">Market Trends</button>
+                        <button class="hero-cat-pill" data-category="nri">NRI</button>
+                        <button class="hero-cat-pill" data-category="development">Development</button>
+                        <button class="hero-cat-pill" data-category="legal">Legal</button>
+                    </div>
+                </div>
+
+                <!-- Visual Content -->
+                <div class="col-lg-6" id="blog-hero-visual">
+                    <div class="blog-hero-visual reveal-content" data-delay="0.2">
+                        <div class="visual-card-stack">
+                            <div class="visual-shape-bg"></div>
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
+                                alt="Modern Architecture" class="visual-img-main">
+
+                            <!-- Floating Tag -->
+                            <div class="floating-tag">
+                                <div class="floating-tag-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                                    </svg>
+                                </div>
+                                <div class="floating-text">
+                                    <span class="d-block fw-bold text-dark text-nowrap">Market Outlook</span>
+                                    <span class="small text-muted text-nowrap">Trending Now</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         BLOG GRID
+         ============================================ -->
+    <section class="blog-grid section-padding">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Blog Card 1 -->
+                <div class="col-lg-6 reveal-content" data-category="investment">
+                    <article class="blog-card h-100">
+                        <a href="blog-detail.html" class="blog-card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=500&fit=crop"
+                                alt="Real Estate Investment" class="blog-card-img">
+                        </a>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-category">Investment</span>
+                                <span class="blog-date">Feb 8, 2026</span>
+                            </div>
+                            <h3 class="blog-card-title">
+                                <a href="blog-detail.html">Strategic Land Acquisition: Key Factors for Successful Real
+                                    Estate Investment</a>
+                            </h3>
+                            <p class="blog-card-desc">Discover the essential elements of strategic land acquisition and
+                                how proper due diligence can maximize your investment returns in the Indian real estate
+                                market.</p>
+                            <a href="blog-detail.html" class="blog-read-more">
+                                Read Article
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14m-7-7 7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Blog Card 2 -->
+                <div class="col-lg-6 reveal-content" data-category="market-trends">
+                    <article class="blog-card h-100">
+                        <a href="blog-detail.html" class="blog-card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=500&fit=crop"
+                                alt="Market Analysis" class="blog-card-img">
+                        </a>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-category">Market Trends</span>
+                                <span class="blog-date">Feb 5, 2026</span>
+                            </div>
+                            <h3 class="blog-card-title">
+                                <a href="blog-detail.html">2026 Real Estate Market Outlook: Emerging Opportunities in
+                                    Tier-2 Cities</a>
+                            </h3>
+                            <p class="blog-card-desc">Analyze the latest market trends and understand why tier-2 cities
+                                are becoming the new investment hotspots for real estate developers and investors.</p>
+                            <a href="blog-detail.html" class="blog-read-more">
+                                Read Article
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14m-7-7 7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Blog Card 3 -->
+                <div class="col-lg-6 reveal-content" data-category="nri">
+                    <article class="blog-card h-100">
+                        <a href="blog-detail.html" class="blog-card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=500&fit=crop"
+                                alt="NRI Investment" class="blog-card-img">
+                        </a>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-category">NRI Investments</span>
+                                <span class="blog-date">Feb 1, 2026</span>
+                            </div>
+                            <h3 class="blog-card-title">
+                                <a href="blog-detail.html">Complete Guide to NRI Property Investment in India: Legal &
+                                    Tax Implications</a>
+                            </h3>
+                            <p class="blog-card-desc">Everything NRIs need to know about investing in Indian real
+                                estate, from FEMA compliance to tax benefits and repatriation guidelines.</p>
+                            <a href="blog-detail.html" class="blog-read-more">
+                                Read Article
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14m-7-7 7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Blog Card 4 -->
+                <div class="col-lg-6 reveal-content" data-category="development">
+                    <article class="blog-card h-100">
+                        <a href="blog-detail.html" class="blog-card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=500&fit=crop"
+                                alt="Land Development" class="blog-card-img">
+                        </a>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-category">Development</span>
+                                <span class="blog-date">Jan 28, 2026</span>
+                            </div>
+                            <h3 class="blog-card-title">
+                                <a href="blog-detail.html">Modern Land Development Strategies: From Zoning to Project
+                                    Execution</a>
+                            </h3>
+                            <p class="blog-card-desc">Learn the comprehensive approach to land development, including
+                                zoning regulations, environmental clearances, and sustainable building practices.</p>
+                            <a href="blog-detail.html" class="blog-read-more">
+                                Read Article
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14m-7-7 7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Blog Card 5 -->
+                <div class="col-lg-6 reveal-content" data-category="legal">
+                    <article class="blog-card h-100">
+                        <a href="blog-detail.html" class="blog-card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=500&fit=crop"
+                                alt="Legal Compliance" class="blog-card-img">
+                        </a>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-category">Legal & Compliance</span>
+                                <span class="blog-date">Jan 25, 2026</span>
+                            </div>
+                            <h3 class="blog-card-title">
+                                <a href="blog-detail.html">Understanding RERA: Complete Guide for Real Estate Buyers and
+                                    Investors</a>
+                            </h3>
+                            <p class="blog-card-desc">Navigate the Real Estate Regulatory Authority regulations and
+                                understand how RERA protects your investment and ensures transparency.</p>
+                            <a href="blog-detail.html" class="blog-read-more">
+                                Read Article
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14m-7-7 7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Blog Card 6 -->
+                <div class="col-lg-6 reveal-content" data-category="case-studies">
+                    <article class="blog-card h-100">
+                        <a href="blog-detail.html" class="blog-card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1581091870621-e0d7b1d3a563?w=800&h=500&fit=crop"
+                                alt="Success Story" class="blog-card-img">
+                        </a>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-category">Case Studies</span>
+                                <span class="blog-date">Jan 20, 2026</span>
+                            </div>
+                            <h3 class="blog-card-title">
+                                <a href="blog-detail.html">Success Story: Converting Agricultural Land into Profitable
+                                    Mixed-Use Development</a>
+                            </h3>
+                            <p class="blog-card-desc">A detailed case study of how strategic planning and execution
+                                transformed 50 acres of agricultural land into a thriving mixed-use development project.
+                            </p>
+                            <a href="blog-detail.html" class="blog-read-more">
+                                Read Article
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14m-7-7 7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-5">
+                <button class="btn btn-card-outline px-5 py-3">Load More Articles</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+        FOOTER
+    ============================================ -->
+    <footer class="main-footer" id="footer">
+        <div class="container">
+            <!-- Top CTA Box -->
+            <div class="footer-cta-box reveal-scale-up">
+                <h2 class="footer-cta-title text-white">Connect With Our <br><span class="fst-italic">Investment
+                        Advisors</span></h2>
+                <p class="text-white-50 mb-4 fs-5" style="max-width: 600px; margin: 0 auto;">
+                    Unlock exclusive real estate opportunities and build your wealth with professional guidance.
+                </p>
+                <a href="#contact" class="btn btn-card-light text-uppercase fw-bold px-5 py-3 ">
+                    Request Consultation
+                </a>
+            </div>
+
+            <!-- Footer Links Grid -->
+            <div class="row g-5 mb-5 border-bottom border-white border-opacity-10 pb-5">
+                <!-- Column 1 -->
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h6 class="footer-nav-title">We're Korat</h6>
+                    <a href="#process" class="footer-nav-link d-block text-slide" data-text="Our Process"><span>Our
+                            Process</span></a>
+                    <a href="#opportunities" class="footer-nav-link d-block text-slide"
+                        data-text="Opportunities"><span>Opportunities</span></a>
+                    <a href="why-invest-in-india.html" class="footer-nav-link d-block text-slide"
+                        data-text="NRI Services"><span>NRI Services</span></a>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h6 class="footer-nav-title">Services</h6>
+                    <a href="land-acquisition.html" class="footer-nav-link d-block text-slide"
+                        data-text="Land Acquisition"><span>Land Acquisition</span></a>
+                    <a href="land-development.html" class="footer-nav-link d-block text-slide"
+                        data-text="Land Development"><span>Land Development</span></a>
+                    <a href="residential-projects.html" class="footer-nav-link d-block text-slide"
+                        data-text="Residential"><span>Residential</span></a>
+                    <a href="commercial-projects.html" class="footer-nav-link d-block text-slide"
+                        data-text="Commercial"><span>Commercial</span></a>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h6 class="footer-nav-title">Company</h6>
+                    <a href="about.html" class="footer-nav-link d-block text-slide" data-text="About Us"><span>About
+                            Us</span></a>
+                    <a href="#contact" class="footer-nav-link d-block text-slide"
+                        data-text="Careers"><span>Careers</span></a>
+                    <a href="#contact" class="footer-nav-link d-block text-slide"
+                        data-text="Contact"><span>Contact</span></a>
+                </div>
+
+                <!-- Column 4 (Spacer/Logo) -->
+                <div class="col-lg-6 col-md-12 d-flex flex-column align-items-lg-end">
+                    <img src="assets/images/korat_logo.png" alt="Korat Reality" class="footer-logo-lg mb-5 mb-lg-auto">
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-4">
+                <!-- Socials -->
+                <div class="d-flex">
+                    <a href="#" class="footer-social-icon"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="footer-social-icon"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="footer-social-icon"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" class="footer-social-icon"><i class="bi bi-instagram"></i></a>
+                </div>
+
+                <!-- Copyright & Links -->
+                <div class="d-flex flex-wrap justify-content-center gap-4">
+                    <a href="#" class="footer-bottom-link">Privacy Policy</a>
+                    <a href="#" class="footer-bottom-link">Terms of Use</a>
+                    <span class="footer-bottom-link text-white-50">© 2026 Korat Reality. All Rights Reserved.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Lenis (Smooth Scroll) -->
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Smooth Scrolling Logic -->
+    <script src="assets/js/smooth-scroll.js"></script>
+
+    <!-- UI Interactions (Menu, FAQ, Service Icons) -->
+    <script src="assets/js/ui-interactions.js"></script>
+
+    <!-- GSAP Animations -->
+    <script src="assets/js/animations.js"></script>
+
+    <!-- Sliders -->
+    <script src="assets/js/sliders.js"></script>
+
+    <!-- Scroll to Top Button -->
+    <script src="assets/js/scroll-to-top.js"></script>
+
+    <!-- Counter Animation -->
+    <script src="assets/js/counter-animation.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Blog Filter Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const categoryBtns = document.querySelectorAll('.hero-cat-pill');
+            const blogCards = document.querySelectorAll('.blog-grid [data-category]');
+
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const category = this.getAttribute('data-category');
+
+                    // Update active button
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Filter cards
+                    blogCards.forEach(card => {
+                        // Check if the element is NOT one of the buttons (just in case selector isn't enough, though .blog-grid should work)
+                        if (!card.classList.contains('hero-cat-pill')) {
+                            if (category === 'all' || card.getAttribute('data-category') === category) {
+                                card.style.display = 'block';
+                                // Trigger animation
+                                card.classList.remove('reveal-content');
+                                setTimeout(() => card.classList.add('reveal-content'), 10);
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

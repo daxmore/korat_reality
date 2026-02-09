@@ -624,10 +624,6 @@ div#services_id span {
     color: var(--text-dark) !important;
 }
 
-.main-footer img {
-    filter: invert(100%);
-}
-
 .fs-14px {
     font-size: 14px !important;
 }
@@ -1486,7 +1482,7 @@ input::placeholder {
    8. REFACTORED UTILITIES (Index)
    ============================================ */
 .logo-sm {
-    height: 35px;
+    height: 75px;
     width: auto;
 }
 
