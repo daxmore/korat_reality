@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
-<body id="home cls">
+<body id="home">
     <!-- ============================================
          INTRO OVERLAY (TrueKind-Inspired)
          ============================================ -->
@@ -29,7 +29,7 @@
                 <img src="assets/images/svg/for-dark-bg.svg" alt="Korat Reality">
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- ============================================
          HEADER / NAVIGATION
@@ -101,11 +101,11 @@
 
                         <!-- Services Dropdown -->
                         <div class="d-flex flex-column align-items-end w-100">
-                            <a href="#"
+                            <button
                                 class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold d-inline-flex align-items-center gap-2 justify-content-end"
                                 data-bs-toggle="collapse" data-bs-target="#servicesNav">
                                 Our Services <span class="fs-4 text-white-50">+</span>
-                            </a>
+                            </button>
                             <div class="collapse text-end mt-3 border-end border-white border-opacity-25 pe-3"
                                 id="servicesNav">
                                 <a href="land-acquisition.html"
@@ -159,21 +159,21 @@
                 <div class="col-lg-12">
                     <div class="hero-content pt-8">
                         <span
-                            class="hero-label text-teal fw-bold bg-white px-3 py-1 rounded-pill mb-4 d-inline-block shadow-sm text-uppercase small ls-1">Welcome
+                            class="hero-label text-teal fw-bold px-3 py-1 mb-4 d-inline-block text-uppercase small ls-1">Welcome
                             to
                             Korat Reality</span>
                         <h1 class="hero-title text-uppercase mb-3">
-                            Get The Most Out <br>
-                            <span class="highlight">Of Your Land</span>
+                            Trusted Real Estate <br>
+                            <span class="highlight">Advisory & Development</span>
                         </h1>
-                        <p class="text-light mb-4 mx-auto" style="max-width: 600px; font-size: 1rem; line-height: 1.7;">
+                        <p class="text-dark mb-4 mx-auto" style="max-width: 600px; font-size: 1rem; line-height: 1.7;">
                             We work with investors, landowners, and NRIs to identify, develop, and structure real estate
                             opportunities with clear documentation and long-term value mindset.
                         </p>
 
                         <div class="hero-buttons d-flex flex-wrap gap-3 justify-content-center mb-5">
                             <a href="#projects"
-                                class="btn btn-teal text-uppercase rounded-pill px-5 py-3 fw-bold">Explore
+                                class="btn btn-light text-dark text-uppercase  px-5 py-3 fw-bold">Explore
                                 Opportunities</a>
                         </div>
                     </div>
@@ -262,7 +262,7 @@
 
                             <div class="mt-auto">
                                 <a href="why-invest-in-india.html"
-                                    class="btn-card-primary btn-card-action d-block text-center text-decoration-none">Explore
+                                    class="btn-card-outline btn-card-action d-block text-center text-decoration-none">Explore
                                     Opportunities</a>
                             </div>
                         </div>
@@ -334,15 +334,15 @@
             <!-- Stats Row (Outside Card) -->
             <div class="row bottom-stats-row pb-2">
                 <div class="col-md-4 bottom-stat-item">
-                    <h3>1.4M+</h3>
+                    <h3 class="counter" data-count="1.4" data-suffix="M+" data-decimals="1">0M+</h3>
                     <p>Sq. Ft. Developed</p>
                 </div>
                 <div class="col-md-4 bottom-stat-item">
-                    <h3>11%</h3>
+                    <h3 class="counter" data-count="11" data-suffix="%">0%</h3>
                     <p>Avg. Annual ROI</p>
                 </div>
                 <div class="col-md-4 bottom-stat-item">
-                    <h3>15+</h3>
+                    <h3 class="counter" data-count="15" data-suffix="+">0+</h3>
                     <p>Completed Projects</p>
                 </div>
             </div>
@@ -704,7 +704,7 @@
                         India's real estate market offers diverse avenues for growth. We help you navigate residential,
                         commercial, and industrial segments with precision.
                     </p>
-                    <a href="#" class="btn btn-card-outline text-uppercase px-5 py-3 fw-bold rounded-pill">Explore
+                    <a href="#" class="btn btn-card-outline text-uppercase px-5 py-3 fw-bold ">Explore
                         Opportunities</a>
                 </div>
 
@@ -860,7 +860,7 @@
                         accessible, secure, and profitable for global investors.
                     </p>
                     <a href="why-invest-in-india.html"
-                        class="btn btn-card-outline text-uppercase px-5 py-3 fw-bold rounded-pill">NRI Investor
+                        class="btn btn-card-outline text-uppercase px-5 py-3 fw-bold ">NRI Investor
                         Guide</a>
                 </div>
             </div>
@@ -1208,7 +1208,7 @@
                 <p class="text-white-50 mb-4 fs-5" style="max-width: 600px; margin: 0 auto;">
                     Unlock exclusive real estate opportunities and build your wealth with professional guidance.
                 </p>
-                <a href="#contact" class="btn btn-gold text-uppercase fw-bold px-5 py-3 rounded-pill">
+                <a href="#contact" class="btn btn-card-light text-uppercase fw-bold px-5 py-3 ">
                     Request Consultation
                 </a>
             </div>
@@ -1313,6 +1313,12 @@
 
     <!-- Sliders -->
     <script src="assets/js/sliders.js"></script>
+
+    <!-- Scroll to Top Button -->
+    <script src="assets/js/scroll-to-top.js"></script>
+
+    <!-- Counter Animation -->
+    <script src="assets/js/counter-animation.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>

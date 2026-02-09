@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ============================================
     const menuToggleBtn = document.getElementById('menuToggleBtn');
     const mobileMenu = document.getElementById('mobileMenu');
-    const closeMenuBtn = document.getElementById('closeMenuBtn');
+    const closeMenuBtn = document.getElementById('menuCloseBtn');
     const body = document.body;
 
     function openMenu() {
@@ -20,9 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenu.style.clipPath = 'inset(0 0 0 0)';
         body.classList.add('menu-active');
 
-        // Stagger in links
-        const links = mobileMenu.querySelectorAll('a');
-        gsap.fromTo(links,
+        // Stagger in links and buttons
+        const menuItems = mobileMenu.querySelectorAll('a, button.menu-link-large');
+        gsap.fromTo(menuItems,
             { y: 20, opacity: 0 },
             { y: 0, opacity: 1, duration: 0.4, stagger: 0.05, delay: 0.3 }
         );
@@ -36,9 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         setTimeout(() => {
             mobileMenu.style.visibility = 'hidden';
-            // Reset links for next open
-            const links = mobileMenu.querySelectorAll('a');
-            gsap.set(links, { clearProps: 'all' });
+            // Reset links and buttons for next open
+            const menuItems = mobileMenu.querySelectorAll('a, button.menu-link-large');
+            gsap.set(menuItems, { clearProps: 'all' });
         }, 500);
     }
 

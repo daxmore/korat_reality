@@ -7,6 +7,13 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     // --------------------------------------------------------
+    // SCROLL RESTORATION (Prevent scroll to top on reload)
+    // --------------------------------------------------------
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+
+    // --------------------------------------------------------
     // CONFIGURATION
     // --------------------------------------------------------
     const cfg = {
