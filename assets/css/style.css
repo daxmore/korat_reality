@@ -1907,16 +1907,6 @@ input::placeholder {
     background-color: white;
 }
 
-/* Rotate both lines to form X */
-.faq-item.is-active .faq-icon-horizontal,
-.faq-question[aria-expanded="true"] .faq-icon-horizontal {
-    transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.faq-item.is-active .faq-icon-vertical,
-.faq-question[aria-expanded="true"] .faq-icon-vertical {
-    transform: translate(-50%, -50%) rotate(-45deg);
-}
 
 /* Answer Container */
 .faq-answer {
