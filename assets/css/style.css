@@ -804,9 +804,16 @@ div#services_id span {
 }
 
 .btn-card-outline:hover {
-    border-color: var(--text-dark);
+    border: 1px solid var(--text-muted);
     background-color: var(--primary-teal-dark);
     color: white;
+}
+
+.btn-card-outline:active,
+.btn-card-outline:focus {
+    border: 1px solid var(--text-dark) !important;
+    background-color: var(--primary-teal-dark) !important;
+    color: white !important;
 }
 
 .btn-card-light {
