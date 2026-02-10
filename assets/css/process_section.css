@@ -78,68 +78,10 @@
    ============================================ */
 
 /* Desktop (>= 1200px) */
-@media (min-width: 1200px) {
-    .process-bg-follower {
-        display: block;
-    }
 
-    /* On Active: Fade out the white floor to reveal the follower behind */
-    .process-step-card.is-active::before {
-        opacity: 0;
-    }
-
-    .process-step-card.is-active {
-        border-color: rgba(0, 0, 0, 0.05);
-        /* Maintain border */
-    }
-
-    /* Text Color Changes */
-    .process-step-card.is-active .process-number {
-        color: rgba(255, 255, 255, 1);
-    }
-
-    .process-step-card.is-active .process-title {
-        color: #fff;
-    }
-
-    .process-step-card.is-active .process-desc {
-        color: rgba(255, 255, 255, 0.8);
-    }
-}
 
 /* Mobile/Tablet (< 1200px): Standard CSS Hover */
-@media (max-width: 1199.98px) {
-    .process-bg-follower {
-        display: none !important;
-    }
 
-    /* Revert to standard background on mobile */
-    .process-step-card {
-        background-color: #fff;
-    }
-
-    .process-step-card:hover {
-        background: var(--primary-teal-dark);
-        border-color: var(--primary-teal-dark);
-        transform: translateY(-5px);
-    }
-
-    .process-step-card:hover .process-number {
-        color: rgba(255, 255, 255, 0.6);
-    }
-
-    .process-step-card:hover .process-title {
-        color: #fff;
-    }
-
-    .process-step-card:hover .process-desc {
-        color: rgba(255, 255, 255);
-    }
-
-    .process-step-card::before {
-        background: transparent !important;
-    }
-}
 
 /* Number Styling */
 .process-number {
@@ -183,11 +125,3 @@
 } */
 
 /* Connectors (Desktop Only) */
-@media (min-width: 992px) {
-    .process-grid {
-        position: relative;
-    }
-
-    /* Subtle lines between rows or cards could be added here if needed, 
-       but clean cards usually boost UX better than complex diagrams. */
-}
