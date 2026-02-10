@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     scrollTrigger: {
                         trigger: elem,
                         start: options.start || "top 85%",
-                        toggleActions: "play none none reverse"
+                        toggleActions: "play none none none"
                     },
                     y: 0,
                     opacity: 1,
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     scrollTrigger: {
                         trigger: elem,
                         start: options.start || "top 85%",
-                        toggleActions: "play none none reverse"
+                        toggleActions: "play none none none"
                     },
                     y: 0,
                     opacity: 1,
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     scrollTrigger: {
                         trigger: elem,
                         start: options.start || "top 85%",
-                        toggleActions: "play none none reverse"
+                        toggleActions: "play none none none"
                     },
                     x: 0,
                     opacity: 1,
@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     scrollTrigger: {
                         trigger: elem,
                         start: options.start || "top 85%",
-                        toggleActions: "play none none reverse"
+                        toggleActions: "play none none none"
                     },
                     x: 0,
                     opacity: 1,
@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     scrollTrigger: {
                         trigger: elem,
                         start: options.start || "top 85%",
-                        toggleActions: "play none none reverse"
+                        toggleActions: "play none none none"
                     },
                     scale: 1,
                     opacity: 1,
@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     scrollTrigger: {
                         trigger: elem,
                         start: options.start || "top 85%",
-                        toggleActions: "play none none reverse"
+                        toggleActions: "play none none none"
                     },
                     clipPath: "inset(0 0% 0 0%)",
                     opacity: 1,
@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     scrollTrigger: {
                         trigger: elem,
                         start: options.start || "top 85%",
-                        toggleActions: "play none none reverse"
+                        toggleActions: "play none none none"
                     },
                     clipPath: "inset(0% 0% 0% 0%)",
                     opacity: 1,
@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     scrollTrigger: {
                         trigger: elem,
                         start: options.start || "top 85%",
-                        toggleActions: "play none none reverse"
+                        toggleActions: "play none none none"
                     },
                     rotation: 0,
                     scale: 1,
@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     scrollTrigger: {
                         trigger: elem,
                         start: options.start || "top 85%",
-                        toggleActions: "play none none reverse"
+                        toggleActions: "play none none none"
                     },
                     filter: "blur(0px)",
                     opacity: 1,
@@ -218,7 +218,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     scrollTrigger: {
                         trigger: elem,
                         start: options.start || "top 85%",
-                        toggleActions: "play none none reverse"
+                        toggleActions: "play none none none"
                     },
                     clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
                     opacity: 1,
@@ -262,7 +262,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     scrollTrigger: {
                         trigger: elem,
                         start: options.start || "top 85%",
-                        toggleActions: "play none none reverse"
+                        toggleActions: "play none none none"
                     },
                     y: 0,
                     opacity: 1,
@@ -282,7 +282,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     scrollTrigger: {
                         trigger: elem,
                         start: options.start || "top 85%",
-                        toggleActions: "play none none reverse"
+                        toggleActions: "play none none none"
                     },
                     scale: 1,
                     opacity: 1,
@@ -438,8 +438,85 @@ document.addEventListener("DOMContentLoaded", function () {
     // Content Rows - Alternating Animations
     const contentRows = document.querySelectorAll('.content-row');
     contentRows.forEach((row, index) => {
-        const animation = index % 2 === 0 ? 'slideLeft' : 'slideRight';
-        animationTypes[animation](row, { duration: 0.9 });
+        // Simpler fadeUp for better performance on scroll
+        animationTypes['fadeUp'](row, { duration: 0.6 });
+    });
+
+    // ============================================
+    // BLOG DETAIL ANIMATIONS (Run on Load)
+    // ============================================
+    if (document.querySelector('#blog-detail')) {
+        // PREVENT GENERIC TEXT ANIMATIONS
+        // Mark text elements as 'animated' so generic fallbacks skip them
+        const textElements = document.querySelectorAll('.blog-detail-section p, .blog-detail-section h1, .blog-detail-section h2, .blog-detail-section h3, .blog-detail-section h4, .blog-detail-section h5, .blog-detail-section h6, .blog-detail-section ul li, .blog-detail-section span');
+        textElements.forEach(el => el.classList.add('animated'));
+
+        const blogDetailTl = gsap.timeline({ delay: 0.1 });
+
+        // Main Article Container (animate container only)
+        if (document.querySelector('.blog-detail-article')) {
+            gsap.set('.blog-detail-article', { y: 20, opacity: 0 });
+            blogDetailTl.to('.blog-detail-article', { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" });
+        }
+
+        // Sidebar Widgets (Categories) & Author Card
+        const sidebarWidgets = document.querySelectorAll('.sidebar-widget, .author-card');
+        if (sidebarWidgets.length > 0) {
+            gsap.set(sidebarWidgets, { y: 20, opacity: 0 });
+            blogDetailTl.to(sidebarWidgets, { y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: "power2.out" }, "-=0.6");
+        }
+
+        // Related Posts (Keep scroll trigger as they are lower down)
+        applyAnimation('.related-posts-section .blog-card', 'fadeUp', { stagger: 0.15 });
+    }
+
+    // ============================================
+    // Custom Animation: Why Choose Us (Unified Batch Trigger)
+    // ============================================
+    const whyUsSection = document.querySelector('#why-choose-us');
+    if (whyUsSection) {
+        const header = whyUsSection.querySelector('.why-choose-header');
+        const cards = whyUsSection.querySelectorAll('.why-choose-card-anim');
+
+        // Initial States
+        if (header) gsap.set(header, { y: 30, opacity: 0 });
+        if (cards.length > 0) gsap.set(cards, { y: 50, opacity: 0 });
+
+        ScrollTrigger.create({
+            trigger: whyUsSection,
+            start: "top 75%", // Trigger when section is well into view
+            toggleActions: "play none none none",
+            onEnter: () => {
+                // Animation Timeline
+                const tl = gsap.timeline();
+
+                if (header) {
+                    tl.to(header, {
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.8,
+                        ease: "power3.out"
+                    });
+                }
+
+                if (cards.length > 0) {
+                    tl.to(cards, {
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.8,
+                        stagger: 0.1,
+                        ease: "power3.out"
+                    }, "-=0.6"); // Overlap with header animation
+                }
+            }
+        });
+    }
+
+    // Specific optimization for NRI Preference Section to fix lag
+    applyAnimation('.nri-pref-grid .reveal-content', 'fadeUp', {
+        duration: 0.6,
+        stagger: 0.1, // Reduced stagger
+        start: "top 90%" // Trigger earlier
     });
 
     // ============================================
@@ -495,6 +572,8 @@ document.addEventListener("DOMContentLoaded", function () {
     applyAnimation('section .btn:not(.menu-link-large)', 'scaleUp', { delay: 0.3, duration: 0.6 });
 
     // Footer - Slide Up
-    applyAnimation('.main-footer', 'fadeUp', { start: "top 95%", duration: 0.8 });
+    if (!document.querySelector('#blog-detail')) {
+        applyAnimation('.main-footer', 'fadeUp', { start: "top 95%", duration: 0.8 });
+    }
 
 });

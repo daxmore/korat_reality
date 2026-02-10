@@ -1,0 +1,40 @@
+/* ============================================
+   PAGE SPECIFIC BACKGROUNDS
+   ============================================ */
+.nri-hero-bg {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/wide_aerial_view_1.jpeg') center/cover no-repeat;
+}
+
+.land-hero-bg {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/wide_aerial_view_2.jpeg') center/cover no-repeat;
+}
+
+.hero-bg-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.hero-bg-image {
+    width: 100%;
+    height: 125%;
+    transform: scale(1.1);
+    transition: transform 10s ease;
+}
+
+.min-h-300 {
+    min-height: 300px;
+}
+
+.min-h-500 {
+    min-height: 500px;
+}
+
+.cta-grad-bg {
+    background: radial-gradient(circle at 80% 20%, rgba(185, 155, 95, 0.15) 0%, rgba(28, 28, 28, 0) 50%);
+    pointer-events: none;
+}

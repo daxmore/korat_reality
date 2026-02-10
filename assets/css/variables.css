@@ -25,9 +25,4 @@
     --section-lg-padding: clamp(5rem, 12vw, 10rem) 0;
     --container-padding: clamp(1.5rem, 4vw, 3rem);
     --border-opacity: 0.08;
-
-    /* Additional Variables */
-    --primary-gold: #c5a47e;
-    --primary-dark-gold: #b99b5f;
-    --primary-dark: #004d49;
 }

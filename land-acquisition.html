@@ -17,32 +17,8 @@
     <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <style>
-        .land-hero-bg {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/wide_aerial_view_2.jpeg') center/cover no-repeat;
-        }
-
-        .hero-bg-wrapper {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 0;
-        }
-
-        .hero-bg-image {
-            width: 100%;
-            height: 100%;
-            transform: scale(1.1);
-            transition: transform 10s ease;
-        }
-
-        .min-h-500 {
-            min-height: 500px;
-        }
-    </style>
+    <!-- Custom Pages CSS -->
+    <link rel="stylesheet" href="assets/css/pages.css">
 </head>
 
 <body id="page-land">
@@ -86,7 +62,7 @@
 
             <!-- Mobile Menu content (Full Screen Overlay) -->
             <div class="fullscreen-menu position-fixed top-0 end-0 w-40 bg-dark" id="mobileMenu">
-                <div class="d-flex flex-column min-h-dvh p-4">
+                <div class="d-flex flex-column min-h-dvh py-4 py-sm-5 px-4">
                     <!-- Menu Header -->
                     <div class="d-flex justify-content-between justify-content-lg-end align-items-center mb-4">
                         <a href="index.html">
@@ -150,7 +126,7 @@
                             data-text="NRI Investor Guide"><span>NRI Investor Guide</span></a>
                         <a href="blog.html"
                             class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
-                            data-text="Insights / Blog"><span>Insights / Blog</span></a>
+                            data-text="Blog"><span>Blog</span></a>
                         <a href="contact.html"
                             class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
                             data-text="Contact Us"><span>Contact Us</span></a>
@@ -173,16 +149,16 @@
             <div class="row min-vh-100 align-items-center justify-content-center pt-5">
                 <div class="col-lg-9">
                     <div class="hero-content reveal-content mt-5 mt-lg-0">
-                        <h1 class="hero-title text-uppercase font-heading fw-bold mb-4 text-white display-3 ls-2">
+                        <h1 class="hero-title text-uppercase font-heading fw-bold mb-4 text-gold display-3 ls-2">
                             Strategic <span class="text-gold font-serif fst-italic">Land Acquisition</span> Services
                         </h1>
-                        <p class="hero-description mx-auto text-white fs-6 mb-4 lh-md" style="max-width: 840px;">
+                        <p class="hero-description mx-auto text-dark fs-6 mb-4 lh-md" style="max-width: 840px;">
                             Acquiring land for commercial or industrial purposes demands strategic insight, legal
                             expertise, and regulatory knowledge. As a leading land acquisition company India, Korat
                             Reality specializes in providing comprehensive land acquisition services India that
                             transform complex land transactions into secure, value-driven investment opportunities.
                         </p>
-                        <p class="hero-description mx-auto text-white fs-6 lh-md" style="max-width: 840px;">
+                        <p class="hero-description mx-auto text-darkfs-6 lh-md" style="max-width: 840px;">
                             Whether you're seeking commercial land acquisition opportunities, planning industrial
                             expansion, or exploring secure land investment India as an NRI, our advisory-led approach
                             ensures every acquisition is backed by thorough due diligence, transparent valuation, and
@@ -247,7 +223,7 @@
                     <div
                         class="p-5 border border-white border-opacity-10 rounded-start h-100 hover-lift bg-gradient-dark">
                         <div class="d-flex gap-3 mb-4 align-items-center">
-                            <i class="bi bi-shop-window fs-2 text-gold"></i>
+                            <i class="bi bi-shop-window fs-2 text-white"></i>
                             <h3 class="font-heading text-uppercase fw-bold h4 m-0">Commercial Land Acquisition</h3>
                         </div>
                         <p class="text-white-50 lh-lg mb-4">Commercial land acquisition focuses on parcels strategically
@@ -264,7 +240,7 @@
                     <div
                         class="p-5 border border-white border-opacity-10 rounded-end h-100 hover-lift bg-gradient-dark">
                         <div class="d-flex gap-3 mb-4 align-items-center">
-                            <i class="bi bi-gear-wide-connected fs-2 text-gold"></i>
+                            <i class="bi bi-gear-wide-connected fs-2 text-white"></i>
                             <h3 class="font-heading text-uppercase fw-bold h4 m-0">Industrial Land Acquisition</h3>
                         </div>
                         <p class="text-white-50 lh-lg mb-4">Industrial land acquisition requires specialized knowledge
@@ -538,82 +514,68 @@
     <!-- ============================================
          WHY CHOOSE US & CTA SECTION
          ============================================ -->
-    <section class="section-padding bg-dark text-white" id="why-choose-us">
+    <section class="why-choose-us-section" id="why-choose-us">
         <div class="container">
-            <div class="row justify-content-center mb-5 reveal-content">
-                <div class="col-lg-10 text-center">
-                    <h2 class="display-6 font-heading text-uppercase fw-bold mb-4">Why Choose Korat Reality as Your Land
-                        Acquisition Partner</h2>
-                    <div class="row g-4 text-start mt-4">
-                        <div class="col-md-6">
-                            <div class="d-flex gap-3">
-                                <i class="bi bi-award text-gold fs-4"></i>
-                                <div>
-                                    <h5 class="fw-bold text-uppercase">Advisory-First Mindset</h5>
-                                    <p class="text-white-50 small">Strategic recommendations over commission-driven
-                                        transactions.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="d-flex gap-3">
-                                <i class="bi bi-eye text-gold fs-4"></i>
-                                <div>
-                                    <h5 class="fw-bold text-uppercase">Process Transparency</h5>
-                                    <p class="text-white-50 small">Complete visibility from evaluation through
-                                        post-acquisition support.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="d-flex gap-3">
-                                <i class="bi bi-graph-up-arrow text-gold fs-4"></i>
-                                <div>
-                                    <h5 class="fw-bold text-uppercase">Long-Term Value Focus</h5>
-                                    <p class="text-white-50 small">Prioritizing sustained value over quick deals.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="d-flex gap-3">
-                                <i class="bi bi-shield-check text-gold fs-4"></i>
-                                <div>
-                                    <h5 class="fw-bold text-uppercase">Not a Transactional Broker</h5>
-                                    <p class="text-white-50 small">Comprehensive evaluation ensuring rigorous standards.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="row align-items-center mb-5 why-choose-header">
+                <div class="col-lg-8">
+                    <h2 class="display-5 font-heading text-uppercase fw-bold mb-2">Why Choose Korat Reality</h2>
+                    <h3 class="display-6 font-heading text-gold fst-italic font-serif">For Land Acquisition</h3>
+                </div>
+                <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                    <p class="text-white-50 small mb-0" style="max-width: 300px; margin-left: auto;">
+                        Korat Reality delivers strategic, compliant, and value-driven land acquisition services backed
+                        by
+                        decades of market expertise.
+                    </p>
                 </div>
             </div>
 
-            <!-- CTA -->
-            <div class="row justify-content-center mt-5">
-                <div class="col-lg-10 text-center reveal-content">
-                    <div class="bg-white text-dark p-4 p-md-5 py-5 rounded-4 shadow-lg">
-                        <h3 class="font-heading text-uppercase fw-bold mb-3">Talk to Our Investment Advisor</h3>
-                        <p class="text-muted mb-4">Strategic land acquisition requires expert guidance. Whether
-                            exploring commercial land acquisition for retail development or industrial land acquisition
-                            services India for manufacturing expansion, our experienced advisors provide confidential,
-                            comprehensive consultation.</p>
-
-                        <div class="d-flex justify-content-center gap-3 flex-wrap">
-                            <a href="#contact"
-                                class="btn btn-gold text-uppercase fw-bold ls-1 px-4 py-3 flex-grow-1">Schedule
-                                Consultation</a>
-                            <a href="#evaluation"
-                                class="btn btn-outline-dark-custom text-uppercase fw-bold ls-1 px-4 py-3 flex-grow-1">Request
-                                Land
-                                Evaluation</a>
+            <div class="row g-4">
+                <!-- Card 1 -->
+                <div class="col-lg-6 why-choose-card-anim">
+                    <div class="why-choose-card">
+                        <div class="why-choose-icon-wrapper">
+                            <i class="bi bi-bezier2"></i>
                         </div>
+                        <h3 class="text-uppercase">Advisory-First Mindset</h3>
+                        <p>Strategic recommendations over commission-driven transactions. We focus on aligning
+                            opportunities with your long-term goals.</p>
+                    </div>
+                </div>
 
-                        <div id="evaluation" class="mt-4 pt-4 border-top">
-                            <h4 class="h5 fw-bold text-uppercase mb-2">Request Land Evaluation</h4>
-                            <p class="small text-muted mb-0">Our professional evaluation services cover legal title
-                                verification, valuation analysis, zoning compliance, and development potential. Detailed
-                                reports equip you with actionable intelligence for informed decisions.</p>
+                <!-- Card 2 -->
+                <div class="col-lg-6 why-choose-card-anim">
+                    <div class="why-choose-card">
+                        <div class="why-choose-icon-wrapper">
+                            <i class="bi bi-eye"></i>
                         </div>
+                        <h3 class="text-uppercase">Process Transparency</h3>
+                        <p>Complete visibility from evaluation through post-acquisition support. No hidden agendas, just
+                            clear, honest communication.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-lg-6 why-choose-card-anim">
+                    <div class="why-choose-card">
+                        <div class="why-choose-icon-wrapper">
+                            <i class="bi bi-graph-up-arrow"></i>
+                        </div>
+                        <h3 class="text-uppercase">Long-Term Value Focus</h3>
+                        <p>Prioritizing sustained value over quick deals. We identify land with genuine growth potential
+                            and intrinsic value.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-lg-6 why-choose-card-anim">
+                    <div class="why-choose-card">
+                        <div class="why-choose-icon-wrapper">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <h3 class="text-uppercase">Not a Transactional Broker</h3>
+                        <p>Comprehensive evaluation ensuring rigorous standards. We act as your strategic partner,
+                            ensuring every aspect is vetted.</p>
                     </div>
                 </div>
             </div>
@@ -908,8 +870,7 @@
     <!-- GSAP & ScrollTrigger -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <!-- Shery.js -->
-    <script type="text/javascript" src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
+
 
     <!-- Lenis (Smooth Scroll) -->
     <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>

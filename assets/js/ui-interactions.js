@@ -16,30 +16,38 @@ document.addEventListener('DOMContentLoaded', () => {
     function openMenu() {
         if (!mobileMenu) return;
 
-        mobileMenu.style.visibility = 'visible';
-        mobileMenu.style.clipPath = 'inset(0 0 0 0)';
+        mobileMenu.classList.add('is-active');
         body.classList.add('menu-active');
 
-        // Stagger in links and buttons
-        const menuItems = mobileMenu.querySelectorAll('a, button.menu-link-large');
+        // Stagger in ALL links and buttons
+        const menuItems = mobileMenu.querySelectorAll('a, button');
+
+        // Ensure they start hidden properly before animating in
+        gsap.set(menuItems, { clearProps: 'all' }); // Return to CSS state (opacity: 0)
+
         gsap.fromTo(menuItems,
-            { y: 20, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.4, stagger: 0.05, delay: 0.3 }
+            { y: 30, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.35, stagger: 0.03, delay: 0.1, ease: "power2.out" }
         );
     }
 
     function closeMenu() {
         if (!mobileMenu) return;
 
-        mobileMenu.style.clipPath = 'inset(0 0 0 100%)';
-        body.classList.remove('menu-active');
-
-        setTimeout(() => {
-            mobileMenu.style.visibility = 'hidden';
-            // Reset links and buttons for next open
-            const menuItems = mobileMenu.querySelectorAll('a, button.menu-link-large');
-            gsap.set(menuItems, { clearProps: 'all' });
-        }, 500);
+        // Animate out very quickly
+        const menuItems = mobileMenu.querySelectorAll('a, button');
+        gsap.to(menuItems, {
+            y: -10,
+            opacity: 0,
+            duration: 0.15,
+            stagger: 0,
+            onComplete: () => {
+                mobileMenu.classList.remove('is-active');
+                body.classList.remove('menu-active');
+                // Reset to CSS state (opacity: 0)
+                gsap.set(menuItems, { clearProps: 'all' });
+            }
+        });
     }
 
     if (menuToggleBtn) {

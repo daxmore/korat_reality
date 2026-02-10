@@ -116,6 +116,10 @@
     transition: color 0.4s ease;
 }
 
+#process .reveal-scale-up {
+    z-index: 11;
+}
+
 /* .process-step-card:hover .process-title {
     color: #fff;
 }

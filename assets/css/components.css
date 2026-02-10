@@ -9,7 +9,7 @@
     color: #fff;
     border: none;
     padding: 0.85em 2em;
-    border-radius: 50px;
+    /* border-radius: 50px; */
     font-size: 0.875rem;
     font-weight: 600;
     letter-spacing: 0.5px;
@@ -31,7 +31,7 @@
     color: #fff;
     border: none;
     padding: 0.85em 2em;
-    border-radius: 50px;
+    /* border-radius: 50px; */
     font-size: 0.875rem;
     font-weight: 600;
     transition: color 0.4s ease, background-color 0.4s ease, transform 0.4s ease;
@@ -325,4 +325,105 @@
     z-index: 1;
     color: white;
     transition: transform 0.3s ease;
+}
+
+/* Why Choose Us Section - Premium Dark Redesign */
+.why-choose-us-section {
+    position: relative;
+    background-color: var(--primary-teal-dark);
+    /* Deep dark blue/black */
+    overflow: hidden;
+    padding: 6rem 0;
+    color: #fff;
+}
+
+.why-choose-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.why-choose-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 2.5rem;
+    border-radius: 16px;
+    transition: all 0.4s ease;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.why-choose-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 0;
+    background: var(--primary-gold);
+    transition: height 0.4s ease;
+}
+
+.why-choose-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.why-choose-card:hover::before {
+    height: 100%;
+}
+
+.why-choose-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, rgba(185, 155, 95, 0.2), rgba(185, 155, 95, 0.05));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: var(--primary-gold);
+    font-size: 1.5rem;
+    border: 1px solid rgba(185, 155, 95, 0.2);
+}
+
+.why-choose-icon-wrapper i {
+    line-height: 1;
+    display: inline-block;
+}
+
+.why-choose-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.5px;
+    color: #fff;
+}
+
+.why-choose-card p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 991px) {
+    .why-choose-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 6-6 columns layout images */
+#page-nri img.w-100.h-100.object-fit-cover.shadow-sm,
+#page-land img.w-100.h-100.object-fit-cover,
+#page-land-dev img.w-100.h-100.object-fit-cover {
+    height: 500px !important;
+}
+
+/* author section */
+img.rounded-circle.w-100.h-100.object-fit-cover.shadow-sm {
+    background: white;
 }

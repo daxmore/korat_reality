@@ -269,7 +269,7 @@
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-    border-radius: 12px 0;
+    border-radius: 12px 12px 0 0;
 }
 
 .blog-card:hover .blog-card-img {
@@ -371,6 +371,10 @@
 
 .breadcrumb-item.active {
     color: var(--text-muted);
+}
+
+#blog-detail .breadcrumb-section {
+    margin-top: 120px;
 }
 
 /* Blog Detail Meta */
