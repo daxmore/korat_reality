@@ -294,6 +294,7 @@
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border-radius: 12px 0;
 }
 
 .blog-card:hover .blog-card-img {

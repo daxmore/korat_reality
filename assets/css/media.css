@@ -84,6 +84,54 @@
     .service-desc-hover:hover {
         transform: translateY(20px) !important;
     }
+
+    #blog-hero-visual {
+        display: none;
+    }
+
+    /* Extracted from style.css */
+    .stats-card-wrapper {
+        padding-left: 0;
+        border-left: none;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+        padding-top: 2rem;
+    }
+
+    .story-card-main {
+        padding-right: 0;
+    }
+
+    .key-image-wrapper {
+        position: relative;
+        bottom: 0;
+        right: 0;
+        width: 80%;
+        margin: 2rem auto 0;
+        display: block;
+        transform: none;
+    }
+
+    .key-image-wrapper img {
+        transform: none;
+    }
+
+    .service-card-new {
+        height: 420px;
+        padding: 2rem;
+    }
+
+    .service-title {
+        font-size: 1.75rem;
+    }
+
+    .service-desc-hover {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .service-img-wrapper {
+        width: 180px;
+    }
 }
 
 /* ============================================
@@ -100,16 +148,21 @@
     .services-grid>div:nth-child(even) {
         padding-top: 7rem !important;
     }
-}
 
-@media (max-width: 991px) {
+    /* Extracted from style.css */
+    .story-grid {
+        grid-template-columns: 1.4fr 1fr;
+    }
 
-    #blog-hero-visual {
-        display: none;
+    .join-team-wrapper {
+        flex-direction: row;
+        min-height: 500px;
+    }
+
+    .nri-pref-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
-
-
 
 /* ============================================
    MOBILE (max-width: 575px)
@@ -161,5 +214,102 @@
     /* Intro logo size adjustment */
     .intro-logo img {
         height: 50px;
+    }
+
+    /* Extracted from style.css */
+    .scroll-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+
+    .progress-ring {
+        width: 45px;
+        height: 45px;
+    }
+
+    .scroll-to-top .arrow-icon {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* ============================================
+   OTHER BREAKPOINTS
+   ============================================ */
+@media (max-width: 991.98px) {
+    .vision-mission-section {
+        padding: 70px 0;
+    }
+
+    .vm-card {
+        padding: 30px;
+    }
+
+    .vm-card-title {
+        font-size: 1.3rem;
+    }
+
+    .vm-image-item {
+        height: 220px;
+    }
+
+    .vm-geometric-element {
+        display: none;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .vision-mission-section {
+        padding: 50px 0;
+    }
+
+    .vm-main-title {
+        font-size: 2rem;
+    }
+
+    .vm-card {
+        padding: 25px;
+        border-radius: 16px;
+    }
+
+    .vm-icon-wrapper {
+        width: 50px;
+    }
+
+    .vm-icon-wrapper svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .vm-stats-row {
+        gap: 20px;
+    }
+
+    .vm-image-strip .row {
+        gap: 4px;
+    }
+
+    .vm-image-item {
+        height: 180px;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .vm-image-number {
+        font-size: 1.5rem;
+    }
+
+    .vm-image-label {
+        bottom: 15px;
+        left: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .scroll-to-top {
+        bottom: 15px;
+        right: 15px;
     }
 }

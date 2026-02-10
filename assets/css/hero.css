@@ -1,0 +1,168 @@
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero-section {
+    position: relative;
+    background-color: var(--primary-cream);
+    overflow: hidden;
+    min-height: 100vh;
+    min-height: 130dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 125%;
+    object-fit: cover;
+    z-index: 0;
+    border-radius: 0 !important;
+}
+
+.hero-cloud-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(to top, #FAF9F6, rgba(250, 249, 246, 0));
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.15;
+    z-index: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(245, 244, 240, 0.7);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    margin-top: -2rem;
+}
+
+.hero-title {
+    color: var(--primary-teal);
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-family: var(--font-serif);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+}
+
+.hero-title .highlight {
+    color: var(--accent-teal);
+    font-family: var(--font-serif);
+    font-style: normal;
+    font-weight: 400;
+}
+
+.hero-desc-text {
+    font-size: 14px;
+    letter-spacing: 1px;
+    max-width: 800px;
+    line-height: 1.8;
+}
+
+.btn-hero {
+    min-width: 250px;
+}
+
+/* Sticky Image Wrappers */
+.shery-img-wrapper {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+.shery-img-pinned {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 1;
+    will-change: opacity, transform;
+}
+
+.shery-img-pinned:first-child {
+    z-index: 1;
+}
+
+.shery-img-pinned:nth-child(n+2) {
+    z-index: 2;
+    opacity: 0;
+}
+
+.content-block {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+}
+
+/* Sticky Cross-Fade */
+.sticky-container {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.sticky-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+    z-index: 1;
+}
+
+.sticky-img.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.sticky-content-block {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+}

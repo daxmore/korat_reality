@@ -1,0 +1,164 @@
+/* ============================================
+   BASE STYLES & UTILS
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text-dark);
+    background-color: var(--primary-cream);
+    overflow-x: hidden;
+}
+
+body.menu-active {
+    overflow: hidden;
+}
+
+body.intro-active {
+    overflow: hidden;
+}
+
+/* Utilities */
+.section-padding {
+    padding: var(--section-padding);
+}
+
+.section-lg-padding {
+    padding: var(--section-lg-padding);
+}
+
+.bg-teal {
+    background-color: var(--primary-teal) !important;
+}
+
+.bg-dark {
+    background-color: var(--primary-teal-dark) !important;
+}
+
+.bg-cream {
+    background-color: var(--primary-cream) !important;
+}
+
+.bg-pastel-green {
+    background-color: var(--primary-pastel-green) !important;
+}
+
+.bg-pastel-pink {
+    background-color: var(--primary-pastel-pink) !important;
+}
+
+.bg-warning-subtle {
+    background-color: rgb(185, 155, 95, 0.2) !important;
+}
+
+.bg-light-cream-alt {
+    background-color: #faf7f2;
+}
+
+.bg-cream-light {
+    background-color: #fcfbf9;
+}
+
+.bg-white-05 {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.object-fit-cover {
+    object-fit: cover;
+}
+
+.grayscale-img {
+    filter: grayscale(100%);
+    transition: filter 0.5s ease;
+}
+
+.grayscale-img:hover {
+    filter: grayscale(0%);
+}
+
+.grayscale-img.opacity-50 {
+    opacity: 0.5;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.grayscale-img.opacity-50:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+}
+
+.filter-invert {
+    filter: invert(100%);
+}
+
+.cursor-default {
+    cursor: default;
+}
+
+.z-2 {
+    z-index: 2;
+}
+
+.opacity-10 {
+    opacity: 0.1 !important;
+}
+
+.opacity-25 {
+    opacity: 0.25 !important;
+}
+
+.opacity-50 {
+    opacity: 0.5 !important;
+}
+
+.opacity-75 {
+    opacity: 0.75 !important;
+}
+
+.img-opacity-80 {
+    opacity: 0.8;
+}
+
+.transition-all {
+    transition: all 0.4s ease;
+}
+
+.min-h-dvh {
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+.min-h-400 {
+    min-height: 400px;
+}
+
+.min-h-500 {
+    min-height: 500px;
+}
+
+/* Global Image Styles */
+img {
+    border-radius: 12px;
+}
+
+.logo-sm,
+.intro-logo img,
+.footer-logo {
+    border-radius: 0 !important;
+}
+
+.rounded-circle {
+    border-radius: 50% !important;
+}

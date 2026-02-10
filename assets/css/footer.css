@@ -114,3 +114,51 @@ input:focus {
 .footer-social-icon:hover {
     opacity: 1;
 }
+
+/* Combined Rules from style.css overrides */
+.footer-cta-box {
+    background-color: var(--primary-teal-dark);
+    color: white;
+}
+
+.footer-logo {
+    width: 60px;
+    height: auto;
+}
+
+.footer-brand-text {
+    line-height: 1.8;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.footer-copy-text {
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+/* Hover effects */
+.main-footer a,
+.main-footer ul li a,
+footer.main-footer a {
+    transition: color 0.3s ease, transform 0.3s ease !important;
+    display: inline-block;
+}
+
+.main-footer .text-muted:hover,
+.main-footer a.text-muted:hover {
+    color: var(--primary-gold, #c5a47e) !important;
+}
+
+.main-footer ul li a {
+    color: var(--text-dark) !important;
+    /* This was in style.css, but main-footer usually white? */
+}
+
+/* Note: The above rule sets footer links to dark, but footer bg is teal-dark/white? 
+   In `style.css` original, `.main-footer ul li a { color: var(--text-dark) !important; }` was present at line 623.
+   But `footer.css` says `color: #fff`. 
+   If I include it, it might break visibility if background is dark.
+   I'll assume the user wants `style.css` preference.
+*/

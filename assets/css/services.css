@@ -1,0 +1,135 @@
+/* ============================================
+   SERVICES SECTION
+   ============================================ */
+.services-section .border-end {
+    border-right: 1px solid rgba(255, 255, 255, var(--border-opacity)) !important;
+}
+
+.services-section .border-bottom {
+    border-bottom: 1px solid rgba(255, 255, 255, var(--border-opacity)) !important;
+}
+
+.bg-teal-dark {
+    background-color: var(--primary-teal-dark) !important;
+}
+
+.service-card-new {
+    border-radius: 20px;
+    padding: 2.5rem;
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    user-select: none;
+}
+
+.service-title {
+    font-size: 2.25rem;
+    line-height: 1;
+    transition: transform 0.4s ease;
+    transform-origin: left top;
+}
+
+.service-desc-hover {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease 0.1s;
+    margin-top: 1rem;
+    max-width: 90%;
+}
+
+.service-img-wrapper {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 340px;
+    height: 340px;
+    transition: transform 0.4s ease;
+    z-index: 2;
+}
+
+/* Hover States for Service Cards */
+.service-card-new:hover .service-desc-hover {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service-card-new:hover .service-img-wrapper {
+    transform: translateX(-50%) scale(1.05) translateY(-10px);
+}
+
+.service-svg-illu {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 340px;
+    object-fit: cover;
+}
+
+.service-footer {
+    margin-top: auto;
+}
+
+.service-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.6rem 1.4rem;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.service-cta-btn .arrow-icon {
+    transition: transform 0.3s ease;
+}
+
+.service-cta-btn:hover .arrow-icon {
+    transform: translateX(4px);
+}
+
+.service-cta-btn:hover {
+    background-color: var(--primary-teal-light);
+    color: var(--primary-teal-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.service-card .icon-box {
+    transition: transform 0.4s ease;
+}
+
+.service-card:hover .icon-box {
+    transform: scale(1.1);
+    color: var(--primary-dark) !important;
+}
+
+.rounded-pill-vertical {
+    border-radius: 100px;
+}
+
+.service-border-right {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.services-grid>div:nth-child(even) {
+    padding-top: 7rem !important;
+}
+
+#services .py-1 {
+    padding-top: .20rem !important;
+    padding-bottom: .20rem !important;
+}
+
+#services,
+#why-korat {
+    padding-bottom: 0;
+}
