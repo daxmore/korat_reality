@@ -448,8 +448,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (document.querySelector('#blog-detail')) {
         // PREVENT GENERIC TEXT ANIMATIONS
         // Mark text elements as 'animated' so generic fallbacks skip them
-        const textElements = document.querySelectorAll('.blog-detail-section p, .blog-detail-section h1, .blog-detail-section h2, .blog-detail-section h3, .blog-detail-section h4, .blog-detail-section h5, .blog-detail-section h6, .blog-detail-section ul li, .blog-detail-section span');
-        textElements.forEach(el => el.classList.add('animated'));
+        // const textElements = document.querySelectorAll('.blog-detail-section p, .blog-detail-section h1, .blog-detail-section h2, .blog-detail-section h3, .blog-detail-section h4, .blog-detail-section h5, .blog-detail-section h6, .blog-detail-section ul li, .blog-detail-section span');
+        // textElements.forEach(el => el.classList.add('animated'));
 
         const blogDetailTl = gsap.timeline({ delay: 0.1 });
 
