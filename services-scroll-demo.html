@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services – Scroll-Driven Demo | Korat Reality</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ============================
+           CSS RESET & BASE
+           ============================ */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: auto;
+            /* GSAP handles smooth scroll */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8f7f4;
+            color: #1a1a1a;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ============================
+           TYPOGRAPHY
+           ============================ */
+        .font-serif {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        /* ============================
+           SPACER (before & after the pinned section)
+           ============================ */
+        .spacer {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .spacer h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            color: #1a3c34;
+            max-width: 600px;
+        }
+
+        .spacer p {
+            color: #666;
+            margin-top: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        /* ============================
+           SERVICES SECTION (pinned wrapper)
+           ============================ */
+        .services-section {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            background: #f8f7f4;
+            overflow: hidden;
+        }
+
+        .services-inner {
+            display: flex;
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            min-height: 100vh;
+            align-items: flex-start;
+        }
+
+        /* ============================
+           LEFT COLUMN (sticky navigation)
+           ============================ */
+        .services-left {
+            position: sticky;
+            top: 100px;
+            width: 40%;
+            flex-shrink: 0;
+            padding-right: 3rem;
+            padding-top: 2rem;
+            align-self: flex-start;
+        }
+
+        .services-label {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #1a3c34;
+            background: rgba(26, 60, 52, 0.08);
+            padding: 6px 16px;
+            border-radius: 30px;
+            margin-bottom: 1.5rem;
+        }
+
+        .services-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.6rem, 3vw, 2.6rem);
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.2;
+            margin-bottom: 2.5rem;
+        }
+
+        .services-heading span {
+            color: #1a3c34;
+        }
+
+        /* Step Navigation */
+        .step-nav {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+
+        /* Progress Bar */
+        .progress-track {
+            position: relative;
+            width: 3px;
+            background: #e0ddd8;
+            border-radius: 3px;
+            flex-shrink: 0;
+            align-self: stretch;
+        }
+
+        .progress-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #1a3c34;
+            border-radius: 3px;
+            height: 0%;
+            transition: height 0.3s ease;
+        }
+
+        /* Step Items */
+        .step-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0;
+            cursor: default;
+            transition: all 0.35s ease;
+            opacity: 0.35;
+        }
+
+        .step-item.active {
+            opacity: 1;
+        }
+
+        .step-number {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: #b0ada6;
+            font-variant-numeric: tabular-nums;
+            min-width: 22px;
+            transition: color 0.35s ease;
+        }
+
+        .step-item.active .step-number {
+            color: #1a3c34;
+        }
+
+        .step-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #888;
+            transition: color 0.35s ease;
+            white-space: nowrap;
+        }
+
+        .step-item.active .step-title {
+            color: #1a1a1a;
+        }
+
+        /* Active dot indicator */
+        .step-item.active .step-number::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: #1a3c34;
+            border-radius: 50%;
+            margin-right: 6px;
+            vertical-align: middle;
+            animation: dotPulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes dotPulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: scale(0.7);
+            }
+        }
+
+        /* ============================
+           RIGHT COLUMN (service cards)
+           ============================ */
+        .services-right {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            position: relative;
+            padding: 1.5rem 0;
+        }
+
+        .service-card-scroll {
+            position: absolute;
+            /* top: 50%; */
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.96);
+            width: 94%;
+            height: 85vh;
+            max-height: 720px;
+            border-radius: 24px;
+            overflow: hidden;
+            opacity: 0;
+            pointer-events: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Per-card background colors */
+        .service-card-scroll[data-index="0"] {
+            background: #e8efdf;
+        }
+
+        .service-card-scroll[data-index="1"] {
+            background: #dfe8ef;
+        }
+
+        .service-card-scroll[data-index="2"] {
+            background: #f0ebe3;
+        }
+
+        .service-card-scroll[data-index="3"] {
+            background: #e3ecf0;
+        }
+
+        .service-card-scroll[data-index="4"] {
+            background: #ebeaef;
+        }
+
+        .service-card-scroll.active {
+            pointer-events: auto;
+        }
+
+        /* Step number badge (top-left inside card) */
+        .card-step-number {
+            position: absolute;
+            top: 24px;
+            left: 28px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 6px 14px;
+            border-radius: 30px;
+            z-index: 2;
+            letter-spacing: 0.5px;
+        }
+
+        /* Image area: centered in the card */
+        .service-card-img-area {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3.5rem 2.5rem 1rem;
+            position: relative;
+        }
+
+        .service-card-img {
+            max-width: 75%;
+            max-height: 320px;
+            object-fit: contain;
+            display: block;
+            filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.08));
+        }
+
+        /* Bottom area: title + desc left, CTA right */
+        .service-card-bottom {
+            padding: 1.5rem 2rem 2rem;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+
+        .service-card-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .service-card-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .service-card-info p {
+            color: #555;
+            font-size: 0.88rem;
+            line-height: 1.6;
+            max-width: 380px;
+        }
+
+        .service-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 24px;
+            background: #1a3c34;
+            border: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .service-cta:hover {
+            background: #0f2a24;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(26, 60, 52, 0.3);
+        }
+
+        .service-cta svg {
+            transition: transform 0.3s ease;
+        }
+
+        .service-cta:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* ============================
+           RESPONSIVE
+           ============================ */
+        @media (max-width: 900px) {
+            .services-inner {
+                flex-direction: column;
+                padding: 0 1.2rem;
+            }
+
+            .services-left {
+                position: relative;
+                top: 0;
+                width: 100%;
+                padding-right: 0;
+                padding-top: 3rem;
+                padding-bottom: 1rem;
+            }
+
+            .services-right {
+                width: 100%;
+                min-height: 70vh;
+            }
+
+            .service-card-scroll {
+                width: 98%;
+                height: 75vh;
+            }
+
+            .step-nav {
+                margin-bottom: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .services-heading {
+                font-size: 1.4rem;
+            }
+
+            .service-card-img {
+                max-width: 85%;
+                max-height: 200px;
+            }
+
+            .service-card-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1rem 1.4rem 1.5rem;
+            }
+
+            .service-card-info h3 {
+                font-size: 1.2rem;
+            }
+
+            .service-card-info p {
+                font-size: 0.82rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SPACER: before services -->
+    <div class="spacer">
+        <div>
+            <h2 class="font-serif">Welcome to Korat Reality</h2>
+            <p>Scroll down to explore our services ↓</p>
+        </div>
+    </div>
+
+    <!-- ============================================
+         SERVICES SECTION – Scroll-Driven
+         ============================================ -->
+    <section class="services-section" id="services">
+        <div class="services-inner">
+
+            <!-- LEFT COLUMN: Sticky Navigation -->
+            <div class="services-left">
+                <span class="services-label">Services</span>
+                <h2 class="services-heading">
+                    The most effective way to <span>build wealth</span>
+                </h2>
+
+                <div class="step-nav">
+                    <!-- Vertical Progress Bar -->
+                    <div class="progress-track">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+
+                    <!-- Step Items -->
+                    <ul class="step-list" id="stepList">
+                        <li class="step-item active" data-index="0">
+                            <span class="step-number">01</span>
+                            <span class="step-title">Land Acquisition</span>
+                        </li>
+                        <li class="step-item" data-index="1">
+                            <span class="step-number">02</span>
+                            <span class="step-title">Land Development</span>
+                        </li>
+                        <li class="step-item" data-index="2">
+                            <span class="step-number">03</span>
+                            <span class="step-title">Residential Projects</span>
+                        </li>
+                        <li class="step-item" data-index="3">
+                            <span class="step-number">04</span>
+                            <span class="step-title">Commercial Projects</span>
+                        </li>
+                        <li class="step-item" data-index="4">
+                            <span class="step-number">05</span>
+                            <span class="step-title">Industrial Projects</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: Service Cards -->
+            <div class="services-right">
+
+                <!-- Card 1: Land Acquisition -->
+                <div class="service-card-scroll" data-index="0">
+                    <span class="card-step-number">01</span>
+                    <div class="service-card-img-area">
+                        <img src="assets/images/land_acquisition.png" alt="Land Acquisition" class="service-card-img">
+                    </div>
+                    <div class="service-card-bottom">
+                        <div class="service-card-info">
+                            <h3>Land Acquisition</h3>
+                            <p>Comprehensive market research and location analysis to identify high-potential land
+                                parcels across India.</p>
+                        </div>
+                        <a href="land-acquisition.html" class="service-cta">
+                            Learn More
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14" />
+                                <path d="M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2: Land Development -->
+                <div class="service-card-scroll" data-index="1">
+                    <span class="card-step-number">02</span>
+                    <div class="service-card-img-area">
+                        <img src="assets/images/land_development.png" alt="Land Development" class="service-card-img">
+                    </div>
+                    <div class="service-card-bottom">
+                        <div class="service-card-info">
+                            <h3>Land Development</h3>
+                            <p>Transforming raw land into market-ready properties through town planning, infrastructure
+                                setup, and legal compliance.</p>
+                        </div>
+                        <a href="land-development.html" class="service-cta">
+                            Learn More
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14" />
+                                <path d="M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3: Residential Projects -->
+                <div class="service-card-scroll" data-index="2">
+                    <span class="card-step-number">03</span>
+                    <div class="service-card-img-area">
+                        <img src="assets/images/residential_projects.png" alt="Residential Projects"
+                            class="service-card-img">
+                    </div>
+                    <div class="service-card-bottom">
+                        <div class="service-card-info">
+                            <h3>Residential Projects</h3>
+                            <p>Developing plotting communities and villa projects in areas with excellent connectivity
+                                and social infrastructure.</p>
+                        </div>
+                        <a href="residential-projects.html" class="service-cta">
+                            Learn More
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14" />
+                                <path d="M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 4: Commercial Projects -->
+                <div class="service-card-scroll" data-index="3">
+                    <span class="card-step-number">04</span>
+                    <div class="service-card-img-area">
+                        <img src="assets/images/commercial_project.png" alt="Commercial Projects"
+                            class="service-card-img">
+                    </div>
+                    <div class="service-card-bottom">
+                        <div class="service-card-info">
+                            <h3>Commercial Projects</h3>
+                            <p>Retail complexes, office spaces, and mixed-use developments designed for sustainable
+                                rental yields.</p>
+                        </div>
+                        <a href="commercial-projects.html" class="service-cta">
+                            Learn More
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14" />
+                                <path d="M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 5: Industrial Projects -->
+                <div class="service-card-scroll" data-index="4">
+                    <span class="card-step-number">05</span>
+                    <div class="service-card-img-area">
+                        <img src="assets/images/industrial_project.png" alt="Industrial Projects"
+                            class="service-card-img">
+                    </div>
+                    <div class="service-card-bottom">
+                        <div class="service-card-info">
+                            <h3>Industrial Projects</h3>
+                            <p>Industrial land development for manufacturers and logistics companies in designated
+                                industrial zones.</p>
+                        </div>
+                        <a href="industrial-projects.html" class="service-cta">
+                            Learn More
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14" />
+                                <path d="M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPACER: after services -->
+    <div class="spacer">
+        <div>
+            <h2 class="font-serif">Continue Exploring</h2>
+            <p>More sections would follow below ↓</p>
+        </div>
+    </div>
+
+    <!-- ============================================
+         SCRIPTS
+         ============================================ -->
+    <!-- GSAP & ScrollTrigger CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <script>
+        // Register plugin
+        gsap.registerPlugin(ScrollTrigger);
+
+        // ============================
+        // ELEMENTS
+        // ============================
+        const section = document.querySelector('.services-section');
+        const cards = document.querySelectorAll('.service-card-scroll');
+        const stepItems = document.querySelectorAll('.step-item');
+        const progressFill = document.getElementById('progressFill');
+        const totalSteps = cards.length;
+
+        // ============================
+        // HELPER: Set active step
+        // ============================
+        function setActiveStep(index) {
+            // Clamp index to valid range
+            index = Math.max(0, Math.min(index, totalSteps - 1));
+
+            // Update step list
+            stepItems.forEach((item, i) => {
+                item.classList.toggle('active', i === index);
+            });
+
+            // Update progress bar
+            const progressPercent = ((index + 1) / totalSteps) * 100;
+            progressFill.style.height = progressPercent + '%';
+        }
+
+        // ============================
+        // GSAP TIMELINE + SCROLL TRIGGER
+        // ============================
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: section,
+                start: 'top top',
+                end: '+=3000',
+                pin: true,
+                scrub: 0.8,
+                anticipatePin: 1,
+                onUpdate: (self) => {
+                    // Calculate which step we're on based on scroll progress
+                    const progress = self.progress;
+                    const stepIndex = Math.min(
+                        Math.floor(progress * totalSteps),
+                        totalSteps - 1
+                    );
+                    setActiveStep(stepIndex);
+                }
+            }
+        });
+
+        // ============================
+        // BUILD THE TIMELINE
+        // Each card gets: fade in → hold → fade out
+        // Last card: fade in → hold (no fade out)
+        // ============================
+        cards.forEach((card, i) => {
+            // Segment duration (equal shares)
+            const segmentDuration = 1;
+
+            if (i === 0) {
+                // First card: start visible
+                gsap.set(card, { opacity: 1, y: 0, scale: 1 });
+                card.classList.add('active');
+
+                // Hold, then fade out
+                tl.to(card, {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: segmentDuration * 0.6,
+                    ease: 'none'
+                });
+
+                // Fade out first card
+                tl.to(card, {
+                    opacity: 0,
+                    y: -30,
+                    scale: 0.96,
+                    duration: segmentDuration * 0.4,
+                    ease: 'power2.in',
+                    onStart: () => card.classList.remove('active'),
+                    onReverseComplete: () => card.classList.add('active')
+                });
+            } else if (i === totalSteps - 1) {
+                // Last card: fade in and hold (no exit)
+                tl.fromTo(card,
+                    { opacity: 0, y: 40, scale: 0.96 },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        scale: 1,
+                        duration: segmentDuration * 0.4,
+                        ease: 'power2.out',
+                        onComplete: () => card.classList.add('active'),
+                        onReverseComplete: () => card.classList.remove('active')
+                    }
+                );
+
+                // Hold at end
+                tl.to(card, {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: segmentDuration * 0.6,
+                    ease: 'none'
+                });
+            } else {
+                // Middle cards: fade in → hold → fade out
+                // Fade in
+                tl.fromTo(card,
+                    { opacity: 0, y: 40, scale: 0.96 },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        scale: 1,
+                        duration: segmentDuration * 0.3,
+                        ease: 'power2.out',
+                        onComplete: () => card.classList.add('active'),
+                        onReverseComplete: () => card.classList.remove('active')
+                    }
+                );
+
+                // Hold
+                tl.to(card, {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: segmentDuration * 0.4,
+                    ease: 'none'
+                });
+
+                // Fade out
+                tl.to(card, {
+                    opacity: 0,
+                    y: -30,
+                    scale: 0.96,
+                    duration: segmentDuration * 0.3,
+                    ease: 'power2.in',
+                    onStart: () => card.classList.remove('active'),
+                    onReverseComplete: () => card.classList.add('active')
+                });
+            }
+        });
+
+        // ============================
+        // INITIAL STATE
+        // ============================
+        setActiveStep(0);
+    </script>
+
+</body>
+
+</html>

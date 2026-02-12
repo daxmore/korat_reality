@@ -348,9 +348,9 @@ document.addEventListener("DOMContentLoaded", function () {
     applyAnimation('.section-overlap .dashboard-header', 'fadeUp', { duration: 0.8 });
     applyAnimation('.section-overlap .inner-card', 'fadeUp', { stagger: 0.15, delay: 0.2 });
 
-    // Services Section - Slide from Left
-    applyAnimation('.services-section .section-title', 'slideLeft', { duration: 0.9 });
-    applyAnimation('.service-card-new', 'scaleUp', { stagger: 0.12, duration: 0.8 });
+    // Services Section - Handled by services-scroll.js (GSAP ScrollTrigger timeline)
+    applyAnimation('.services-label', 'fadeUp', { duration: 0.6 });
+    applyAnimation('.services-heading', 'fadeUp', { duration: 0.8, delay: 0.1 });
 
     // Why Korat Section - Slide from Right
     applyAnimation('.why-korat-title', 'slideRight', { duration: 0.9 });
