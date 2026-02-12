@@ -1,12 +1,11 @@
 /**
  * Korat Reality - Services Section Scroll-Driven Animation
- * GSAP + ScrollTrigger powered step-based storytelling
+ * Slides a vertical track of cards upward as the user scrolls.
+ * Cards are always at full scale — no opacity/scale pop-in.
  */
 document.addEventListener("DOMContentLoaded", function () {
-    // Guard: Check if GSAP and ScrollTrigger are available
     if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
 
-    // Guard: Check if the services section exists on this page
     const section = document.querySelector('.services-section');
     if (!section) return;
 
@@ -15,12 +14,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // ============================
     // ELEMENTS
     // ============================
+    const track = document.getElementById('cardsTrack');
     const cards = section.querySelectorAll('.service-card-scroll');
     const stepItems = section.querySelectorAll('.step-item');
     const progressFill = document.getElementById('progressFill');
     const totalSteps = cards.length;
 
-    if (totalSteps === 0) return;
+    if (totalSteps === 0 || !track) return;
 
     // ============================
     // HELPER: Set active step
@@ -39,9 +39,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // ============================
-    // GSAP TIMELINE + SCROLL TRIGGER
+    // Measure: total slide distance
+    // We want to scroll through (totalSteps - 1) card heights
+    // so the last card ends up at the top of the viewport.
     // ============================
-    const tl = gsap.timeline({
+    function getCardHeight() {
+        return cards[0].offsetHeight + 24; // card height + margin-bottom (1.5rem ≈ 24px)
+    }
+
+    const totalSlide = () => getCardHeight() * (totalSteps - 1);
+
+    // ============================
+    // GSAP SCROLL TRIGGER
+    // Translate the track upward by the total slide distance.
+    // ============================
+    gsap.to(track, {
+        y: () => -totalSlide(),
+        ease: 'none',
         scrollTrigger: {
             trigger: section,
             start: 'top top',
@@ -49,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
             pin: true,
             scrub: 2,
             anticipatePin: 1,
+            invalidateOnRefresh: true, // recalc on resize
             onUpdate: (self) => {
                 const progress = self.progress;
                 const stepIndex = Math.min(
@@ -57,82 +72,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
                 setActiveStep(stepIndex);
             }
-        }
-    });
-
-    // ============================
-    // BUILD THE TIMELINE
-    // Each card gets: fade in → hold → fade out
-    // Last card: fade in → hold (no fade out)
-    // ============================
-    cards.forEach((card, i) => {
-        const segmentDuration = 1;
-
-        if (i === 0) {
-            // First card: start visible
-            gsap.set(card, { opacity: 1, y: 0, scale: 1 });
-            card.classList.add('active');
-
-            // Hold
-            tl.to(card, {
-                opacity: 1, y: 0, scale: 1,
-                duration: segmentDuration * 0.6,
-                ease: 'none'
-            });
-
-            // Fade out
-            tl.to(card, {
-                opacity: 0, y: -30, scale: 0.96,
-                duration: segmentDuration * 0.4,
-                ease: 'power2.in',
-                onStart: () => card.classList.remove('active'),
-                onReverseComplete: () => card.classList.add('active')
-            });
-        } else if (i === totalSteps - 1) {
-            // Last card: fade in and hold (no exit)
-            tl.fromTo(card,
-                { opacity: 0, y: 40, scale: 0.96 },
-                {
-                    opacity: 1, y: 0, scale: 1,
-                    duration: segmentDuration * 0.4,
-                    ease: 'power2.out',
-                    onComplete: () => card.classList.add('active'),
-                    onReverseComplete: () => card.classList.remove('active')
-                }
-            );
-
-            // Hold at end
-            tl.to(card, {
-                opacity: 1, y: 0, scale: 1,
-                duration: segmentDuration * 0.6,
-                ease: 'none'
-            });
-        } else {
-            // Middle cards: fade in → hold → fade out
-            tl.fromTo(card,
-                { opacity: 0, y: 40, scale: 0.96 },
-                {
-                    opacity: 1, y: 0, scale: 1,
-                    duration: segmentDuration * 0.3,
-                    ease: 'power2.out',
-                    onComplete: () => card.classList.add('active'),
-                    onReverseComplete: () => card.classList.remove('active')
-                }
-            );
-
-            tl.to(card, {
-                opacity: 1, y: 0, scale: 1,
-                duration: segmentDuration * 0.4,
-                ease: 'none'
-            });
-
-            tl.to(card, {
-                opacity: 0, y: -30, scale: 0.96,
-                duration: segmentDuration * 0.3,
-                ease: 'power2.in',
-                onStart: () => card.classList.remove('active'),
-                onReverseComplete: () => card.classList.add('active')
-            });
         }
     });
 

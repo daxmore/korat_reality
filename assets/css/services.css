@@ -169,29 +169,39 @@
    ============================ */
 .services-right {
     width: 60%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
     position: relative;
-    padding: 1.5rem 0;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Cards wrapper — clips overflow so only current + peek of next show */
+.cards-viewport {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.cards-track {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* will-change for smoother GPU compositing */
+    will-change: transform;
 }
 
 .service-card-scroll {
-    position: absolute;
-    /* top: 50%; */
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.96);
     width: 94%;
     height: 85vh;
     max-height: 720px;
+    margin: 0 auto 1.5rem;
     border-radius: 24px;
     overflow: hidden;
-    opacity: 0;
-    pointer-events: none;
     display: flex;
     flex-direction: column;
+    opacity: 1;
+    transform: scale(1);
 }
 
 /* Per-card background colors */
@@ -215,9 +225,6 @@
     background: #ebeaef;
 }
 
-.service-card-scroll.active {
-    pointer-events: auto;
-}
 
 /* Step number badge (top-left inside card) */
 .card-step-number {
