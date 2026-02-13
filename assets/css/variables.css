@@ -1,20 +1,62 @@
 :root {
-    /* Colors - Teal/Green Inspired Theme */
-    --primary-teal: #068466;
-    /* New Background/Button Color */
-    --primary-teal-dark: #004d49;
-    /* New Card Color */
-    --primary-teal-light: #64ccc2;
-    /* Fallback/Same as primary for now */
-    --accent-teal: #008080;
-    --primary-cream: #f5f4f0;
-    --primary-light: #fdfcfa;
-    --primary-pastel-green: #e8f4f3;
-    --primary-pastel-pink: #fef0ed;
-    --text-dark: #1c4044;
-    --text-light: #f5f4f0;
-    --text-muted: #6b6b6b;
-    --text-teal: #004d4d;
+    /* ============================================
+       CORE PALETTE (4 Colors)
+       ============================================
+       1. Charcoal   #1C1C1C  (Primary Dark)
+       2. Canvas     #EAE6E0  (Primary Light / Background)
+       3. Slate      #535366  (Secondary Dark / Accents)
+       4. White      #FFFFFF  (Pure Light / Cards)
+       ============================================ */
+
+    /* Core Colors */
+    --color-charcoal: #1C1C1C;
+    --color-canvas: #EAE6E0;
+    --color-slate: #535366;
+    --color-white: #FFFFFF;
+
+    /* Backgrounds */
+    --primary-cream: var(--color-canvas);
+    /* Main background */
+    --primary-light: var(--color-white);
+    /* Lighter areas */
+    --bg-primary: var(--color-canvas);
+    --bg-card: var(--color-white);
+
+    /* Text */
+    --text-dark: var(--color-charcoal);
+    /* Headings */
+    --text-body: var(--color-charcoal);
+    /* Body text */
+    --text-muted: var(--color-slate);
+    /* Meta text */
+    --text-light: var(--color-canvas);
+    /* Text on dark backgrounds */
+
+    /* Accents & Brand (Mapped to new palette) */
+    --primary-teal: var(--color-charcoal);
+    /* Primary buttons/links */
+    --primary-teal-dark: var(--color-slate);
+    /* Hover states */
+    --primary-teal-light: rgba(83, 83, 102, 0.1);
+    /* Subtle backgrounds */
+    --accent-teal: var(--color-slate);
+
+    /* Legacy Color Mappings (for backward compatibility) */
+    --color-olive: var(--color-charcoal);
+    /* Was usage for buttons */
+    --color-forest: var(--color-charcoal);
+    /* Was usage for text */
+    --color-cream: var(--color-canvas);
+    /* Was usage for bg */
+    --color-gold: var(--color-slate);
+    /* Was highlights -> now Slate for editorial look */
+    --color-burnt: var(--color-slate);
+    /* Was hover -> now Slate */
+
+    /* Variable Aliases for Components */
+    --border-color: rgba(28, 28, 28, 0.15);
+    --border-opacity: 0.15;
+
     /* Fonts */
     --font-heading: 'Moderat', sans-serif;
     --font-body: 'Moderat', sans-serif;
@@ -24,5 +66,4 @@
     --section-padding: clamp(4rem, 8vw, 7rem) 0;
     --section-lg-padding: clamp(5rem, 12vw, 10rem) 0;
     --container-padding: clamp(1.5rem, 4vw, 3rem);
-    --border-opacity: 0.08;
 }

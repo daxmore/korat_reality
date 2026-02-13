@@ -175,20 +175,27 @@
 }
 
 /* Cards wrapper — clips overflow so only current + peek of next show */
+/* Cards wrapper — clips overflow so only current + peek of next show */
 .cards-viewport {
     position: sticky;
     top: 0;
     height: 100vh;
     overflow: hidden;
+    padding-top: 80px;
+    /* Space for fixed header */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* items slide up */
 }
 
 .cards-track {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
+    /* Changed from absolute to flow within flex container if needed, but relative/absolute works. Let's keep relative for simplicity */
     width: 100%;
-    /* will-change for smoother GPU compositing */
     will-change: transform;
+    /* margin-top removed for seamless scroll */
 }
 
 .service-card-scroll {

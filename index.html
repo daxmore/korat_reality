@@ -145,195 +145,107 @@
     </header>
 
     <!-- ============================================
-         HERO SECTION - Canvas Parallax Animation
+         HERO SECTION — Editorial Layout
+         ============================================ -->
+    <!-- ============================================
+         HERO SECTION — 'Still Curve' Grid Layout
          ============================================ -->
     <section class="hero-section" id="hero">
-        <!-- Hero Background Image -->
-        <img src="assets/images/hero_image.jpeg" alt="Hero Background" class="hero-bg-image">
+        <div class="hero-container">
 
-        <!-- Cloud Overlay -->
-        <div class="hero-cloud-overlay"></div>
+            <!-- 1. Massive Title -->
+            <h1 class="hero-mega-title">KORAT REALITY</h1>
 
-        <div class="container-fluid px-lg-4">
-            <div class="row min-vh-100 align-items-center justify-content-center">
-                <div class="col-lg-12">
-                    <div class="hero-content pt-8">
-                        <span
-                            class="hero-label text-teal fw-bold px-3 py-1 mb-4 d-inline-block text-uppercase small ls-1">Welcome
-                            to
-                            Korat Reality</span>
-                        <h1 class="hero-title text-uppercase mb-3">
-                            Trusted Real Estate <br>
-                            <span class="highlight">Advisory & Development</span>
-                        </h1>
-                        <p class="text-dark mb-4 mx-auto" style="max-width: 600px; font-size: 1rem; line-height: 1.7;">
-                            We work with investors, landowners, and NRIs to identify, develop, and structure real estate
-                            opportunities with clear documentation and long-term value mindset.
+            <!-- 2. Meta / Info Grid Row -->
+            <div class="hero-meta-row">
+                <span class="meta-item">001</span>
+                <span class="meta-item meta-center">Strategic Development</span>
+                <span class="meta-item">Info</span>
+            </div>
+
+            <!-- 3. Main Split Grid -->
+            <div class="hero-split-layout">
+                <!-- Large Feature Image -->
+                <div class="hero-feature-img">
+                    <img src="assets/images/hero_image.jpeg" alt="Premium Land Development in Gujarat">
+                </div>
+
+                <!-- Right Content Sidebar -->
+                <div class="hero-sidebar">
+                    <div class="sidebar-intro">
+                        <p>
+                            A legacy shaped by precision and trust. "Korat Reality" explores the intersection of
+                            strategic land acquisition and long-term value creation. We provide opportunities
+                            where elegance emerges through clear documentation and visionary planning.
                         </p>
                     </div>
+
+                    <div class="sidebar-footer">
+                        <span class="sidebar-label">Expertise</span>
+                        <ul class="sidebar-list">
+                            <li>Land Acquisition</li>
+                            <li>Commercial Planning</li>
+                            <li>Industrial Hubs</li>
+                            <li>Legal Compliance</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+
         </div>
     </section>
-
     <!-- ============================================
-         OVERLAPPING INTRO / DASHBOARD SECTION
+         ABOUT SECTION — Editorial Grid
          ============================================ -->
-    <section class="section-overlap text-dark" id="about">
-        <div class="container">
-            <!-- Main Dashboard Container -->
-            <div class="dashboard-container">
-                <!-- Header -->
-                <div class="row mb-5">
-                    <div class="col-lg-8">
-                        <div class="dashboard-header">
-                            <h2 class="display-5 fw-bold mb-3">About Korat Reality</h2>
-                            <p class="text-muted lead mb-0">Building trust through transparency and expertise. Continue
-                                where you left off building your real estate portfolio.</p>
-                        </div>
-                    </div>
+    <section class="section-overlap editorial-about-section" id="about">
+        <div class="hero-container"> <!-- Using hero-container for consistent width -->
+            <div class="editorial-about-grid">
+
+                <!-- 1. Left Label Column -->
+                <div class="about-col-left">
+                    <span class="about-label">002 / TRUST</span>
                 </div>
 
-                <!-- Cards Grid -->
-                <div class="row g-4">
-                    <!-- Card 1: Project Overview -->
-                    <div class="col-lg-4">
-                        <div class="inner-card">
-                            <div>
-                                <h4 class="card-label">Project Overview</h4>
-                                <p class="small text-muted mb-3">You've explored <span
-                                        class="text-teal fw-bold">3</span> of our latest opportunities.</p>
+                <!-- 2. Right Content Column -->
+                <div class="about-col-right">
+                    <h2 class="about-editorial-title">
+                        Building Trust Through<br>
+                        <span class="about-highlight">Radical Transparency</span>
+                    </h2>
 
-                                <div class="mb-4">
-                                    <h4 class="card-label">Total Projects</h4>
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div class="card-value">15+</div>
-                                        <div class="stat-pill">Active</div>
-                                    </div>
-                                    <p class="small text-muted mt-1">Updated 2 days ago</p>
-                                </div>
+                    <p class="about-editorial-text">
+                        We navigate the complexities of real estate with a data-first approach.
+                        For years, we have identified high-value opportunities that merge strategic
+                        planning with clear, honest documentation. Your wealth is built on our precision.
+                    </p>
 
-                                <div>
-                                    <h4 class="card-label">Land Developed</h4>
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div class="card-value">500+ <span class="h6 text-muted">Acres</span></div>
-                                        <div class="stat-pill">growing</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mt-4 pt-3 border-top">
-                                <a href="land-development.html"
-                                    class="btn-card-outline btn-card-action d-block text-center text-decoration-none">View
-                                    All Projects</a>
-                            </div>
+                    <!-- Stats Grid -->
+                    <div class="about-editorial-stats">
+                        <div class="editorial-stat-item">
+                            <span class="estat-num">15+</span>
+                            <span class="estat-label">Active Projects</span>
+                        </div>
+                        <div class="editorial-stat-item">
+                            <span class="estat-num">500+</span>
+                            <span class="estat-label">Acres Developed</span>
+                        </div>
+                        <div class="editorial-stat-item">
+                            <span class="estat-num">11%</span>
+                            <span class="estat-label">Annual ROI</span>
                         </div>
                     </div>
 
-                    <!-- Card 2: Investment Vision -->
-                    <div class="col-lg-4">
-                        <div class="inner-card">
-                            <div>
-                                <h4 class="card-label">Investment Vision</h4>
-                                <div class="card-value mb-3 text-teal">Long-Term Value</div>
-                                <p class="text-muted small mb-4">
-                                    We prioritize sustainable growth over quick flips. What are your investment goals?
-                                </p>
-
-                                <div class="d-flex flex-wrap mb-3">
-                                    <a href="land-acquisition.html" class="action-pill">Land Acquisition</a>
-                                    <a href="commercial-projects.html" class="action-pill">Commercial</a>
-                                    <a href="residential-projects.html" class="action-pill">Residential</a>
-                                    <a href="industrial-projects.html" class="action-pill">Industrial</a>
-                                </div>
-                            </div>
-
-                            <div class="mt-auto">
-                                <a href="why-invest-in-india.html"
-                                    class="btn-card-outline btn-card-action d-block text-center text-decoration-none">Explore
-                                    Opportunities</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 3: Quick Actions / Services -->
-                    <div class="col-lg-4">
-                        <div class="inner-card">
-                            <div>
-                                <h4 class="card-label">Quick Actions</h4>
-                                <p class="text-muted small mb-4">Manage your journey with us.</p>
-
-                                <div class="d-flex flex-column gap-3">
-                                    <div class="p-3 bg-light rounded-3 border d-flex align-items-center gap-3">
-                                        <div class="bg-white p-2 rounded-circle shadow-sm text-teal">
-                                            <svg width="20" height="20" fill="none" stroke="currentColor"
-                                                viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <h6 class="m-0 small fw-bold">Schedule Visit</h6>
-                                            <small class="text-muted">Book a site tour</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="p-3 bg-light rounded-3 border d-flex align-items-center gap-3">
-                                        <div class="bg-white p-2 rounded-circle shadow-sm text-teal">
-                                            <svg width="20" height="20" fill="none" stroke="currentColor"
-                                                viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
-                                                </path>
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <h6 class="m-0 small fw-bold">Contact Advisor</h6>
-                                            <small class="text-muted">Get expert guidance</small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mt-4 pt-3">
-                                <a href="contact.html"
-                                    class="btn-card-outline btn-card-action d-block text-center text-decoration-none">Contact
-                                    Us</a>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Minimal CTA -->
+                    <a href="about.html" class="editorial-cta-link">
+                        Discover Our Philosophy
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
                 </div>
 
-                <!-- Bottom Hint -->
-                <div class="mt-4 pt-3 border-top">
-                    <div class="d-flex align-items-center gap-2 text-muted small">
-                        <div class="bg-teal text-white rounded p-1">
-                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                            </svg>
-                        </div>
-                        <span class="fw-bold text-dark">Market Trend:</span> Real estate in Gujarat is projected to grow
-                        by 12% this year.
-                    </div>
-                </div>
             </div>
-
-            <!-- Stats Row (Outside Card) -->
-            <!-- <div class="row bottom-stats-row pb-2">
-                <div class="col-md-4 bottom-stat-item">
-                    <h3 class="counter" data-count="1.4" data-suffix="M+" data-decimals="1">0M+</h3>
-                    <p>Sq. Ft. Developed</p>
-                </div>
-                <div class="col-md-4 bottom-stat-item">
-                    <h3 class="counter" data-count="11" data-suffix="%">0%</h3>
-                    <p>Avg. Annual ROI</p>
-                </div>
-                <div class="col-md-4 bottom-stat-item">
-                    <h3 class="counter" data-count="15" data-suffix="+">0+</h3>
-                    <p>Completed Projects</p>
-                </div>
-            </div> -->
         </div>
     </section>
 
