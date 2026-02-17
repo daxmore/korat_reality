@@ -1,6 +1,10 @@
 /* ============================================
    15. NEW FOOTER STYLES
    ============================================ */
+footer {
+    overflow: hidden;
+}
+
 .main-footer {
     background-color: var(--primary-teal-dark);
     /* Deeper Teal Background */

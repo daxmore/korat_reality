@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Create the scroll to top button HTML structure
     const scrollTopHTML = `
         <button id="scrollTopBtn" class="scroll-to-top" aria-label="Scroll to top">
-            <svg class="progress-ring" width="50" height="50">
+            <svg class="progress-ring" width="50" height="50" viewBox="0 0 50 50">
                 <circle class="progress-ring-bg" cx="25" cy="25" r="22" />
                 <circle class="progress-ring-circle" cx="25" cy="25" r="22" />
             </svg>
