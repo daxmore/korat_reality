@@ -9,6 +9,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Hero CSS -->
+    <link rel="stylesheet" href="assets/css/hero.css">
+    <!-- About Section CSS -->
+    <link rel="stylesheet" href="assets/css/about.css">
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="assets/css/media.css">
     <!-- Shery.js CSS -->
@@ -136,93 +140,77 @@
     <!-- ============================================
          About HERO
          ============================================ -->
-    <section class="hero-section text-center position-relative" id="about-hero">
-        <!-- Hero Background Image -->
-        <img src="assets/images/about_hero.png" alt="About Korat Reality" class="hero-bg-image">
+    <section class="hero-main" id="about-hero">
+        <!-- Centered Content -->
+        <div class="hero-content">
+            <span class="hero-subtitle">About Korat Reality</span>
+            <h1 class="hero-title">Who We Are</h1>
+            <p class="hero-text">
+                A research-driven real estate development firm that transforms land into
+                secure, high-value assets through transparent processes, legal clarity, and compliant execution.
+            </p>
+            <a href="#our-story" class="btn-hero-cta">Explore Our Story</a>
+        </div>
 
-        <!-- Cloud Overlay for smooth transition -->
-        <div class="hero-cloud-overlay"></div>
-
-        <div class="container position-relative z-2">
-            <div class="row min-vh-100 align-items-start justify-content-center">
-                <div class="col-lg-10">
-                    <div class="hero-content reveal-content pt-5">
-                        <span class="About-label text-teal fw-bold px-3 py-1 mb-4 d-inline-block">About
-                            Us</span>
-                        <h1 class="About-statement text-dark display-3 mb-0">
-                            Korat Reality is a research-driven real estate development firm that transforms land into
-                            secure, high-value assets through transparent processes, legal clarity, and compliant
-                            execution. We partner with investors, NRIs, and landowners to deliver confident decisions
-                            and long-term value.
-                        </h1>
-                    </div>
-                </div>
-            </div>
+        <!-- Hero Bottom Image -->
+        <div class="hero-illustration">
+            <img src="assets/images/hero_image.jpeg" alt="About Korat Reality">
         </div>
     </section>
 
     <!-- ============================================
-         WHO WE ARE (Story Section Overlap)
+         WHO WE ARE — Editorial Grid
          ============================================ -->
-    <section class="story-section-overlap text-dark" id="our-story">
-        <div class="container">
-            <div class="story-grid-container">
-                <div class="story-grid">
-                    <!-- Column 1: Main 'Who We Are' Content -->
-                    <div class="story-card-main reveal-content">
-                        <div class="story-content">
-                            <span class="text-uppercase text-primary-teal fw-bold mb-3 d-block small ls-1">Who We
-                                Are</span>
-                            <h2 class="story-title mb-4">
-                                Transparent execution and research-driven strategies.
-                            </h2>
-                            <p class="story-text">
-                                Korat Reality is a real estate development company in India dedicated to transforming
-                                land into
-                                valuable assets. As a trusted real estate investment company, we partner with investors,
-                                NRIs, and landowners seeking professional guidance and long-term value creation.
-                            </p>
-                            <p class="story-text">
-                                We are not transactional brokers—we are development partners who prioritize due
-                                diligence,
-                                feasibility analysis, and sustainable growth. Our team brings expertise in land
-                                acquisition
-                                and development, urban planning, legal compliance, and investment advisory, offering a
-                                holistic
-                                approach to real estate development.
-                            </p>
-                            <p class="story-text mb-4">
-                                Whether you're exploring investment opportunities, seeking secure NRI investments, or
-                                looking
-                                to maximize your land's potential, Korat Reality provides the expertise and structured
-                                processes
-                                needed for confident real estate decisions.
-                            </p>
+    <section class="section-overlap editorial-about-section" id="our-story">
+        <div class="hero-container">
+            <div class="editorial-about-grid">
+
+                <!-- 1. Left Label Column -->
+                <div class="about-col-left">
+                    <span class="about-label">WHO WE ARE</span>
+                </div>
+
+                <!-- 2. Right Content Column -->
+                <div class="about-col-right">
+                    <h2 class="about-editorial-title">
+                        Transparent Execution &amp;<br>
+                        <span class="about-highlight">Research-Driven Strategy</span>
+                    </h2>
+
+                    <p class="about-editorial-text">
+                        Korat Reality is a real estate development company in India dedicated to transforming
+                        land into valuable assets. We partner with investors, NRIs, and landowners seeking
+                        professional guidance and long-term value creation. We are not transactional brokers—we
+                        are development partners who prioritize due diligence, feasibility analysis, and
+                        sustainable growth.
+                    </p>
+
+                    <!-- Stats Grid -->
+                    <div class="about-editorial-stats">
+                        <div class="editorial-stat-item">
+                            <span class="estat-num">100+</span>
+                            <span class="estat-label">Acres Developed</span>
                         </div>
-                        <!-- Key Image Absolute Positioned -->
-                        <div class="key-image-wrapper">
-                            <img src="assets/images/key_image.png" alt="Key to Success">
+                        <div class="editorial-stat-item">
+                            <span class="estat-num">15%</span>
+                            <span class="estat-label">Annual Growth</span>
+                        </div>
+                        <div class="editorial-stat-item">
+                            <span class="estat-num">5+</span>
+                            <span class="estat-label">Major Cities</span>
                         </div>
                     </div>
 
-                    <!-- Column 2: Stats (Kept as matching visual element) -->
-                    <div class="stats-column reveal-content">
-                        <div class="stats-card-wrapper">
-                            <div class="stat-item">
-                                <h3 class="counter" data-count="100" data-suffix="+">0+</h3>
-                                <p>Acres Developed</p>
-                            </div>
-                            <div class="stat-item">
-                                <h3 class="counter" data-count="15" data-suffix="%">0%</h3>
-                                <p>Annual Growth</p>
-                            </div>
-                            <div class="stat-item">
-                                <h3 class="counter" data-count="5">0</h3>
-                                <p>Major Cities</p>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Minimal CTA -->
+                    <a href="#vision-mission" class="editorial-cta-link">
+                        Our Vision &amp; Mission
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
                 </div>
+
             </div>
         </div>
     </section>

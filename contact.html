@@ -9,6 +9,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Contact Page CSS -->
+    <link rel="stylesheet" href="assets/css/contact.css">
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="assets/css/media.css">
     <!-- Shery.js CSS -->
@@ -131,222 +133,411 @@
     </header>
 
     <!-- ============================================
-         HERO SECTION
+         CONTACT FORM & INFO SECTION
          ============================================ -->
-    <section class="hero-section position-relative bg-dark d-flex align-items-center justify-content-center"
-        style="min-height: 100dvh;">
-        <!-- Hero Background Image -->
-        <img src="assets/images/about_hero.png" alt="Contact Korat Reality" class="hero-bg-image">
+    <section class="contact-form-section" id="contact-main">
+        <div class="container">
+            <h2 class="contact-main-title">Get in touch</h2>
 
-        <!-- Cloud Overlay for smooth transition -->
-        <div class="hero-cloud-overlay"></div>
+            <div class="contact-grid">
+                <!-- LEFT: Form Column -->
+                <div class="contact-form-col">
+                    <h3 class="contact-form-heading">Send a Message</h3>
+                    <p class="contact-form-desc">Pellentesque in ipsum id orci porta dapibus. Quisque velit nisi,
+                        pretium ut lacinia in, elementum id enim. Done</p>
 
-        <div class="container text-center text-white position-relative z-1 pt-5">
-            <h1 class="display-3 font-serif text-dark mb-4 reveal-content">Get in Touch</h1>
-            <p class="lead text-dark reveal-content" style="max-width: 600px; margin: 0 auto;">
-                Whether you have a question about investment opportunities, partnership inquiries, or just want to say
-                hello, our team is ready to answer all your questions.
-            </p>
+                    <form class="minimal-form" id="contactForm">
+                        <div class="form-row-2col">
+                            <div class="form-group">
+                                <label for="contactName">Name</label>
+                                <input type="text" class="form-control" id="contactName" placeholder="Your full name">
+                            </div>
+                            <div class="form-group">
+                                <label for="contactEmail">Email Address</label>
+                                <input type="email" class="form-control" id="contactEmail" placeholder="your@email.com">
+                            </div>
+                        </div>
+                        <div class="form-row-2col">
+                            <div class="form-group">
+                                <label for="contactInterest">Interested In</label>
+                                <select class="form-select" id="contactInterest">
+                                    <option selected disabled>Select an option</option>
+                                    <option value="Land Acquisition">Land Acquisition</option>
+                                    <option value="Residential Project">Residential Project</option>
+                                    <option value="Commercial Project">Commercial Project</option>
+                                    <option value="Investment">Investment Advisory</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactPhone">Phone Number</label>
+                                <input type="tel" class="form-control" id="contactPhone" placeholder="+91 000 000 0000">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">Message</label>
+                            <textarea class="form-control" id="contactMessage" rows="4"
+                                placeholder="How can we help you?"></textarea>
+                        </div>
+                        <div class="form-submit-row">
+                            <button type="submit" class="btn-minimal-submit">
+                                <span>Submit</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- RIGHT: Contact Info Column -->
+                <div class="contact-info-col">
+                    <!-- Call Us -->
+                    <div class="info-item">
+                        <h5>Call Us</h5>
+                        <p>Pellentesque in ipsum id orci porta dapibus. Quisque velit nisi, pretium ut lacinia in,
+                            elementum id enim. Done</p>
+                        <a href="tel:+919876543210" class="info-link">
+                            <span class="info-link-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                </svg>
+                            </span>
+                            <span>(291) 929-1391</span>
+                        </a>
+                    </div>
+
+                    <!-- Visit Us -->
+                    <div class="info-item">
+                        <h5>Visit Us</h5>
+                        <p>Pellentesque in ipsum id orci porta dapibus. Quisque velit nisi, pretium ut lacinia in,
+                            elementum id enim. Done</p>
+                        <a href="#" class="info-link">
+                            <span class="info-link-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                            </span>
+                            <span>123, Korat Business Hub, Ahmedabad, Gujarat</span>
+                        </a>
+                    </div>
+
+                    <!-- Live Chat -->
+                    <div class="info-item">
+                        <h5>Live Chat</h5>
+                        <p>Pellentesque in ipsum id orci porta dapibus. Quisque velit nisi, pretium ut lacinia in,
+                            elementum id enim. Done</p>
+                        <a href="#" class="info-link">
+                            <span class="info-link-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                                </svg>
+                            </span>
+                            <span>Start Chat</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- ============================================
-         CONTACT FORM & INFO
+         FAQ SECTION (Same as Index)
          ============================================ -->
-    <section class="section-padding bg-cream">
+    <section class="faq-section section-padding primary-cream" id="faq">
         <div class="container">
-            <div class="row g-5">
-                <!-- Info Column -->
-                <div class="col-lg-4">
-                    <div class="mb-5 reveal-content">
-                        <h4 class="text-uppercase fw-bold mb-4 font-heading">Contact Information</h4>
-                        <p class="text-muted mb-4">Feel free to reach out to us through any of the following channels.
-                            We look forward to connecting with you.</p>
+            <!-- Section Header -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <h2 class="faq-title text-dark text-uppercase mb-4">
+                        Frequently Asked
+                        <span class="faq-title-highlight font-serif">Questions</span>
+                    </h2>
+                </div>
+            </div>
 
-                        <div class="d-flex flex-column gap-4">
-                            <!-- Item -->
-                            <div class="d-flex align-items-start gap-3">
-                                <div class="bg-dark text-white rounded-circle p-2 d-flex align-items-center justify-content-center"
-                                    style="width: 40px; height: 40px;">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path
-                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                                        </path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h6 class="fw-bold text-uppercase mb-1">Phone</h6>
-                                    <p class="text-muted m-0 small">+91 98765 43210</p>
-                                </div>
-                            </div>
-                            <!-- Item -->
-                            <div class="d-flex align-items-start gap-3">
-                                <div class="bg-dark text-white rounded-circle p-2 d-flex align-items-center justify-content-center"
-                                    style="width: 40px; height: 40px;">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path
-                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                                        </path>
-                                        <polyline points="22,6 12,13 2,6"></polyline>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h6 class="fw-bold text-uppercase mb-1">Email</h6>
-                                    <p class="text-muted m-0 small">info@koratreality.com</p>
-                                </div>
-                            </div>
-                            <!-- Item -->
-                            <div class="d-flex align-items-start gap-3">
-                                <div class="bg-dark text-white rounded-circle p-2 d-flex align-items-center justify-content-center"
-                                    style="width: 40px; height: 40px;">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                        <circle cx="12" cy="10" r="3"></circle>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h6 class="fw-bold text-uppercase mb-1">Office</h6>
-                                    <p class="text-muted m-0 small">123, Korat Business Hub,<br>Ahmedabad, Gujarat,
-                                        India</p>
-                                </div>
-                            </div>
+            <!-- FAQ Accordion -->
+            <div class="faq-accordion">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item border-top border-dark border-opacity-10">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-number font-body">01</span>
+                        <span class="faq-question-text">What does Korat Reality do?</span>
+                        <span class="faq-icon">
+                            <span class="faq-icon-line faq-icon-horizontal"></span>
+                            <span class="faq-icon-line faq-icon-vertical"></span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Korat Reality is a real estate development company India and investment advisory firm
+                                specializing in land acquisition, development, and structured property opportunities
+                                across residential, commercial, and industrial segments throughout India.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Form Column -->
-                <div class="col-lg-8">
-                    <div class="bg-white p-4 p-lg-5 shadow-sm rounded-0 reveal-content">
-                        <h4 class="text-uppercase fw-bold mb-4 font-heading">Send us a Message</h4>
-                        <form>
-                            <div class="row g-4">
-                                <div class="col-md-6">
-                                    <label class="form-label text-uppercase small fw-bold">Your Name</label>
-                                    <input type="text" class="form-control rounded-0 border-dark border-opacity-25 py-3"
-                                        placeholder="John Doe">
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label text-uppercase small fw-bold">Email Address</label>
-                                    <input type="email"
-                                        class="form-control rounded-0 border-dark border-opacity-25 py-3"
-                                        placeholder="john@example.com">
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label text-uppercase small fw-bold">Phone Number</label>
-                                    <input type="tel" class="form-control rounded-0 border-dark border-opacity-25 py-3"
-                                        placeholder="+91 000 000 0000">
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label text-uppercase small fw-bold">Interested In</label>
-                                    <select class="form-select rounded-0 border-dark border-opacity-25 py-3">
-                                        <option selected>Select an option</option>
-                                        <option value="Land Acquisition">Land Acquisition</option>
-                                        <option value="Residential Project">Residential Project</option>
-                                        <option value="Commercial Project">Commercial Project</option>
-                                        <option value="Investment">Investment Advisory</option>
-                                        <option value="Other">Other</option>
-                                    </select>
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label text-uppercase small fw-bold">Message</label>
-                                    <textarea class="form-control rounded-0 border-dark border-opacity-25" rows="5"
-                                        placeholder="How can we help you?"></textarea>
-                                </div>
-                                <div class="col-12 mt-4">
-                                    <button type="submit"
-                                        class="btn btn-gold text-uppercase px-5 py-3 fw-bold w-100">Send
-                                        Message</button>
-                                </div>
-                            </div>
-                        </form>
+                <!-- FAQ Item 2 -->
+                <div class="faq-item border-top border-dark border-opacity-10">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-number font-body">02</span>
+                        <span class="faq-question-text">Is Korat Reality focused on residential or commercial
+                            projects?</span>
+                        <span class="faq-icon">
+                            <span class="faq-icon-line faq-icon-horizontal"></span>
+                            <span class="faq-icon-line faq-icon-vertical"></span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Korat Reality works across residential, commercial, and industrial real estate segments
+                                based on comprehensive market research and location potential. Our project selection is
+                                driven by investment viability and long-term value creation rather than being limited
+                                to a single property type.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item border-top border-dark border-opacity-10">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-number font-body">03</span>
+                        <span class="faq-question-text">Is real estate investment in India safe for NRIs?</span>
+                        <span class="faq-icon">
+                            <span class="faq-icon-line faq-icon-horizontal"></span>
+                            <span class="faq-icon-line faq-icon-vertical"></span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Yes, when supported by proper legal due diligence, compliance checks, and professional
+                                advisory services, NRI property investment India can be secure and rewarding. Korat
+                                Reality specializes in providing NRI investors with end-to-end support, including
+                                documentation coordination, legal verification, and transparent communication
+                                throughout the investment process.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item border-top border-dark border-opacity-10">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-number font-body">04</span>
+                        <span class="faq-question-text">Does Korat Reality assist NRIs throughout the investment
+                            process?</span>
+                        <span class="faq-icon">
+                            <span class="faq-icon-line faq-icon-horizontal"></span>
+                            <span class="faq-icon-line faq-icon-vertical"></span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Yes, we provide comprehensive end-to-end guidance to NRI investors, including
+                                documentation coordination, legal compliance support, Power of Attorney assistance,
+                                remote transaction management, and structured advisory services designed specifically
+                                for overseas investors.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="faq-item border-top border-dark border-opacity-10">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-number font-body">05</span>
+                        <span class="faq-question-text">What types of land development projects does Korat Reality
+                            handle?</span>
+                        <span class="faq-icon">
+                            <span class="faq-icon-line faq-icon-horizontal"></span>
+                            <span class="faq-icon-line faq-icon-vertical"></span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>We handle diverse development projects including residential plotting projects,
+                                commercial land development, industrial land development, township projects, and joint
+                                venture real estate projects with landowners through JV and JDA models focused on
+                                mutual value creation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 6 -->
+                <div class="faq-item border-top border-dark border-opacity-10">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-number font-body">06</span>
+                        <span class="faq-question-text">Does Korat Reality work with landowners?</span>
+                        <span class="faq-icon">
+                            <span class="faq-icon-line faq-icon-horizontal"></span>
+                            <span class="faq-icon-line faq-icon-vertical"></span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Yes, we collaborate with landowners through joint venture (JV) and joint development
+                                agreement (JDA) models. These partnerships are structured to maximize land value while
+                                ensuring fair revenue sharing, legal clarity, and professional project execution that
+                                benefits all stakeholders.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 7 -->
+                <div class="faq-item border-top border-dark border-opacity-10">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-number font-body">07</span>
+                        <span class="faq-question-text">How does Korat Reality ensure transparency in projects?</span>
+                        <span class="faq-icon">
+                            <span class="faq-icon-line faq-icon-horizontal"></span>
+                            <span class="faq-icon-line faq-icon-vertical"></span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Our transparent real estate development approach emphasizes comprehensive legal
+                                verification, detailed feasibility studies, strict compliance alignment with RERA and
+                                local regulations, structured execution timelines, regular progress reporting, and
+                                complete documentation access for investors and partners.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 8 -->
+                <div class="faq-item border-top border-dark border-opacity-10">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-number font-body">08</span>
+                        <span class="faq-question-text">What makes Korat Reality different from brokers?</span>
+                        <span class="faq-icon">
+                            <span class="faq-icon-line faq-icon-horizontal"></span>
+                            <span class="faq-icon-line faq-icon-vertical"></span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Korat Reality focuses on development-led value creation and long-term real estate
+                                investment strategy rather than transactional brokerage. We are involved in the entire
+                                lifecycle—from land acquisition and development to investor advisory—ensuring project
+                                quality, legal compliance, and sustainable returns rather than just facilitating
+                                transactions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 9 -->
+                <div class="faq-item border-top border-dark border-opacity-10">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-number font-body">09</span>
+                        <span class="faq-question-text">Can investors explore both short-term and long-term
+                            opportunities?</span>
+                        <span class="faq-icon">
+                            <span class="faq-icon-line faq-icon-horizontal"></span>
+                            <span class="faq-icon-line faq-icon-vertical"></span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Yes, investment opportunities are structured based on project type, location growth
+                                trajectory, development timeline, and individual investor objectives. We offer options
+                                ranging from land banking for long-term appreciation to plotting projects with
+                                medium-term exit possibilities, allowing investors to choose based on their financial
+                                goals and risk profile.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 10 -->
+                <div class="faq-item border-top border-dark border-opacity-10 border-bottom">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-number font-body">10</span>
+                        <span class="faq-question-text">How can I connect with an investment advisor at Korat
+                            Reality?</span>
+                        <span class="faq-icon">
+                            <span class="faq-icon-line faq-icon-horizontal"></span>
+                            <span class="faq-icon-line faq-icon-vertical"></span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>You can reach out via our online enquiry form, call our advisory desk, or request a
+                                consultation through our website. Our property investment advisory team will schedule a
+                                personalized discussion to understand your requirements and present suitable
+                                opportunities based on your investment goals and budget.</p>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <!-- CTA -->
+            <div class="faq-cta text-center mt-5 pt-4">
+                <p class="primary-dark small text-uppercase mb-4">Still have questions?</p>
+                <a href="#contact-main" class="btn btn-gold text-uppercase px-5 py-3 fw-bold">Contact Our Advisors</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CTA BANNER
+         ============================================ -->
+    <section class="contact-cta-banner">
+        <div class="container">
+            <h2 class="cta-banner-title">Join Korat Reality Today.<br>Getting More Done<br>Together.</h2>
         </div>
     </section>
 
     <!-- ============================================
         FOOTER
     ============================================ -->
-    <footer class="main-footer" id="footer">
+    <footer class="contact-footer" id="footer">
         <div class="container">
-            <!-- Top CTA Box -->
-            <div class="footer-cta-box reveal-scale-up">
-                <h2 class="footer-cta-title text-white">Connect With Our <br><span class="fst-italic">Investment
-                        Advisors</span></h2>
-                <p class="text-white-50 mb-4 fs-5" style="max-width: 600px; margin: 0 auto;">
-                    Unlock exclusive real estate opportunities and build your wealth with professional guidance.
-                </p>
-                <a href="#contact" class="btn btn-card-light text-uppercase fw-bold px-5 py-3 ">
-                    Request Consultation
-                </a>
-            </div>
-
-            <!-- Footer Links Grid -->
-            <div class="row g-5 mb-5 border-bottom border-white border-opacity-10 pb-5">
-                <!-- Column 1 -->
-                <div class="col-lg-2 col-md-4 col-6">
-                    <h6 class="footer-nav-title">We're Korat</h6>
-                    <a href="#process" class="footer-nav-link d-block text-slide" data-text="Our Process"><span>Our
-                            Process</span></a>
-                    <a href="#opportunities" class="footer-nav-link d-block text-slide"
-                        data-text="Opportunities"><span>Opportunities</span></a>
-                    <a href="why-invest-in-india.html" class="footer-nav-link d-block text-slide"
-                        data-text="NRI Services"><span>NRI Services</span></a>
+            <div class="footer-grid">
+                <!-- Address -->
+                <div class="footer-col">
+                    <h6 class="footer-col-title">Address</h6>
+                    <p class="footer-col-text">123, Korat Business Hub,<br>Ahmedabad, Gujarat,<br>India 380015</p>
                 </div>
-
-                <!-- Column 2 -->
-                <div class="col-lg-2 col-md-4 col-6">
-                    <h6 class="footer-nav-title">Services</h6>
-                    <a href="land-acquisition.html" class="footer-nav-link d-block text-slide"
-                        data-text="Land Acquisition"><span>Land Acquisition</span></a>
-                    <a href="land-development.html" class="footer-nav-link d-block text-slide"
-                        data-text="Land Development"><span>Land Development</span></a>
-                    <a href="residential-projects.html" class="footer-nav-link d-block text-slide"
-                        data-text="Residential"><span>Residential</span></a>
-                    <a href="commercial-projects.html" class="footer-nav-link d-block text-slide"
-                        data-text="Commercial"><span>Commercial</span></a>
+                <!-- Phone & Email -->
+                <div class="footer-col">
+                    <h6 class="footer-col-title">Phone Number</h6>
+                    <p class="footer-col-text">+91 98765 43210</p>
+                    <h6 class="footer-col-title mt-4">Email</h6>
+                    <p class="footer-col-text">info@koratreality.com</p>
                 </div>
-
-                <!-- Column 3 -->
-                <div class="col-lg-2 col-md-4 col-6">
-                    <h6 class="footer-nav-title">Company</h6>
-                    <a href="about.html" class="footer-nav-link d-block text-slide" data-text="About Us"><span>About
-                            Us</span></a>
-                    <a href="#contact" class="footer-nav-link d-block text-slide"
-                        data-text="Careers"><span>Careers</span></a>
-                    <a href="#contact" class="footer-nav-link d-block text-slide"
-                        data-text="Contact"><span>Contact</span></a>
-                </div>
-
-                <!-- Column 4 (Spacer/Logo) -->
-                <div class="col-lg-6 col-md-12 d-flex flex-column align-items-lg-end">
-                    <img src="assets/images/korat_logo_footer.png" alt="Korat Reality"
-                        class="footer-logo-lg mb-5 mb-lg-auto">
-                </div>
-            </div>
-
-            <!-- Bottom Bar -->
-            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-4">
-                <!-- Socials -->
-                <div class="d-flex">
-                    <a href="#" class="footer-social-icon"><i class="bi bi-facebook"></i></a>
-                    <a href="#" class="footer-social-icon"><i class="bi bi-twitter-x"></i></a>
-                    <a href="#" class="footer-social-icon"><i class="bi bi-linkedin"></i></a>
-                    <a href="#" class="footer-social-icon"><i class="bi bi-instagram"></i></a>
-                </div>
-
-                <!-- Copyright & Links -->
-                <div class="d-flex flex-wrap justify-content-center gap-4">
-                    <a href="#" class="footer-bottom-link">Privacy Policy</a>
-                    <a href="#" class="footer-bottom-link">Terms of Use</a>
-                    <span class="footer-bottom-link text-white-50">© 2026 Korat Reality. All Rights Reserved.</span>
+                <!-- Follow -->
+                <div class="footer-col">
+                    <h6 class="footer-col-title">Follow</h6>
+                    <div class="footer-social-row">
+                        <a href="#" class="footer-social-link" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="footer-social-link" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="footer-social-link" aria-label="YouTube">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.13C5.12 19.56 12 19.56 12 19.56s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+                            </svg>
+                        </a>
+                        <a href="#" class="footer-social-link" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -357,7 +548,6 @@
     <!-- GSAP & ScrollTrigger -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
 
     <!-- Lenis (Smooth Scroll) -->
     <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
