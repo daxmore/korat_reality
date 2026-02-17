@@ -24,36 +24,77 @@
          ============================================  -->
     <header class="main-header py-4">
         <div class="container-fluid px-4 px-md-5">
-            <div class="d-flex justify-content-between align-items-center w-100">
+            <div class="d-flex align-items-center w-100">
                 <!-- 1. Logo -->
-                <a href="index.html" class="d-block">
+                <a href="index.html" class="d-block me-4 me-lg-5">
                     <img src="assets/images/korat_logo.png" alt="KR" class="logo-sm">
                 </a>
 
-                <!-- 2. Center Navigation (Desktop Only) -->
-                <div class="d-none d-lg-flex align-items-center gap-5 w-75 mx-auto justify-content-center">
+                <!-- Spacer -->
+                <div class="flex-grow-1"></div>
+
+                <!-- 2. Navigation Links (Desktop Only) -->
+                <div class="d-none d-lg-flex align-items-center gap-4 gap-xl-3">
                     <a href="about.html"
-                        class="text-teal text-uppercase text-decoration-none fw-semibold small ls-1 text-slide"
-                        data-text="About Us"><span>About Us</span></a>
+                        class="text-dark text-uppercase text-decoration-none fw-bold small ls-1 hover-underline-animation"><span
+                            class="small">About
+                            Us</span></a>
+
                     <a href="why-invest-in-india.html"
-                        class="text-teal text-uppercase text-decoration-none fw-semibold small ls-1 text-slide"
-                        data-text="Why Invest In India"><span>Why Invest In India</span></a>
-                    <a href="nri-investor-guide.html"
-                        class="text-teal text-uppercase text-decoration-none fw-semibold small ls-1 text-slide"
-                        data-text="NRI Investor Guide"><span>NRI Investor Guide</span></a>
+                        class="text-dark text-uppercase text-decoration-none fw-bold small ls-1 hover-underline-animation"><span
+                            class="small">Why
+                            Invest In India</span></a>
+
+                    <!-- Our Services Dropdown -->
+                    <div class="dropdown group position-relative">
+                        <a href="#"
+                            class="text-dark text-uppercase text-decoration-none fw-bold small ls-1 custom-dropdown-toggle d-block"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="small">Our Services</span>
+                        </a>
+                        <ul class="dropdown-menu border-0 shadow-lg rounded-4 p-4 mt-2"
+                            style="min-width: 240px; transform: translateX(-15%);">
+                            <li><a class="dropdown-item text-dark fw-medium py-2" href="land-acquisition.html">Land
+                                    Acquisition</a></li>
+                            <li><a class="dropdown-item text-dark fw-medium py-2" href="land-development.html">Land
+                                    Development</a></li>
+                            <li><a class="dropdown-item text-dark fw-medium py-2"
+                                    href="commercial-projects.html">Commercial Projects</a></li>
+                            <li><a class="dropdown-item text-dark fw-medium py-2"
+                                    href="residential-projects.html">Residential Projects</a></li>
+                            <li><a class="dropdown-item text-dark fw-medium py-2"
+                                    href="industrial-projects.html">Industrial Projects</a></li>
+                        </ul>
+                    </div>
+
+                    <a href="investment-opportunities.html"
+                        class="text-dark text-uppercase text-decoration-none fw-bold small ls-1 hover-underline-animation"><span
+                            class="small">Opportunities</span></a>
                 </div>
 
-                <!-- 3. Menu Button -->
-                <button
-                    class="btn btn-sm border-0 bg-transparent p-0 text-teal d-flex align-items-center justify-content-center hover-teal"
-                    type="button" id="menuToggleBtn" aria-label="Menu">
-                    <svg width="36" height="20" viewBox="0 0 36 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <line x1="2" y1="6" x2="36" y2="6" stroke="currentColor" stroke-width="3"
-                            stroke-linecap="round" />
-                        <line x1="2" y1="14" x2="36" y2="14" stroke="currentColor" stroke-width="3"
-                            stroke-linecap="round" />
-                    </svg>
-                </button>
+                <!-- Spacer -->
+                <div class="flex-grow-1"></div>
+
+                <!-- 3. Right Side -->
+                <div class="d-flex align-items-center gap-3">
+                    <!-- Contact Us Button (Desktop) -->
+                    <a href="contact.html"
+                        class="btn btn-dark rounded-pill px-4 py-2 text-uppercase fw-bold small ls-1 d-none d-lg-block">
+                        Contact Us
+                    </a>
+
+                    <!-- Mobile Menu Button (Mobile Only) -->
+                    <button
+                        class="btn btn-sm border-0 bg-transparent p-0 text-teal d-flex align-items-center justify-content-center hover-teal d-lg-none"
+                        type="button" id="menuToggleBtn" aria-label="Menu">
+                        <svg width="36" height="20" viewBox="0 0 36 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="2" y1="6" x2="36" y2="6" stroke="currentColor" stroke-width="3"
+                                stroke-linecap="round" />
+                            <line x1="2" y1="14" x2="36" y2="14" stroke="currentColor" stroke-width="3"
+                                stroke-linecap="round" />
+                        </svg>
+                    </button>
+                </div>
             </div>
 
             <!-- Mobile Menu content (Full Screen Overlay) -->
@@ -117,12 +158,6 @@
                         <a href="investment-opportunities.html"
                             class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
                             data-text="Investment Opportunities"><span>Investment Opportunities</span></a>
-                        <a href="why-invest-in-india.html"
-                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
-                            data-text="NRI Investor Guide"><span>NRI Investor Guide</span></a>
-                        <a href="blog.html"
-                            class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
-                            data-text="Blog"><span>Blog</span></a>
                         <a href="contact.html"
                             class="menu-link-large text-white text-uppercase text-decoration-none lh-MD fw-bold text-slide"
                             data-text="Contact Us"><span>Contact Us</span></a>
@@ -248,296 +283,83 @@
     </section>
 
     <!-- ============================================
-         FAQ SECTION (Same as Index)
-         ============================================ -->
-    <section class="faq-section section-padding primary-cream" id="faq">
-        <div class="container">
-            <!-- Section Header -->
-            <div class="row mb-5">
-                <div class="col-lg-12">
-                    <h2 class="faq-title text-dark text-uppercase mb-4">
-                        Frequently Asked
-                        <span class="faq-title-highlight font-serif">Questions</span>
-                    </h2>
-                </div>
-            </div>
-
-            <!-- FAQ Accordion -->
-            <div class="faq-accordion">
-                <!-- FAQ Item 1 -->
-                <div class="faq-item border-top border-dark border-opacity-10">
-                    <button class="faq-question" aria-expanded="false">
-                        <span class="faq-number font-body">01</span>
-                        <span class="faq-question-text">What does Korat Reality do?</span>
-                        <span class="faq-icon">
-                            <span class="faq-icon-line faq-icon-horizontal"></span>
-                            <span class="faq-icon-line faq-icon-vertical"></span>
-                        </span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            <p>Korat Reality is a real estate development company India and investment advisory firm
-                                specializing in land acquisition, development, and structured property opportunities
-                                across residential, commercial, and industrial segments throughout India.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 2 -->
-                <div class="faq-item border-top border-dark border-opacity-10">
-                    <button class="faq-question" aria-expanded="false">
-                        <span class="faq-number font-body">02</span>
-                        <span class="faq-question-text">Is Korat Reality focused on residential or commercial
-                            projects?</span>
-                        <span class="faq-icon">
-                            <span class="faq-icon-line faq-icon-horizontal"></span>
-                            <span class="faq-icon-line faq-icon-vertical"></span>
-                        </span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            <p>Korat Reality works across residential, commercial, and industrial real estate segments
-                                based on comprehensive market research and location potential. Our project selection is
-                                driven by investment viability and long-term value creation rather than being limited
-                                to a single property type.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 3 -->
-                <div class="faq-item border-top border-dark border-opacity-10">
-                    <button class="faq-question" aria-expanded="false">
-                        <span class="faq-number font-body">03</span>
-                        <span class="faq-question-text">Is real estate investment in India safe for NRIs?</span>
-                        <span class="faq-icon">
-                            <span class="faq-icon-line faq-icon-horizontal"></span>
-                            <span class="faq-icon-line faq-icon-vertical"></span>
-                        </span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            <p>Yes, when supported by proper legal due diligence, compliance checks, and professional
-                                advisory services, NRI property investment India can be secure and rewarding. Korat
-                                Reality specializes in providing NRI investors with end-to-end support, including
-                                documentation coordination, legal verification, and transparent communication
-                                throughout the investment process.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 4 -->
-                <div class="faq-item border-top border-dark border-opacity-10">
-                    <button class="faq-question" aria-expanded="false">
-                        <span class="faq-number font-body">04</span>
-                        <span class="faq-question-text">Does Korat Reality assist NRIs throughout the investment
-                            process?</span>
-                        <span class="faq-icon">
-                            <span class="faq-icon-line faq-icon-horizontal"></span>
-                            <span class="faq-icon-line faq-icon-vertical"></span>
-                        </span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            <p>Yes, we provide comprehensive end-to-end guidance to NRI investors, including
-                                documentation coordination, legal compliance support, Power of Attorney assistance,
-                                remote transaction management, and structured advisory services designed specifically
-                                for overseas investors.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 5 -->
-                <div class="faq-item border-top border-dark border-opacity-10">
-                    <button class="faq-question" aria-expanded="false">
-                        <span class="faq-number font-body">05</span>
-                        <span class="faq-question-text">What types of land development projects does Korat Reality
-                            handle?</span>
-                        <span class="faq-icon">
-                            <span class="faq-icon-line faq-icon-horizontal"></span>
-                            <span class="faq-icon-line faq-icon-vertical"></span>
-                        </span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            <p>We handle diverse development projects including residential plotting projects,
-                                commercial land development, industrial land development, township projects, and joint
-                                venture real estate projects with landowners through JV and JDA models focused on
-                                mutual value creation.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 6 -->
-                <div class="faq-item border-top border-dark border-opacity-10">
-                    <button class="faq-question" aria-expanded="false">
-                        <span class="faq-number font-body">06</span>
-                        <span class="faq-question-text">Does Korat Reality work with landowners?</span>
-                        <span class="faq-icon">
-                            <span class="faq-icon-line faq-icon-horizontal"></span>
-                            <span class="faq-icon-line faq-icon-vertical"></span>
-                        </span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            <p>Yes, we collaborate with landowners through joint venture (JV) and joint development
-                                agreement (JDA) models. These partnerships are structured to maximize land value while
-                                ensuring fair revenue sharing, legal clarity, and professional project execution that
-                                benefits all stakeholders.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 7 -->
-                <div class="faq-item border-top border-dark border-opacity-10">
-                    <button class="faq-question" aria-expanded="false">
-                        <span class="faq-number font-body">07</span>
-                        <span class="faq-question-text">How does Korat Reality ensure transparency in projects?</span>
-                        <span class="faq-icon">
-                            <span class="faq-icon-line faq-icon-horizontal"></span>
-                            <span class="faq-icon-line faq-icon-vertical"></span>
-                        </span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            <p>Our transparent real estate development approach emphasizes comprehensive legal
-                                verification, detailed feasibility studies, strict compliance alignment with RERA and
-                                local regulations, structured execution timelines, regular progress reporting, and
-                                complete documentation access for investors and partners.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 8 -->
-                <div class="faq-item border-top border-dark border-opacity-10">
-                    <button class="faq-question" aria-expanded="false">
-                        <span class="faq-number font-body">08</span>
-                        <span class="faq-question-text">What makes Korat Reality different from brokers?</span>
-                        <span class="faq-icon">
-                            <span class="faq-icon-line faq-icon-horizontal"></span>
-                            <span class="faq-icon-line faq-icon-vertical"></span>
-                        </span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            <p>Korat Reality focuses on development-led value creation and long-term real estate
-                                investment strategy rather than transactional brokerage. We are involved in the entire
-                                lifecycle—from land acquisition and development to investor advisory—ensuring project
-                                quality, legal compliance, and sustainable returns rather than just facilitating
-                                transactions.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 9 -->
-                <div class="faq-item border-top border-dark border-opacity-10">
-                    <button class="faq-question" aria-expanded="false">
-                        <span class="faq-number font-body">09</span>
-                        <span class="faq-question-text">Can investors explore both short-term and long-term
-                            opportunities?</span>
-                        <span class="faq-icon">
-                            <span class="faq-icon-line faq-icon-horizontal"></span>
-                            <span class="faq-icon-line faq-icon-vertical"></span>
-                        </span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            <p>Yes, investment opportunities are structured based on project type, location growth
-                                trajectory, development timeline, and individual investor objectives. We offer options
-                                ranging from land banking for long-term appreciation to plotting projects with
-                                medium-term exit possibilities, allowing investors to choose based on their financial
-                                goals and risk profile.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 10 -->
-                <div class="faq-item border-top border-dark border-opacity-10 border-bottom">
-                    <button class="faq-question" aria-expanded="false">
-                        <span class="faq-number font-body">10</span>
-                        <span class="faq-question-text">How can I connect with an investment advisor at Korat
-                            Reality?</span>
-                        <span class="faq-icon">
-                            <span class="faq-icon-line faq-icon-horizontal"></span>
-                            <span class="faq-icon-line faq-icon-vertical"></span>
-                        </span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            <p>You can reach out via our online enquiry form, call our advisory desk, or request a
-                                consultation through our website. Our property investment advisory team will schedule a
-                                personalized discussion to understand your requirements and present suitable
-                                opportunities based on your investment goals and budget.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CTA -->
-            <div class="faq-cta text-center mt-5 pt-4">
-                <p class="primary-dark small text-uppercase mb-4">Still have questions?</p>
-                <a href="#contact-main" class="btn btn-gold text-uppercase px-5 py-3 fw-bold">Contact Our Advisors</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================
-         CTA BANNER
-         ============================================ -->
-    <section class="contact-cta-banner">
-        <div class="container">
-            <h2 class="cta-banner-title">Join Korat Reality Today.<br>Getting More Done<br>Together.</h2>
-        </div>
-    </section>
-
-    <!-- ============================================
         FOOTER
     ============================================ -->
-    <footer class="contact-footer" id="footer">
+    <footer class="main-footer" id="footer">
         <div class="container">
-            <div class="footer-grid">
-                <!-- Address -->
-                <div class="footer-col">
-                    <h6 class="footer-col-title">Address</h6>
-                    <p class="footer-col-text">123, Korat Business Hub,<br>Ahmedabad, Gujarat,<br>India 380015</p>
+            <!-- Top CTA Box -->
+            <div class="footer-cta-box reveal-scale-up">
+                <h2 class="footer-cta-title text-white">Connect With Our <br><span class="fst-italic">Investment
+                        Advisors</span></h2>
+                <p class="text-white-50 mb-4 fs-5" style="max-width: 600px; margin: 0 auto;">
+                    Unlock exclusive real estate opportunities and build your wealth with professional guidance.
+                </p>
+                <a href="#contact" class="btn btn-card-light text-uppercase fw-bold px-5 py-3 ">
+                    Request Consultation
+                </a>
+            </div>
+
+            <!-- Footer Links Grid -->
+            <div class="row g-5 mb-5 border-bottom border-white border-opacity-10 pb-5">
+                <!-- Column 1 -->
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h6 class="footer-nav-title">We're Korat</h6>
+                    <a href="#process" class="footer-nav-link d-block text-slide" data-text="Our Process"><span>Our
+                            Process</span></a>
+                    <a href="#opportunities" class="footer-nav-link d-block text-slide"
+                        data-text="Opportunities"><span>Opportunities</span></a>
+                    <a href="why-invest-in-india.html" class="footer-nav-link d-block text-slide"
+                        data-text="NRI Services"><span>NRI Services</span></a>
                 </div>
-                <!-- Phone & Email -->
-                <div class="footer-col">
-                    <h6 class="footer-col-title">Phone Number</h6>
-                    <p class="footer-col-text">+91 98765 43210</p>
-                    <h6 class="footer-col-title mt-4">Email</h6>
-                    <p class="footer-col-text">info@koratreality.com</p>
+
+                <!-- Column 2 -->
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h6 class="footer-nav-title">Services</h6>
+                    <a href="land-acquisition.html" class="footer-nav-link d-block text-slide"
+                        data-text="Land Acquisition"><span>Land Acquisition</span></a>
+                    <a href="land-development.html" class="footer-nav-link d-block text-slide"
+                        data-text="Land Development"><span>Land Development</span></a>
+                    <a href="residential-projects.html" class="footer-nav-link d-block text-slide"
+                        data-text="Residential"><span>Residential</span></a>
+                    <a href="commercial-projects.html" class="footer-nav-link d-block text-slide"
+                        data-text="Commercial"><span>Commercial</span></a>
                 </div>
-                <!-- Follow -->
-                <div class="footer-col">
-                    <h6 class="footer-col-title">Follow</h6>
-                    <div class="footer-social-row">
-                        <a href="#" class="footer-social-link" aria-label="Facebook">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                            </svg>
-                        </a>
-                        <a href="#" class="footer-social-link" aria-label="Twitter">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
-                            </svg>
-                        </a>
-                        <a href="#" class="footer-social-link" aria-label="YouTube">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.13C5.12 19.56 12 19.56 12 19.56s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
-                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
-                            </svg>
-                        </a>
-                        <a href="#" class="footer-social-link" aria-label="LinkedIn">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                                <rect x="2" y="9" width="4" height="12" />
-                                <circle cx="4" cy="4" r="2" />
-                            </svg>
-                        </a>
-                    </div>
+
+                <!-- Column 3 -->
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h6 class="footer-nav-title">Company</h6>
+                    <a href="about.html" class="footer-nav-link d-block text-slide" data-text="About Us"><span>About
+                            Us</span></a>
+                    <a href="blog.html" class="footer-nav-link d-block text-slide"
+                        data-text="Blog"><span>Blog</span></a>
+                    <a href="#contact" class="footer-nav-link d-block text-slide"
+                        data-text="Careers"><span>Careers</span></a>
+                    <a href="#contact" class="footer-nav-link d-block text-slide"
+                        data-text="Contact"><span>Contact</span></a>
+                </div>
+
+                <!-- Column 4 (Spacer/Logo) -->
+                <div class="col-lg-6 col-md-12 d-flex flex-column align-items-lg-end">
+                    <img src="assets/images/korat_logo_footer.png" alt="Korat Reality"
+                        class="footer-logo-lg mb-5 mb-lg-auto">
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-4">
+                <!-- Socials -->
+                <div class="d-flex">
+                    <a href="#" class="footer-social-icon"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="footer-social-icon"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="footer-social-icon"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" class="footer-social-icon"><i class="bi bi-instagram"></i></a>
+                </div>
+
+                <!-- Copyright & Links -->
+                <div class="d-flex flex-wrap justify-content-center gap-4">
+                    <a href="#" class="footer-bottom-link">Privacy Policy</a>
+                    <a href="#" class="footer-bottom-link">Terms of Use</a>
+                    <span class="footer-bottom-link text-white-50">© 2026 Korat Reality. All Rights Reserved.</span>
                 </div>
             </div>
         </div>

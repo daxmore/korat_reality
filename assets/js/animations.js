@@ -446,24 +446,16 @@ document.addEventListener("DOMContentLoaded", function () {
     // BLOG DETAIL ANIMATIONS (Run on Load)
     // ============================================
     if (document.querySelector('#blog-detail')) {
-        // PREVENT GENERIC TEXT ANIMATIONS
-        // Mark text elements as 'animated' so generic fallbacks skip them
-        // const textElements = document.querySelectorAll('.blog-detail-section p, .blog-detail-section h1, .blog-detail-section h2, .blog-detail-section h3, .blog-detail-section h4, .blog-detail-section h5, .blog-detail-section h6, .blog-detail-section ul li, .blog-detail-section span');
-        // textElements.forEach(el => el.classList.add('animated'));
+        // PREVENT ALL ANIMATIONS inside article and sidebar
+        const noAnimElements = document.querySelectorAll('.blog-detail-article *, .sidebar-widget *');
+        noAnimElements.forEach(el => el.classList.add('animated'));
+        document.querySelectorAll('.blog-detail-article, .sidebar-widget').forEach(el => el.classList.add('animated'));
 
-        const blogDetailTl = gsap.timeline({ delay: 0.1 });
-
-        // Main Article Container (animate container only)
-        if (document.querySelector('.blog-detail-article')) {
-            gsap.set('.blog-detail-article', { y: 20, opacity: 0 });
-            blogDetailTl.to('.blog-detail-article', { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" });
-        }
-
-        // Sidebar Widgets (Categories) & Author Card
-        const sidebarWidgets = document.querySelectorAll('.sidebar-widget, .author-card');
-        if (sidebarWidgets.length > 0) {
-            gsap.set(sidebarWidgets, { y: 20, opacity: 0 });
-            blogDetailTl.to(sidebarWidgets, { y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: "power2.out" }, "-=0.6");
+        // Author Card only (sidebar-widget excluded to keep category text static)
+        const authorCards = document.querySelectorAll('.author-card');
+        if (authorCards.length > 0) {
+            gsap.set(authorCards, { y: 20, opacity: 0 });
+            blogDetailTl.to(authorCards, { y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: "power2.out" }, "-=0.6");
         }
 
         // Related Posts (Keep scroll trigger as they are lower down)
@@ -552,8 +544,8 @@ document.addEventListener("DOMContentLoaded", function () {
     applyAnimation('.stat-item p:not(.animated)', 'fadeUp', { duration: 0.4, delay: 0.1 });
     applyAnimation('.bottom-stat-item p:not(.animated)', 'fadeUp', { duration: 0.4, delay: 0.1 });
 
-    // List items that aren't already animated
-    applyAnimation('section ul li:not(.animated)', 'fadeUp', { stagger: 0.05, duration: 0.5 });
+    // List items that aren't already animated (exclude sidebar categories)
+    applyAnimation('section ul:not(.sidebar-category-list) li:not(.animated)', 'fadeUp', { stagger: 0.05, duration: 0.5 });
 
     // Paragraphs in content sections
     applyAnimation('section .story-text:not(.animated)', 'fadeUp', { stagger: 0.1, duration: 0.6 });

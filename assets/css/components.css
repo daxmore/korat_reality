@@ -276,7 +276,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 15px rgba(6, 132, 102, 0.3);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
     opacity: 0;
     visibility: hidden;
     transform: scale(0.8) translateY(20px);
@@ -292,7 +292,7 @@
 .scroll-to-top:hover {
     background: var(--primary-teal-dark);
     transform: scale(1.1) translateY(-2px);
-    box-shadow: 0 6px 20px rgba(6, 132, 102, 0.4);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
 }
 
 .scroll-to-top:active {
