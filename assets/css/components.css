@@ -162,11 +162,12 @@
 .btn-card-light {
     background-color: var(--primary-cream);
     color: var(--text-dark);
+    border: 2px solid #ffffff;
 }
 
 .btn-card-light:hover {
-    background-color: var(--primary-pastel-green);
-    color: var(--primary-teal-dark);
+    background-color: transparent !important;
+    border: 2px solid #ffffff;
 }
 
 .btn:active,
