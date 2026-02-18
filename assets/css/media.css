@@ -1,3 +1,204 @@
+/* KORAT REALITY - MERGED RESPONSIVE STYLES */
+
+/* === SECTION: components.css (Responsive) === */
+@media (max-width: 991px) {
+    .why-choose-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* === SECTION: custom_nav.css (Responsive) === */
+@media (min-width: 992px) {
+    .dropdown.group:hover .dropdown-menu {
+        display: block;
+        animation: fadeInUp 0.3s ease forwards;
+        margin-top: 0;
+    }
+}@media (min-width: 992px) {
+    .dropdown.group:hover .dropdown-menu {
+        display: block;
+        animation: fadeInUp 0.3s ease forwards;
+        margin-top: 10px !important;
+        /* Keep gap consistent */
+    }
+}
+
+/* === SECTION: hero.css (Responsive) === */
+@media (max-width: 768px) {
+    .hero-main {
+        min-height: 90vh;
+        padding-top: 5rem;
+    }
+
+    .hero-title {
+        font-size: clamp(2.2rem, 8vw, 3.5rem);
+    }
+
+    .hero-text {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .btn-hero-cta {
+        padding: 12px 28px;
+        font-size: 0.9rem;
+    }
+
+    .hero-illustration img {
+        height: clamp(180px, 30vw, 300px);
+    }
+}@media (max-width: 480px) {
+    .hero-main {
+        min-height: 85vh;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-illustration img {
+        height: 180px;
+    }
+}
+
+/* === SECTION: about.css (Responsive) === */
+@media (max-width: 900px) {
+    .editorial-about-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .about-col-left::before {
+        top: -1.5rem;
+    }
+
+    .about-editorial-text {
+        padding-left: 0;
+        border-left: none;
+        max-width: 100%;
+    }
+
+    .about-editorial-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}@media (max-width: 600px) {
+    .editorial-about-section {
+        padding: 5rem 0;
+    }
+
+    .about-editorial-stats {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* === SECTION: services.css (Responsive) === */
+@media screen and (max-width: 991px) {
+    .services-section {
+        min-height: auto;
+        padding: 4rem 0 !important;
+        overflow: visible;
+    }
+
+    .services-inner {
+        display: block;
+        min-height: auto;
+        padding: 0 1.5rem;
+    }
+
+    /* Hide the left sidebar/nav on mobile */
+    .services-left {
+        display: none;
+    }
+
+    .services-right {
+        width: 100%;
+        min-height: auto;
+        overflow: visible;
+    }
+
+    .cards-viewport {
+        position: static;
+        height: auto;
+        padding-top: 0;
+        overflow: visible;
+    }
+
+    .service-card-scroll {
+        width: 100%;
+        height: auto;
+        max-height: none;
+        margin-bottom: 1.5rem;
+        transform: none !important;
+        /* Override JS transforms if any remain */
+        opacity: 1 !important;
+    }
+
+    /* Adjust content inside cards for mobile */
+    .service-card-img-area {
+        padding: 2rem 1.5rem 1rem;
+    }
+
+    .service-card-img {
+        max-height: 400px;
+        max-width: 90%;
+    }
+
+    .service-card-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .service-card-info p {
+        max-width: 100%;
+    }
+
+    .service-cta {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* === SECTION: contact.css (Responsive) === */
+@media (max-width: 991px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .contact-info-col {
+        padding-left: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}@media (max-width: 600px) {
+    .minimal-form .form-row-2col {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .minimal-form .form-row-2col .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .contact-info-col {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* === ORIGINAL MEDIA.CSS === */
 /* ============================================
    KORAT REALITY - Responsive Styles
    All Media Queries
@@ -483,3 +684,4 @@
         align-items: flex-start;
     }
 }
+
