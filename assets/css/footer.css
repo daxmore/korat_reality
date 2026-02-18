@@ -166,3 +166,7 @@ footer.main-footer a {
    If I include it, it might break visibility if background is dark.
    I'll assume the user wants `style.css` preference.
 */
+/* Animation Override for Footer */
+.main-footer .hover-underline-animation::after {
+    background-color: #fff !important;
+}
