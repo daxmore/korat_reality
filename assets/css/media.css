@@ -14,7 +14,9 @@
         animation: fadeInUp 0.3s ease forwards;
         margin-top: 0;
     }
-}@media (min-width: 992px) {
+}
+
+@media (min-width: 992px) {
     .dropdown.group:hover .dropdown-menu {
         display: block;
         animation: fadeInUp 0.3s ease forwards;
@@ -47,7 +49,9 @@
     .hero-illustration img {
         height: clamp(180px, 30vw, 300px);
     }
-}@media (max-width: 480px) {
+}
+
+@media (max-width: 480px) {
     .hero-main {
         min-height: 85vh;
     }
@@ -82,7 +86,9 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
     }
-}@media (max-width: 600px) {
+}
+
+@media (max-width: 600px) {
     .editorial-about-section {
         padding: 5rem 0;
     }
@@ -178,7 +184,9 @@
     .footer-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-}@media (max-width: 600px) {
+}
+
+@media (max-width: 600px) {
     .minimal-form .form-row-2col {
         grid-template-columns: 1fr;
         gap: 0;
@@ -514,6 +522,7 @@
         right: 15px;
     }
 }
+
 /* ============================================
    PROCESS SECTION MEDIA QUERIES
    ============================================ */
@@ -654,7 +663,7 @@
 
 @media (max-width: 767px) {
     .blog-hero {
-        padding-top: 4rem;
+        padding-top: 10rem;
         padding-bottom: 3rem;
     }
 
@@ -684,4 +693,3 @@
         align-items: flex-start;
     }
 }
-
