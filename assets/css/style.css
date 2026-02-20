@@ -1565,6 +1565,15 @@ footer.main-footer a {
 /* ============================================
    ABOUT SECTION — Editorial Grid Layout
    ============================================ */
+.reveal-scale-up>div {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.reveal-scale-up>div:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15) !important;
+}
+
 .editorial-about-section {
     position: relative;
     background: var(--primary-cream, #fefae0);
@@ -3629,4 +3638,3 @@ footer.main-footer a {
     background: radial-gradient(circle at 80% 20%, rgba(185, 155, 95, 0.15) 0%, rgba(28, 28, 28, 0) 50%);
     pointer-events: none;
 }
-

@@ -1,60 +1,105 @@
 /**
- * Number Counter Animation
- * Animates numbers from 0 to target value on scroll
+ * Counter Animation — count-up on scroll
+ * Triggers when .estat-num elements enter the viewport.
+ * Handles suffixes like "+", "%", etc.
  */
+(function () {
+    'use strict';
 
-document.addEventListener("DOMContentLoaded", function () {
-
-    // Check if GSAP is available
-    if (typeof gsap === 'undefined') {
-        console.warn('GSAP not loaded - counter animations disabled');
-        return;
+    /**
+     * Parse a raw text like "500+", "11%", "15+" into
+     * { target: 500, suffix: "+" }
+     */
+    function parseValue(text) {
+        text = text.trim();
+        // Match leading number (int or float), then any trailing suffix
+        var match = text.match(/^(\d+(?:\.\d+)?)(.*)$/);
+        if (!match) return null;
+        return {
+            target: parseFloat(match[1]),
+            suffix: match[2] || ''
+        };
     }
 
-    // Register ScrollTrigger if available
-    if (typeof ScrollTrigger !== 'undefined') {
-        gsap.registerPlugin(ScrollTrigger);
+    /**
+     * Animate a single .estat-num element from 0 → target.
+     */
+    function animateCounter(el) {
+        var parsed = parseValue(el.dataset.counterTarget || el.textContent);
+        if (!parsed) return;
+
+        var target = parsed.target;
+        var suffix = parsed.suffix;
+        var duration = 1000; // ms
+        var startTime = null;
+        var isFloat = target !== Math.floor(target);
+
+        // Ease-out cubic
+        function easeOut(t) {
+            return 1 - Math.pow(1 - t, 3);
+        }
+
+        function step(timestamp) {
+            if (!startTime) startTime = timestamp;
+            var elapsed = timestamp - startTime;
+            var progress = Math.min(elapsed / duration, 1);
+            var value = easeOut(progress) * target;
+
+            el.textContent = (isFloat ? value.toFixed(1) : Math.floor(value)) + suffix;
+
+            if (progress < 1) {
+                requestAnimationFrame(step);
+            } else {
+                // Ensure exact final value
+                el.textContent = (isFloat ? target.toFixed(1) : target) + suffix;
+            }
+        }
+
+        requestAnimationFrame(step);
     }
 
-    // Get all counter elements
-    const counters = document.querySelectorAll('.counter');
+    /**
+     * Set up IntersectionObserver to fire the animation
+     * when the stat section scrolls into view.
+     */
+    function initCounters() {
+        var elements = document.querySelectorAll('.estat-num');
+        if (!elements.length) return;
 
-    counters.forEach(counter => {
-        const target = parseInt(counter.getAttribute('data-count'));
-        const suffix = counter.getAttribute('data-suffix') || '';
-        const duration = parseFloat(counter.getAttribute('data-duration')) || 0.6;
-        const decimals = parseInt(counter.getAttribute('data-decimals')) || 0;
-
-        // Create counter object for animation
-        const counterObj = { val: 0 };
-
-        // Create ScrollTrigger animation
-        gsap.to(counterObj, {
-            val: target,
-            duration: duration,
-            ease: "power2.out",
-            scrollTrigger: {
-                trigger: counter,
-                start: "top 85%",
-                toggleActions: "play none none none",
-                once: true // Only animate once
-            },
-            onUpdate: function () {
-                // Update the counter text
-                if (decimals > 0) {
-                    counter.textContent = counterObj.val.toFixed(decimals) + suffix;
-                } else {
-                    counter.textContent = Math.ceil(counterObj.val) + suffix;
-                }
-            },
-            onComplete: function () {
-                // Ensure final value is exact
-                if (decimals > 0) {
-                    counter.textContent = target.toFixed(decimals) + suffix;
-                } else {
-                    counter.textContent = target + suffix;
-                }
+        // Store the original text as a data attribute so
+        // parseValue always reads the correct target.
+        elements.forEach(function (el) {
+            if (!el.dataset.counterTarget) {
+                el.dataset.counterTarget = el.textContent.trim();
             }
         });
-    });
-});
+
+        if (!('IntersectionObserver' in window)) {
+            // Fallback: animate immediately
+            elements.forEach(animateCounter);
+            return;
+        }
+
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    observer.unobserve(entry.target); // only once
+                }
+            });
+        }, {
+            threshold: 0.4  // fire when 40% of the element is visible
+        });
+
+        elements.forEach(function (el) {
+            observer.observe(el);
+        });
+    }
+
+    // Run after DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCounters);
+    } else {
+        initCounters();
+    }
+})();
