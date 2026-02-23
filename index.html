@@ -258,180 +258,157 @@
     </section>
 
     <!-- ============================================
-         SERVICES SECTION – Scroll-Driven
+         SERVICES SECTION – Bento Grid Layout
          ============================================ -->
     <section class="services-section section-padding bg-light" id="services">
-        <div class="services-inner">
-
-            <!-- LEFT COLUMN: Sticky Navigation -->
-            <div class="services-left">
-                <span class="services-label">Services</span>
-                <h2 class="services-heading">
-                    The most effective way to <span>build wealth</span>
+        <div class="container pb-5">
+            <!-- Header -->
+            <div class="services-header text-center mb-5 pb-lg-4 reveal-scale-up">
+                <span class="services-label d-block mb-3 text-uppercase fw-bold text-muted tracking-wider small">Our
+                    Services</span>
+                <h2 class="services-heading display-4 font-serif fw-normal mb-4">
+                    The most effective way to <span class="text-gold fst-italic">build wealth</span>
                 </h2>
-
-                <div class="step-nav">
-                    <!-- Vertical Progress Bar -->
-                    <div class="progress-track">
-                        <div class="progress-fill" id="progressFill"></div>
-                    </div>
-
-                    <!-- Step Items -->
-                    <ul class="step-list" id="stepList">
-                        <li class="step-item active" data-index="0">
-                            <span class="step-number">01</span>
-                            <span class="step-title">Land Acquisition</span>
-                        </li>
-                        <li class="step-item" data-index="1">
-                            <span class="step-number">02</span>
-                            <span class="step-title">Land Development</span>
-                        </li>
-                        <li class="step-item" data-index="2">
-                            <span class="step-number">03</span>
-                            <span class="step-title">Residential Projects</span>
-                        </li>
-                        <li class="step-item" data-index="3">
-                            <span class="step-number">04</span>
-                            <span class="step-title">Commercial Projects</span>
-                        </li>
-                        <li class="step-item" data-index="4">
-                            <span class="step-number">05</span>
-                            <span class="step-title">Industrial Projects</span>
-                        </li>
-                    </ul>
-                </div>
+                <p class="lead text-muted max-width-700 mx-auto">
+                    We navigate the complexities of real estate with a data-first approach, offering end-to-end
+                    strategic investment services.
+                </p>
             </div>
 
-            <!-- RIGHT COLUMN: Service Cards -->
-            <div class="services-right">
-                <div class="cards-viewport">
-                    <div class="cards-track" id="cardsTrack">
-                        <div class="service-card-scroll" data-index="0">
-                            <span class="card-step-number">01</span>
-                            <div class="service-card-img-area">
-                                <img src="assets/images/land_acquisition.png" alt="Land Acquisition"
-                                    class="service-card-img">
+            <!-- Swiper Carousel -->
+            <div class="services-swiper swiper">
+                <div class="swiper-wrapper">
+
+                    <!-- Slide 1: Land Acquisition -->
+                    <div class="swiper-slide service-slide">
+                        <a href="land-acquisition.html" class="bento-card reveal-scale-up">
+                            <div class="bento-card-image">
+                                <img src="assets/images/land_acquisition.png" alt="Land Acquisition">
                             </div>
-                            <div class="service-card-bottom">
-                                <div class="service-card-info">
+                            <div class="bento-card-content">
+                                <span class="bento-step">01</span>
+                                <div class="bento-text">
                                     <h3>Land Acquisition</h3>
                                     <p>Comprehensive market research and location analysis to identify high-potential
-                                        land
-                                        parcels across India.</p>
+                                        land parcels across India.</p>
                                 </div>
-                                <a href="land-acquisition.html" class="service-cta">
-                                    Learn More
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M5 12h14" />
-                                        <path d="M12 5l7 7-7 7" />
+                                <div class="bento-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
                                     </svg>
-                                </a>
+                                </div>
                             </div>
-                        </div>
+                        </a>
+                    </div>
 
-                        <!-- Card 2: Land Development -->
-                        <div class="service-card-scroll" data-index="1">
-                            <span class="card-step-number">02</span>
-                            <div class="service-card-img-area">
-                                <img src="assets/images/land_development.png" alt="Land Development"
-                                    class="service-card-img">
+                    <!-- Slide 2: Land Development -->
+                    <div class="swiper-slide service-slide">
+                        <a href="land-development.html" class="bento-card reveal-scale-up"
+                            style="transition-delay: 0.1s;">
+                            <div class="bento-card-image">
+                                <img src="assets/images/land_development.png" alt="Land Development">
                             </div>
-                            <div class="service-card-bottom">
-                                <div class="service-card-info">
+                            <div class="bento-card-content">
+                                <span class="bento-step">02</span>
+                                <div class="bento-text">
                                     <h3>Land Development</h3>
-                                    <p>Transforming raw land into market-ready properties through town planning,
-                                        infrastructure
-                                        setup, and legal compliance.</p>
+                                    <p>Transforming raw land into market-ready properties through town planning and
+                                        legal compliance.</p>
                                 </div>
-                                <a href="land-development.html" class="service-cta">
-                                    Learn More
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M5 12h14" />
-                                        <path d="M12 5l7 7-7 7" />
+                                <div class="bento-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
                                     </svg>
-                                </a>
+                                </div>
                             </div>
-                        </div>
+                        </a>
+                    </div>
 
-                        <!-- Card 3: Residential Projects -->
-                        <div class="service-card-scroll" data-index="2">
-                            <span class="card-step-number">03</span>
-                            <div class="service-card-img-area">
-                                <img src="assets/images/residential_projects.png" alt="Residential Projects"
-                                    class="service-card-img">
+                    <!-- Slide 3: Residential Projects -->
+                    <div class="swiper-slide service-slide">
+                        <a href="residential-projects.html" class="bento-card reveal-scale-up"
+                            style="transition-delay: 0.2s;">
+                            <div class="bento-card-image">
+                                <img src="assets/images/residential_projects.png" alt="Residential Projects">
                             </div>
-                            <div class="service-card-bottom">
-                                <div class="service-card-info">
+                            <div class="bento-card-content">
+                                <span class="bento-step">03</span>
+                                <div class="bento-text">
                                     <h3>Residential Projects</h3>
                                     <p>Developing plotting communities and villa projects in areas with excellent
-                                        connectivity
-                                        and social infrastructure.</p>
+                                        connectivity.</p>
                                 </div>
-                                <a href="residential-projects.html" class="service-cta">
-                                    Learn More
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M5 12h14" />
-                                        <path d="M12 5l7 7-7 7" />
+                                <div class="bento-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
                                     </svg>
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Card 4: Commercial Projects -->
-                        <div class="service-card-scroll" data-index="3">
-                            <span class="card-step-number">04</span>
-                            <div class="service-card-img-area">
-                                <img src="assets/images/commercial_project.png" alt="Commercial Projects"
-                                    class="service-card-img">
-                            </div>
-                            <div class="service-card-bottom">
-                                <div class="service-card-info">
-                                    <h3>Commercial Projects</h3>
-                                    <p>Retail complexes, office spaces, and mixed-use developments designed for
-                                        sustainable
-                                        rental yields.</p>
                                 </div>
-                                <a href="commercial-projects.html" class="service-cta">
-                                    Learn More
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M5 12h14" />
-                                        <path d="M12 5l7 7-7 7" />
-                                    </svg>
-                                </a>
                             </div>
-                        </div>
-
-                        <!-- Card 5: Industrial Projects -->
-                        <div class="service-card-scroll" data-index="4">
-                            <span class="card-step-number">05</span>
-                            <div class="service-card-img-area">
-                                <img src="assets/images/industrial_project.png" alt="Industrial Projects"
-                                    class="service-card-img">
-                            </div>
-                            <div class="service-card-bottom">
-                                <div class="service-card-info">
-                                    <h3>Industrial Projects</h3>
-                                    <p>Industrial land development for manufacturers and logistics companies in
-                                        designated
-                                        industrial zones.</p>
-                                </div>
-                                <a href="industrial-projects.html" class="service-cta">
-                                    Learn More
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M5 12h14" />
-                                        <path d="M12 5l7 7-7 7" />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
+                        </a>
                     </div>
+
+                    <!-- Slide 4: Commercial Projects -->
+                    <div class="swiper-slide service-slide">
+                        <a href="commercial-projects.html" class="bento-card reveal-scale-up"
+                            style="transition-delay: 0.3s;">
+                            <div class="bento-card-image">
+                                <img src="assets/images/commercial_project.png" alt="Commercial Projects">
+                            </div>
+                            <div class="bento-card-content">
+                                <span class="bento-step">04</span>
+                                <div class="bento-text">
+                                    <h3>Commercial Projects</h3>
+                                    <p>Retail complexes and mixed-use developments designed for sustainable rental
+                                        yields.</p>
+                                </div>
+                                <div class="bento-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Slide 5: Industrial Projects -->
+                    <div class="swiper-slide service-slide">
+                        <a href="industrial-projects.html" class="bento-card reveal-scale-up"
+                            style="transition-delay: 0.4s;">
+                            <div class="bento-card-image">
+                                <img src="assets/images/industrial_project.png" alt="Industrial Projects">
+                            </div>
+                            <div class="bento-card-content">
+                                <span class="bento-step">05</span>
+                                <div class="bento-text">
+                                    <h3>Industrial Projects</h3>
+                                    <p>Industrial land development for manufacturers in designated industrial zones.</p>
+                                </div>
+                                <div class="bento-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
                 </div>
+
+                <!-- Custom Navigation -->
+                <div class="swiper-nav-buttons reveal-content">
+                    <button class="services-prev swiper-button-prev"></button>
+                    <button class="services-next swiper-button-next"></button>
+                </div>
+                <!-- Pagination -->
+                <div class="swiper-pagination mt-4 position-relative"></div>
+
             </div>
+        </div>
     </section>
 
     <!-- ============================================
@@ -1172,13 +1149,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
     <!-- Lenis (Smooth Scroll) -->
-    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Smooth Scrolling Logic -->
-    <script src="assets/js/smooth-scroll.js"></script>
 
     <!-- UI Interactions (Menu, FAQ, Service Icons) -->
     <script src="assets/js/ui-interactions.js"></script>
@@ -1197,6 +1172,12 @@
 
     <!-- Counter Animation -->
     <script src="assets/js/counter-animation.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Services Carousel -->
+    <script src="assets/js/carousel.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>

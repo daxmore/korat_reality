@@ -1569,9 +1569,16 @@ footer.main-footer a {
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
+/* 
 .reveal-scale-up>div:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15) !important;
+} */
+
+.section-overlap {
+    position: relative;
+    z-index: 10;
+    margin-top: -60px;
 }
 
 .editorial-about-section {
@@ -1717,346 +1724,203 @@ footer.main-footer a {
 
 
 
-/* === SECTION: services.css === */
 /* ============================================
-   SERVICES SECTION – Scroll-Driven Step System
+   SERVICES SECTION – Swiper Normal Carousel
    ============================================ */
 
-/* Section wrapper */
-.services-section {
+.services-swiper {
     position: relative;
     width: 100%;
-    min-height: 100vh;
+    padding-top: 30px;
+    padding-bottom: 80px;
+    /* Space for pagination */
+}
+
+.swiper-wrapper {
+    align-items: stretch;
+}
+
+.service-slide {
+    height: auto;
+}
+
+/* Base Card Styling for Slides */
+.service-slide .bento-card {
+    position: relative;
+    background: #fff;
+    border-radius: 16px;
     overflow: hidden;
-    padding: 0 !important;
-}
-
-.services-inner {
-    display: flex;
-    width: 100%;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    min-height: 100vh;
-    align-items: flex-start;
-}
-
-/* ============================
-   LEFT COLUMN (sticky navigation)
-   ============================ */
-.services-left {
-    position: sticky;
-    top: 100px;
-    width: 40%;
-    flex-shrink: 0;
-    padding-right: 3rem;
-    padding-top: 2rem;
-    align-self: flex-start;
-}
-
-.services-label {
-    display: inline-block;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--primary-teal-dark, #1a3c34);
-    background: rgba(26, 60, 52, 0.08);
-    padding: 6px 16px;
-    border-radius: 30px;
-    margin-bottom: 1.5rem;
-}
-
-.services-heading {
-    font-family: var(--font-serif);
-    font-size: clamp(1.6rem, 3vw, 2.6rem);
-    font-weight: 700;
-    color: #1a1a1a;
-    line-height: 1.2;
-    margin-bottom: 2.5rem;
-}
-
-.services-heading span {
-    color: var(--primary-teal-dark, #1a3c34);
-}
-
-/* Step Navigation */
-.step-nav {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.5rem;
-}
-
-/* Progress Bar */
-.progress-track {
-    position: relative;
-    width: 3px;
-    background: #e0ddd8;
-    border-radius: 3px;
-    flex-shrink: 0;
-    align-self: stretch;
-}
-
-.progress-fill {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: var(--primary-teal-dark, #1a3c34);
-    border-radius: 3px;
-    height: 0%;
-    transition: height 0.3s ease;
-}
-
-/* Step Items */
-.step-list {
-    list-style: none;
+    text-decoration: none;
+    color: inherit;
     display: flex;
     flex-direction: column;
-    gap: 0;
-    padding: 0;
-    margin: 0;
+    height: 100%;
+    min-height: 480px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    user-select: none;
+    cursor: grab;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
 }
 
-.step-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 10px 0;
-    cursor: default;
-    transition: all 0.35s ease;
-    opacity: 0.35;
+.service-slide .bento-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
 }
 
-.step-item.active {
-    opacity: 1;
+.service-slide .bento-card:active {
+    cursor: grabbing;
 }
 
-.step-number {
-    font-size: 0.75rem;
-    font-weight: 800;
-    color: #b0ada6;
-    font-variant-numeric: tabular-nums;
-    min-width: 22px;
-    transition: color 0.35s ease;
-}
 
-.step-item.active .step-number {
-    color: var(--primary-teal-dark, #1a3c34);
-}
-
-.step-title {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #888;
-    transition: color 0.35s ease;
-    white-space: nowrap;
-}
-
-.step-item.active .step-title {
-    color: #1a1a1a;
-}
-
-/* Active dot indicator */
-.step-item.active .step-number::before {
-    content: '';
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    background: var(--primary-teal-dark, #1a3c34);
-    border-radius: 50%;
-    margin-right: 6px;
-    vertical-align: middle;
-    animation: dotPulse 1.5s ease-in-out infinite;
-}
-
-@keyframes dotPulse {
-
-    0%,
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    50% {
-        opacity: 0.5;
-        transform: scale(0.7);
-    }
-}
-
-/* ============================
-   RIGHT COLUMN (service cards)
-   ============================ */
-.services-right {
-    width: 60%;
-    position: relative;
-    min-height: 100vh;
-    overflow: hidden;
-}
-
-/* Cards wrapper — clips overflow so only current + peek of next show */
-.cards-viewport {
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    overflow: hidden;
-    padding-top: 80px;
-    /* Space for fixed header */
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    /* items slide up */
-}
-
-.cards-track {
-    position: relative;
-    width: 100%;
-    will-change: transform;
-}
-
-.service-card-scroll {
-    width: 94%;
-    height: 85vh;
-    max-height: 720px;
-    margin: 0 auto 1.5rem;
-    border-radius: 24px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    opacity: 1;
-    transform: scale(1);
-}
-
-/* Per-card background colors */
-.service-card-scroll[data-index="0"] {
+/* Distinct background colors for each slide index */
+.service-slide:nth-child(1) .bento-card {
     background: #e8efdf;
 }
 
-.service-card-scroll[data-index="1"] {
+.service-slide:nth-child(2) .bento-card {
     background: #dfe8ef;
 }
 
-.service-card-scroll[data-index="2"] {
+.service-slide:nth-child(3) .bento-card {
     background: #f0ebe3;
 }
 
-.service-card-scroll[data-index="3"] {
+.service-slide:nth-child(4) .bento-card {
     background: #e3ecf0;
 }
 
-.service-card-scroll[data-index="4"] {
+.service-slide:nth-child(5) .bento-card {
     background: #ebeaef;
 }
 
 
-/* Step number badge (top-left inside card) */
-.card-step-number {
-    position: absolute;
-    top: 24px;
-    left: 28px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: #1a1a1a;
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    padding: 6px 14px;
-    border-radius: 30px;
-    z-index: 2;
-    letter-spacing: 0.5px;
-}
-
-/* Image area: centered in the card */
-.service-card-img-area {
+/* Image Area */
+.service-slide .bento-card-image {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 3.5rem 2.5rem 1rem;
-    position: relative;
+    padding: 2.5rem 2rem 1rem;
+    overflow: hidden;
 }
 
-.service-card-img {
-    max-width: 75%;
-    max-height: 320px;
+.service-slide .bento-card-image img {
+    max-width: 85%;
+    max-height: 300px;
     object-fit: contain;
-    display: block;
-    filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.08));
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.1));
 }
 
-/* Bottom area: title + desc left, CTA right */
-.service-card-bottom {
-    padding: 1.5rem 2rem 2rem;
+
+/* Content Area */
+.service-slide .bento-card-content {
+    padding: 1.5rem 2rem 2.5rem;
     display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 1.5rem;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 2;
+    min-height: 220px;
 }
 
-.service-card-info {
-    flex: 1;
-    min-width: 0;
+.service-slide .bento-step {
+    position: absolute;
+    top: 1.5rem;
+    left: 2rem;
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: rgba(26, 26, 26, 0.3);
+    font-variant-numeric: tabular-nums;
 }
 
-.service-card-info h3 {
+.service-slide .bento-text h3 {
     font-family: var(--font-serif);
-    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    font-size: clamp(1.4rem, 2vw, 1.7rem);
     font-weight: 700;
     color: #1a1a1a;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     line-height: 1.2;
 }
 
-.service-card-info p {
+.service-slide .bento-text p {
     color: #555;
-    font-size: 0.88rem;
-    line-height: 1.6;
-    max-width: 380px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 0;
 }
 
-.service-cta {
-    display: inline-flex;
+/* Icon Action Button */
+.service-slide .bento-icon {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    color: #fff;
-    text-decoration: none;
-    padding: 12px 24px;
-    background: var(--primary-teal-dark, #1a3c34);
-    border: none;
-    border-radius: 50px;
+    justify-content: center;
+    color: var(--primary-teal-dark);
+}
+
+/* Swiper Custom Navigation */
+.swiper-nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.services-prev,
+.services-next {
+    position: static !important;
+    width: 50px !important;
+    height: 50px !important;
+    background: #fff;
+    border-radius: 50%;
+    margin: 0 !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
-    white-space: nowrap;
-    flex-shrink: 0;
 }
 
-.service-cta:hover {
-    background: #0f2a24;
+.services-prev:after,
+.services-next:after {
+    font-size: 1.2rem !important;
+    color: var(--primary-teal-dark);
+    font-weight: bold;
+}
+
+.services-prev:hover,
+.services-next:hover {
+    background: var(--primary-teal-dark);
+    transform: translateY(-2px);
+}
+
+.services-prev:hover:after,
+.services-next:hover:after {
     color: #fff;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 16px rgba(26, 60, 52, 0.3);
 }
 
-.service-cta svg {
-    transition: transform 0.3s ease;
+.swiper-pagination-bullet {
+    background: var(--primary-teal-dark) !important;
+    opacity: 0.3 !important;
 }
 
-.service-cta:hover svg {
-    transform: translateX(4px);
+.swiper-pagination-bullet-active {
+    opacity: 1 !important;
 }
 
-#services,
-#why-korat {
-    padding-bottom: 0;
-}
+/* Responsive Grid / Slider Overrides */
+@media (max-width: 767.98px) {
+    .service-slide .bento-card {
+        min-height: 400px;
+    }
 
-/* ============================
-   MOBILE RESPONSIVENESS
-   ============================ */
+    .service-slide .bento-card-image img {
+        max-height: 180px;
+    }
+}
 
 
 /* === SECTION: process_section.css === */

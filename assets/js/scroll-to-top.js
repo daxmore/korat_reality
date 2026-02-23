@@ -51,19 +51,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Scroll to top function
     function scrollToTop() {
-        // Check if Lenis is active
-        if (window.lenis) {
-            window.lenis.scrollTo(0, {
-                duration: 1.5,
-                easing: (t) => 1 - Math.pow(1 - t, 3)
-            });
-        } else {
-            // Fallback to native smooth scroll
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     }
 
     // Event listeners
