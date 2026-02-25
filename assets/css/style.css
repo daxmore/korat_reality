@@ -1923,11 +1923,6 @@ footer.main-footer a {
     .service-slide .bento-card-image img {
         max-height: 180px;
     }
-
-    .portfolio-pills-nav {
-        padding: 1rem !important;
-        border-radius: 0 !important;
-    }
 }
 
 
@@ -3735,12 +3730,14 @@ footer.main-footer a {
 .portfolio-pills-nav {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
     background: #f1f1f1;
     padding: 8px;
-    border-radius: 100px;
+    border-radius: 40px;
     width: fit-content;
-    margin: 0 auto 60px auto;
+    max-width: 100%;
+    margin: 0 0 60px 0;
 }
 
 .hero-cat-pill {
@@ -3797,19 +3794,6 @@ footer.main-footer a {
 
     .pw-title {
         font-size: 1.6rem;
-    }
-
-    .portfolio-pills-nav {
-        width: 100%;
-        overflow-x: auto;
-        justify-content: flex-start;
-        padding: 5px;
-        white-space: nowrap;
-        scrollbar-width: none;
-    }
-
-    .portfolio-pills-nav::-webkit-scrollbar {
-        display: none;
     }
 }
 
@@ -3955,7 +3939,7 @@ footer.main-footer a {
     max-width: 1200px;
     background: var(--color-white);
     border-radius: 24px;
-    overflow: hidden;
+    overflow-y: auto;
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
     transform: translateY(40px) scale(0.95);
     opacity: 0;

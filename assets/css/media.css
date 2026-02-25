@@ -236,6 +236,25 @@
     .pw-item:hover .pw-image img {
         transform: none !important;
     }
+
+    /* Portfolio Filters - Vertical Column */
+    .portfolio-pills-nav {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto 40px auto;
+        border-radius: 24px;
+        padding: 12px;
+        gap: 6px;
+    }
+
+    .hero-cat-pill {
+        width: 100%;
+        text-align: center;
+        padding: 10px 20px;
+    }
 }
 
 /* ============================================
@@ -709,29 +728,71 @@
 /* ============================================
    PROJECT MODAL (Responsive)
    ============================================ */
+@media (max-width: 1400px) {
+    .project-modal-container {
+        height: 600px;
+    }
+}
+
+@media (max-width: 1250px) {
+    .project-modal-container {
+        height: 600px;
+    }
+}
+
+@media (max-width: 1050px) {
+    .project-modal-container {
+        height: 450px;
+    }
+}
+
 @media (max-width: 991px) {
     .project-modal {
         padding: 1rem;
     }
 
     .project-modal-container {
-        max-height: 90vh;
+        height: auto !important;
+        max-height: 85vh;
         overflow-y: auto;
     }
 
+    #modalProjectTitle {
+        font-size: 2rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+
     .project-modal-image-wrapper {
-        min-height: 300px;
+        min-height: 250px;
+    }
+
+    .project-modal-details {
+        padding: 2rem !important;
     }
 }
 
 @media (max-width: 575px) {
     .project-info-grid {
         grid-template-columns: 1fr;
-        gap: 1rem;
+        gap: 1.25rem;
     }
 
     .project-modal-close {
         top: 1rem;
         right: 1rem;
+        width: 36px;
+        height: 36px;
+    }
+
+    #modalProjectTitle {
+        font-size: 1.75rem !important;
+    }
+
+    .info-item .h5 {
+        font-size: 1rem !important;
+    }
+
+    .project-description p {
+        font-size: 0.95rem !important;
     }
 }
