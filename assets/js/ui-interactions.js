@@ -218,25 +218,122 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
-});
 
-/* =========================================================================
-   PORTFOLIO FILTER ELASTIC MENU
-   ========================================================================= */
-document.addEventListener('DOMContentLoaded', () => {
+
+    // ============================================
+    // PORTFOLIO FILTER LOGIC
+    // ============================================
     const filterBtn = document.querySelector('.filter-toggle-btn');
     const filterOptions = document.querySelector('.filter-options');
-    const filterOptionBtns = document.querySelectorAll('.filter-option');
-    
+    const filterOptionBtns = document.querySelectorAll('.filter-option'); // these are the sticky filter options
+
+    // Also attach logic to the top pill filters if clicked
+    const heroPillBtns = document.querySelectorAll('.hero-cat-pill');
+
+    const portfolioGrid = document.querySelector('.portfolio-works-grid');
+    let allPortfolioItems = [];
+
+    // Store all initial portfolio items
+    if (portfolioGrid) {
+        allPortfolioItems = Array.from(portfolioGrid.querySelectorAll('.pw-item'));
+    }
+
+    // Function to apply filter with crazy animations
+    function applyPortfolioFilter(category) {
+        if (!portfolioGrid) return;
+
+        // Normalize category by optionally removing " Projects" so "Residential Projects" matches "Residential"
+        const categoryNormalized = category.replace(' Projects', '').trim();
+
+        // Sync active states across both navigation sets
+        if (heroPillBtns) {
+            heroPillBtns.forEach(btn => {
+                if (btn.textContent.trim() === category) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+
+        if (filterOptionBtns) {
+            filterOptionBtns.forEach(btn => {
+                if (btn.textContent.trim() === category) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+
+        // 1. Get currently visible items
+        const currentItems = Array.from(portfolioGrid.children);
+
+        // 2. Animate current items OUT elegantly
+        if (currentItems.length > 0) {
+            gsap.to(currentItems, {
+                opacity: 0,
+                y: 20,
+                duration: 0.1,
+                stagger: 0.03,
+                ease: "power2.inOut",
+                onComplete: () => {
+                    renderNewItems(category, categoryNormalized);
+                }
+            });
+        } else {
+            renderNewItems(category, categoryNormalized);
+        }
+    }
+
+    function renderNewItems(category, categoryNormalized) {
+        // Clear the current grid in DOM
+        portfolioGrid.innerHTML = '';
+
+        const itemsToShow = [];
+
+        // Filter elements
+        allPortfolioItems.forEach(item => {
+            const itemCategoryEl = item.querySelector('.pw-meta-type');
+            const itemCategory = itemCategoryEl ? itemCategoryEl.textContent.trim() : '';
+
+            if (category === 'All' || itemCategory === categoryNormalized || itemCategory === category) {
+                itemsToShow.push(item);
+                portfolioGrid.appendChild(item);
+            }
+        });
+
+        // 3. Animate new items IN elegantly
+        if (itemsToShow.length > 0) {
+            // Set initial hidden state
+            gsap.set(itemsToShow, {
+                scale: 0.98,
+                opacity: 0,
+                y: 40
+            });
+
+            // The elegant fade and slide reveal
+            gsap.to(itemsToShow, {
+                scale: 1,
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                stagger: 0.05,
+                ease: "power3.out",
+                overwrite: true
+            });
+        }
+    }
+
     if (filterBtn && filterOptions) {
         // Toggle menu on click
         filterBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             filterOptions.classList.toggle('active');
-            
+
             // Toggle view text based on state
             const viewText = filterBtn.querySelector('.view-text');
-            if(filterOptions.classList.contains('active')) {
+            if (filterOptions.classList.contains('active')) {
                 viewText.textContent = 'Close -';
             } else {
                 viewText.textContent = 'Filter +';
@@ -247,24 +344,53 @@ document.addEventListener('DOMContentLoaded', () => {
         document.addEventListener('click', (e) => {
             if (!filterBtn.contains(e.target) && !filterOptions.contains(e.target) && filterOptions.classList.contains('active')) {
                 filterOptions.classList.remove('active');
-                filterBtn.querySelector('.view-text').textContent = 'Filter +';
+                if (filterBtn.querySelector('.view-text')) {
+                    filterBtn.querySelector('.view-text').textContent = 'Filter +';
+                }
             }
         });
 
-        // Handle option click (visual active state only for now)
-        filterOptionBtns.forEach(btn => {
+        // Handle sticky option click
+        if (filterOptionBtns) {
+            filterOptionBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const category = btn.textContent.trim();
+                    applyPortfolioFilter(category);
+
+                    // Optionally close menu after selection
+                    setTimeout(() => {
+                        filterOptions.classList.remove('active');
+                        if (filterBtn.querySelector('.view-text')) {
+                            filterBtn.querySelector('.view-text').textContent = 'Filter +';
+                        }
+                    }, 300);
+                });
+            });
+        }
+    }
+
+    // Top pill buttons interactions
+    if (heroPillBtns.length > 0) {
+        heroPillBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Remove active from all
-                filterOptionBtns.forEach(b => b.classList.remove('active'));
-                // Add active to clicked
-                btn.classList.add('active');
-                
-                // Optionally close menu after selection
-                setTimeout(() => {
-                    filterOptions.classList.remove('active');
-                    filterBtn.querySelector('.view-text').textContent = 'Filter +';
-                }, 300);
+                const category = btn.textContent.trim();
+                applyPortfolioFilter(category);
             });
         });
     }
+
+    // Initial page load elegant staggered entry animation
+    if (allPortfolioItems.length > 0) {
+        gsap.set(allPortfolioItems, { opacity: 0, y: 30, scale: 0.98 });
+        gsap.to(allPortfolioItems, {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 1,
+            stagger: 0.08,
+            ease: "power3.out",
+            delay: 0.1
+        });
+    }
+
 });
