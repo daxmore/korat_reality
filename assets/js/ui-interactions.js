@@ -393,4 +393,163 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ============================================
+    // PORTFOLIO PILL MOUSE FOLLOWER
+    // ============================================
+    const portfolioImages = document.querySelectorAll('.pw-image');
+
+    portfolioImages.forEach(image => {
+        const pill = image.querySelector('.pw-pill-btn');
+        if (!pill) return;
+
+        image.addEventListener('mouseenter', (e) => {
+            // Initial positioning to avoid jump
+            const rect = image.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            gsap.set(pill, {
+                x: x,
+                y: y,
+                xPercent: -50,
+                yPercent: -50,
+                scale: 0,
+                opacity: 0
+            });
+
+            gsap.to(pill, {
+                opacity: 1,
+                scale: 0.85,
+                duration: 0.1,
+                ease: "power2.out"
+            });
+        });
+
+        image.addEventListener('mousemove', (e) => {
+            const rect = image.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            // Follow with extreme snappiness and perfect centering
+            gsap.to(pill, {
+                x: x,
+                y: y,
+                xPercent: -50,
+                yPercent: -50,
+                duration: 0.4, // Balanced for smooth follow
+                ease: "power2.out",
+                overwrite: 'auto',
+                scale: 0.85
+            });
+        });
+
+        image.addEventListener('mouseleave', () => {
+            gsap.to(pill, {
+                opacity: 0,
+                scale: 0,
+                duration: 0.1,
+                ease: "power2.in"
+            });
+        });
+    });
+
+    // ============================================
+    // PROJECT MODAL LOGIC
+    // ============================================
+    const projectModal = document.getElementById('projectModal');
+    const closeProjectModal = document.getElementById('closeProjectModal');
+    const modalBackdrop = projectModal?.querySelector('.project-modal-backdrop');
+    const modalContainer = projectModal?.querySelector('.project-modal-container');
+
+    // Elements to populate
+    const modalTitle = document.getElementById('modalProjectTitle');
+    const modalCategory = document.getElementById('modalProjectCategory');
+    const modalLocation = document.getElementById('modalProjectLocation');
+    const modalArea = document.getElementById('modalProjectArea');
+    const modalYear = document.getElementById('modalProjectYear');
+    const modalStatus = document.getElementById('modalProjectStatus');
+    const modalImage = document.getElementById('modalProjectImage');
+
+    function openModal(data) {
+        if (!projectModal) return;
+
+        // Populate content
+        if (modalTitle) modalTitle.textContent = data.title;
+        if (modalCategory) modalCategory.textContent = data.category;
+        if (modalLocation) modalLocation.textContent = data.location;
+        if (modalArea) modalArea.textContent = data.area;
+        if (modalYear) modalYear.textContent = data.year;
+        if (modalStatus) modalStatus.textContent = data.status;
+        if (modalImage) {
+            modalImage.src = data.image;
+            modalImage.alt = data.title;
+        }
+
+        projectModal.classList.add('is-active');
+        body.classList.add('modal-open'); // Prevent body scroll
+
+        // GSAP Animation
+        gsap.to(modalBackdrop, { opacity: 1, duration: 0.5, ease: "power2.out" });
+        gsap.fromTo(modalContainer,
+            { y: 50, scale: 0.95, opacity: 0 },
+            { y: 0, scale: 1, opacity: 1, duration: 0.6, ease: "power3.out", delay: 0.1 }
+        );
+    }
+
+    function closeModal() {
+        if (!projectModal) return;
+
+        gsap.to(modalContainer, {
+            y: 30,
+            opacity: 0,
+            scale: 0.98,
+            duration: 0.4,
+            ease: "power3.in"
+        });
+
+        gsap.to(modalBackdrop, {
+            opacity: 0,
+            duration: 0.4,
+            ease: "power2.in",
+            onComplete: () => {
+                projectModal.classList.remove('is-active');
+                body.classList.remove('modal-open');
+            }
+        });
+    }
+
+    // Attach click events to project items
+    // We use event delegation or re-attach after filtering
+    document.addEventListener('click', (e) => {
+        const projectItem = e.target.closest('.pw-item');
+        if (projectItem) {
+            e.preventDefault();
+            const data = {
+                title: projectItem.dataset.title,
+                category: projectItem.dataset.category,
+                year: projectItem.dataset.year,
+                location: projectItem.dataset.location,
+                area: projectItem.dataset.area,
+                status: projectItem.dataset.status,
+                image: projectItem.dataset.image
+            };
+            openModal(data);
+        }
+    });
+
+    if (closeProjectModal) {
+        closeProjectModal.addEventListener('click', closeModal);
+    }
+
+    if (modalBackdrop) {
+        modalBackdrop.addEventListener('click', closeModal);
+    }
+
+    // Escape key to close
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && projectModal.classList.contains('is-active')) {
+            closeModal();
+        }
+    });
+
 });

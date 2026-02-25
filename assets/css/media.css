@@ -224,6 +224,18 @@
     .key-image-wrapper {
         display: none;
     }
+
+    /* Disable Project Hover Effects for Mobile/Tablet */
+    .pw-item:hover .pw-pill-btn {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+    }
+
+    .pw-item:hover .pw-image img {
+        transform: none !important;
+    }
 }
 
 /* ============================================
@@ -691,5 +703,35 @@
     .blog-share {
         flex-direction: column;
         align-items: flex-start;
+    }
+}
+
+/* ============================================
+   PROJECT MODAL (Responsive)
+   ============================================ */
+@media (max-width: 991px) {
+    .project-modal {
+        padding: 1rem;
+    }
+
+    .project-modal-container {
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .project-modal-image-wrapper {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 575px) {
+    .project-info-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .project-modal-close {
+        top: 1rem;
+        right: 1rem;
     }
 }
