@@ -1565,7 +1565,7 @@ footer.main-footer a {
 /* ============================================
    ABOUT SECTION — Editorial Grid Layout
    ============================================ */
-.reveal-scale-up>div {
+.yl-scale-up>div {
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
@@ -1796,7 +1796,6 @@ footer.main-footer a {
 
 /* Image Area */
 .service-slide .bento-card-image {
-    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3501,4 +3500,474 @@ footer.main-footer a {
 .cta-grad-bg {
     background: radial-gradient(circle at 80% 20%, rgba(185, 155, 95, 0.15) 0%, rgba(28, 28, 28, 0) 50%);
     pointer-events: none;
+}
+
+/* ============================================
+   PORTFOLIO PAGE (TELHA CLARKE STYLE)
+   ============================================ */
+.portfolio-main {
+    margin-top: 8rem;
+}
+
+.portfolio-works-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-flow: dense;
+    gap: 30px;
+}
+
+.pw-item {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: var(--text-dark);
+    overflow: hidden;
+    margin-bottom: 0px;
+    /* Use grid gap instead */
+}
+
+/* Base states for hover info */
+.pw-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    z-index: 2;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.pw-info h2 {
+    color: #fff;
+    margin-bottom: 5px;
+    font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.pw-meta {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.pw-meta span {
+    margin: 0 8px;
+    color: var(--primary-gold, #b99b5f);
+}
+
+.pw-image {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.pw-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-radius: 0;
+}
+
+.pw-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 50%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+/* Hover Effects */
+.pw-item:hover .pw-image img {
+    transform: scale(1.03);
+}
+
+.pw-item:hover .pw-overlay {
+    opacity: 1;
+}
+
+.pw-item:hover .pw-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Grid Spanning */
+.pw-large {
+    grid-column: span 8;
+}
+
+.pw-medium {
+    grid-column: span 6;
+}
+
+.pw-small {
+    grid-column: span 4;
+}
+
+.pw-tall {
+    grid-column: span 4;
+    grid-row: span 2;
+}
+
+/* Image Aspect Ratios (Padding hack for intrinsic ratio) */
+.pw-large .pw-image {
+    padding-top: 56.25%;
+    /* 16:9 */
+}
+
+.pw-medium .pw-image {
+    padding-top: 75%;
+    /* 4:3 */
+}
+
+.pw-small .pw-image {
+    padding-top: 100%;
+    /* 1:1 */
+}
+
+.pw-tall .pw-image {
+    padding-top: 150%;
+    /* 2:3 */
+}
+
+.pw-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Responsive Grid */
+@media (max-width: 991px) {
+
+    .pw-large,
+    .pw-medium,
+    .pw-small {
+        grid-column: span 12;
+    }
+
+    .pw-tall {
+        grid-column: span 6;
+        grid-row: span 1;
+    }
+
+    .pw-tall .pw-image {
+        padding-top: 75%;
+    }
+}
+
+@media (max-width: 767px) {
+    .portfolio-works-grid {
+        gap: 20px;
+    }
+
+    .pw-large,
+    .pw-medium,
+    .pw-small,
+    .pw-tall {
+        grid-column: span 12;
+        margin-bottom: 20px;
+    }
+
+    .pw-image {
+        padding-top: 66.66% !important;
+        /* 3:2 for all on mobile */
+    }
+
+    /* Show info by default on mobile */
+    .pw-info {
+        opacity: 1;
+        transform: translateY(0);
+        padding: 20px;
+    }
+
+    .pw-overlay {
+        opacity: 0.8;
+    }
+}
+
+@media (max-width: 575px) {
+    .portfolio-main {
+        margin-top: 10rem !important;
+    }
+}
+
+/* NEW PORTFOLIO GRID STRUCTURE */
+/* First row: 2 items (span 6 each) */
+.portfolio-works-grid .pw-item:nth-child(6n + 1),
+.portfolio-works-grid .pw-item:nth-child(6n + 2) {
+    grid-column: span 6;
+}
+
+.portfolio-works-grid .pw-item:nth-child(6n + 1) .pw-image {
+    padding-top: 75%;
+    /* 4:3 aspect ratio */
+}
+
+.portfolio-works-grid .pw-item:nth-child(6n + 2) .pw-image {
+    padding-top: 50%;
+    /* 2:1 wider aspect ratio specifically requested off reference image */
+}
+
+/* Second row: 3 items (span 4 each) */
+.portfolio-works-grid .pw-item:nth-child(6n + 3),
+.portfolio-works-grid .pw-item:nth-child(6n + 4),
+.portfolio-works-grid .pw-item:nth-child(6n + 5) {
+    grid-column: span 4;
+}
+
+.portfolio-works-grid .pw-item:nth-child(6n + 3) .pw-image,
+.portfolio-works-grid .pw-item:nth-child(6n + 4) .pw-image,
+.portfolio-works-grid .pw-item:nth-child(6n + 5) .pw-image {
+    padding-top: 100%;
+    /* 1:1 aspect ratio */
+}
+
+/* Third row: 1 item (span 12) */
+.portfolio-works-grid .pw-item:nth-child(6n + 6) {
+    grid-column: span 12;
+}
+
+.portfolio-works-grid .pw-item:nth-child(6n + 6) .pw-image {
+    padding-top: 40%;
+    /* Panoramic aspect ratio */
+}
+
+/* Updated hover info styling to match Telha Clarke reference */
+.pw-info-bottom {
+    position: static;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0 0 0;
+    opacity: 1;
+    transform: none;
+    background: transparent;
+}
+
+
+
+/* Remove absolute positioning and dark overlay from the new layout items */
+.pw-item.pw-new-layout .pw-info {
+    position: relative;
+    transform: none;
+    opacity: 1;
+    padding: 10px 5px 0;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    color: var(--text-dark);
+}
+
+.pw-item.pw-new-layout .pw-info h2 {
+    color: var(--text-dark);
+    font-size: 1.25rem;
+    font-weight: 500;
+    text-shadow: none;
+    margin: 0;
+    font-family: var(--font-body);
+    transition: color 0.3s ease;
+}
+
+.pw-item.pw-new-layout .pw-meta-new {
+    position: relative;
+    overflow: hidden;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    color: #999;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.pw-item.pw-new-layout .pw-meta-default {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-end;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s ease;
+}
+
+.pw-item.pw-new-layout .pw-meta-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: flex-end;
+    transform: translateY(100%);
+    opacity: 0;
+    color: #777;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s ease;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.pw-item.pw-new-layout .pw-meta-hover svg {
+    margin-bottom: 2px;
+}
+
+.pw-item.pw-new-layout:hover .pw-meta-default {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.pw-item.pw-new-layout:hover .pw-meta-hover {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.pw-item.pw-new-layout .pw-meta-type,
+.pw-item.pw-new-layout .pw-meta-year {
+    color: #333;
+}
+
+.pw-item.pw-new-layout .pw-overlay {
+    background: rgba(0, 0, 0, 0.05);
+    /* very subtle dark overlay on hover */
+}
+
+.pw-item.pw-new-layout:hover .pw-info h2 {
+    color: var(--text-dark);
+}
+
+/* Ensure no default dark gradient on the images */
+.pw-item.pw-new-layout .pw-overlay {
+    background: none;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 991px) {
+
+    .portfolio-works-grid .pw-item:nth-child(6n + 3),
+    .portfolio-works-grid .pw-item:nth-child(6n + 4),
+    .portfolio-works-grid .pw-item:nth-child(6n + 5) {
+        grid-column: span 6;
+    }
+}
+
+@media (max-width: 767px) {
+    .portfolio-works-grid .pw-item {
+        grid-column: span 12 !important;
+        margin-bottom: 0 !important;
+        /* ensure margin is removed on mobile */
+    }
+
+    .pw-item.pw-new-layout .pw-info {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .pw-item.pw-new-layout .pw-meta-new {
+        justify-content: space-between;
+        width: 100%;
+        gap: 0;
+    }
+}
+
+/* ============================================
+   PORTFOLIO FILTER (STICKY ELASTIC)
+   ============================================ */
+.portfolio-filter-container {
+    position: sticky;
+    bottom: 12px;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    pointer-events: none;
+    /* Let clicks pass through container */
+    margin-top: 5rem;
+}
+
+.filter-menu-wrapper {
+    position: relative;
+    pointer-events: auto;
+    /* Re-enable clicks for the button */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.filter-toggle-btn {
+    background-color: var(--primary-dark, #1c1c1c);
+    /* Footer color */
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 2;
+}
+
+.filter-toggle-btn:hover {
+    transform: translateY(-2px);
+}
+
+.filter-toggle-btn svg {
+    margin-bottom: 2px;
+}
+
+.filter-options {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px) scale(0.95);
+    background-color: var(--primary-dark, #1c1c1c);
+    border-radius: 12px;
+    padding: 15px 0;
+    margin-bottom: 6px;
+    display: flex;
+    flex-direction: column;
+    min-width: 350px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    /* The elastic spring animation transition */
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 1;
+}
+
+.filter-options.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0) scale(1);
+}
+
+.filter-option {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 10px 25px;
+    text-align: left;
+    font-size: 1.1rem;
+    font-family: var(--font-body);
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.filter-option:hover,
+.filter-option.active {
+    color: #fff;
 }

@@ -219,3 +219,52 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
+/* =========================================================================
+   PORTFOLIO FILTER ELASTIC MENU
+   ========================================================================= */
+document.addEventListener('DOMContentLoaded', () => {
+    const filterBtn = document.querySelector('.filter-toggle-btn');
+    const filterOptions = document.querySelector('.filter-options');
+    const filterOptionBtns = document.querySelectorAll('.filter-option');
+    
+    if (filterBtn && filterOptions) {
+        // Toggle menu on click
+        filterBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            filterOptions.classList.toggle('active');
+            
+            // Toggle view text based on state
+            const viewText = filterBtn.querySelector('.view-text');
+            if(filterOptions.classList.contains('active')) {
+                viewText.textContent = 'Close -';
+            } else {
+                viewText.textContent = 'Filter +';
+            }
+        });
+
+        // Close when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!filterBtn.contains(e.target) && !filterOptions.contains(e.target) && filterOptions.classList.contains('active')) {
+                filterOptions.classList.remove('active');
+                filterBtn.querySelector('.view-text').textContent = 'Filter +';
+            }
+        });
+
+        // Handle option click (visual active state only for now)
+        filterOptionBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active from all
+                filterOptionBtns.forEach(b => b.classList.remove('active'));
+                // Add active to clicked
+                btn.classList.add('active');
+                
+                // Optionally close menu after selection
+                setTimeout(() => {
+                    filterOptions.classList.remove('active');
+                    filterBtn.querySelector('.view-text').textContent = 'Filter +';
+                }, 300);
+            });
+        });
+    }
+});
