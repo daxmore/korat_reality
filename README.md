@@ -17,8 +17,6 @@
 | **CSS3** | Custom styling + Bootstrap 5 Grid | Bootstrap 5.3.2 |
 | **JavaScript** | Logic & Interactions | ES6+ |
 | **GSAP** | ScrollTrigger & Timelines | 3.12.5 |
-| **Shery.js** | Mouse follower & Magnet effects | Latest (with Three.js r128) |
-| **Three.js** | Required for Shery.js effects | r128 (Stable) |
 
 ---
 
